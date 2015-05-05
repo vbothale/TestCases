@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" name="Failed suite [Demo Search test suite]" parallel="tests">
+  <parameter name="browser" value="chrome"/>
+  <test name="Chrome Test(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="prism_demo.PrismTest">
+        <methods>
+          <include name="afterTest"/>
+          <include name="SimpleSearch"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- prism_demo.PrismTest -->
+    </classes>
+  </test> <!-- Chrome Test(failed) -->
+</suite> <!-- Failed suite [Demo Search test suite] -->

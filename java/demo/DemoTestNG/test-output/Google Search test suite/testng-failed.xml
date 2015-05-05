@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Google Search test suite]">
+  <parameter name="browser" value="IE"/>
+  <test name="Internet Explorer Test(failed)">
+    <classes>
+      <class name="google.SearchTest">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="testSearchforBush"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- google.SearchTest -->
+    </classes>
+  </test> <!-- Internet Explorer Test(failed) -->
+</suite> <!-- Failed suite [Google Search test suite] -->
