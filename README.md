@@ -1,4 +1,4 @@
 TestCases
 
-Sample Test automation scripts for both ruby and java using webdriver
+Sample Test automation scripts for Prism Automation using TestNG and selenium-webdriver
 
