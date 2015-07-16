@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [Demo Search test suite]">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Demo Search test suite]" parallel="tests">
   <parameter name="browser" value="Chrome"/>
-  <test name="Chrome Test(failed)">
-    <parameter name="browser" value="Chrome"/>
+  <test name="IE Test(failed)" parallel="tests">
+    <parameter name="browser" value="IE"/>
     <classes>
       <class name="collateral.addCollateral">
         <methods>
@@ -17,5 +17,5 @@
         </methods>
       </class> <!-- collateral.addCollateral -->
     </classes>
-  </test> <!-- Chrome Test(failed) -->
+  </test> <!-- IE Test(failed) -->
 </suite> <!-- Failed suite [Demo Search test suite] -->
