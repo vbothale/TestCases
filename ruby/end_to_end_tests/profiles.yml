@@ -1,0 +1,15 @@
+default: &default
+  :browser_type: 'ff'
+  :url: 'http://qa01.provapps.com:6080/ProvAppCLWeb/'
+  #:url: 'http://qa.provapps.com/ProvAppCLWeb/'
+  :name: 'Frank Martin'
+  :login: 'fmartin'
+  :password: 'Provenir1'
+Frank:
+  <<: *default  
+Abby:
+  <<: *default
+  :name: 'Abby Lockhart'
+  :login: 'alockhart'
+  :password: 'Provenir1'
+  
