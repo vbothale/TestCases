@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="prism_demo.PrismTest">
+      <class name="search_demo.SearchTest">
         <methods>
-          <include name="SimpleSearch"/>
+          <include name="testSearchforClinton"/>
+          <include name="testSearchforBush"/>
+          <include name="testSearchforObama"/>
         </methods>
-      </class> <!-- prism_demo.PrismTest -->
+      </class> <!-- search_demo.SearchTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

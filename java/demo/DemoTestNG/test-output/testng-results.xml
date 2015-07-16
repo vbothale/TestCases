@@ -1,44 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="9" passed="9">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Demo Search test suite" duration-ms="24072" started-at="2015-05-05T13:39:27Z" finished-at="2015-05-05T13:39:51Z">
+  <suite name="Demo Search test suite" duration-ms="61126" started-at="2015-07-15T19:54:07Z" finished-at="2015-07-15T19:55:08Z">
     <groups>
     </groups>
-    <test name="Chrome Test" duration-ms="17974" started-at="2015-05-05T13:39:27Z" finished-at="2015-05-05T13:39:45Z">
-      <class name="search_demo.SearchTest">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:search_demo.SearchTest@3c854dc9]" name="beforeTest" is-config="true" duration-ms="2966" started-at="2015-05-05T09:39:27Z" finished-at="2015-05-05T09:39:30Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="testSearchforBush()[pri:0, instance:search_demo.SearchTest@3c854dc9]" name="testSearchforBush" duration-ms="5887" started-at="2015-05-05T09:39:30Z" finished-at="2015-05-05T09:39:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSearchforBush -->
-        <test-method status="PASS" signature="testSearchforClinton()[pri:0, instance:search_demo.SearchTest@3c854dc9]" name="testSearchforClinton" duration-ms="4104" started-at="2015-05-05T09:39:36Z" finished-at="2015-05-05T09:39:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSearchforClinton -->
-        <test-method status="PASS" signature="testSearchforObama()[pri:0, instance:search_demo.SearchTest@3c854dc9]" name="testSearchforObama" duration-ms="3803" started-at="2015-05-05T09:39:40Z" finished-at="2015-05-05T09:39:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSearchforObama -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:search_demo.SearchTest@3c854dc9]" name="afterTest" is-config="true" duration-ms="1202" started-at="2015-05-05T09:39:44Z" finished-at="2015-05-05T09:39:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- search_demo.SearchTest -->
-    </test> <!-- Chrome Test -->
-    <test name="Internet Explorer Test" duration-ms="19542" started-at="2015-05-05T13:39:27Z" finished-at="2015-05-05T13:39:47Z">
-      <class name="search_demo.SearchTest">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:search_demo.SearchTest@1cfeaf9c]" name="beforeTest" is-config="true" duration-ms="3666" started-at="2015-05-05T09:39:27Z" finished-at="2015-05-05T09:39:31Z">
+    <test name="IE Test" duration-ms="10212" started-at="2015-07-15T19:54:07Z" finished-at="2015-07-15T19:54:18Z">
+      <class name="collateral.addCollateral">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.addCollateral@5298d146]" name="beforeTest" is-config="true" duration-ms="4153" started-at="2015-07-15T15:54:07Z" finished-at="2015-07-15T15:54:12Z">
           <params>
             <param index="0">
               <value>
@@ -49,27 +18,42 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="testSearchforBush()[pri:0, instance:search_demo.SearchTest@1cfeaf9c]" name="testSearchforBush" duration-ms="5534" started-at="2015-05-05T09:39:31Z" finished-at="2015-05-05T09:39:36Z">
+        <test-method status="PASS" signature="addCollateral()[pri:0, instance:collateral.addCollateral@5298d146]" name="addCollateral" duration-ms="4263" started-at="2015-07-15T15:54:12Z" finished-at="2015-07-15T15:54:16Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSearchforBush -->
-        <test-method status="PASS" signature="testSearchforClinton()[pri:0, instance:search_demo.SearchTest@1cfeaf9c]" name="testSearchforClinton" duration-ms="4479" started-at="2015-05-05T09:39:36Z" finished-at="2015-05-05T09:39:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSearchforClinton -->
-        <test-method status="PASS" signature="testSearchforObama()[pri:0, instance:search_demo.SearchTest@1cfeaf9c]" name="testSearchforObama" duration-ms="4808" started-at="2015-05-05T09:39:41Z" finished-at="2015-05-05T09:39:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSearchforObama -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:search_demo.SearchTest@1cfeaf9c]" name="afterTest" is-config="true" duration-ms="1051" started-at="2015-05-05T09:39:45Z" finished-at="2015-05-05T09:39:47Z">
+        </test-method> <!-- addCollateral -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.addCollateral@5298d146]" name="afterTest" is-config="true" duration-ms="1784" started-at="2015-07-15T15:54:16Z" finished-at="2015-07-15T15:54:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- search_demo.SearchTest -->
-    </test> <!-- Internet Explorer Test -->
-    <test name="Firefox Test" duration-ms="24072" started-at="2015-05-05T13:39:27Z" finished-at="2015-05-05T13:39:51Z">
-      <class name="search_demo.SearchTest">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:search_demo.SearchTest@21d195ca]" name="beforeTest" is-config="true" duration-ms="8360" started-at="2015-05-05T09:39:27Z" finished-at="2015-05-05T09:39:35Z">
+      </class> <!-- collateral.addCollateral -->
+    </test> <!-- IE Test -->
+    <test name="Chrome Test" duration-ms="59964" started-at="2015-07-15T19:54:07Z" finished-at="2015-07-15T19:55:07Z">
+      <class name="collateral.addCollateral">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.addCollateral@33462704]" name="beforeTest" is-config="true" duration-ms="3528" started-at="2015-07-15T15:54:07Z" finished-at="2015-07-15T15:54:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="addCollateral()[pri:0, instance:collateral.addCollateral@33462704]" name="addCollateral" duration-ms="54546" started-at="2015-07-15T15:54:11Z" finished-at="2015-07-15T15:55:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addCollateral -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.addCollateral@33462704]" name="afterTest" is-config="true" duration-ms="1870" started-at="2015-07-15T15:55:05Z" finished-at="2015-07-15T15:55:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- collateral.addCollateral -->
+    </test> <!-- Chrome Test -->
+    <test name="Firefox Test" duration-ms="61126" started-at="2015-07-15T19:54:07Z" finished-at="2015-07-15T19:55:08Z">
+      <class name="collateral.addCollateral">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.addCollateral@6229abca]" name="beforeTest" is-config="true" duration-ms="8179" started-at="2015-07-15T15:54:07Z" finished-at="2015-07-15T15:54:16Z">
           <params>
             <param index="0">
               <value>
@@ -80,23 +64,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="testSearchforBush()[pri:0, instance:search_demo.SearchTest@21d195ca]" name="testSearchforBush" duration-ms="5723" started-at="2015-05-05T09:39:35Z" finished-at="2015-05-05T09:39:41Z">
+        <test-method status="PASS" signature="addCollateral()[pri:0, instance:collateral.addCollateral@6229abca]" name="addCollateral" duration-ms="52203" started-at="2015-07-15T15:54:16Z" finished-at="2015-07-15T15:55:08Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSearchforBush -->
-        <test-method status="PASS" signature="testSearchforClinton()[pri:0, instance:search_demo.SearchTest@21d195ca]" name="testSearchforClinton" duration-ms="4933" started-at="2015-05-05T09:39:41Z" finished-at="2015-05-05T09:39:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSearchforClinton -->
-        <test-method status="PASS" signature="testSearchforObama()[pri:0, instance:search_demo.SearchTest@21d195ca]" name="testSearchforObama" duration-ms="4690" started-at="2015-05-05T09:39:46Z" finished-at="2015-05-05T09:39:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSearchforObama -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:search_demo.SearchTest@21d195ca]" name="afterTest" is-config="true" duration-ms="364" started-at="2015-05-05T09:39:51Z" finished-at="2015-05-05T09:39:51Z">
+        </test-method> <!-- addCollateral -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.addCollateral@6229abca]" name="afterTest" is-config="true" duration-ms="735" started-at="2015-07-15T15:55:08Z" finished-at="2015-07-15T15:55:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- search_demo.SearchTest -->
+      </class> <!-- collateral.addCollateral -->
     </test> <!-- Firefox Test -->
   </suite> <!-- Demo Search test suite -->
 </testng-results>

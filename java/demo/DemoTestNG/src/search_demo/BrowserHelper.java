@@ -14,11 +14,11 @@ public class BrowserHelper {
 				driver = new FirefoxDriver();
 			} else if (browser.equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver",
-						"C:/Dev/Jars/chromedriver.exe");
+						"C:\\Workspace_QA\\TestCases\\java\\demo\\DemoTestNG\\src\\drivers\\chromedriver.exe");
 				driver = new ChromeDriver();
 			} else if (browser.equalsIgnoreCase("IE")) {
 				System.setProperty("webdriver.ie.driver",
-						"C:/Dev/Jars/IEDriverServer.exe");
+						"C:\\Workspace_QA\\TestCases\\java\\demo\\DemoTestNG\\src\\drivers\\IEDriverServer.exe");
 				driver = new InternetExplorerDriver();
 			}
 

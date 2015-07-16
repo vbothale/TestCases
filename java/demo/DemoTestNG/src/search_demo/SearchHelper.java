@@ -9,7 +9,7 @@ public class SearchHelper {
 	public static void enterSearchTerm(WebDriver driver, String searchTerm,
 			String resultText) throws Exception {
 		driver.get("http://www.google.com");
-		new WebDriverWait(driver, 90).until(ExpectedConditions.visibilityOfElementLocated(By.name("q")));
+		// new WebDriverWait(driver, 90).until(ExpectedConditions.visibilityOfElementLocated(By.name("q")));
 		driver.findElement(By.name("q")).sendKeys(searchTerm);
 		driver.findElement(By.name("btnG")).click();
 		Thread.sleep(3000);
