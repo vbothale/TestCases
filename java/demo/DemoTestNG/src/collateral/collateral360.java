@@ -13,14 +13,20 @@ import org.testng.annotations.Test;
 
 import collateral.BrowserHelper.*;
 
-public class addCollateral {
+public class collateral360 {
 
-	private WebDriver driver;
+	public WebDriver driver;
 
 	@Parameters({ "browser" })
 	@BeforeTest
 	public void beforeTest(String browser) throws Exception {
 		driver = BrowserHelper.openBrowser(browser, driver);
+		driver.manage().window().maximize();
+		GenericHelper.loginToPrism(driver);
+		GenericHelper.waitForLoaderGifToFinish(driver);
+		searchHelper.searchRequest(driver);
+		collateral360Helper.collateralAdd(driver);
+		collateral360Helper.clickOnAddBtn(driver);
 	}
 
 	@AfterTest
@@ -30,13 +36,17 @@ public class addCollateral {
 	}
 
 	@Test
-	public void addCollateral() throws InterruptedException {
-		GenericHelper.loginToPrism(driver);
-		GenericHelper.waitForLoaderGifToFinish(driver);
-		searchResult.searchRequest(driver);
+	public void verifyCollateralTitle() throws InterruptedException {
+		collateral360Helper.verifyCollateralTitle(driver);
 	}
-
 	
-	// Go to credit 360
+	@Test
+	public void saveCollateralInformation() throws InterruptedException
+	{
+		collateral360Helper.enterCollateralName(driver);
+		collateral360Helper.enterColateralCode(driver);
+		collateral360Helper.selectCollateralType(driver);
+		collateral360Helper.selectCollateralSubType(driver);
+	}
 
 }

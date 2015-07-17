@@ -22,7 +22,7 @@ public class GenericHelper {
 	public static void waitForLoaderGifToFinish(WebDriver driver) {
 		try {
 			new WebDriverWait(driver, 180).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//img[contains(@src,'loader.gif')]")));
-		System.out.println("loader no longer exists");
+//		System.out.println("loader no longer exists");
 		} catch (Exception e) {
             System.out.println(e.getMessage());
 		}		
