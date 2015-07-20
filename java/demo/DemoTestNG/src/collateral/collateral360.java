@@ -22,17 +22,25 @@ public class collateral360 {
 	public void beforeTest(String browser) throws Exception {
 		driver = BrowserHelper.openBrowser(browser, driver);
 		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
 		GenericHelper.loginToPrism(driver);
 		GenericHelper.waitForLoaderGifToFinish(driver);
 		searchHelper.searchRequest(driver);
-		collateral360Helper.collateralAdd(driver);
-		collateral360Helper.clickOnAddBtn(driver);
+//		collateral360Helper.collateralAdd(driver);
+//		collateral360Helper.clickOnAddBtn(driver);
 	}
 
 	@AfterTest
 	public void afterTest() {
 		System.gc();
 		driver.quit();
+	}
+	
+	@Test
+	public void clickOnCollateralAndAdd()
+	{
+		collateral360Helper.collateralAdd(driver);
+		collateral360Helper.clickOnAddBtn(driver);
 	}
 
 	@Test

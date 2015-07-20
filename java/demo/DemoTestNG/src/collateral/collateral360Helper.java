@@ -54,14 +54,16 @@ public class collateral360Helper {
 	public static void selectCollateralType(WebDriver driver) throws InterruptedException {
 //		new WebDriverWait(driver, 180).until(ExpectedConditions
 //				.visibilityOfElementLocated(By.xpath(".//*[@id='collType']")));
-		
-		WebElement ele = driver.findElement(By.xpath(".//*[@id='collType']"));
+		GenericHelper.enableAllDropdowns(driver);
+		GenericHelper.waitForLoaderGifToFinish(driver);
+		WebElement ele = driver.findElement(By.xpath("//input[contains(@customname,'collType')]"));
 		WebElement ele1 = ele.findElement(By.xpath(".."));
 		WebElement ele2 = ele1.findElement(By.xpath(".//input"));
 //		Select sel = new Select(driver.findElement(By.xpath("//input[contains(@customname,'collType')]")));
 		ele2.sendKeys("Real Estate");
-		ele2.wait(3000);
-//		ele2.sendKeys(Keys.ARROW_DOWN);
+		ele2.sendKeys(Keys.ARROW_DOWN);
+		WebElement ele3 = driver.findElement(By.xpath("//a[contains(.,'Real Estate')]"));
+		ele3.click();
 //		ele2.sendKeys(Keys.ENTER);
 		GenericHelper.waitForLoaderGifToFinish(driver);
 
