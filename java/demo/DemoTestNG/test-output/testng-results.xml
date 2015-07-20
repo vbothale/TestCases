@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Demo Search test suite" duration-ms="76322" started-at="2015-07-17T20:43:34Z" finished-at="2015-07-17T20:44:50Z">
+  <suite name="Demo Search test suite" duration-ms="78316" started-at="2015-07-20T01:42:47Z" finished-at="2015-07-20T01:44:06Z">
     <groups>
     </groups>
-    <test name="Firefox Test" duration-ms="76322" started-at="2015-07-17T20:43:34Z" finished-at="2015-07-17T20:44:50Z">
+    <test name="Firefox Test" duration-ms="78316" started-at="2015-07-20T01:42:47Z" finished-at="2015-07-20T01:44:06Z">
       <class name="collateral.collateral360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.collateral360@34fc265a]" name="beforeTest" is-config="true" duration-ms="65351" started-at="2015-07-17T16:43:34Z" finished-at="2015-07-17T16:44:39Z">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.collateral360@1639f9e3]" name="beforeTest" is-config="true" duration-ms="67382" started-at="2015-07-19T21:42:47Z" finished-at="2015-07-19T21:43:55Z">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="FAIL" signature="saveCollateralInformation()[pri:0, instance:collateral.collateral360@34fc265a]" name="saveCollateralInformation" duration-ms="9446" started-at="2015-07-17T16:44:39Z" finished-at="2015-07-17T16:44:49Z">
+        <test-method status="FAIL" signature="saveCollateralInformation()[pri:0, instance:collateral.collateral360@1639f9e3]" name="saveCollateralInformation" duration-ms="8710" started-at="2015-07-19T21:43:55Z" finished-at="2015-07-19T21:44:04Z">
           <exception class="java.lang.IllegalMonitorStateException">
             <full-stacktrace>
               <![CDATA[java.lang.IllegalMonitorStateException
@@ -51,11 +51,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveCollateralInformation -->
-        <test-method status="PASS" signature="verifyCollateralTitle()[pri:0, instance:collateral.collateral360@34fc265a]" name="verifyCollateralTitle" duration-ms="233" started-at="2015-07-17T16:44:49Z" finished-at="2015-07-17T16:44:49Z">
+        <test-method status="PASS" signature="verifyCollateralTitle()[pri:0, instance:collateral.collateral360@1639f9e3]" name="verifyCollateralTitle" duration-ms="209" started-at="2015-07-19T21:44:04Z" finished-at="2015-07-19T21:44:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCollateralTitle -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.collateral360@34fc265a]" name="afterTest" is-config="true" duration-ms="1267" started-at="2015-07-17T16:44:49Z" finished-at="2015-07-17T16:44:50Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.collateral360@1639f9e3]" name="afterTest" is-config="true" duration-ms="1988" started-at="2015-07-19T21:44:04Z" finished-at="2015-07-19T21:44:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
