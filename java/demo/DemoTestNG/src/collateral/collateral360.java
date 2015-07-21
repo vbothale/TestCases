@@ -33,8 +33,8 @@ public class collateral360 {
 
 	@AfterTest
 	public void afterTest() {
-		System.gc();
-		driver.quit();
+//		System.gc();
+//		driver.quit();
 	}
 
 	@Test

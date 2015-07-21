@@ -93,36 +93,45 @@ public class collateral360Helper {
 		option = "Deposit Account, External";
 		GenericHelper.selectItemFromList(str, option, driver);
 	}
-	
-	public static void enterCollateralOwnerName(WebDriver driver)
-	{
+
+	public static void enterCollateralOwnerName(WebDriver driver) {
 		GenericHelper.waitForLoaderGifToFinish(driver);
 		driver.findElement(By.id("ownerName")).sendKeys("intex");
-		
+
 		driver.findElement(By.id("ownSearch")).click();
+
 		GenericHelper.waitForLoaderGifToFinish(driver);
+		GenericHelper.waitForElementPresent(
+				By.xpath(".//*[@id='partySrchRes']//span[contains(.,'Load')]"),
+				40, driver);
 		driver.findElement(
-				By.xpath(".//*[@id='partySrchRes']/div[4]/a"))
+				By.xpath(".//*[@id='partySrchRes']//span[contains(.,'Load')]"))
 				.click();
-		driver.manage().timeouts()
-		.implicitlyWait(70, TimeUnit.MILLISECONDS);
+		driver.manage().timeouts().implicitlyWait(70, TimeUnit.MILLISECONDS);
 	}
-	
-	public static void enterCollateralPercentage(WebDriver driver)
-	{
+
+	public static void enterCollateralPercentage(WebDriver driver) {
 		GenericHelper.waitForLoaderGifToFinish(driver);
 		driver.findElement(By.id("ownerPer")).sendKeys("100");
 	}
-	
-	public static void setPrimaryCollateralOwner(WebDriver driver)
-	{
+
+	public static void setPrimaryCollateralOwner(WebDriver driver) {
 		driver.findElement(By.id("selectPrimaryOwner")).click();
 	}
-	
-	public static void clickOnSaveCollateral(WebDriver driver)
-	{
+
+	public static void clickOnSaveCollateral(WebDriver driver) {
 		driver.findElement(By.id("savecolldetails")).click();
 		GenericHelper.waitForLoaderGifToFinish(driver);
+		if(driver.findElement(By.id("useCurrentCust")).isDisplayed())
+		{
+			driver.findElement(By.id("useCurrentCust")).click();
+			GenericHelper.waitForLoaderGifToFinish(driver);
+		}
+	}
+	
+	public static void clickOnUseCurrent(WebDriver driver)
+	{
+		
 	}
 
 }

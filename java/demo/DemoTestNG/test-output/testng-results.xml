@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Demo Search test suite" duration-ms="113462" started-at="2015-07-21T18:08:39Z" finished-at="2015-07-21T18:10:32Z">
+  <suite name="Demo Search test suite" duration-ms="121189" started-at="2015-07-21T19:12:25Z" finished-at="2015-07-21T19:14:27Z">
     <groups>
     </groups>
-    <test name="Firefox Test" duration-ms="113462" started-at="2015-07-21T18:08:39Z" finished-at="2015-07-21T18:10:32Z">
+    <test name="Firefox Test" duration-ms="121189" started-at="2015-07-21T19:12:25Z" finished-at="2015-07-21T19:14:27Z">
       <class name="collateral.collateral360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.collateral360@1e017050]" name="beforeTest" is-config="true" duration-ms="65747" started-at="2015-07-21T14:08:39Z" finished-at="2015-07-21T14:09:45Z">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.collateral360@675c9915]" name="beforeTest" is-config="true" duration-ms="74010" started-at="2015-07-21T15:12:25Z" finished-at="2015-07-21T15:13:39Z">
           <params>
             <param index="0">
               <value>
@@ -18,19 +18,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="clickOnCollateralAndAdd()[pri:0, instance:collateral.collateral360@1e017050]" name="clickOnCollateralAndAdd" duration-ms="5730" started-at="2015-07-21T14:09:45Z" finished-at="2015-07-21T14:09:50Z">
+        <test-method status="PASS" signature="clickOnCollateralAndAdd()[pri:0, instance:collateral.collateral360@675c9915]" name="clickOnCollateralAndAdd" duration-ms="2532" started-at="2015-07-21T15:13:39Z" finished-at="2015-07-21T15:13:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickOnCollateralAndAdd -->
-        <test-method status="PASS" signature="saveCollateralInformation()[pri:0, instance:collateral.collateral360@1e017050]" name="saveCollateralInformation" duration-ms="38499" started-at="2015-07-21T14:09:50Z" finished-at="2015-07-21T14:10:29Z">
+        <test-method status="PASS" signature="saveCollateralInformation()[pri:0, instance:collateral.collateral360@675c9915]" name="saveCollateralInformation" duration-ms="44102" started-at="2015-07-21T15:13:42Z" finished-at="2015-07-21T15:14:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveCollateralInformation -->
-        <test-method status="PASS" signature="verifyCollateralTitle()[pri:0, instance:collateral.collateral360@1e017050]" name="verifyCollateralTitle" duration-ms="2401" started-at="2015-07-21T14:10:29Z" finished-at="2015-07-21T14:10:31Z">
+        <test-method status="PASS" signature="verifyCollateralTitle()[pri:0, instance:collateral.collateral360@675c9915]" name="verifyCollateralTitle" duration-ms="522" started-at="2015-07-21T15:14:26Z" finished-at="2015-07-21T15:14:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCollateralTitle -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.collateral360@1e017050]" name="afterTest" is-config="true" duration-ms="1043" started-at="2015-07-21T14:10:31Z" finished-at="2015-07-21T14:10:32Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.collateral360@675c9915]" name="afterTest" is-config="true" duration-ms="0" started-at="2015-07-21T15:14:27Z" finished-at="2015-07-21T15:14:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
