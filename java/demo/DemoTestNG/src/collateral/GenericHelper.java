@@ -17,7 +17,7 @@ public class GenericHelper {
 	public static void loginToPrism(WebDriver driver)  {
 		try {
 			driver.get("http://qa01.provapps.com:6080/ProvAppCLWeb/");
-			driver.findElement(By.id("j_username")).sendKeys("sdietz");
+			driver.findElement(By.id("j_username")).sendKeys("fmartin");
 			driver.findElement(By.id("j_password")).sendKeys("Provenir1");
 			driver.findElement(By.xpath(".//*[@id='fLogin']/div[2]/div/div/div[3]/button")).click();
 			GenericHelper.waitForLoaderGifToFinish(driver);
@@ -47,6 +47,37 @@ public class GenericHelper {
 		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 	}
 
+	public static void selectItemFromList(String customName, String option, WebDriver driver) {
+		try {
+			WebElement searchTxtBox = driver.findElement(By
+					.cssSelector("input[customname='" + customName + "']"));
+
+			searchTxtBox.clear();
+			searchTxtBox.sendKeys(option);
+			GenericHelper.waitForElementPresent(
+					By.xpath(".//ul[@customid='" + customName + "']/li[1]"), 5, driver);
+
+			driver.findElement(
+					By.xpath(".//ul[@customid='" + customName + "']/li[1]"))
+					.click();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		driver.manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS); // nullify
+		// implicitlyWait()
+	}
+	
+	public static WebElement waitForElementPresent(By locator, int timeout, WebDriver driver) {
+		try {
+			driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS); // nullify
+			// implicitlyWait()
+			WebDriverWait wait = new WebDriverWait(driver, timeout);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 
 }

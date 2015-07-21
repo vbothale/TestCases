@@ -13,7 +13,7 @@ public class searchHelper {
 	
 	public static void searchRequest(WebDriver driver) {
 		WebElement ele = driver.findElement(By.id("srchTxt"));
-		ele.sendKeys("test1234");
+		ele.sendKeys("test12345");
 		ele.sendKeys(Keys.ENTER);
 		GenericHelper.waitForLoaderGifToFinish(driver);
 		driver.manage().timeouts()

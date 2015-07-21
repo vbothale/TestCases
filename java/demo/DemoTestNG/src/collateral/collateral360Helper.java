@@ -51,28 +51,73 @@ public class collateral360Helper {
 		driver.findElement(By.id("collCd")).sendKeys("coll1");
 	}
 
-	public static void selectCollateralType(WebDriver driver) throws InterruptedException {
-//		new WebDriverWait(driver, 180).until(ExpectedConditions
-//				.visibilityOfElementLocated(By.xpath(".//*[@id='collType']")));
+	public static void selectCollateralType(WebDriver driver, String option)
+			throws InterruptedException {
+		// // new WebDriverWait(driver, 180).until(ExpectedConditions
+		// // .visibilityOfElementLocated(By.xpath(".//*[@id='collType']")));
+		// GenericHelper.enableAllDropdowns(driver);
+		// GenericHelper.waitForLoaderGifToFinish(driver);
+		// WebElement ele =
+		// driver.findElement(By.xpath("//input[contains(@customname,'collType')]"));
+		// WebElement ele1 = ele.findElement(By.xpath(".."));
+		// WebElement ele2 = ele1.findElement(By.xpath(".//input"));
+		// // Select sel = new
+		// Select(driver.findElement(By.xpath("//input[contains(@customname,'collType')]")));
+		// ele2.sendKeys("Real Estate");
+		// ele2.sendKeys(Keys.ARROW_DOWN);
+		// WebElement ele3 =
+		// driver.findElement(By.xpath("//a[contains(.,'Real Estate')]"));
+		// ele3.click();
+		// // ele2.sendKeys(Keys.ENTER);
+		// GenericHelper.waitForLoaderGifToFinish(driver);
+
 		GenericHelper.enableAllDropdowns(driver);
 		GenericHelper.waitForLoaderGifToFinish(driver);
-		WebElement ele = driver.findElement(By.xpath("//input[contains(@customname,'collType')]"));
-		WebElement ele1 = ele.findElement(By.xpath(".."));
-		WebElement ele2 = ele1.findElement(By.xpath(".//input"));
-//		Select sel = new Select(driver.findElement(By.xpath("//input[contains(@customname,'collType')]")));
-		ele2.sendKeys("Real Estate");
-		ele2.sendKeys(Keys.ARROW_DOWN);
-		WebElement ele3 = driver.findElement(By.xpath("//a[contains(.,'Real Estate')]"));
-		ele3.click();
-//		ele2.sendKeys(Keys.ENTER);
-		GenericHelper.waitForLoaderGifToFinish(driver);
+		GenericHelper.waitForElementPresent(
+				By.xpath("//input[contains(@customname,'collType')]"), 20,
+				driver);
+		String str = "collType";
+		option = "Deposits";
+		GenericHelper.selectItemFromList(str, option, driver);
 
 	}
 
-	public static void selectCollateralSubType(WebDriver driver) {
+	public static void selectCollateralSubType(WebDriver driver, String option) {
+		GenericHelper.enableAllDropdowns(driver);
 		GenericHelper.waitForLoaderGifToFinish(driver);
-		Select sel = new Select(driver.findElement(By.name("collSubType")));
-		sel.selectByValue("Automotive Facility");
+		GenericHelper.waitForElementPresent(
+				By.xpath("//input[contains(@customname,'collSubType')]"), 20,
+				driver);
+		String str = "collSubType";
+		option = "Deposit Account, External";
+		GenericHelper.selectItemFromList(str, option, driver);
+	}
+	
+	public static void enterCollateralOwnerName(WebDriver driver)
+	{
+		GenericHelper.waitForLoaderGifToFinish(driver);
+		driver.findElement(By.id("ownerName")).sendKeys("intex");
+		driver.findElement(By.id("ownSearch")).click();
+		driver.findElement(
+				By.xpath(".//*[@id='partySrchRes']//span[contains(.,'Load')]"))
+				.click();
+	}
+	
+	public static void enterCollateralPercentage(WebDriver driver)
+	{
+		GenericHelper.waitForLoaderGifToFinish(driver);
+		driver.findElement(By.id("ownerPer")).sendKeys("100");
+	}
+	
+	public static void setPrimaryCollateralOwner(WebDriver driver)
+	{
+		driver.findElement(By.id("selectPrimaryOwner")).click();
+	}
+	
+	public static void clickOnSaveCollateral(WebDriver driver)
+	{
+		driver.findElement(By.id("savecolldetails")).click();
+		GenericHelper.waitForLoaderGifToFinish(driver);
 	}
 
 }

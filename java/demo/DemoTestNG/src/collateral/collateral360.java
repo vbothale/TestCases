@@ -16,6 +16,7 @@ import collateral.BrowserHelper.*;
 public class collateral360 {
 
 	public WebDriver driver;
+	private String option;
 
 	@Parameters({ "browser" })
 	@BeforeTest
@@ -53,8 +54,12 @@ public class collateral360 {
 	{
 		collateral360Helper.enterCollateralName(driver);
 		collateral360Helper.enterColateralCode(driver);
-		collateral360Helper.selectCollateralType(driver);
-		collateral360Helper.selectCollateralSubType(driver);
+		collateral360Helper.selectCollateralType(driver,option);
+		collateral360Helper.selectCollateralSubType(driver,option);
+		collateral360Helper.enterCollateralOwnerName(driver);
+		collateral360Helper.enterCollateralPercentage(driver);
+		collateral360Helper.setPrimaryCollateralOwner(driver);
+		collateral360Helper.clickOnSaveCollateral(driver);
 	}
 
 }
