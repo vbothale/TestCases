@@ -21,6 +21,8 @@ public class GenericHelper {
 			driver.findElement(By.id("j_password")).sendKeys("Provenir1");
 			driver.findElement(By.xpath(".//*[@id='fLogin']/div[2]/div/div/div[3]/button")).click();
 			GenericHelper.waitForLoaderGifToFinish(driver);
+			driver.manage().timeouts()
+			.implicitlyWait(70, TimeUnit.MILLISECONDS);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

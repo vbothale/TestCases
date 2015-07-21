@@ -27,8 +27,8 @@ public class collateral360 {
 		GenericHelper.loginToPrism(driver);
 		GenericHelper.waitForLoaderGifToFinish(driver);
 		searchHelper.searchRequest(driver);
-//		collateral360Helper.collateralAdd(driver);
-//		collateral360Helper.clickOnAddBtn(driver);
+		// collateral360Helper.collateralAdd(driver);
+		// collateral360Helper.clickOnAddBtn(driver);
 	}
 
 	@AfterTest
@@ -36,10 +36,9 @@ public class collateral360 {
 		System.gc();
 		driver.quit();
 	}
-	
+
 	@Test
-	public void clickOnCollateralAndAdd()
-	{
+	public void clickOnCollateralAndAdd() {
 		collateral360Helper.collateralAdd(driver);
 		collateral360Helper.clickOnAddBtn(driver);
 	}
@@ -48,14 +47,13 @@ public class collateral360 {
 	public void verifyCollateralTitle() throws InterruptedException {
 		collateral360Helper.verifyCollateralTitle(driver);
 	}
-	
+
 	@Test
-	public void saveCollateralInformation() throws InterruptedException
-	{
+	public void saveCollateralInformation() throws InterruptedException {
 		collateral360Helper.enterCollateralName(driver);
 		collateral360Helper.enterColateralCode(driver);
-		collateral360Helper.selectCollateralType(driver,option);
-		collateral360Helper.selectCollateralSubType(driver,option);
+		collateral360Helper.selectCollateralType(driver, option);
+		collateral360Helper.selectCollateralSubType(driver, option);
 		collateral360Helper.enterCollateralOwnerName(driver);
 		collateral360Helper.enterCollateralPercentage(driver);
 		collateral360Helper.setPrimaryCollateralOwner(driver);

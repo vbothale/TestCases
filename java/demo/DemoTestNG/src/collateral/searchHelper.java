@@ -21,6 +21,7 @@ public class searchHelper {
 		new WebDriverWait(driver, 180)
 				.until(ExpectedConditions.visibilityOfElementLocated(By
 						.xpath(".//*[@id='transSrchRes']//span[contains(.,'Load')]")));
+		driver.findElement(By.id("selCustomer")).click();
 		driver.findElement(
 				By.xpath(".//*[@id='partySrchRes']//span[contains(.,'Load')]"))
 				.click();

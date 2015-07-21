@@ -1,6 +1,7 @@
 package collateral;
 
 import java.sql.Driver;
+import java.util.concurrent.TimeUnit;
 import java.lang.*;
 
 import junit.framework.Assert;
@@ -97,10 +98,14 @@ public class collateral360Helper {
 	{
 		GenericHelper.waitForLoaderGifToFinish(driver);
 		driver.findElement(By.id("ownerName")).sendKeys("intex");
+		
 		driver.findElement(By.id("ownSearch")).click();
+		GenericHelper.waitForLoaderGifToFinish(driver);
 		driver.findElement(
-				By.xpath(".//*[@id='partySrchRes']//span[contains(.,'Load')]"))
+				By.xpath(".//*[@id='partySrchRes']/div[4]/a"))
 				.click();
+		driver.manage().timeouts()
+		.implicitlyWait(70, TimeUnit.MILLISECONDS);
 	}
 	
 	public static void enterCollateralPercentage(WebDriver driver)

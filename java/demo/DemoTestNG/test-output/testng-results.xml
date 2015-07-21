@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="3" passed="2">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Demo Search test suite" duration-ms="97114" started-at="2015-07-21T04:14:04Z" finished-at="2015-07-21T04:15:41Z">
+  <suite name="Demo Search test suite" duration-ms="113462" started-at="2015-07-21T18:08:39Z" finished-at="2015-07-21T18:10:32Z">
     <groups>
     </groups>
-    <test name="Firefox Test" duration-ms="97114" started-at="2015-07-21T04:14:04Z" finished-at="2015-07-21T04:15:41Z">
+    <test name="Firefox Test" duration-ms="113462" started-at="2015-07-21T18:08:39Z" finished-at="2015-07-21T18:10:32Z">
       <class name="collateral.collateral360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.collateral360@7074a393]" name="beforeTest" is-config="true" duration-ms="64264" started-at="2015-07-21T00:14:04Z" finished-at="2015-07-21T00:15:08Z">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.collateral360@1e017050]" name="beforeTest" is-config="true" duration-ms="65747" started-at="2015-07-21T14:08:39Z" finished-at="2015-07-21T14:09:45Z">
           <params>
             <param index="0">
               <value>
@@ -18,87 +18,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="clickOnCollateralAndAdd()[pri:0, instance:collateral.collateral360@7074a393]" name="clickOnCollateralAndAdd" duration-ms="4448" started-at="2015-07-21T00:15:08Z" finished-at="2015-07-21T00:15:13Z">
+        <test-method status="PASS" signature="clickOnCollateralAndAdd()[pri:0, instance:collateral.collateral360@1e017050]" name="clickOnCollateralAndAdd" duration-ms="5730" started-at="2015-07-21T14:09:45Z" finished-at="2015-07-21T14:09:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickOnCollateralAndAdd -->
-        <test-method status="FAIL" signature="saveCollateralInformation()[pri:0, instance:collateral.collateral360@7074a393]" name="saveCollateralInformation" duration-ms="14955" started-at="2015-07-21T00:15:13Z" finished-at="2015-07-21T00:15:28Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Unable to locate element: {"method":"xpath","selector":".//*[@id='partySrchRes']//span[contains(.,'Load')]"}
-Command duration or timeout: 40 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'pbajpai', ip: '10.1.106.51', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_79'
-*** Element info: {Using=xpath, value=.//*[@id='partySrchRes']//span[contains(.,'Load')]}
-Session ID: cc1d691f-1ce6-43ba-b43f-d27e1a610263
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":".//*[@id='partySrchRes']//span[contains(.,'Load')]"}
-Command duration or timeout: 40 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'pbajpai', ip: '10.1.106.51', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_79'
-*** Element info: {Using=xpath, value=.//*[@id='partySrchRes']//span[contains(.,'Load')]}
-Session ID: cc1d691f-1ce6-43ba-b43f-d27e1a610263
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at collateral.collateral360Helper.enterCollateralOwnerName(collateral360Helper.java:101)
-	at collateral.collateral360.saveCollateralInformation(collateral360.java:59)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:771)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:38)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:391)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":".//*[@id='partySrchRes']//span[contains(.,'Load')]"}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'pbajpai', ip: '10.1.106.51', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_79'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/provenir/AppData/Local/Temp/anonymous1196699013294210192webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10299)
-	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///C:/Users/provenir/AppData/Local/Temp/anonymous1196699013294210192webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10308)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/provenir/AppData/Local/Temp/anonymous1196699013294210192webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12282)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/provenir/AppData/Local/Temp/anonymous1196699013294210192webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12287)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/provenir/AppData/Local/Temp/anonymous1196699013294210192webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12229)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method status="PASS" signature="saveCollateralInformation()[pri:0, instance:collateral.collateral360@1e017050]" name="saveCollateralInformation" duration-ms="38499" started-at="2015-07-21T14:09:50Z" finished-at="2015-07-21T14:10:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveCollateralInformation -->
-        <test-method status="PASS" signature="verifyCollateralTitle()[pri:0, instance:collateral.collateral360@7074a393]" name="verifyCollateralTitle" duration-ms="12364" started-at="2015-07-21T00:15:28Z" finished-at="2015-07-21T00:15:40Z">
+        <test-method status="PASS" signature="verifyCollateralTitle()[pri:0, instance:collateral.collateral360@1e017050]" name="verifyCollateralTitle" duration-ms="2401" started-at="2015-07-21T14:10:29Z" finished-at="2015-07-21T14:10:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCollateralTitle -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.collateral360@7074a393]" name="afterTest" is-config="true" duration-ms="1043" started-at="2015-07-21T00:15:40Z" finished-at="2015-07-21T00:15:41Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.collateral360@1e017050]" name="afterTest" is-config="true" duration-ms="1043" started-at="2015-07-21T14:10:31Z" finished-at="2015-07-21T14:10:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
