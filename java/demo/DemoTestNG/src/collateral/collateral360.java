@@ -1,4 +1,10 @@
 package collateral;
+import helper.BrowserHelper.*;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -11,37 +17,62 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import collateral.BrowserHelper.*;
+import Utility.JSONReader;
 
 public class collateral360 {
 
 	public WebDriver driver;
 	private String option;
-
+	private JSONReader reader = new JSONReader();
+	
+	public HashMap<String, Map<String, String>> _hashCustomers = new HashMap<String, Map<String, String>>();
+	
+	private HashMap<String, Map<String, String>> _hashLogins = new HashMap<String, Map<String, String>>();
+	
+	@SuppressWarnings("static-access")
 	@Parameters({ "browser" })
 	@BeforeTest
 	public void beforeTest(String browser) throws Exception {
-		driver = BrowserHelper.openBrowser(browser, driver);
+//		reader.readJSONToHashMap(_hashCustomers);
+		reader.readJSONToHashMap(_hashLogins);
+		driver = helper.BrowserHelper.openBrowser(browser, driver);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		GenericHelper.loginToPrism(driver);
-		GenericHelper.waitForLoaderGifToFinish(driver);
-		searchHelper.searchRequest(driver);
-		// collateral360Helper.collateralAdd(driver);
-		// collateral360Helper.clickOnAddBtn(driver);
+		helper.GenericHelper.loginToPrism(driver);
+		helper.GenericHelper.waitForLoaderGifToFinish(driver);
+		helper.searchHelper.searchRequest(driver);
+		
 	}
 
 	@AfterTest
 	public void afterTest() {
-//		System.gc();
-//		driver.quit();
+		System.gc();
+		driver.quit();
 	}
+	
+	@Test
+	public void testRoy() {
+		HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashCustomers.get("roy");
+		
+		System.out.println("First Name: " + propertiesMap.get("fname"));
+		System.out.println("Lst Name: " + propertiesMap.get("lname"));
+	}
+	
+	@Test
+	public void testParashar() {
+		HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashCustomers.get("parashar");
+		System.out.println("First Name: " + propertiesMap.get("fname"));
+		System.out.println("Lst Name: " + propertiesMap.get("lname"));
+	}
+	
 
 	@Test
 	public void clickOnCollateralAndAdd() {
 		collateral360Helper.collateralAdd(driver);
 		collateral360Helper.clickOnAddBtn(driver);
 	}
+	
+	
 
 	@Test
 	public void verifyCollateralTitle() throws InterruptedException {

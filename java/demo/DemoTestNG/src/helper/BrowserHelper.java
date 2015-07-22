@@ -1,4 +1,4 @@
-package collateral;
+package helper;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;

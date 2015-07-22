@@ -18,9 +18,9 @@ import org.openqa.selenium.WebDriver;
 public class collateral360Helper {
 
 	public static void collateralAdd(WebDriver driver) {
-		GenericHelper.waitForLoaderGifToFinish(driver);
+		helper.GenericHelper.waitForLoaderGifToFinish(driver);
 		driver.findElement(By.id("ctrl")).click();
-		GenericHelper.waitForLoaderGifToFinish(driver);
+		helper.GenericHelper.waitForLoaderGifToFinish(driver);
 	}
 
 	public static void clickOnAddBtn(WebDriver driver) {
@@ -35,14 +35,14 @@ public class collateral360Helper {
 	public static void verifyCollateralTitle(WebDriver driver) {
 		new WebDriverWait(driver, 180).until(ExpectedConditions
 				.visibilityOfElementLocated(By.xpath(".//*[@id='c360r']")));
-		GenericHelper.waitForLoaderGifToFinish(driver);
+		helper.GenericHelper.waitForLoaderGifToFinish(driver);
 		String title = driver.findElement(By.xpath(".//*[@id='c360r']"))
 				.getText().trim();
 		Assert.assertEquals(title, "Basic Collateral Information");
 	}
 
 	public static void enterCollateralName(WebDriver driver) {
-		GenericHelper.waitForLoaderGifToFinish(driver);
+		helper.GenericHelper.waitForLoaderGifToFinish(driver);
 		new WebDriverWait(driver, 180).until(ExpectedConditions
 				.visibilityOfElementLocated(By.id("collAccName")));
 		driver.findElement(By.id("collAccName")).sendKeys("Test collateral");
@@ -72,36 +72,36 @@ public class collateral360Helper {
 		// // ele2.sendKeys(Keys.ENTER);
 		// GenericHelper.waitForLoaderGifToFinish(driver);
 
-		GenericHelper.enableAllDropdowns(driver);
-		GenericHelper.waitForLoaderGifToFinish(driver);
-		GenericHelper.waitForElementPresent(
+		helper.GenericHelper.enableAllDropdowns(driver);
+		helper.GenericHelper.waitForLoaderGifToFinish(driver);
+		helper.GenericHelper.waitForElementPresent(
 				By.xpath("//input[contains(@customname,'collType')]"), 20,
 				driver);
 		String str = "collType";
 		option = "Deposits";
-		GenericHelper.selectItemFromList(str, option, driver);
+		helper.GenericHelper.selectItemFromList(str, option, driver);
 
 	}
 
 	public static void selectCollateralSubType(WebDriver driver, String option) {
-		GenericHelper.enableAllDropdowns(driver);
-		GenericHelper.waitForLoaderGifToFinish(driver);
-		GenericHelper.waitForElementPresent(
+		helper.GenericHelper.enableAllDropdowns(driver);
+		helper.GenericHelper.waitForLoaderGifToFinish(driver);
+		helper.GenericHelper.waitForElementPresent(
 				By.xpath("//input[contains(@customname,'collSubType')]"), 20,
 				driver);
 		String str = "collSubType";
 		option = "Deposit Account, External";
-		GenericHelper.selectItemFromList(str, option, driver);
+		helper.GenericHelper.selectItemFromList(str, option, driver);
 	}
 
 	public static void enterCollateralOwnerName(WebDriver driver) {
-		GenericHelper.waitForLoaderGifToFinish(driver);
+		helper.GenericHelper.waitForLoaderGifToFinish(driver);
 		driver.findElement(By.id("ownerName")).sendKeys("intex");
 
 		driver.findElement(By.id("ownSearch")).click();
 
-		GenericHelper.waitForLoaderGifToFinish(driver);
-		GenericHelper.waitForElementPresent(
+		helper.GenericHelper.waitForLoaderGifToFinish(driver);
+		helper.GenericHelper.waitForElementPresent(
 				By.xpath(".//*[@id='partySrchRes']//span[contains(.,'Load')]"),
 				40, driver);
 		driver.findElement(
@@ -111,7 +111,7 @@ public class collateral360Helper {
 	}
 
 	public static void enterCollateralPercentage(WebDriver driver) {
-		GenericHelper.waitForLoaderGifToFinish(driver);
+		helper.GenericHelper.waitForLoaderGifToFinish(driver);
 		driver.findElement(By.id("ownerPer")).sendKeys("100");
 	}
 
@@ -121,11 +121,11 @@ public class collateral360Helper {
 
 	public static void clickOnSaveCollateral(WebDriver driver) {
 		driver.findElement(By.id("savecolldetails")).click();
-		GenericHelper.waitForLoaderGifToFinish(driver);
+		helper.GenericHelper.waitForLoaderGifToFinish(driver);
 		if(driver.findElement(By.id("useCurrentCust")).isDisplayed())
 		{
 			driver.findElement(By.id("useCurrentCust")).click();
-			GenericHelper.waitForLoaderGifToFinish(driver);
+			helper.GenericHelper.waitForLoaderGifToFinish(driver);
 		}
 	}
 	

@@ -9,7 +9,11 @@
         <methods>
           <include name="saveCollateralInformation"/>
           <include name="afterTest"/>
+          <include name="testParashar"/>
           <include name="beforeTest"/>
+          <include name="testRoy"/>
+          <include name="verifyCollateralTitle"/>
+          <include name="clickOnCollateralAndAdd"/>
         </methods>
       </class> <!-- collateral.collateral360 -->
     </classes>

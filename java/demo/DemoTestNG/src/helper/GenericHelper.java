@@ -1,7 +1,9 @@
-package collateral;
+package helper;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -11,15 +13,30 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import Utility.JSONReader;
+
 public class GenericHelper {
 	private static List<WebElement> lstElements = new ArrayList<WebElement>();
+	private JSONReader reader = new JSONReader();
+	public static HashMap<String, Map<String, String>> _hashCustomers = new HashMap<String, Map<String, String>>();
 	
 	public static void loginToPrism(WebDriver driver)  {
 		try {
+			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashCustomers.get("fmartin");
+			
 			driver.get("http://qa01.provapps.com:6080/ProvAppCLWeb/");
+			
 			driver.findElement(By.id("j_username")).sendKeys("fmartin");
-			driver.findElement(By.id("j_password")).sendKeys("Provenir1");
-			driver.findElement(By.xpath(".//*[@id='fLogin']/div[2]/div/div/div[3]/button")).click();
+//			System.out.println("First Name: " + propertiesMap.get("fname"));
+//			System.out.println("Lst Name: " + propertiesMap.get("lname"));
+			
+			System.out.println("User Name: " + propertiesMap.get("username"));
+			driver.findElement(By.id("j_username")).sendKeys(propertiesMap.get("username"));
+//			
+////			driver.findElement(By.id("j_password")).sendKeys("Provenir1");
+//			driver.findElement(By.id("j_password")).sendKeys(propertiesMap.get("password"));
+//			
+//			driver.findElement(By.xpath(".//*[@id='fLogin']/div[2]/div/div/div[3]/button")).click();
 			GenericHelper.waitForLoaderGifToFinish(driver);
 			driver.manage().timeouts()
 			.implicitlyWait(70, TimeUnit.MILLISECONDS);
