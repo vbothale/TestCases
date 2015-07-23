@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Demo Search test suite]" parallel="tests">
-  <parameter name="browser" value="Firefox"/>
-  <test name="Firefox Test(failed)" parallel="tests">
-    <parameter name="browser" value="Firefox"/>
+<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [Demo Search test suite]" parallel="tests">
+  <parameter name="browser" value="Chrome"/>
+  <test name="IE Test(failed)" parallel="tests">
+    <parameter name="browser" value="IE"/>
     <classes>
       <class name="collateral.collateral360">
         <methods>
           <include name="saveCollateralInformation"/>
           <include name="afterTest"/>
+          <include name="afterTest"/>
           <include name="testParashar"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
           <include name="beforeTest"/>
           <include name="testRoy"/>
           <include name="verifyCollateralTitle"/>
@@ -17,5 +20,5 @@
         </methods>
       </class> <!-- collateral.collateral360 -->
     </classes>
-  </test> <!-- Firefox Test(failed) -->
+  </test> <!-- IE Test(failed) -->
 </suite> <!-- Failed suite [Demo Search test suite] -->

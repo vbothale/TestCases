@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Demo Search test suite" parallel="tests" thread-count="1">
+<suite name="Demo Search test suite" parallel="tests" thread-count="3">
 
 
 	<test name="Firefox Test">
@@ -9,7 +9,7 @@
 		</classes>
 	</test>
 	
-	<!--
+	
 	<test name="IE Test">
 	<parameter name="browser" value="IE" />
 		<classes>
@@ -24,6 +24,6 @@
 			<class name="collateral.collateral360" />
 		</classes>
 	</test>
-	-->
+	
 
 </suite>

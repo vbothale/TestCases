@@ -24,19 +24,22 @@ public class GenericHelper {
 		try {
 			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashCustomers.get("fmartin");
 			
-			driver.get("http://qa01.provapps.com:6080/ProvAppCLWeb/");
+			driver.get("https://qa.provapps.com/ProvAppCLWeb/");
 			
 			driver.findElement(By.id("j_username")).sendKeys("fmartin");
+			driver.findElement(By.id("j_password")).sendKeys("Provenir1");
+			
 //			System.out.println("First Name: " + propertiesMap.get("fname"));
 //			System.out.println("Lst Name: " + propertiesMap.get("lname"));
 			
-			System.out.println("User Name: " + propertiesMap.get("username"));
-			driver.findElement(By.id("j_username")).sendKeys(propertiesMap.get("username"));
-//			
-////			driver.findElement(By.id("j_password")).sendKeys("Provenir1");
+//			System.out.println("User Name: " + propertiesMap.get("username"));
+//			driver.findElement(By.id("j_username")).sendKeys(propertiesMap.get("username"));
+////			
+//			System.out.println("Password  : " + propertiesMap.get("password"));
 //			driver.findElement(By.id("j_password")).sendKeys(propertiesMap.get("password"));
-//			
-//			driver.findElement(By.xpath(".//*[@id='fLogin']/div[2]/div/div/div[3]/button")).click();
+
+			driver.findElement(By.xpath("//button[contains(.,'Login')]")).click();
+			
 			GenericHelper.waitForLoaderGifToFinish(driver);
 			driver.manage().timeouts()
 			.implicitlyWait(70, TimeUnit.MILLISECONDS);

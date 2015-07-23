@@ -33,8 +33,8 @@ public class collateral360 {
 	@Parameters({ "browser" })
 	@BeforeTest
 	public void beforeTest(String browser) throws Exception {
-//		reader.readJSONToHashMap(_hashCustomers);
-		reader.readJSONToHashMap(_hashLogins);
+		reader.readJSONToHashMap(_hashCustomers);
+//		reader.readJSONToHashMap(_hashLogins);
 		driver = helper.BrowserHelper.openBrowser(browser, driver);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();

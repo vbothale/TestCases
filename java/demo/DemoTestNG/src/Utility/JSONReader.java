@@ -57,7 +57,7 @@ public class JSONReader {
 	@SuppressWarnings("unchecked")
 	public static void readJSONToHashMap(HashMap<String,Map<String,String>> hashMap){
 		try {
-			JSONObject jsonObject = (JSONObject) new JSONParser().parse(new FileReader("C:\\Workspace_QA\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json"));
+			JSONObject jsonObject = (JSONObject) new JSONParser().parse(new FileReader("C:\\Workspace_QA\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json"));
 			Iterator iter = jsonObject.entrySet().iterator();
 			while(iter.hasNext()) {
 				Map.Entry<String, Map<String, String>> entryMap = (Entry<String, Map<String, String>>) iter.next();
