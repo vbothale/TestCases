@@ -8,8 +8,6 @@
       <class name="collateral.collateral360">
         <methods>
           <include name="saveCollateralInformation"/>
-          <include name="afterTest"/>
-          <include name="afterTest"/>
           <include name="testParashar"/>
           <include name="beforeTest"/>
           <include name="beforeTest"/>
@@ -21,4 +19,38 @@
       </class> <!-- collateral.collateral360 -->
     </classes>
   </test> <!-- IE Test(failed) -->
+  <test name="Firefox Test(failed)" parallel="tests">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="collateral.collateral360">
+        <methods>
+          <include name="saveCollateralInformation"/>
+          <include name="testParashar"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+          <include name="testRoy"/>
+          <include name="verifyCollateralTitle"/>
+          <include name="clickOnCollateralAndAdd"/>
+        </methods>
+      </class> <!-- collateral.collateral360 -->
+    </classes>
+  </test> <!-- Firefox Test(failed) -->
+  <test name="Chrome Test(failed)" parallel="tests">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="collateral.collateral360">
+        <methods>
+          <include name="saveCollateralInformation"/>
+          <include name="testParashar"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+          <include name="beforeTest"/>
+          <include name="testRoy"/>
+          <include name="verifyCollateralTitle"/>
+          <include name="clickOnCollateralAndAdd"/>
+        </methods>
+      </class> <!-- collateral.collateral360 -->
+    </classes>
+  </test> <!-- Chrome Test(failed) -->
 </suite> <!-- Failed suite [Demo Search test suite] -->
