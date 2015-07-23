@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import locators.loginPage;
+import locators.loginPage.*;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,45 +21,21 @@ import Utility.JSONReader;
 public class GenericHelper {
 	private static List<WebElement> lstElements = new ArrayList<WebElement>();
 	private JSONReader reader = new JSONReader();
-	public static HashMap<String, Map<String, String>> _hashCustomers = new HashMap<String, Map<String, String>>();
-	
-	public static void loginToPrism(WebDriver driver)  {
-		try {
-			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashCustomers.get("fmartin");
-			
-			driver.get("https://qa.provapps.com/ProvAppCLWeb/");
-			
-			driver.findElement(By.id("j_username")).sendKeys("fmartin");
-			driver.findElement(By.id("j_password")).sendKeys("Provenir1");
-			
-//			System.out.println("First Name: " + propertiesMap.get("fname"));
-//			System.out.println("Lst Name: " + propertiesMap.get("lname"));
-			
-//			System.out.println("User Name: " + propertiesMap.get("username"));
-//			driver.findElement(By.id("j_username")).sendKeys(propertiesMap.get("username"));
-////			
-//			System.out.println("Password  : " + propertiesMap.get("password"));
-//			driver.findElement(By.id("j_password")).sendKeys(propertiesMap.get("password"));
+//	public static HashMap<String, Map<String, String>> _hashCustomers = new HashMap<String, Map<String, String>>();
 
-			driver.findElement(By.xpath("//button[contains(.,'Login')]")).click();
-			
-			GenericHelper.waitForLoaderGifToFinish(driver);
-			driver.manage().timeouts()
-			.implicitlyWait(70, TimeUnit.MILLISECONDS);
+	
+
+	public static void waitForLoaderGifToFinish(WebDriver driver) {
+		try {
+			new WebDriverWait(driver, 180).until(ExpectedConditions
+					.invisibilityOfElementLocated(By
+							.xpath(".//img[contains(@src,'loader.gif')]")));
+			// System.out.println("loader no longer exists");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
 
-	public static void waitForLoaderGifToFinish(WebDriver driver) {
-		try {
-			new WebDriverWait(driver, 180).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//img[contains(@src,'loader.gif')]")));
-//		System.out.println("loader no longer exists");
-		} catch (Exception e) {
-            System.out.println(e.getMessage());
-		}		
-	}
-	
 	public static void enableAllDropdowns(WebDriver driver) {
 		Actions action = new Actions(driver);
 		lstElements = driver.findElements(By
@@ -69,7 +48,8 @@ public class GenericHelper {
 		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 	}
 
-	public static void selectItemFromList(String customName, String option, WebDriver driver) {
+	public static void selectItemFromList(String customName, String option,
+			WebDriver driver) {
 		try {
 			WebElement searchTxtBox = driver.findElement(By
 					.cssSelector("input[customname='" + customName + "']"));
@@ -77,7 +57,8 @@ public class GenericHelper {
 			searchTxtBox.clear();
 			searchTxtBox.sendKeys(option);
 			GenericHelper.waitForElementPresent(
-					By.xpath(".//ul[@customid='" + customName + "']/li[1]"), 5, driver);
+					By.xpath(".//ul[@customid='" + customName + "']/li[1]"), 5,
+					driver);
 
 			driver.findElement(
 					By.xpath(".//ul[@customid='" + customName + "']/li[1]"))
@@ -88,8 +69,9 @@ public class GenericHelper {
 		driver.manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS); // nullify
 		// implicitlyWait()
 	}
-	
-	public static WebElement waitForElementPresent(By locator, int timeout, WebDriver driver) {
+
+	public static WebElement waitForElementPresent(By locator, int timeout,
+			WebDriver driver) {
 		try {
 			driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS); // nullify
 			// implicitlyWait()
@@ -100,6 +82,5 @@ public class GenericHelper {
 		}
 		return null;
 	}
-
 
 }

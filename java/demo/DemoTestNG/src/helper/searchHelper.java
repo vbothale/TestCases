@@ -1,5 +1,7 @@
 package helper;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -9,15 +11,28 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import Utility.JSONReader;
+
 public class searchHelper {
-	
-	public static void searchRequest(WebDriver driver) {
+
+	public static void searchCustomer(WebDriver driver, HashMap<String, Map<String, String>>_hashCustomers) {
+		
+		HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashCustomers
+				.get("searchCustomer");
+		
+		System.out.println("**************************************" + propertiesMap.get("searchCustomer"));
+		driver.findElement(By.id("srchTxt")).sendKeys(
+				propertiesMap.get("searchCustomer"));
+		
+
 		WebElement ele = driver.findElement(By.id("srchTxt"));
-		ele.sendKeys("test12345");
+		
+		
+		
+		// ele.sendKeys("test12345");
 		ele.sendKeys(Keys.ENTER);
 		GenericHelper.waitForLoaderGifToFinish(driver);
-		driver.manage().timeouts()
-		.implicitlyWait(70, TimeUnit.MILLISECONDS);
+		driver.manage().timeouts().implicitlyWait(70, TimeUnit.MILLISECONDS);
 		new WebDriverWait(driver, 180)
 				.until(ExpectedConditions.visibilityOfElementLocated(By
 						.xpath(".//*[@id='transSrchRes']//span[contains(.,'Load')]")));
@@ -26,6 +41,11 @@ public class searchHelper {
 				By.xpath(".//*[@id='partySrchRes']//span[contains(.,'Load')]"))
 				.click();
 		GenericHelper.waitForLoaderGifToFinish(driver);
+	}
+
+	public static void searchRequest(WebDriver driver) {
+		// TODO Auto-generated method stub
+
 	}
 
 }

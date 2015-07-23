@@ -9,7 +9,7 @@
 		</classes>
 	</test>
 	
-	
+	<!-- 
 	<test name="IE Test">
 	<parameter name="browser" value="IE" />
 		<classes>
@@ -24,6 +24,6 @@
 			<class name="collateral.collateral360" />
 		</classes>
 	</test>
-	
+	-->
 
 </suite>

@@ -14,12 +14,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.WebDriver;
+//import collateral.locatorCollateral;
 
 public class collateral360Helper {
 
 	public static void collateralAdd(WebDriver driver) {
 		helper.GenericHelper.waitForLoaderGifToFinish(driver);
-		driver.findElement(By.id("ctrl")).click();
+//		driver.findElement(By.id("ctrl")).click();
+		
 		helper.GenericHelper.waitForLoaderGifToFinish(driver);
 	}
 

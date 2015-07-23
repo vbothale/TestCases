@@ -6,5 +6,25 @@
     "sdietz": {
         "username": "sdietz",
         "password": "Provenir1"
+    },
+    "alockhart": {
+        "username": "alockhart",
+        "password": "Provenir1"
+    },
+    "ecandelario": {
+        "username": "ecandelario",
+        "password": "Provenir1"
+    },
+    "jcarter": {
+        "username": "jcarter",
+        "password": "Provenir1"
+    },
+    "automationUser1": {
+        "username": "autouser1",
+        "password": "Provenir1"
+    },
+    "automationUser2": {
+        "username": "autouser2",
+        "password": "Provenir1"
     }
 }

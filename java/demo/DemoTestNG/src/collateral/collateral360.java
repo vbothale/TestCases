@@ -25,22 +25,24 @@ public class collateral360 {
 	private String option;
 	private JSONReader reader = new JSONReader();
 	
-	public HashMap<String, Map<String, String>> _hashCustomers = new HashMap<String, Map<String, String>>();
+	private HashMap<String, Map<String, String>> _hashCustomers = new HashMap<String, Map<String, String>>();
 	
 	private HashMap<String, Map<String, String>> _hashLogins = new HashMap<String, Map<String, String>>();
+	
 	
 	@SuppressWarnings("static-access")
 	@Parameters({ "browser" })
 	@BeforeTest
 	public void beforeTest(String browser) throws Exception {
-		reader.readJSONToHashMap(_hashCustomers);
-//		reader.readJSONToHashMap(_hashLogins);
+		
+		reader.readJSONToHashMap(_hashCustomers,"C:\\Workspace_QA\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
+		reader.readJSONToHashMap(_hashLogins,"C:\\Workspace_QA\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
 		driver = helper.BrowserHelper.openBrowser(browser, driver);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		helper.GenericHelper.loginToPrism(driver);
+		helper.loginHelper.loginToPrism(driver, _hashLogins);
 		helper.GenericHelper.waitForLoaderGifToFinish(driver);
-		helper.searchHelper.searchRequest(driver);
+		helper.searchHelper.searchCustomer(driver,_hashCustomers);
 		
 	}
 
@@ -48,21 +50,6 @@ public class collateral360 {
 	public void afterTest() {
 		System.gc();
 		driver.quit();
-	}
-	
-	@Test
-	public void testRoy() {
-		HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashCustomers.get("roy");
-		
-		System.out.println("First Name: " + propertiesMap.get("fname"));
-		System.out.println("Lst Name: " + propertiesMap.get("lname"));
-	}
-	
-	@Test
-	public void testParashar() {
-		HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashCustomers.get("parashar");
-		System.out.println("First Name: " + propertiesMap.get("fname"));
-		System.out.println("Lst Name: " + propertiesMap.get("lname"));
 	}
 	
 
