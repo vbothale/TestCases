@@ -28,7 +28,7 @@ public class collateral360Helper {
 	public void collateralAdd(WebDriver driver) {
 		helper.GenericHelper.waitForLoaderGifToFinish(driver);
 		driver.findElement(By.id("ctrl")).click();
-		Util.scrollUp(driver);
+		Util.scrollDown(driver);
 		helper.GenericHelper.waitForLoaderGifToFinish(driver);
 	}
 
