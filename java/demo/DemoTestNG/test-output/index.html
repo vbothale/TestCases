@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Demo_Search_test_suite">
-              <span class="suite-name border-failed">Demo Search test suite</span>
+              <span class="suite-name border-passed">Demo Search test suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,31 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods, 3 failed,   2 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Demo_Search_test_suite" class="hide-methods failed suite-Demo_Search_test_suite"> (hide)</a> <!-- hide-methods failed suite-Demo_Search_test_suite -->
-                      <a href="#" panel-name="suite-Demo_Search_test_suite" class="show-methods failed suite-Demo_Search_test_suite"> (show)</a> <!-- show-methods failed suite-Demo_Search_test_suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Demo_Search_test_suite">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Demo_Search_test_suite" title="collateral.collateral360" hash-for-method="clickOnCollateralAndAdd">clickOnCollateralAndAdd</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Demo_Search_test_suite" title="collateral.collateral360" hash-for-method="saveCollateralInformation">saveCollateralInformation</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Demo_Search_test_suite" title="collateral.collateral360" hash-for-method="verifyCollateralTitle">verifyCollateralTitle</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Demo_Search_test_suite -->
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -125,12 +101,17 @@
                     <div class="method-list-content passed suite-Demo_Search_test_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Demo_Search_test_suite" title="collateral.collateral360" hash-for-method="testParashar">testParashar</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Demo_Search_test_suite" title="collateral.collateral360" hash-for-method="clickOnCollateralAndAdd">clickOnCollateralAndAdd</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Demo_Search_test_suite" title="collateral.collateral360" hash-for-method="testRoy">testRoy</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Demo_Search_test_suite" title="collateral.collateral360" hash-for-method="saveCollateralInformation">saveCollateralInformation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Demo_Search_test_suite" title="collateral.collateral360" hash-for-method="verifyCollateralTitle">verifyCollateralTitle</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Demo_Search_test_suite -->
@@ -145,170 +126,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Demo_Search_test_suite" class="panel Demo_Search_test_suite">
-          <div class="suite-Demo_Search_test_suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">collateral.collateral360</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="clickOnCollateralAndAdd">
-                  </a> <!-- clickOnCollateralAndAdd -->
-                  <span class="method-name">clickOnCollateralAndAdd</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Timed out after 180 seconds waiting for visibility of element located by By.xpath: .//*[@id=&apos;addAddrRow2&apos;]
-Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;pbajpai&apos;, ip: &apos;192.168.1.161&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
-Session ID: b6a48540-f1f7-4bf1-9e1f-3c6ea3efa660
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0}]
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
-	at collateral.collateral360Helper.clickOnAddBtn(collateral360Helper.java:30)
-	at collateral.collateral360.clickOnCollateralAndAdd(collateral360.java:74)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;.//*[@id=&apos;addAddrRow2&apos;]&quot;}
-Command duration or timeout: 216 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;pbajpai&apos;, ip: &apos;192.168.1.161&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
-*** Element info: {Using=xpath, value=.//*[@id=&apos;addAddrRow2&apos;]}
-Session ID: b6a48540-f1f7-4bf1-9e1f-3c6ea3efa660
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0}]
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:809)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$0(ExpectedConditions.java:807)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:1)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 22 more
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;.//*[@id=&apos;addAddrRow2&apos;]&quot;}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;pbajpai&apos;, ip: &apos;192.168.1.161&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
-Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/provenir/AppData/Local/Temp/anonymous6415954659730091838webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10299)
-	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/provenir/AppData/Local/Temp/anonymous6415954659730091838webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:603)
-... Removed 19 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="saveCollateralInformation">
-                  </a> <!-- saveCollateralInformation -->
-                  <span class="method-name">saveCollateralInformation</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Timed out after 180 seconds waiting for visibility of element located by By.id: collAccName
-Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;pbajpai&apos;, ip: &apos;192.168.1.161&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
-Session ID: b6a48540-f1f7-4bf1-9e1f-3c6ea3efa660
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0}]
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
-	at collateral.collateral360Helper.enterCollateralName(collateral360Helper.java:48)
-	at collateral.collateral360.saveCollateralInformation(collateral360.java:86)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;collAccName&quot;}
-Command duration or timeout: 134 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;pbajpai&apos;, ip: &apos;192.168.1.161&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
-*** Element info: {Using=id, value=collAccName}
-Session ID: b6a48540-f1f7-4bf1-9e1f-3c6ea3efa660
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0}]
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
-	at org.openqa.selenium.By$ById.findElement(By.java:215)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:809)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$0(ExpectedConditions.java:807)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:1)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 22 more
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;collAccName&quot;}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;pbajpai&apos;, ip: &apos;192.168.1.161&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
-Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/provenir/AppData/Local/Temp/anonymous6415954659730091838webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10299)
-	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/provenir/AppData/Local/Temp/anonymous6415954659730091838webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:603)
-... Removed 19 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyCollateralTitle">
-                  </a> <!-- verifyCollateralTitle -->
-                  <span class="method-name">verifyCollateralTitle</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Timed out after 180 seconds waiting for visibility of element located by By.xpath: .//*[@id=&apos;c360r&apos;]
-Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;pbajpai&apos;, ip: &apos;192.168.1.161&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
-Session ID: b6a48540-f1f7-4bf1-9e1f-3c6ea3efa660
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0}]
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
-	at collateral.collateral360Helper.verifyCollateralTitle(collateral360Helper.java:38)
-	at collateral.collateral360.verifyCollateralTitle(collateral360.java:81)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;.//*[@id=&apos;c360r&apos;]&quot;}
-Command duration or timeout: 198 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;pbajpai&apos;, ip: &apos;192.168.1.161&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
-*** Element info: {Using=xpath, value=.//*[@id=&apos;c360r&apos;]}
-Session ID: b6a48540-f1f7-4bf1-9e1f-3c6ea3efa660
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0}]
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:809)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$0(ExpectedConditions.java:807)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:1)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 22 more
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;.//*[@id=&apos;c360r&apos;]&quot;}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;pbajpai&apos;, ip: &apos;192.168.1.161&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
-Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/provenir/AppData/Local/Temp/anonymous6415954659730091838webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10299)
-	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/provenir/AppData/Local/Temp/anonymous6415954659730091838webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:603)
-... Removed 19 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Demo_Search_test_suite-class-failed -->
           <div class="suite-Demo_Search_test_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -317,16 +134,23 @@ Driver info: driver.version: unknown
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testParashar">
-                  </a> <!-- testParashar -->
-                  <span class="method-name">testParashar</span>
+                  <a name="clickOnCollateralAndAdd">
+                  </a> <!-- clickOnCollateralAndAdd -->
+                  <span class="method-name">clickOnCollateralAndAdd</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testRoy">
-                  </a> <!-- testRoy -->
-                  <span class="method-name">testRoy</span>
+                  <a name="saveCollateralInformation">
+                  </a> <!-- saveCollateralInformation -->
+                  <span class="method-name">saveCollateralInformation</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCollateralTitle">
+                  </a> <!-- verifyCollateralTitle -->
+                  <span class="method-name">verifyCollateralTitle</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -384,32 +208,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(5);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'clickOnCollateralAndAdd')
+data.setCell(0, 1, 'saveCollateralInformation')
 data.setCell(0, 2, 'collateral.collateral360')
-data.setCell(0, 3, 180595);
+data.setCell(0, 3, 46233);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'saveCollateralInformation')
+data.setCell(1, 1, 'clickOnCollateralAndAdd')
 data.setCell(1, 2, 'collateral.collateral360')
-data.setCell(1, 3, 180299);
+data.setCell(1, 3, 2138);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'verifyCollateralTitle')
 data.setCell(2, 2, 'collateral.collateral360')
-data.setCell(2, 3, 180048);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testRoy')
-data.setCell(3, 2, 'collateral.collateral360')
-data.setCell(3, 3, 2);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testParashar')
-data.setCell(4, 2, 'collateral.collateral360')
-data.setCell(4, 3, 2);
+data.setCell(2, 3, 1863);
 window.suiteTableData['Demo_Search_test_suite']= { tableData: data, tableDiv: 'times-div-Demo_Search_test_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 9 minutes</span>
+              <span class="suite-total-time">Total running time: 50 seconds</span>
               <div id="times-div-Demo_Search_test_suite">
               </div> <!-- times-div-Demo_Search_test_suite -->
             </div> <!-- times-div -->
@@ -441,34 +257,20 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">clickOnCollateralAndAdd</span>
-                <span class="method-start">69832 ms</span>
+                <span class="method-start">69044 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">saveCollateralInformation</span>
-                <span class="method-start">250467 ms</span>
+                <span class="method-start">71185 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testParashar</span>
-                <span class="method-start">430774 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testRoy</span>
-                <span class="method-start">430785 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">verifyCollateralTitle</span>
-                <span class="method-start">430790 ms</span>
+                <span class="method-start">117425 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">610850 ms</span>
+                <span class="method-start">119290 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -1,5 +1,6 @@
 package collateral;
 import helper.BrowserHelper.*;
+import helper.loginHelper;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -21,7 +22,7 @@ import Utility.JSONReader;
 
 public class collateral360 {
 
-	public WebDriver driver;
+	WebDriver driver;
 	private String option;
 	private JSONReader reader = new JSONReader();
 	
@@ -40,7 +41,7 @@ public class collateral360 {
 		driver = helper.BrowserHelper.openBrowser(browser, driver);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		helper.loginHelper.loginToPrism(driver, _hashLogins);
+		helper.loginHelper.loginToPrism(driver,_hashLogins);
 		helper.GenericHelper.waitForLoaderGifToFinish(driver);
 		helper.searchHelper.searchCustomer(driver,_hashCustomers);
 		
@@ -55,7 +56,8 @@ public class collateral360 {
 
 	@Test
 	public void clickOnCollateralAndAdd() {
-		collateral360Helper.collateralAdd(driver);
+		collateral360Helper cltrl= new collateral360Helper();
+		cltrl.collateralAdd(driver);
 		collateral360Helper.clickOnAddBtn(driver);
 	}
 	

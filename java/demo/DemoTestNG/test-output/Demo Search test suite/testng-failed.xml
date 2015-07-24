@@ -8,7 +8,6 @@
       <class name="collateral.collateral360">
         <methods>
           <include name="saveCollateralInformation"/>
-          <include name="afterTest"/>
           <include name="beforeTest"/>
           <include name="verifyCollateralTitle"/>
           <include name="clickOnCollateralAndAdd"/>

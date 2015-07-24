@@ -1,15 +1,19 @@
 package collateral;
 
-import java.sql.Driver;
+import Utility.*;
+
 import java.util.concurrent.TimeUnit;
 import java.lang.*;
 
 import junit.framework.Assert;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,11 +21,14 @@ import org.openqa.selenium.WebDriver;
 //import collateral.locatorCollateral;
 
 public class collateral360Helper {
-
-	public static void collateralAdd(WebDriver driver) {
+	
+//	@FindBy(how = How.XPATH, using = ".//*[@id='ctrl']")
+//	public WebElement collateralLink;
+	
+	public void collateralAdd(WebDriver driver) {
 		helper.GenericHelper.waitForLoaderGifToFinish(driver);
-//		driver.findElement(By.id("ctrl")).click();
-		
+		driver.findElement(By.id("ctrl")).click();
+		Util.scrollUp(driver);
 		helper.GenericHelper.waitForLoaderGifToFinish(driver);
 	}
 
@@ -35,12 +42,14 @@ public class collateral360Helper {
 
 	@SuppressWarnings("deprecation")
 	public static void verifyCollateralTitle(WebDriver driver) {
+		Util.waitForLoaderToFinish(driver);
 		new WebDriverWait(driver, 180).until(ExpectedConditions
 				.visibilityOfElementLocated(By.xpath(".//*[@id='c360r']")));
 		helper.GenericHelper.waitForLoaderGifToFinish(driver);
 		String title = driver.findElement(By.xpath(".//*[@id='c360r']"))
 				.getText().trim();
 		Assert.assertEquals(title, "Basic Collateral Information");
+	
 	}
 
 	public static void enterCollateralName(WebDriver driver) {
@@ -131,9 +140,6 @@ public class collateral360Helper {
 		}
 	}
 	
-	public static void clickOnUseCurrent(WebDriver driver)
-	{
-		
-	}
+	
 
 }

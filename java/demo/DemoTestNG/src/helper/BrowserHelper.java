@@ -27,5 +27,19 @@ public class BrowserHelper {
 		}
 		return driver;
 	}
+	
+	public enum WebDriverEnum {
+		Firefox(0), InternetExplorer(1), Chrome(2);
+
+		private int value;
+
+		private WebDriverEnum(int value) {
+			this.value = value;
+		}
+
+		public int intValue() {
+			return value;
+		}
+	}
 
 }
