@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>IE Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/5</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/3</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jul 23 12:10:48 EDT 2015</td>
+<td>Started on:</td><td>Sun Jul 26 22:31:53 EDT 2015</td>
 </tr>
-<tr><td>Total time:</td><td>7 seconds (7222 ms)</td>
+<tr><td>Total time:</td><td>6 seconds (6512 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,39 +75,40 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='collateral.collateral360.beforeTest()'><b>beforeTest</b><br>Test class: collateral.collateral360<br>Parameters: IE</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with id == srchTxt (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 335 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+<td title='collateral.Collateral360.beforeTest()'><b>beforeTest</b><br>Test class: collateral.Collateral360<br>Parameters: InternetExplorer</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: Unable to find element on closed window (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 17 milliseconds
 Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;pbajpai&apos;, ip: &apos;192.168.1.161&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
-*** Element info: {Using=id, value=srchTxt}
-Session ID: 2ea77deb-8a8f-4531-86b4-7155d3f19cb9
+System info: host: &apos;pbajpai&apos;, ip: &apos;10.5.22.7&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
+*** Element info: {Using=xpath, value=//button[contains(.,&apos;Login&apos;)]}
+Session ID: 04a32a37-5697-4fde-a745-25d07765f72f
 Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=false, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, pageLoadStrategy=normal, ie.usePerProcessProxy=false, cssSelectorsEnabled=true, ignoreProtectedModeSettings=false, requireWindowFocus=false, initialBrowserUrl=http://localhost:32177/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, pageLoadStrategy=normal, ie.usePerProcessProxy=false, cssSelectorsEnabled=true, ignoreProtectedModeSettings=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:6280/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
-	at org.openqa.selenium.By$ById.findElement(By.java:215)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at helper.searchHelper.searchRequest(searchHelper.java:15)
-	at collateral.collateral360.beforeTest(collateral360.java:43)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy7.click(Unknown Source)
+	at helper.LoginHelper.clickLoginBtn(LoginHelper.java:26)
+	at collateral.Collateral360.beforeTest(Collateral360.java:39)
 	at java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1434289620", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1434289620'><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with id == srchTxt (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 335 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace701614861", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace701614861'><pre>org.openqa.selenium.NoSuchWindowException: Unable to find element on closed window (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 17 milliseconds
 Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;pbajpai&apos;, ip: &apos;192.168.1.161&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
-*** Element info: {Using=id, value=srchTxt}
-Session ID: 2ea77deb-8a8f-4531-86b4-7155d3f19cb9
+System info: host: &apos;pbajpai&apos;, ip: &apos;10.5.22.7&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
+*** Element info: {Using=xpath, value=//button[contains(.,&apos;Login&apos;)]}
+Session ID: 04a32a37-5697-4fde-a745-25d07765f72f
 Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=false, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, pageLoadStrategy=normal, ie.usePerProcessProxy=false, cssSelectorsEnabled=true, ignoreProtectedModeSettings=false, requireWindowFocus=false, initialBrowserUrl=http://localhost:32177/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, pageLoadStrategy=normal, ie.usePerProcessProxy=false, cssSelectorsEnabled=true, ignoreProtectedModeSettings=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:6280/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -116,11 +117,14 @@ Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
-	at org.openqa.selenium.By$ById.findElement(By.java:215)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at helper.searchHelper.searchRequest(searchHelper.java:15)
-	at collateral.collateral360.beforeTest(collateral360.java:43)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy7.click(Unknown Source)
+	at helper.LoginHelper.clickLoginBtn(LoginHelper.java:26)
+	at collateral.Collateral360.beforeTest(Collateral360.java:39)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -151,7 +155,7 @@ Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='collateral.collateral360.afterTest()'><b>afterTest</b><br>Test class: collateral.collateral360</td>
+<td title='collateral.Collateral360.afterTest()'><b>afterTest</b><br>Test class: collateral.Collateral360</td>
 <td></td>
 <td>0</td>
 <td>null</td></tr>
@@ -164,30 +168,20 @@ Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='collateral.collateral360.clickOnCollateralAndAdd()'><b>clickOnCollateralAndAdd</b><br>Test class: collateral.collateral360</td>
+<td title='collateral.Collateral360.clickOnCollateralAndAdd()'><b>clickOnCollateralAndAdd</b><br>Test class: collateral.Collateral360</td>
 <td></td>
 <td>0</td>
-<td>collateral.collateral360@50b742d3</td></tr>
+<td>collateral.Collateral360@18a9b68c</td></tr>
 <tr>
-<td title='collateral.collateral360.saveCollateralInformation()'><b>saveCollateralInformation</b><br>Test class: collateral.collateral360</td>
+<td title='collateral.Collateral360.saveCollateralInformation()'><b>saveCollateralInformation</b><br>Test class: collateral.Collateral360</td>
 <td></td>
 <td>0</td>
-<td>collateral.collateral360@50b742d3</td></tr>
+<td>collateral.Collateral360@18a9b68c</td></tr>
 <tr>
-<td title='collateral.collateral360.testParashar()'><b>testParashar</b><br>Test class: collateral.collateral360</td>
+<td title='collateral.Collateral360.verifyCollateralTitle()'><b>verifyCollateralTitle</b><br>Test class: collateral.Collateral360</td>
 <td></td>
 <td>0</td>
-<td>collateral.collateral360@50b742d3</td></tr>
-<tr>
-<td title='collateral.collateral360.testRoy()'><b>testRoy</b><br>Test class: collateral.collateral360</td>
-<td></td>
-<td>0</td>
-<td>collateral.collateral360@50b742d3</td></tr>
-<tr>
-<td title='collateral.collateral360.verifyCollateralTitle()'><b>verifyCollateralTitle</b><br>Test class: collateral.collateral360</td>
-<td></td>
-<td>0</td>
-<td>collateral.collateral360@50b742d3</td></tr>
+<td>collateral.Collateral360@18a9b68c</td></tr>
 </table><p>
 </body>
 </html>

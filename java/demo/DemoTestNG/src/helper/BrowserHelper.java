@@ -8,7 +8,9 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 
 public class BrowserHelper {
-	public static WebDriver openBrowser(String browser, WebDriver driver) throws Exception {
+	static WebDriver driver;
+	
+	public static WebDriver openBrowser(String browser) throws Exception {
 		try {
 			if (browser.equalsIgnoreCase("Firefox")) {
 				driver = new FirefoxDriver();
@@ -26,20 +28,6 @@ public class BrowserHelper {
 			System.out.println(e.getMessage());
 		}
 		return driver;
-	}
-	
-	public enum WebDriverEnum {
-		Firefox(0), InternetExplorer(1), Chrome(2);
-
-		private int value;
-
-		private WebDriverEnum(int value) {
-			this.value = value;
-		}
-
-		public int intValue() {
-			return value;
-		}
 	}
 
 }

@@ -5,14 +5,14 @@
   <test name="Firefox Test(failed)" parallel="tests">
     <parameter name="browser" value="Firefox"/>
     <classes>
-      <class name="collateral.collateral360">
+      <class name="collateral.Collateral360">
         <methods>
-          <include name="saveCollateralInformation"/>
-          <include name="beforeTest"/>
           <include name="verifyCollateralTitle"/>
           <include name="clickOnCollateralAndAdd"/>
+          <include name="beforeTest"/>
+          <include name="saveCollateralInformation"/>
         </methods>
-      </class> <!-- collateral.collateral360 -->
+      </class> <!-- collateral.Collateral360 -->
     </classes>
   </test> <!-- Firefox Test(failed) -->
 </suite> <!-- Failed suite [Demo Search test suite] -->

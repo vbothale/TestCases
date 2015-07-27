@@ -20,7 +20,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.WebDriver;
 //import collateral.locatorCollateral;
 
-public class collateral360Helper {
+public class Collateral360Helper {
 	
 //	@FindBy(how = How.XPATH, using = ".//*[@id='ctrl']")
 //	public WebElement collateralLink;

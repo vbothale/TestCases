@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utility.JSONReader;
 
-public class searchHelper {
+public class SearchHelper {
 
 	public static void searchCustomer(WebDriver driver, HashMap<String, Map<String, String>>_hashCustomers) {
 		
