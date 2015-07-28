@@ -5,58 +5,60 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import Utility.JSONReader;
+import Utility.TestDataReader;
 import Utility.WebDriverSetUp;
 
 public class Collateral360 {
 
 	LoginHelper loginPage;
+	Collateral360Helper collateral360Helper;
 	WebDriver driver;
 	private String option;
-	private JSONReader reader = new JSONReader();
+	private TestDataReader reader = new TestDataReader();
 	
 	private HashMap<String, Map<String, String>> _hashCustomers = new HashMap<String, Map<String, String>>();
 	private HashMap<String, Map<String, String>> _hashLogins = new HashMap<String, Map<String, String>>();
 	
 	
 	@Parameters({ "browser" })
+	
 	@BeforeTest
 	public void beforeTest(String browser) throws Exception {
 		
-		reader.readJSONToHashMap(_hashCustomers,"C:\\Workspace_QA\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
-		reader.readJSONToHashMap(_hashLogins,"C:\\Workspace_QA\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
+		reader.readValue(_hashCustomers,"C:\\Workspace_QA\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
+		reader.readValue(_hashLogins,"C:\\Workspace_QA\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
 		
+		//browser being initialized/called 
 		driver = Utility.WebDriverSetUp.getDriver(browser);
 		driver.manage().window().maximize();
+		
+		//delete the cache
 		driver.manage().deleteAllCookies();
+		
 		helper.LoginHelper.loginToPrism(driver,_hashLogins);
-		loginPage = new LoginHelper(driver);
+//		loginPage = new LoginHelper(driver);
 //		loginPage.clickLoginBtn(driver);
-		loginPage.clickLogin(driver);
-		helper.GenericHelper.waitForLoaderGifToFinish(driver);
+//		loginPage.clickLogin(driver);
+		
+		Utility.Util.waitForLoaderToFinish(driver);
+		
+		//search for customer
 		helper.SearchHelper.searchCustomer(driver,_hashCustomers);
 		
 	}
-
-	@AfterTest
-	public void afterTest() {
-		System.gc();
-		driver.quit();
-	}
 	
-
 	@Test
 	public void clickOnCollateralAndAdd() {
-		Collateral360Helper cltrl= new Collateral360Helper();
-		cltrl.collateralAdd(driver);
-		Collateral360Helper.clickOnAddBtn(driver);
+		collateral360Helper = new Collateral360Helper();
+		collateral360Helper.collateralAdd(driver);
+		collateral360Helper.clickOnAddBtn(driver);
 	}
-	
 	
 
 	@Test
@@ -74,6 +76,12 @@ public class Collateral360 {
 		Collateral360Helper.enterCollateralPercentage(driver);
 		Collateral360Helper.setPrimaryCollateralOwner(driver);
 		Collateral360Helper.clickOnSaveCollateral(driver);
+	}
+	
+	@AfterTest
+	public void afterTest() {
+		System.gc();
+		driver.quit();
 	}
 
 }

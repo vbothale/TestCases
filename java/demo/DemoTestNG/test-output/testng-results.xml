@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="3" failed="0" total="3" passed="0">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Demo Search test suite" duration-ms="51219" started-at="2015-07-27T02:33:57Z" finished-at="2015-07-27T02:34:48Z">
+  <suite name="Demo Search test suite" duration-ms="124387" started-at="2015-07-28T03:48:43Z" finished-at="2015-07-28T03:50:47Z">
     <groups>
     </groups>
-    <test name="Firefox Test" duration-ms="51219" started-at="2015-07-27T02:33:57Z" finished-at="2015-07-27T02:34:48Z">
+    <test name="Firefox Test" duration-ms="124387" started-at="2015-07-28T03:48:43Z" finished-at="2015-07-28T03:50:47Z">
       <class name="collateral.Collateral360">
-        <test-method status="FAIL" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.Collateral360@68e4a47]" name="beforeTest" is-config="true" duration-ms="0" started-at="2015-07-26T22:33:57Z" finished-at="2015-07-26T22:33:57Z">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.Collateral360@d5c4abf]" name="beforeTest" is-config="true" duration-ms="68713" started-at="2015-07-27T23:48:43Z" finished-at="2015-07-27T23:49:51Z">
           <params>
             <param index="0">
               <value>
@@ -15,90 +15,22 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
-            <message>
-              <![CDATA[Error communicating with the remote browser. It may have died.
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'pbajpai', ip: '10.5.22.7', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_79'
-Driver info: driver.version: FirefoxDriver]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'pbajpai', ip: '10.5.22.7', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_79'
-Driver info: driver.version: FirefoxDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
-	at org.openqa.selenium.firefox.FirefoxDriver.access$0(FirefoxDriver.java:1)
-	at org.openqa.selenium.firefox.FirefoxDriver$1$1.implicitlyWait(FirefoxDriver.java:248)
-	at helper.SearchHelper.searchCustomer(SearchHelper.java:35)
-	at collateral.Collateral360.beforeTest(Collateral360.java:42)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:140)
-	at org.testng.TestRunner.beforeRun(TestRunner.java:645)
-	at org.testng.TestRunner.run(TestRunner.java:613)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:38)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:391)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:143)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
-	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:168)
-	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:392)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:578)
-	... 22 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
-	... 37 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="SKIP" signature="clickOnCollateralAndAdd()[pri:0, instance:collateral.Collateral360@68e4a47]" name="clickOnCollateralAndAdd" duration-ms="1" started-at="2015-07-26T22:34:48Z" finished-at="2015-07-26T22:34:48Z">
+        <test-method status="PASS" signature="clickOnCollateralAndAdd()[pri:0, instance:collateral.Collateral360@d5c4abf]" name="clickOnCollateralAndAdd" duration-ms="6048" started-at="2015-07-27T23:49:51Z" finished-at="2015-07-27T23:49:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickOnCollateralAndAdd -->
-        <test-method status="SKIP" signature="saveCollateralInformation()[pri:0, instance:collateral.Collateral360@68e4a47]" name="saveCollateralInformation" duration-ms="1" started-at="2015-07-26T22:34:48Z" finished-at="2015-07-26T22:34:48Z">
+        <test-method status="PASS" signature="saveCollateralInformation()[pri:0, instance:collateral.Collateral360@d5c4abf]" name="saveCollateralInformation" duration-ms="46267" started-at="2015-07-27T23:49:57Z" finished-at="2015-07-27T23:50:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveCollateralInformation -->
-        <test-method status="SKIP" signature="verifyCollateralTitle()[pri:0, instance:collateral.Collateral360@68e4a47]" name="verifyCollateralTitle" duration-ms="0" started-at="2015-07-26T22:34:48Z" finished-at="2015-07-26T22:34:48Z">
+        <test-method status="PASS" signature="verifyCollateralTitle()[pri:0, instance:collateral.Collateral360@d5c4abf]" name="verifyCollateralTitle" duration-ms="1803" started-at="2015-07-27T23:50:44Z" finished-at="2015-07-27T23:50:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCollateralTitle -->
-        <test-method status="SKIP" signature="afterTest()[pri:0, instance:collateral.Collateral360@68e4a47]" name="afterTest" is-config="true" duration-ms="0" started-at="2015-07-26T22:34:48Z" finished-at="2015-07-26T22:34:48Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.Collateral360@d5c4abf]" name="afterTest" is-config="true" duration-ms="1532" started-at="2015-07-27T23:50:46Z" finished-at="2015-07-27T23:50:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

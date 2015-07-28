@@ -1,7 +1,5 @@
 package Utility;
 
-import helper.GenericHelper;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -14,11 +12,15 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Util {
 	private static List<WebElement> lstElements = new ArrayList<WebElement>();
+	public static final int DEFAULT_ELEMENT_WAIT = 5;
+	public static final int DEFAULT_PAGE_WAIT = 5;
+	public static final int DEFAULT_AJAX_WAIT = 10;
 
 	public static void waitForLoaderToFinish(WebDriver driver) {
 		try {
@@ -52,7 +54,7 @@ public class Util {
 
 			searchTxtBox.clear();
 			searchTxtBox.sendKeys(option);
-			GenericHelper.waitForElementPresent(
+			Util.waitForElementPresent(
 					By.xpath(".//ul[@customid='" + customName + "']/li[1]"), 5,
 					driver);
 
@@ -124,5 +126,32 @@ public class Util {
 			driver.findElement(By.name((checkBoxname + i))).click();
 		}
 	}
+	
+	public static boolean waitForAJAX(WebDriver driver) {
+		boolean jQcondition = false;
+		try {
+			driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS); // nullify
+																			// implicitlyWait()
+			new WebDriverWait(driver, DEFAULT_AJAX_WAIT) {
+			}.until(new ExpectedCondition<Boolean>() {
+
+				@Override
+				public Boolean apply(WebDriver driverObject) {
+					return (Boolean) ((JavascriptExecutor) driverObject)
+							.executeScript("return jQuery.active == 0");
+				}
+			});
+			jQcondition = (Boolean) ((JavascriptExecutor) driver)
+					.executeScript("return jQuery.active == 0");
+			driver.manage().timeouts()
+					.implicitlyWait(DEFAULT_PAGE_WAIT, TimeUnit.SECONDS); // reset
+																			// implicitlyWait
+			return jQcondition;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return jQcondition;
+	}
+
 
 }

@@ -26,16 +26,17 @@ public class Collateral360Helper {
 //	public WebElement collateralLink;
 	
 	public void collateralAdd(WebDriver driver) {
-		helper.GenericHelper.waitForLoaderGifToFinish(driver);
+		Utility.Util.waitForLoaderToFinish(driver);
 		driver.findElement(By.id("ctrl")).click();
 		Util.scrollDown(driver);
-		helper.GenericHelper.waitForLoaderGifToFinish(driver);
+		Utility.Util.waitForLoaderToFinish(driver);
 	}
 
 	public static void clickOnAddBtn(WebDriver driver) {
-		new WebDriverWait(driver, 180)
-				.until(ExpectedConditions.visibilityOfElementLocated(By
-						.xpath(".//*[@id='addAddrRow2']")));
+//		new WebDriverWait(driver, 180)
+//				.until(ExpectedConditions.visibilityOfElementLocated(By
+//						.xpath(".//*[@id='addAddrRow2']")));
+		Utility.Util.waitForElementPresent(By.xpath(".//*[@id='addAddrRow2']"), 30, driver);
 		driver.findElement(By.id("addAddrRow2")).click();
 
 	}
@@ -43,9 +44,10 @@ public class Collateral360Helper {
 	@SuppressWarnings("deprecation")
 	public static void verifyCollateralTitle(WebDriver driver) {
 		Util.waitForLoaderToFinish(driver);
-		new WebDriverWait(driver, 180).until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath(".//*[@id='c360r']")));
-		helper.GenericHelper.waitForLoaderGifToFinish(driver);
+//		new WebDriverWait(driver, 180).until(ExpectedConditions
+//				.visibilityOfElementLocated(By.xpath(".//*[@id='c360r']")));
+		Utility.Util.waitForElementPresent(By.xpath(".//*[@id='c360r']"), 60, driver);
+		Utility.Util.waitForLoaderToFinish(driver);
 		String title = driver.findElement(By.xpath(".//*[@id='c360r']"))
 				.getText().trim();
 		Assert.assertEquals(title, "Basic Collateral Information");
@@ -53,9 +55,10 @@ public class Collateral360Helper {
 	}
 
 	public static void enterCollateralName(WebDriver driver) {
-		helper.GenericHelper.waitForLoaderGifToFinish(driver);
-		new WebDriverWait(driver, 180).until(ExpectedConditions
-				.visibilityOfElementLocated(By.id("collAccName")));
+		Utility.Util.waitForLoaderToFinish(driver);
+//		new WebDriverWait(driver, 180).until(ExpectedConditions
+//				.visibilityOfElementLocated(By.id("collAccName")));
+		Utility.Util.waitForElementPresent(By.id("collAccName"), 40, driver);
 		driver.findElement(By.id("collAccName")).sendKeys("Test collateral");
 	}
 
@@ -83,46 +86,48 @@ public class Collateral360Helper {
 		// // ele2.sendKeys(Keys.ENTER);
 		// GenericHelper.waitForLoaderGifToFinish(driver);
 
-		helper.GenericHelper.enableAllDropdowns(driver);
-		helper.GenericHelper.waitForLoaderGifToFinish(driver);
-		helper.GenericHelper.waitForElementPresent(
+		Utility.Util.enableAllDropdowns(driver);
+		Utility.Util.waitForLoaderToFinish(driver);
+		Utility.Util.waitForElementPresent(
 				By.xpath("//input[contains(@customname,'collType')]"), 20,
 				driver);
 		String str = "collType";
 		option = "Deposits";
-		helper.GenericHelper.selectItemFromList(str, option, driver);
+		Utility.Util.selectItemFromList(str, option, driver);
 
 	}
 
 	public static void selectCollateralSubType(WebDriver driver, String option) {
-		helper.GenericHelper.enableAllDropdowns(driver);
-		helper.GenericHelper.waitForLoaderGifToFinish(driver);
-		helper.GenericHelper.waitForElementPresent(
+		Utility.Util.enableAllDropdowns(driver);
+		Utility.Util.waitForLoaderToFinish(driver);
+		Utility.Util.waitForElementPresent(
 				By.xpath("//input[contains(@customname,'collSubType')]"), 20,
 				driver);
 		String str = "collSubType";
 		option = "Deposit Account, External";
-		helper.GenericHelper.selectItemFromList(str, option, driver);
+		Utility.Util.selectItemFromList(str, option, driver);
 	}
 
 	public static void enterCollateralOwnerName(WebDriver driver) {
-		helper.GenericHelper.waitForLoaderGifToFinish(driver);
+		Utility.Util.waitForLoaderToFinish(driver);
 		driver.findElement(By.id("ownerName")).sendKeys("intex");
 
 		driver.findElement(By.id("ownSearch")).click();
 
-		helper.GenericHelper.waitForLoaderGifToFinish(driver);
-		helper.GenericHelper.waitForElementPresent(
+		Utility.Util.waitForLoaderToFinish(driver);
+		Utility.Util.waitForElementPresent(
 				By.xpath(".//*[@id='partySrchRes']//span[contains(.,'Load')]"),
 				40, driver);
 		driver.findElement(
 				By.xpath(".//*[@id='partySrchRes']//span[contains(.,'Load')]"))
 				.click();
+		
+		//When busy div is not showing need to wait for few secs until grid gets loaded
 		driver.manage().timeouts().implicitlyWait(70, TimeUnit.MILLISECONDS);
 	}
 
 	public static void enterCollateralPercentage(WebDriver driver) {
-		helper.GenericHelper.waitForLoaderGifToFinish(driver);
+		Utility.Util.waitForLoaderToFinish(driver);
 		driver.findElement(By.id("ownerPer")).sendKeys("100");
 	}
 
@@ -132,11 +137,11 @@ public class Collateral360Helper {
 
 	public static void clickOnSaveCollateral(WebDriver driver) {
 		driver.findElement(By.id("savecolldetails")).click();
-		helper.GenericHelper.waitForLoaderGifToFinish(driver);
+		Utility.Util.waitForLoaderToFinish(driver);
 		if(driver.findElement(By.id("useCurrentCust")).isDisplayed())
 		{
 			driver.findElement(By.id("useCurrentCust")).click();
-			helper.GenericHelper.waitForLoaderGifToFinish(driver);
+			Utility.Util.waitForLoaderToFinish(driver);
 		}
 	}
 	

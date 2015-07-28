@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import Utility.JSONReader;
+import Utility.TestDataReader;
 
 public class SearchHelper {
 
@@ -27,11 +27,10 @@ public class SearchHelper {
 
 		WebElement ele = driver.findElement(By.id("srchTxt"));
 		
-		
-		
 		// ele.sendKeys("test12345");
+		
 		ele.sendKeys(Keys.ENTER);
-		GenericHelper.waitForLoaderGifToFinish(driver);
+		Utility.Util.waitForLoaderToFinish(driver);
 		driver.manage().timeouts().implicitlyWait(70, TimeUnit.MILLISECONDS);
 		new WebDriverWait(driver, 180)
 				.until(ExpectedConditions.visibilityOfElementLocated(By
@@ -40,7 +39,7 @@ public class SearchHelper {
 		driver.findElement(
 				By.xpath(".//*[@id='partySrchRes']//span[contains(.,'Load')]"))
 				.click();
-		GenericHelper.waitForLoaderGifToFinish(driver);
+		Utility.Util.waitForLoaderToFinish(driver);
 	}
 
 	public static void searchRequest(WebDriver driver) {
