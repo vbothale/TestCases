@@ -17,12 +17,13 @@ public class LoginHelper {
 	
 	WebDriver driver;
 
-	public LoginHelper(WebDriver driver) {
-		this.driver = driver;	
-//		LoginPage loginPage = new LoginPage(driver);
-	}
+//	public LoginHelper(WebDriver driver){
+//		this.driver = driver;	
+////		LoginPage loginPage = new LoginPage(driver);
+//	}
 	
-
+//	LoginPage loginPage = LoginPage.getInstance(driver);
+	
 
 	public static void loginToPrism(WebDriver driver,
 			HashMap<String, Map<String, String>> _hashLogins) {

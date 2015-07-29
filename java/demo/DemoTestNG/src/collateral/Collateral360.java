@@ -38,7 +38,7 @@ public class Collateral360 {
 		driver = Utility.WebDriverSetUp.getDriver(browser);
 		driver.manage().window().maximize();
 		
-		//delete the cache
+		//deletes the cache
 		driver.manage().deleteAllCookies();
 		
 		helper.LoginHelper.loginToPrism(driver,_hashLogins);
@@ -80,8 +80,9 @@ public class Collateral360 {
 	
 	@AfterTest
 	public void afterTest() {
-		System.gc();
+		driver.close();
 		driver.quit();
+		System.gc();
 	}
 
 }

@@ -9,12 +9,17 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
 	
 	WebDriver driver;
-
-	public LoginPage(WebDriver driver)
-	{
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
+	
+//	private static LoginPage loginPage = new LoginPage(driver);
+//
+//	private LoginPage(WebDriver driver)
+//	{
+//	}
+//	
+//	public static LoginPage getInstance(WebDriver driver)
+//	{
+//		return new loginPage(driver);
+//	}
 	
 	@FindBy(how = How.XPATH, using = "//button[contains(.,'Login')]")
 	public static WebElement loginBtn;
@@ -34,5 +39,10 @@ public class LoginPage {
 //	{
 //		this.username = value;
 //	}
+	
+	public void clickLogin()
+	{
+		loginBtn.click();
+	}
 
 }

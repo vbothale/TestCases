@@ -126,7 +126,7 @@ public class Util {
 			driver.findElement(By.name((checkBoxname + i))).click();
 		}
 	}
-	
+
 	public static boolean waitForAJAX(WebDriver driver) {
 		boolean jQcondition = false;
 		try {
@@ -153,5 +153,22 @@ public class Util {
 		return jQcondition;
 	}
 
+	public boolean selectSpecificRecordFromPopup(By locator,
+			String option, WebDriver driver) {
+		Util.waitForElementPresent(
+				By.xpath(".//div[contains(@id='" + locator + "']"), 5, driver);
+		lstElements = driver.findElements(By.xpath(".//div[contains(@id='"
+				+ locator + "']"));
+		for (int i = 1; i <= lstElements.size(); i++) {
+			WebElement element = driver.findElement(By
+					.xpath(".//div[contains(@id='" + locator
+							+ "'div[3]/div/table/tbody/tr" + i + "']/td[1]"));
+			if (element.getText().equalsIgnoreCase(option)) {
+				return true;
+			} else
+				return false;
+		}
+		return false;
+	}
 
 }
