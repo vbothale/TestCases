@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import Utility.TestDataReader;
+import utility.TestDataReader;
 
 public class SearchHelper {
 
@@ -30,7 +30,7 @@ public class SearchHelper {
 		// ele.sendKeys("test12345");
 		
 		ele.sendKeys(Keys.ENTER);
-		Utility.Util.waitForLoaderToFinish(driver);
+		utility.Util.waitForLoaderToFinish(driver);
 		driver.manage().timeouts().implicitlyWait(70, TimeUnit.MILLISECONDS);
 		new WebDriverWait(driver, 180)
 				.until(ExpectedConditions.visibilityOfElementLocated(By
@@ -39,7 +39,7 @@ public class SearchHelper {
 		driver.findElement(
 				By.xpath(".//*[@id='partySrchRes']//span[contains(.,'Load')]"))
 				.click();
-		Utility.Util.waitForLoaderToFinish(driver);
+		utility.Util.waitForLoaderToFinish(driver);
 	}
 
 	public static void searchRequest(WebDriver driver) {

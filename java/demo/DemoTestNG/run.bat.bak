@@ -1,0 +1,1 @@
+java -cp ./libs/*;./bin; org.testng.TestNG "C:/Workspace_QA/TestCases/java/demo/DemoTestNG/src/collateral/TestAll-Search.xml"

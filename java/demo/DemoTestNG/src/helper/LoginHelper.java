@@ -49,8 +49,8 @@ public class LoginHelper {
 			
 			 driver.findElement(By.xpath("//button[contains(.,'Login')]"))
 			 .click();
-
-			 Utility.Util.waitForLoaderToFinish(driver);
+			 utility.Util.waitForAJAX(driver);
+			 utility.Util.waitForLoaderToFinish(driver);
 			driver.manage().timeouts()
 					.implicitlyWait(70, TimeUnit.MILLISECONDS);
 		} catch (Exception e) {

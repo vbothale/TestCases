@@ -11,8 +11,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import Utility.TestDataReader;
-import Utility.WebDriverSetUp;
+import utility.TestDataReader;
+import utility.WebDriverSetUp;
 
 public class Collateral360 {
 
@@ -30,12 +30,12 @@ public class Collateral360 {
 	
 	@BeforeTest
 	public void beforeTest(String browser) throws Exception {
-		
+	
 		reader.readValue(_hashCustomers,"C:\\Workspace_QA\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
 		reader.readValue(_hashLogins,"C:\\Workspace_QA\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
 		
 		//browser being initialized/called 
-		driver = Utility.WebDriverSetUp.getDriver(browser);
+		driver = utility.WebDriverSetUp.getDriver(browser);
 		driver.manage().window().maximize();
 		
 		//deletes the cache
@@ -46,7 +46,7 @@ public class Collateral360 {
 //		loginPage.clickLoginBtn(driver);
 //		loginPage.clickLogin(driver);
 		
-		Utility.Util.waitForLoaderToFinish(driver);
+		utility.Util.waitForLoaderToFinish(driver);
 		
 		//search for customer
 		helper.SearchHelper.searchCustomer(driver,_hashCustomers);
