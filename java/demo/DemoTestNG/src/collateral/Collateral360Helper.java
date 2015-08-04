@@ -37,8 +37,8 @@ public class Collateral360Helper {
 //		new WebDriverWait(driver, 180)
 //				.until(ExpectedConditions.visibilityOfElementLocated(By
 //						.xpath(".//*[@id='addAddrRow2']")));
-		utility.Util.waitForElementPresent(By.xpath(".//*[@id='addAddrRow2']"), 30, driver);
-		driver.findElement(By.id("addAddrRow2")).click();
+		utility.Util.waitForElementPresent(By.xpath(".//*[@id='clientCollateral']/div/a"), 30, driver);
+		driver.findElement(By.xpath(".//*[@id='clientCollateral']/div/a")).click();
 
 	}
 

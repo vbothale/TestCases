@@ -1,4 +1,4 @@
-package collateral;
+package customer;
 import helper.LoginHelper;
 
 import java.util.HashMap;
@@ -12,12 +12,13 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import utility.TestDataReader;
+import utility.Util;
 import utility.WebDriverSetUp;
 
-public class Collateral360 {
+public class Cust360 {
 
 	LoginHelper loginPage;
-	Collateral360Helper collateral360Helper;
+
 	WebDriver driver;
 	private String option;
 	private TestDataReader reader = new TestDataReader();
@@ -41,45 +42,18 @@ public class Collateral360 {
 		//deletes the cache
 		driver.manage().deleteAllCookies();
 		
-		helper.LoginHelper.loginToPrism(driver,_hashLogins);
+		LoginHelper.login(driver, _hashLogins);
+//		helper.LoginHelper.login(driver,_hashLogins);
 //		loginPage = new LoginHelper(driver);
 //		loginPage.clickLoginBtn(driver);
 //		loginPage.clickLogin(driver);
 		
 		utility.Util.waitForLoaderToFinish(driver);
-		
 		//search for customer
 		helper.SearchHelper.searchCustomer(driver,_hashCustomers);
-		
+		Util.waitForAJAX(driver);
 	}
 	
-	@Test(priority=0)
-	public void clickOnCollateralAndAdd() {
-		collateral360Helper = new Collateral360Helper();
-		collateral360Helper.collateralAdd(driver);
-		collateral360Helper.clickOnAddBtn(driver);
-		System.out.println("test 1");
-	}
-	
-
-	@Test(priority=1)
-	public void verifyCollateralTitle() throws InterruptedException {
-		Collateral360Helper.verifyCollateralTitle(driver);
-		System.out.println("test 2");
-	}
-
-	@Test(priority=2)
-	public void saveCollateralInformation() throws InterruptedException {
-		Collateral360Helper.enterCollateralName(driver);
-		Collateral360Helper.enterColateralCode(driver);
-		Collateral360Helper.selectCollateralType(driver, option);
-		Collateral360Helper.selectCollateralSubType(driver, option);
-		Collateral360Helper.enterCollateralOwnerName(driver);
-		Collateral360Helper.enterCollateralPercentage(driver);
-		Collateral360Helper.setPrimaryCollateralOwner(driver);
-		Collateral360Helper.clickOnSaveCollateral(driver);
-		System.out.println("test 3");
-	}
 	
 	@AfterTest
 	public void afterTest() {

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Chrome Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jul 31 01:19:28 EDT 2015</td>
+<td>Started on:</td><td>Tue Aug 04 13:56:08 EDT 2015</td>
 </tr>
-<tr><td>Total time:</td><td>138 seconds (138016 ms)</td>
+<tr><td>Total time:</td><td>602 seconds (602520 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,36 +76,42 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='collateral.Collateral360.clickOnCollateralAndAdd()'><b>clickOnCollateralAndAdd</b><br>Test class: collateral.Collateral360</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: Element is not clickable at point (1315, 16). Other element would receive the click: &lt;span class=&quot;arrow_overlay&quot;&gt;...&lt;/span&gt;
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element
   (Session info: chrome=44.0.2403.125)
   (Driver info: chromedriver=2.16.333243 (0bfa1d3575fc1044244f21ddb82bf870944ef961),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 138 milliseconds
+Command duration or timeout: 121 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;pbajpai&apos;, ip: &apos;10.5.23.60&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
-Session ID: d018bb32e1e744b2355276a757b93927
+System info: host: &apos;pbajpai&apos;, ip: &apos;10.5.20.52&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
+*** Element info: {Using=id, value=ctrl}
+Session ID: 19282c6ce8abcb26c160cfa7d3b8d107
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir15348_28412}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir14224_16063}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:269)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:80)
-	at collateral.Collateral360Helper.clickOnAddBtn(Collateral360Helper.java:41)
-	at collateral.Collateral360.clickOnCollateralAndAdd(Collateral360.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
+	at org.openqa.selenium.By$ById.findElement(By.java:215)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at collateral.Collateral360Helper.collateralAdd(Collateral360Helper.java:30)
+	at collateral.Collateral360.clickOnCollateralAndAdd(Collateral360.java:59)
 	at java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
-... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace490879604", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace490879604'><pre>org.openqa.selenium.WebDriverException: unknown error: Element is not clickable at point (1315, 16). Other element would receive the click: &lt;span class=&quot;arrow_overlay&quot;&gt;...&lt;/span&gt;
+... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1775505714", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1775505714'><pre>org.openqa.selenium.NoSuchElementException: no such element
   (Session info: chrome=44.0.2403.125)
   (Driver info: chromedriver=2.16.333243 (0bfa1d3575fc1044244f21ddb82bf870944ef961),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 138 milliseconds
+Command duration or timeout: 121 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;pbajpai&apos;, ip: &apos;10.5.23.60&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
-Session ID: d018bb32e1e744b2355276a757b93927
+System info: host: &apos;pbajpai&apos;, ip: &apos;10.5.20.52&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
+*** Element info: {Using=id, value=ctrl}
+Session ID: 19282c6ce8abcb26c160cfa7d3b8d107
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir15348_28412}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir14224_16063}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -113,10 +119,12 @@ Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browser
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:269)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:80)
-	at collateral.Collateral360Helper.clickOnAddBtn(Collateral360Helper.java:41)
-	at collateral.Collateral360.clickOnCollateralAndAdd(Collateral360.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
+	at org.openqa.selenium.By$ById.findElement(By.java:215)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at collateral.Collateral360Helper.collateralAdd(Collateral360Helper.java:30)
+	at collateral.Collateral360.clickOnCollateralAndAdd(Collateral360.java:59)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -138,21 +146,21 @@ Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browser
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
 </pre></div></td>
-<td>0</td>
-<td>collateral.Collateral360@76dedd5c</td></tr>
+<td>180</td>
+<td>collateral.Collateral360@381bfd7</td></tr>
 <tr>
 <td title='collateral.Collateral360.saveCollateralInformation()'><b>saveCollateralInformation</b><br>Test class: collateral.Collateral360</td>
 <td><div><pre>org.openqa.selenium.NoSuchElementException: no such element
   (Session info: chrome=44.0.2403.125)
   (Driver info: chromedriver=2.16.333243 (0bfa1d3575fc1044244f21ddb82bf870944ef961),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 117 milliseconds
+Command duration or timeout: 26 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;pbajpai&apos;, ip: &apos;10.5.23.60&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
-*** Element info: {Using=id, value=useCurrentCust}
-Session ID: d018bb32e1e744b2355276a757b93927
+System info: host: &apos;pbajpai&apos;, ip: &apos;10.5.20.52&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
+*** Element info: {Using=id, value=collAccName}
+Session ID: 19282c6ce8abcb26c160cfa7d3b8d107
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir15348_28412}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir14224_16063}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
@@ -160,24 +168,24 @@ Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browser
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
 	at org.openqa.selenium.By$ById.findElement(By.java:215)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at collateral.Collateral360Helper.clickOnSaveCollateral(Collateral360Helper.java:142)
-	at collateral.Collateral360.saveCollateralInformation(Collateral360.java:78)
+	at collateral.Collateral360Helper.enterCollateralName(Collateral360Helper.java:63)
+	at collateral.Collateral360.saveCollateralInformation(Collateral360.java:71)
 	at java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
-... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace548416742", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace548416742'><pre>org.openqa.selenium.NoSuchElementException: no such element
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace145043165", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace145043165'><pre>org.openqa.selenium.NoSuchElementException: no such element
   (Session info: chrome=44.0.2403.125)
   (Driver info: chromedriver=2.16.333243 (0bfa1d3575fc1044244f21ddb82bf870944ef961),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 117 milliseconds
+Command duration or timeout: 26 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;pbajpai&apos;, ip: &apos;10.5.23.60&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
-*** Element info: {Using=id, value=useCurrentCust}
-Session ID: d018bb32e1e744b2355276a757b93927
+System info: host: &apos;pbajpai&apos;, ip: &apos;10.5.20.52&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
+*** Element info: {Using=id, value=collAccName}
+Session ID: 19282c6ce8abcb26c160cfa7d3b8d107
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir15348_28412}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir14224_16063}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]
 	at sun.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
 	at java.lang.reflect.Constructor.newInstance(Unknown Source)
@@ -188,8 +196,8 @@ Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browser
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
 	at org.openqa.selenium.By$ById.findElement(By.java:215)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at collateral.Collateral360Helper.clickOnSaveCollateral(Collateral360Helper.java:142)
-	at collateral.Collateral360.saveCollateralInformation(Collateral360.java:78)
+	at collateral.Collateral360Helper.enterCollateralName(Collateral360Helper.java:63)
+	at collateral.Collateral360.saveCollateralInformation(Collateral360.java:71)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -211,21 +219,81 @@ Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browser
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
 </pre></div></td>
-<td>44</td>
-<td>collateral.Collateral360@76dedd5c</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
+<td>114</td>
+<td>collateral.Collateral360@381bfd7</td></tr>
 <tr>
 <td title='collateral.Collateral360.verifyCollateralTitle()'><b>verifyCollateralTitle</b><br>Test class: collateral.Collateral360</td>
-<td></td>
-<td>0</td>
-<td>collateral.Collateral360@76dedd5c</td></tr>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element
+  (Session info: chrome=44.0.2403.125)
+  (Driver info: chromedriver=2.16.333243 (0bfa1d3575fc1044244f21ddb82bf870944ef961),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 22 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
+System info: host: &apos;pbajpai&apos;, ip: &apos;10.5.20.52&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
+*** Element info: {Using=xpath, value=.//*[@id=&apos;c360r&apos;]}
+Session ID: 19282c6ce8abcb26c160cfa7d3b8d107
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir14224_16063}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at collateral.Collateral360Helper.verifyCollateralTitle(Collateral360Helper.java:52)
+	at collateral.Collateral360.verifyCollateralTitle(Collateral360.java:66)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace323827385", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace323827385'><pre>org.openqa.selenium.NoSuchElementException: no such element
+  (Session info: chrome=44.0.2403.125)
+  (Driver info: chromedriver=2.16.333243 (0bfa1d3575fc1044244f21ddb82bf870944ef961),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 22 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
+System info: host: &apos;pbajpai&apos;, ip: &apos;10.5.20.52&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;
+*** Element info: {Using=xpath, value=.//*[@id=&apos;c360r&apos;]}
+Session ID: 19282c6ce8abcb26c160cfa7d3b8d107
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir14224_16063}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]
+	at sun.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at collateral.Collateral360Helper.verifyCollateralTitle(Collateral360Helper.java:52)
+	at collateral.Collateral360.verifyCollateralTitle(Collateral360.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:38)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:391)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>60</td>
+<td>collateral.Collateral360@381bfd7</td></tr>
 </table><p>
 </body>
 </html>

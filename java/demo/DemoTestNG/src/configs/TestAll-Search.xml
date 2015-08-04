@@ -9,12 +9,14 @@
 		</classes>
 	</test>
 	
+	<!--
 	<test name="IE Test">
 	<parameter name="browser" value="InternetExplorer" />
 		<classes>
 			<class name="collateral.Collateral360" />
 		</classes>
 	</test>
+	
 
 	<test name="Chrome Test">
 	<parameter name="browser" value="Chrome" />
@@ -22,5 +24,6 @@
 			<class name="collateral.Collateral360" />
 		</classes>
 	</test>
+-->
 	
 </suite>
