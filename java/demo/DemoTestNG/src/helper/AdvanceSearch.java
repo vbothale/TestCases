@@ -19,8 +19,8 @@ public class AdvanceSearch {
 		
 		System.out.println("**************************************" + propertiesMap.get("searchRequest"));
 		Util.enableAllDropdowns(driver);
-		String str = driver.findElement(By.name("advSrchTyp")).sendKeys(
-				propertiesMap.get("searchCustomer"));
+//		String str = driver.findElement(By.name("advSrchTyp")).sendKeys(
+//				propertiesMap.get("searchCustomer"));
 	
 	}
 

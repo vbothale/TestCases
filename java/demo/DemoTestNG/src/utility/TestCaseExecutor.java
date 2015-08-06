@@ -71,8 +71,8 @@ public class TestCaseExecutor {
 					message = e.getCause().getMessage();
 				}
 
-				TestStepDetails ann = method
-						.getAnnotation(TestStepDetails.class);
+				Test ann = method
+						.getAnnotation(Test.class);
 
 				Reporter.log("\nStep Name :- " + method.getName());
 				Reporter.log("\nDescription:- " + ann.stepDescription());

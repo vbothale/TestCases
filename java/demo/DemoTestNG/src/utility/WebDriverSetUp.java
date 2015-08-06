@@ -26,25 +26,25 @@ public class WebDriverSetUp {
 			break;
 
 		case "InternetExplorer":
-			File file = new File(
-					"C:\\Workspace_QA\\TestCases\\java\\demo\\DemoTestNG\\src\\drivers\\IEDriverServer.exe");
-			System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+			   File file = new File("src/drivers/IEDriverServer.exe");
+			  
+			   
+			      IEservice = new InternetExplorerDriverService.Builder()
+			      .usingDriverExecutable(file).usingAnyFreePort()
+			      .build();
+			      IEservice.start();
+			      
+			   //   System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+			      
+			      capabilities = DesiredCapabilities.internetExplorer();
+			      capabilities
+			    .setCapability(
+			      InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
+			      true);
+			  capabilities.setCapability("ignoreZoomSetting", true);
 
-			IEservice = new InternetExplorerDriverService.Builder()
-					.usingDriverExecutable(file).usingAnyFreePort().build();
-			IEservice.start();
-
-			capabilities = DesiredCapabilities.internetExplorer();
-
-			capabilities
-					.setCapability(
-							InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
-							true);
-			capabilities.setCapability("ignoreZoomSetting", true);
-
-			driver = new InternetExplorerDriver(capabilities);
-
-			break;
+			      driver = new RemoteWebDriver(IEservice.getUrl(),capabilities);
+			      break;
 
 		case "Chrome":
 			File fileChrome = new File(
