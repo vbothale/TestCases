@@ -9,7 +9,7 @@
 	<test name="Firefox Test">
 	<parameter name="browser" value="Firefox" />
 		<classes>
-			<class name="collateral.Collateral360" />
+			<class name="customer.Cust360" />
 		</classes>
 	</test>
 
@@ -17,7 +17,7 @@
 	<test name="IE Test">
 	<parameter name="browser" value="InternetExplorer" />
 		<classes>
-			<class name="collateral.Collateral360" />
+			<class name="credit.Credit360" />
 		</classes>
 	</test>
 	
@@ -28,5 +28,6 @@
 			<class name="collateral.Collateral360" />
 		</classes>
 	</test>
+	
 	
 </suite>
