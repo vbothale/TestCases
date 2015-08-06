@@ -1,5 +1,6 @@
 package credit;
 
+import helper.Credit360Helper;
 import helper.LoginHelper;
 
 import java.util.HashMap;
@@ -7,18 +8,18 @@ import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import utility.TestDataReader;
 import utility.Util;
-import collateral.Collateral360Helper;
 
 public class Credit360 {
 	
 	LoginHelper loginPage;
-	Collateral360Helper collateral360Helper;
+	Credit360Helper credit360Helper;
 	WebDriver driver;
 	private String option;
 	private TestDataReader reader = new TestDataReader();
@@ -54,10 +55,17 @@ public class Credit360 {
 	@Test
 	public void searchRequest(WebDriver driver)
 	{
-		Util.waitForAJAX(driver);
-		Util.waitForElementPresent(By.xpath(".//*[@id='clientCreditReq']/div/a"), 20, driver);
-		driver.findElement(By.id(".//*[@id='clientCreditReq']/div/a")).click();
-		Util.waitForAJAX(driver);
+		credit360Helper.clickOnAdvanceSearchLink(driver);
+		credit360Helper.enterRequestType(driver, option);
+		credit360Helper.enterCreditNameAndSubmit(driver);
 	}
+	
+	@AfterTest
+	public void afterTest() {
+		driver.close();
+		driver.quit();
+		System.gc();
+	}
+
 	
 }

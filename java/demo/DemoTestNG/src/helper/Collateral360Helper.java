@@ -1,10 +1,8 @@
-package collateral;
+package helper;
 
 import java.util.concurrent.TimeUnit;
 import java.lang.*;
-
-import junit.framework.Assert;
-
+import org.testng.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -42,7 +40,7 @@ public class Collateral360Helper {
 
 	}
 
-	@SuppressWarnings("deprecation")
+
 	public static void verifyCollateralTitle(WebDriver driver) {
 		Util.waitForLoaderToFinish(driver);
 //		new WebDriverWait(driver, 180).until(ExpectedConditions
@@ -51,7 +49,9 @@ public class Collateral360Helper {
 		utility.Util.waitForLoaderToFinish(driver);
 		String title = driver.findElement(By.xpath(".//*[@id='c360r']"))
 				.getText().trim();
-		Assert.assertEquals(title, "Basic Collateral Information");
+		Assert.assertEquals("Basic Collateral Information", title);
+//		Assert.assertEquals(title, "Basic Collateral Information");
+	
 	
 	}
 

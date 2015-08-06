@@ -1,9 +1,11 @@
 package collateral;
+import helper.Collateral360Helper;
 import helper.LoginHelper;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
@@ -11,16 +13,19 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import customer.Customer360;
 import utility.TestDataReader;
 import utility.WebDriverSetUp;
 
-public class Collateral360 {
+public class Collateral360 extends org.testng.reporters.EmailableReporter{
 
 	LoginHelper loginPage;
 	Collateral360Helper collateral360Helper;
 	WebDriver driver;
 	private String option;
 	private TestDataReader reader = new TestDataReader();
+	
+	static Logger log = Logger.getLogger(Collateral360.class);
 	
 	private HashMap<String, Map<String, String>> _hashCustomers = new HashMap<String, Map<String, String>>();
 	private HashMap<String, Map<String, String>> _hashLogins = new HashMap<String, Map<String, String>>();

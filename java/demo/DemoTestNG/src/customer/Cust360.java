@@ -1,11 +1,14 @@
 package customer;
+import helper.Customer360Helper;
 import helper.LoginHelper;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -15,9 +18,10 @@ import utility.TestDataReader;
 import utility.Util;
 import utility.WebDriverSetUp;
 
-public class Cust360 {
+public class Cust360 extends org.testng.reporters.EmailableReporter{
 
 	LoginHelper loginPage;
+	Customer360Helper customer360Hepler;
 
 	WebDriver driver;
 	private String option;
@@ -42,7 +46,10 @@ public class Cust360 {
 		//deletes the cache
 		driver.manage().deleteAllCookies();
 		
-		LoginHelper.login(driver, _hashLogins);
+		loginPage = new LoginHelper();
+		loginPage.login(driver, _hashLogins);
+		
+//		LoginHelper.login(driver, _hashLogins);
 //		helper.LoginHelper.login(driver,_hashLogins);
 //		loginPage = new LoginHelper(driver);
 //		loginPage.clickLoginBtn(driver);
@@ -52,6 +59,33 @@ public class Cust360 {
 		//search for customer
 		helper.SearchHelper.searchCustomer(driver,_hashCustomers);
 		Util.waitForAJAX(driver);
+	}
+	
+	@Test
+	public void clickAddressAndAdd()
+	{
+		customer360Hepler = new Customer360Helper();
+		customer360Hepler.clickAddress(driver);
+		customer360Hepler.clickAddBtnOnAddress(driver);
+	}
+	
+	@Test
+	public void verifyAddressTitleOnAddressPage()
+	{
+		customer360Hepler = new Customer360Helper();
+		customer360Hepler.verifyAddressTitle(driver);
+	}
+	
+	@Test
+	public void saveAddress()
+	{
+		customer360Hepler.enterAddressType(driver,option);
+		customer360Hepler.selectCountry(driver, option);
+		customer360Hepler.enterAddressLine1(driver);
+		customer360Hepler.enterPostalCode(driver);
+		customer360Hepler.enterCity(driver);
+		customer360Hepler.enterRegion(driver, option);
+		customer360Hepler.clickSaveOnAddress(driver);
 	}
 	
 	
