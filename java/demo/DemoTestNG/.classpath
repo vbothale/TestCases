@@ -7,8 +7,8 @@
 	<classpathentry kind="lib" path="libs/log4j-1.2.16.jar"/>
 	<classpathentry kind="lib" path="libs/selenium-java-2.46.0-srcs.jar"/>
 	<classpathentry kind="lib" path="libs/selenium-java-2.46.0.jar"/>
-	<classpathentry kind="lib" path="libs/selenium-server-standalone-2.46.0.jar"/>
 	<classpathentry kind="lib" path="libs/testng-6.8-sources.jar"/>
 	<classpathentry kind="lib" path="libs/testng-6.8.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/provenir/Downloads/New folder/selenium-server-standalone-2.46.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
