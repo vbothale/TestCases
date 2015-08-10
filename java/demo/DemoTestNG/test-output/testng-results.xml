@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" total="9" passed="7">
+<testng-results skipped="1" failed="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Demo Search test suite" duration-ms="222230" started-at="2015-08-06T14:46:10Z" finished-at="2015-08-06T14:49:53Z">
+  <suite name="Demo Search test suite" duration-ms="70239" started-at="2015-08-09T23:21:16Z" finished-at="2015-08-09T23:22:26Z">
     <groups>
     </groups>
-    <test name="Chrome Test" duration-ms="148801" started-at="2015-08-06T14:46:10Z" finished-at="2015-08-06T14:48:39Z">
-      <class name="collateral.Collateral360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.Collateral360@3b1e7dd]" name="beforeTest" is-config="true" duration-ms="103037" started-at="2015-08-06T10:46:10Z" finished-at="2015-08-06T10:47:54Z">
+    <test name="Chrome Test" duration-ms="70239" started-at="2015-08-09T23:21:16Z" finished-at="2015-08-09T23:22:26Z">
+      <class name="credit.Credit360">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:credit.Credit360@3937bf4]" name="beforeTest" is-config="true" duration-ms="68757" started-at="2015-08-09T19:21:16Z" finished-at="2015-08-09T19:22:25Z">
           <params>
             <param index="0">
               <value>
@@ -18,85 +18,45 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="clickOnCollateralAndAdd()[pri:0, instance:collateral.Collateral360@3b1e7dd]" name="clickOnCollateralAndAdd" duration-ms="2276" started-at="2015-08-06T10:47:54Z" finished-at="2015-08-06T10:47:56Z">
+        <test-method status="SKIP" signature="searchRequest(org.openqa.selenium.WebDriver)[pri:0, instance:credit.Credit360@3937bf4]" name="searchRequest" duration-ms="0" started-at="2015-08-09T19:22:25Z" finished-at="2015-08-09T19:22:25Z">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Method searchRequest requires 1 parameters but 0 were supplied in the @Test annotation.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Method searchRequest requires 1 parameters but 0 were supplied in the @Test annotation.
+	at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:191)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:127)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:376)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:451)
+	at org.testng.internal.Invoker.handleParameters(Invoker.java:1287)
+	at org.testng.internal.Invoker.createParameters(Invoker.java:1004)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1093)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:38)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:391)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickOnCollateralAndAdd -->
-        <test-method status="PASS" signature="verifyCollateralTitle()[pri:0, instance:collateral.Collateral360@3b1e7dd]" name="verifyCollateralTitle" duration-ms="4854" started-at="2015-08-06T10:47:56Z" finished-at="2015-08-06T10:48:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCollateralTitle -->
-        <test-method status="PASS" signature="saveCollateralInformation()[pri:0, instance:collateral.Collateral360@3b1e7dd]" name="saveCollateralInformation" duration-ms="38607" started-at="2015-08-06T10:48:01Z" finished-at="2015-08-06T10:48:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- saveCollateralInformation -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.Collateral360@3b1e7dd]" name="afterTest" is-config="true" duration-ms="2" started-at="2015-08-06T10:48:39Z" finished-at="2015-08-06T10:48:39Z">
+        </test-method> <!-- searchRequest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:credit.Credit360@3937bf4]" name="afterTest" is-config="true" duration-ms="1454" started-at="2015-08-09T19:22:25Z" finished-at="2015-08-09T19:22:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- collateral.Collateral360 -->
+      </class> <!-- credit.Credit360 -->
     </test> <!-- Chrome Test -->
-    <test name="Firefox Test" duration-ms="188674" started-at="2015-08-06T14:46:10Z" finished-at="2015-08-06T14:49:19Z">
-      <class name="collateral.Collateral360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.Collateral360@7a08c0a3]" name="beforeTest" is-config="true" duration-ms="127998" started-at="2015-08-06T10:46:10Z" finished-at="2015-08-06T10:48:18Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Firefox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="clickOnCollateralAndAdd()[pri:0, instance:collateral.Collateral360@7a08c0a3]" name="clickOnCollateralAndAdd" duration-ms="2917" started-at="2015-08-06T10:48:18Z" finished-at="2015-08-06T10:48:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickOnCollateralAndAdd -->
-        <test-method status="PASS" signature="verifyCollateralTitle()[pri:0, instance:collateral.Collateral360@7a08c0a3]" name="verifyCollateralTitle" duration-ms="12031" started-at="2015-08-06T10:48:21Z" finished-at="2015-08-06T10:48:33Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCollateralTitle -->
-        <test-method status="PASS" signature="saveCollateralInformation()[pri:0, instance:collateral.Collateral360@7a08c0a3]" name="saveCollateralInformation" duration-ms="45711" started-at="2015-08-06T10:48:33Z" finished-at="2015-08-06T10:49:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- saveCollateralInformation -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.Collateral360@7a08c0a3]" name="afterTest" is-config="true" duration-ms="1" started-at="2015-08-06T10:49:19Z" finished-at="2015-08-06T10:49:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- collateral.Collateral360 -->
-    </test> <!-- Firefox Test -->
-    <test name="IE Test" duration-ms="222230" started-at="2015-08-06T14:46:10Z" finished-at="2015-08-06T14:49:53Z">
-      <class name="collateral.Collateral360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.Collateral360@2e78d8ac]" name="beforeTest" is-config="true" duration-ms="106631" started-at="2015-08-06T10:46:10Z" finished-at="2015-08-06T10:47:57Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[InternetExplorer]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="clickOnCollateralAndAdd()[pri:0, instance:collateral.Collateral360@2e78d8ac]" name="clickOnCollateralAndAdd" duration-ms="12876" started-at="2015-08-06T10:47:57Z" finished-at="2015-08-06T10:48:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickOnCollateralAndAdd -->
-        <test-method status="FAIL" signature="verifyCollateralTitle()[pri:0, instance:collateral.Collateral360@2e78d8ac]" name="verifyCollateralTitle" duration-ms="61663" started-at="2015-08-06T10:48:10Z" finished-at="2015-08-06T10:49:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCollateralTitle -->
-        <test-method status="FAIL" signature="saveCollateralInformation()[pri:0, instance:collateral.Collateral360@2e78d8ac]" name="saveCollateralInformation" duration-ms="41041" started-at="2015-08-06T10:49:12Z" finished-at="2015-08-06T10:49:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- saveCollateralInformation -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.Collateral360@2e78d8ac]" name="afterTest" is-config="true" duration-ms="2" started-at="2015-08-06T10:49:53Z" finished-at="2015-08-06T10:49:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- collateral.Collateral360 -->
-    </test> <!-- IE Test -->
   </suite> <!-- Demo Search test suite -->
 </testng-results>

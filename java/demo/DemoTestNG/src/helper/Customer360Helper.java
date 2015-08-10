@@ -33,6 +33,8 @@ public class Customer360Helper {
 	}
 
 	public void enterAddressType(WebDriver driver, String option) {
+		Util.waitForAJAX(driver);
+		Util.scrollUp(driver);
 		Util.enableAllDropdowns(driver);
 		Util.waitForElementPresent(
 				By.xpath("//input[contains(@customname,'addrTyp')]"), 20,
@@ -59,12 +61,14 @@ public class Customer360Helper {
 	public void enterPostalCode(WebDriver driver) {
 		Util.waitForAJAX(driver);
 		driver.findElement(By.id("postalCd")).sendKeys("10005");
+		driver.findElement(By.xpath(".//*[@id='postCodeDivId']/img")).click();
 		Util.waitForLoaderToFinish(driver);
 	}
 
 	public void enterCity(WebDriver driver) {
 		Util.waitForAJAX(driver);
-		driver.findElement(By.id("city")).sendKeys("CA");
+		Util.waitForElementPresent(By.id("city"), 15, driver);
+		driver.findElement(By.id("city")).sendKeys("NY");
 	}
 
 	public void enterRegion(WebDriver driver, String option) {
@@ -72,7 +76,7 @@ public class Customer360Helper {
 		Util.waitForElementPresent(By.xpath("//input[@customname='state']"),
 				20, driver);
 		String str = "state";
-		option = "California";
+		option = "New York";
 		Util.selectItemFromList(str, option, driver);
 	}
 

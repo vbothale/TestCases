@@ -1,6 +1,7 @@
 package customer;
 import helper.Customer360Helper;
 import helper.LoginHelper;
+import helper.SearchHelper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,6 +23,7 @@ public class Cust360 extends org.testng.reporters.EmailableReporter{
 
 	LoginHelper loginPage;
 	Customer360Helper customer360Hepler;
+	SearchHelper searchHelper;
 
 	WebDriver driver;
 	private String option;
@@ -31,13 +33,14 @@ public class Cust360 extends org.testng.reporters.EmailableReporter{
 	private HashMap<String, Map<String, String>> _hashLogins = new HashMap<String, Map<String, String>>();
 	
 	
+	@SuppressWarnings("static-access")
 	@Parameters({ "browser" })
 	
 	@BeforeTest
 	public void beforeTest(String browser) throws Exception {
 	
-		reader.readValue(_hashCustomers,"C:\\Movies\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
-		reader.readValue(_hashLogins,"C:\\Movies\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
+		reader.readValue(_hashCustomers,"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
+		reader.readValue(_hashLogins,"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
 		
 		//browser being initialized/called 
 		driver = utility.WebDriverSetUp.getDriver(browser);
@@ -49,15 +52,9 @@ public class Cust360 extends org.testng.reporters.EmailableReporter{
 		loginPage = new LoginHelper();
 		loginPage.login(driver, _hashLogins);
 		
-//		LoginHelper.login(driver, _hashLogins);
-//		helper.LoginHelper.login(driver,_hashLogins);
-//		loginPage = new LoginHelper(driver);
-//		loginPage.clickLoginBtn(driver);
-//		loginPage.clickLogin(driver);
-		
-		utility.Util.waitForLoaderToFinish(driver);
+		Util.waitForLoaderToFinish(driver);
 		//search for customer
-		helper.SearchHelper.searchCustomer(driver,_hashCustomers);
+		searchHelper.searchCustomer(driver,_hashCustomers);
 		Util.waitForAJAX(driver);
 	}
 	

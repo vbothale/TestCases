@@ -2,24 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [Demo Search test suite]" parallel="tests">
   <parameter name="browser" value="Chrome"/>
-  <listeners>
-    <listener class-name="utility.Listener"/>
-  </listeners>
-  <test name="IE Test(failed)" parallel="tests">
-    <parameter name="browser" value="InternetExplorer"/>
+  <test name="Chrome Test(failed)" parallel="tests">
+    <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="collateral.Collateral360">
+      <class name="credit.Credit360">
         <methods>
-          <include name="verifyCollateralTitle"/>
           <include name="beforeTest"/>
-          <include name="beforeTest"/>
-          <include name="beforeTest"/>
-          <include name="saveCollateralInformation"/>
-          <include name="afterTest"/>
-          <include name="afterTest"/>
+          <include name="searchRequest"/>
           <include name="afterTest"/>
         </methods>
-      </class> <!-- collateral.Collateral360 -->
+      </class> <!-- credit.Credit360 -->
     </classes>
-  </test> <!-- IE Test(failed) -->
+  </test> <!-- Chrome Test(failed) -->
 </suite> <!-- Failed suite [Demo Search test suite] -->
