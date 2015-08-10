@@ -9,32 +9,6 @@ import utility.Util;
 
 public class Credit360Helper {
 
-	public void clickOnAdvanceSearchLink(WebDriver driver) {
-		Util.waitForAJAX(driver);
-		Util.waitForElementPresent(By.id("advLink"), 20, driver);
-		driver.findElement(By.id("advLink")).click();
-		Util.waitForLoaderToFinish(driver);
-	}
-
-	public void enterRequestType(WebDriver driver, String option) {
-		Util.enableAllDropdowns(driver);
-		Util.waitForElementPresent(
-				By.xpath("//input[@customname='advSrchTyp']"), 20, driver);
-		String str = "advSrchTyp";
-		option = "Request Search";
-		Util.selectItemFromList(str, option, driver);
-	}
-
-	public void enterCreditNameAndSubmit(WebDriver driver) {
-		Util.waitForAJAX(driver);
-		Util.waitForElementPresent(
-				By.xpath("//input[contains(@name,'advSrchIp0')]"), 20, driver);
-		driver.findElement(By.xpath("//input[contains(@name,'advSrchIp0')]"))
-				.sendKeys("Credit 1234");
-		driver.findElement(By.id("submitCrt")).click();
-		Util.waitForLoaderToFinish(driver);
-	}
-
 	public void verifyCreditTitle(WebDriver driver) {
 		Util.waitForElementPresent(By.xpath("//h2[contains(.,'Credit 360')]"),
 				20, driver);
@@ -42,6 +16,31 @@ public class Credit360Helper {
 				.findElement(By.xpath("//h2[contains(.,'Credit 360')]"))
 				.getText().trim();
 		Assert.assertEquals("Credit 360", title);
+	}
+	
+	public void clickCreditBorrowerAndAdd(WebDriver driver)
+	{
+		Util.waitForElementPresent(By.id("credBorr"), 20, driver);
+		driver.findElement(By.id("credBorr")).click();
+		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(By.xpath(".//*[@id='credBorrowers']/a"), 10, driver);
+		driver.findElement(By.xpath(".//*[@id='credBorrowers']/a")).click();
+		Util.waitForLoaderToFinish(driver);
+	}
+	
+	public void saveGuarantor(WebDriver driver)
+	{
+		Util.waitForElementPresent(By.xpath(".//*[@id='rightContent']/div[2]/div[2]/div/div/div/form/input[4]"), 15, driver);
+		driver.findElement(By.xpath(".//*[@id='rightContent']/div[2]/div[2]/div/div/div/form/input[4]")).sendKeys("intex");
+		driver.findElement(By.id("imgBtn")).click();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+		driver.findElement(By.name("selCustomer")).click();
+		driver.findElement(By.xpath("//span[contains(.,'Select')]")).click();
+		Util.waitForLoaderToFinish(driver);
+		driver.findElement(By.xpath("//span[contains(.,'Save')]")).click();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
 	}
 
 }
