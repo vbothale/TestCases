@@ -8,6 +8,13 @@ import utility.Util;
 import Page.LoginPage;
 
 public class AdvanceSearchHelper {
+	
+	WebDriver driver;
+
+	public AdvanceSearchHelper(WebDriver driver) {
+		this.driver = driver;
+		// TODO Auto-generated constructor stub
+	}
 
 	public static void clickOnAdvanceSearchLink(WebDriver driver) {
 	
@@ -45,6 +52,16 @@ public class AdvanceSearchHelper {
 				By.xpath(".//*[@id='advSrchResult']/div/div/div[2]/div/table/tbody/tr/td[1]"))
 				.click();
 		Util.waitForLoaderToFinish(driver);
+	}
+	
+	public Credit360Helper verifyCreditTitle(WebDriver driver) {
+		Util.waitForElementPresent(By.xpath("//h2[contains(.,'Credit 360')]"),
+				20, driver);
+		String title = driver
+				.findElement(By.xpath("//h2[contains(.,'Credit 360')]"))
+				.getText().trim();
+		Assert.assertEquals("Credit 360", title);
+		return new Credit360Helper(driver);
 	}
 
 }

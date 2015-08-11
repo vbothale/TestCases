@@ -20,12 +20,17 @@ import utility.Util;
 
 public class Credit360 {
 
+	WebDriver driver;
 	LoginHelper loginPage;
 	Credit360Helper credit360Helper;
 	AdvanceSearchHelper advanceSearchHelper;
 	SearchHelper searchHelper;
-	
-	WebDriver driver;
+
+//	public Credit360(WebDriver driver) {
+//		advanceSearchHelper = new AdvanceSearchHelper(driver);
+//		credit360Helper = new Credit360Helper(driver);
+//	}
+
 	private String option;
 	private TestDataReader reader = new TestDataReader();
 
@@ -37,7 +42,8 @@ public class Credit360 {
 	@BeforeTest
 	public void beforeTest(String browser) throws Exception {
 
-		reader.readValue(_hashSearch,
+		reader.readValue(
+				_hashSearch,
 				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\AdvanceSearch.json");
 		reader.readValue(_hashLogins,
 				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
@@ -50,25 +56,26 @@ public class Credit360 {
 		driver.manage().deleteAllCookies();
 
 		loginPage.loginPrism(driver, _hashLogins);
-		
+
 		advanceSearchHelper.clickOnAdvanceSearchLink(driver);
 		advanceSearchHelper.enterRequestType(driver, option);
 		advanceSearchHelper.enterCreditNameAndSubmit(driver);
 		advanceSearchHelper.clickReqOnGrid(driver);
-
+		System.out.println("*******************************************");
 	}
 
 	@Test
 	public void searchRequest(WebDriver driver) {
-		credit360Helper.verifyCreditTitle(driver);
+		credit360Helper = advanceSearchHelper.verifyCreditTitle(driver);
+//		credit360Helper.verifyCreditTitle(driver);
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	}
-	
-	@Test
-	public void addAndSaveBorrower(WebDriver driver)
-	{
-		credit360Helper.clickCreditBorrowerAndAdd(driver);
-		credit360Helper.saveGuarantor(driver);
-	}
+
+//	@Test
+//	public void addAndSaveBorrower(WebDriver driver) {
+//		credit360Helper.clickCreditBorrowerAndAdd(driver);
+//		credit360Helper.saveGuarantor(driver);
+//	}
 
 	@AfterTest
 	public void afterTest() {

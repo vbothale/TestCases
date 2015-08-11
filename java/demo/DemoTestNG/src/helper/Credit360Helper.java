@@ -8,6 +8,13 @@ import org.testng.Assert;
 import utility.Util;
 
 public class Credit360Helper {
+	
+	WebDriver driver;
+	
+	public Credit360Helper(WebDriver driver)
+	{
+		this.driver = driver;
+	}
 
 	public void verifyCreditTitle(WebDriver driver) {
 		Util.waitForElementPresent(By.xpath("//h2[contains(.,'Credit 360')]"),
