@@ -10,7 +10,6 @@ import org.testng.Assert;
 import utility.Test;
 import utility.TestDataReader;
 import Page.LoginPage;
-import static Page.TestCasesDriver.localProperties;
 import static utility.TestDataReader.*;
 
 public class Customer360 extends
@@ -30,7 +29,7 @@ org.testng.reporters.EmailableReporter{
 	
 	
 	
-	@Test(continueAfterFailure = false, expectedResult = "On clicking New Credit Request link Credit Summary screen should be displayed.", stepDescription = "Verify the login functionality and click on New Credit Request link")
+	@Test
 	public void step_001_verifySuccessfullogin() {
 		log.info("Verify the login functionality");
 		reader.readValue(_hashCustomers,"C:\\Movies\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");

@@ -48,7 +48,7 @@ public class WebDriverSetUp {
 
 		case "Chrome":
 			File fileChrome = new File(
-					"C:\\Workspace_QA\\TestCases\\java\\demo\\DemoTestNG\\src\\drivers\\chromedriver.exe");
+					"src/drivers/chromedriver.exe");
 			chromeService = new ChromeDriverService.Builder()
 					.usingDriverExecutable(fileChrome).usingAnyFreePort()
 					.build();

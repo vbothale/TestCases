@@ -1,62 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Demo Search test suite" duration-ms="70239" started-at="2015-08-09T23:21:16Z" finished-at="2015-08-09T23:22:26Z">
+  <suite name="Demo Search test suite" duration-ms="8" started-at="2015-08-11T15:35:39Z" finished-at="2015-08-11T15:35:39Z">
     <groups>
     </groups>
-    <test name="Chrome Test" duration-ms="70239" started-at="2015-08-09T23:21:16Z" finished-at="2015-08-09T23:22:26Z">
-      <class name="credit.Credit360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:credit.Credit360@3937bf4]" name="beforeTest" is-config="true" duration-ms="68757" started-at="2015-08-09T19:21:16Z" finished-at="2015-08-09T19:22:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="SKIP" signature="searchRequest(org.openqa.selenium.WebDriver)[pri:0, instance:credit.Credit360@3937bf4]" name="searchRequest" duration-ms="0" started-at="2015-08-09T19:22:25Z" finished-at="2015-08-09T19:22:25Z">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Method searchRequest requires 1 parameters but 0 were supplied in the @Test annotation.]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Method searchRequest requires 1 parameters but 0 were supplied in the @Test annotation.
-	at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:191)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:127)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:376)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:451)
-	at org.testng.internal.Invoker.handleParameters(Invoker.java:1287)
-	at org.testng.internal.Invoker.createParameters(Invoker.java:1004)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1093)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:771)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:38)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:391)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchRequest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:credit.Credit360@3937bf4]" name="afterTest" is-config="true" duration-ms="1454" started-at="2015-08-09T19:22:25Z" finished-at="2015-08-09T19:22:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- credit.Credit360 -->
+    <test name="Chrome Test" duration-ms="8" started-at="2015-08-11T15:35:39Z" finished-at="2015-08-11T15:35:39Z">
     </test> <!-- Chrome Test -->
   </suite> <!-- Demo Search test suite -->
 </testng-results>

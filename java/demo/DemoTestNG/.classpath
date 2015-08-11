@@ -46,5 +46,6 @@
 	<classpathentry kind="lib" path="C:/Users/provenir/Downloads/Compressed/selenium-java-2.46.0/selenium-2.46.0/libs/xml-apis-1.4.01.jar"/>
 	<classpathentry kind="lib" path="C:/Users/provenir/Downloads/New folder/json-simple-1.1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/provenir/Downloads/New folder/selenium-server-standalone-2.46.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/provenir/Downloads/Compressed/apache-log4j-1.2.15.jar/apache-log4j-1.2.15.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

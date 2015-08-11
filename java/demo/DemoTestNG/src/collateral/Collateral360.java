@@ -14,10 +14,10 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import customer.Customer360;
 import utility.TestDataReader;
 import utility.Util;
 import utility.WebDriverSetUp;
+import customer.Customer360;
 
 public class Collateral360 extends org.testng.reporters.EmailableReporter{
 

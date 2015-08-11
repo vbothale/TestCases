@@ -10,6 +10,7 @@
           <include name="beforeTest"/>
           <include name="searchRequest"/>
           <include name="afterTest"/>
+          <include name="addAndSaveBorrower"/>
         </methods>
       </class> <!-- credit.Credit360 -->
     </classes>

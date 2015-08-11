@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Demo_Search_test_suite">
-              <span class="suite-name border-skipped">Demo Search test suite</span>
+              <span class="suite-name border-passed">Demo Search test suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,21 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,  1 skipped,  </span>
-                  </li>
-                  <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Demo_Search_test_suite" class="hide-methods skipped suite-Demo_Search_test_suite"> (hide)</a> <!-- hide-methods skipped suite-Demo_Search_test_suite -->
-                      <a href="#" panel-name="suite-Demo_Search_test_suite" class="show-methods skipped suite-Demo_Search_test_suite"> (show)</a> <!-- show-methods skipped suite-Demo_Search_test_suite -->
-                    </span>
-                    <div class="method-list-content skipped suite-Demo_Search_test_suite">
-                      <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Demo_Search_test_suite" title="credit.Credit360" hash-for-method="searchRequest">searchRequest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content skipped suite-Demo_Search_test_suite -->
+                    <span class="method-stats">0 methods,   </span>
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -116,29 +102,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Demo_Search_test_suite" class="panel Demo_Search_test_suite">
-          <div class="suite-Demo_Search_test_suite-class-skipped">
-            <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">credit.Credit360</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="searchRequest">
-                  </a> <!-- searchRequest -->
-                  <span class="method-name">searchRequest</span>
-                  <div class="stack-trace">org.testng.TestNGException: 
-Method searchRequest requires 1 parameters but 0 were supplied in the @Test annotation.
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 15 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Demo_Search_test_suite-class-skipped -->
         </div> <!-- panel Demo_Search_test_suite -->
         <div panel-name="test-xml-Demo_Search_test_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -152,7 +115,7 @@ Method searchRequest requires 1 parameters but 0 were supplied in the @Test anno
   &lt;test name=&quot;Chrome Test&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;credit.Credit360&quot;/&gt;
+      &lt;class name=&quot;customer.Customer360&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Chrome Test --&gt;
 &lt;/suite&gt; &lt;!-- Demo Search test suite --&gt;
@@ -192,16 +155,11 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
-data.setCell(0, 0, 0)
-data.setCell(0, 1, 'searchRequest')
-data.setCell(0, 2, 'credit.Credit360')
-data.setCell(0, 3, 0);
+data.addRows(0);
 window.suiteTableData['Demo_Search_test_suite']= { tableData: data, tableDiv: 'times-div-Demo_Search_test_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 0 ms</span>
               <div id="times-div-Demo_Search_test_suite">
               </div> <!-- times-div-Demo_Search_test_suite -->
             </div> <!-- times-div -->
@@ -226,16 +184,6 @@ return data;
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="chronological-class">
-              <div class="chronological-class-name">credit.Credit360</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">beforeTest(Chrome)</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
-              <div class="configuration-test after">
-                <span class="method-name">afterTest</span>
-                <span class="method-start">68779 ms</span>
-              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

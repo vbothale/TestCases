@@ -75,8 +75,8 @@ public class TestCaseExecutor {
 						.getAnnotation(Test.class);
 
 				Reporter.log("\nStep Name :- " + method.getName());
-				Reporter.log("\nDescription:- " + ann.stepDescription());
-				Reporter.log("\nExpected:- " + ann.expectedResult());
+//				Reporter.log("\nDescription:- " + ann.stepDescription());
+//				Reporter.log("\nExpected:- " + ann.expectedResult());
 
 				if (!Strings.isNullOrEmpty(message)) {
 					testCaseMessage.append(message);
@@ -84,12 +84,12 @@ public class TestCaseExecutor {
 					Reporter.log("\nStatus:- Fail");
 					this.takeScreenShot(method.getName());
 					Reporter.log("\nActual:-" + message);
-					if (!ann.continueAfterFailure()) {
-						Assert.fail(testCaseMessage.toString());
-					}
-				} else {
-					Reporter.log("\nStatus:- Pass");
-				}
+//					if (!ann.continueAfterFailure()) {
+//						Assert.fail(testCaseMessage.toString());
+//					}
+//				} else {
+//					Reporter.log("\nStatus:- Pass");
+//				}
 				Reporter.log("\n");
 			}
 
@@ -97,7 +97,9 @@ public class TestCaseExecutor {
 				Assert.fail(testCaseMessage.toString());
 			}
 
-		} catch (Exception e) {
+			}
+		}
+			catch (Exception e) {
 			log.error(e.getMessage());
 		}
 	}
