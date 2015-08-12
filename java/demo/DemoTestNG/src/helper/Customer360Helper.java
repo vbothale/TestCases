@@ -10,6 +10,7 @@ import utility.Util;
 public class Customer360Helper {
 
 	public void clickAddress(WebDriver driver) {
+		Util.waitForAJAX(driver);
 		Util.waitForElementPresent(By.id("addr"), 20, driver);
 		driver.findElement(By.id("addr")).click();
 		Util.waitForLoaderToFinish(driver);
@@ -82,9 +83,9 @@ public class Customer360Helper {
 
 	public void clickSaveOnAddress(WebDriver driver) {
 		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(By.xpath("//span[contains(.,'Save')]"), 15, driver);
 		driver.findElement(By.xpath("//span[contains(.,'Save')]")).click();
 		Util.waitForLoaderToFinish(driver);
-		Util.waitForAJAX(driver);
 	}
 
 }

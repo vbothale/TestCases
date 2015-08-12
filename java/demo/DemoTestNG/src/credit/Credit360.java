@@ -61,13 +61,13 @@ public class Credit360 {
 		advanceSearchHelper.enterRequestType(driver, option);
 		advanceSearchHelper.enterCreditNameAndSubmit(driver);
 		advanceSearchHelper.clickReqOnGrid(driver);
-		System.out.println("*******************************************");
 	}
 
+	@SuppressWarnings("static-access")
 	@Test
 	public void searchRequest() {
-		credit360Helper = advanceSearchHelper.verifyCreditTitle(driver);
-//		credit360Helper.verifyCreditTitle(driver);
+		//credit360Helper = advanceSearchHelper.verifyCreditTitle(driver);
+		credit360Helper.verifyCreditTitle(driver);
 		System.out.println("+++++++++++++++++++++++++++++++++++");
 	}
 
@@ -75,6 +75,7 @@ public class Credit360 {
 	@Test
 	public void addAndSaveBorrower() {
 		credit360Helper.clickCreditBorrowerAndAdd(driver);
+		System.out.println("-----------------------------------------------");
 		credit360Helper.saveGuarantor(driver);
 	}
 

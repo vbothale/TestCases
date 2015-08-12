@@ -55,7 +55,6 @@ public class Cust360 extends org.testng.reporters.EmailableReporter{
 		Util.waitForLoaderToFinish(driver);
 		//search for customer
 		searchHelper.searchCustomer(driver,_hashCustomers);
-		Util.waitForAJAX(driver);
 	}
 	
 	@Test

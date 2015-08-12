@@ -16,7 +16,7 @@ public class Credit360Helper {
 		this.driver = driver;
 	}
 
-	public void verifyCreditTitle() {
+	public static void verifyCreditTitle(WebDriver driver) {
 		Util.waitForElementPresent(By.xpath("//h2[contains(.,'Credit 360')]"),
 				20, driver);
 		String title = driver
@@ -28,6 +28,7 @@ public class Credit360Helper {
 	public static void clickCreditBorrowerAndAdd(WebDriver driver)
 	{
 		Util.waitForAJAX(driver);
+		Util.scrollDown(driver);
 		Util.waitForElementPresent(By.id("credBorr"), 20, driver);
 		driver.findElement(By.id("credBorr")).click();
 		Util.waitForLoaderToFinish(driver);

@@ -17,7 +17,6 @@ public class AdvanceSearchHelper {
 	}
 
 	public static void clickOnAdvanceSearchLink(WebDriver driver) {
-	
 		Util.waitForAJAX(driver);
 		Util.waitForElementPresent(By.id("advLink"), 20, driver);
 		driver.findElement(By.id("advLink")).click();
@@ -39,6 +38,7 @@ public class AdvanceSearchHelper {
 				By.xpath("//input[contains(@name,'advSrchIp0')]"), 20, driver);
 		driver.findElement(By.xpath("//input[contains(@name,'advSrchIp0')]"))
 				.sendKeys("Credit Req 1234");
+		Util.waitForElementPresent(By.id("submitCrt"), 20, driver);
 		driver.findElement(By.id("submitCrt")).click();
 		Util.waitForLoaderToFinish(driver);
 	}

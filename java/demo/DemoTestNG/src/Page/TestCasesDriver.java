@@ -17,7 +17,7 @@ public class TestCasesDriver extends TestCaseExecutor {
 
 	public static Properties localProperties = new Properties();
 //	public static String browser;
-//	public static String applicationUrl;
+	public static String applicationUrl;
 	public static TestDataReader reader = new TestDataReader();
 //	public static TestDataReader demofile = new TestDataReader();
 	public static String pdfPath;
@@ -25,17 +25,18 @@ public class TestCasesDriver extends TestCaseExecutor {
 	// public static File file = new File("Framework/upload/jmeter.pdf");
 
 	@BeforeSuite
-	@Parameters({ "environment"})
+	@Parameters({ "environment", "login", "customer"})
 	public void initialize(
-			@Optional("src/resources/DevTestData.properties") String env)
-//			@Optional("src/resources/Login.json") String xmlPath)
+			@Optional("src/resources/DevTestData.properties") String env,
+			@Optional("src/resources/Login.json") String loginJson,
+			@Optional("src/resources/Customers.json") String customerJson)
 //			@Optional("src/main/java/com/provenir/automation/framework/config/ProvenirDemoTestData.xml") String newxmlPath)
 
 	throws FileNotFoundException, IOException {
 		localProperties.load(new FileInputStream(env));
 		applicationUrl = localProperties.getProperty("url");
 //		browser = localProperties.getProperty("browser");
-//		reader.init(xmlPath);
+//		reader.init(loginJson);
 //		demofile.init(newxmlPath);
 
 		PropertyConfigurator

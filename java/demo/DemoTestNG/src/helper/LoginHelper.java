@@ -55,6 +55,7 @@ public class LoginHelper {
 	public static void login(WebDriver driver,
 			HashMap<String, Map<String, String>> _hashLogins) {
 		try {
+			
 			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashLogins
 					.get("sdietz");
 
@@ -66,9 +67,10 @@ public class LoginHelper {
 
 			driver.findElement(By.id("j_password")).sendKeys(
 					propertiesMap.get("password"));
-			Util.waitForAJAX(driver);
+			
 			 driver.findElement(By.xpath("//button[contains(.,'Login')]"))
 			 .click();
+			 Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 			driver.manage().timeouts()
 					.implicitlyWait(70, TimeUnit.MILLISECONDS);
