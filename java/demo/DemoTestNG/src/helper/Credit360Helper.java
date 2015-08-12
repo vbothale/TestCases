@@ -16,7 +16,7 @@ public class Credit360Helper {
 		this.driver = driver;
 	}
 
-	public void verifyCreditTitle(WebDriver driver) {
+	public void verifyCreditTitle() {
 		Util.waitForElementPresent(By.xpath("//h2[contains(.,'Credit 360')]"),
 				20, driver);
 		String title = driver
@@ -25,17 +25,19 @@ public class Credit360Helper {
 		Assert.assertEquals("Credit 360", title);
 	}
 	
-	public void clickCreditBorrowerAndAdd(WebDriver driver)
+	public static void clickCreditBorrowerAndAdd(WebDriver driver)
 	{
+		Util.waitForAJAX(driver);
 		Util.waitForElementPresent(By.id("credBorr"), 20, driver);
 		driver.findElement(By.id("credBorr")).click();
+		Util.waitForLoaderToFinish(driver);
 		Util.waitForAJAX(driver);
-		Util.waitForElementPresent(By.xpath(".//*[@id='credBorrowers']/a"), 10, driver);
+		Util.waitForElementPresent(By.xpath(".//*[@id='credBorrowers']/a"), 20, driver);
 		driver.findElement(By.xpath(".//*[@id='credBorrowers']/a")).click();
 		Util.waitForLoaderToFinish(driver);
 	}
 	
-	public void saveGuarantor(WebDriver driver)
+	public static void saveGuarantor(WebDriver driver)
 	{
 		Util.waitForElementPresent(By.xpath(".//*[@id='rightContent']/div[2]/div[2]/div/div/div/form/input[4]"), 15, driver);
 		driver.findElement(By.xpath(".//*[@id='rightContent']/div[2]/div[2]/div/div/div/form/input[4]")).sendKeys("intex");

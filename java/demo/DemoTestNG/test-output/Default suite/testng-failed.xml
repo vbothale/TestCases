@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="collateral.Collateral360">
+      <class name="credit.Credit360">
         <methods>
-          <include name="saveCollateralDetails"/>
-          <include name="verifyCollateralTitle"/>
+          <include name="searchRequest"/>
+          <include name="addAndSaveBorrower"/>
         </methods>
-      </class> <!-- collateral.Collateral360 -->
+      </class> <!-- credit.Credit360 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

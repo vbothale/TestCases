@@ -54,7 +54,8 @@ public class AdvanceSearchHelper {
 		Util.waitForLoaderToFinish(driver);
 	}
 	
-	public Credit360Helper verifyCreditTitle(WebDriver driver) {
+	public static Credit360Helper verifyCreditTitle(WebDriver driver) {
+	
 		Util.waitForElementPresent(By.xpath("//h2[contains(.,'Credit 360')]"),
 				20, driver);
 		String title = driver

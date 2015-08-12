@@ -31,7 +31,7 @@ public class TestCaseExecutor {
 
 			driver = WebDriverSetUp.getDriver(browser);
 			System.out.println(browser);
-		//	applicationUrl = TestDataReader.readValue(_hashEnv,"C:\\Workspace_QA\\TestCases\\java\\demo\\DemoTestNG\\resources\\Env.json");
+		
 			driver.get(applicationUrl);
 			System.out.println(applicationUrl);
 

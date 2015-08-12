@@ -1,5 +1,6 @@
 package customer;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,6 +36,7 @@ org.testng.reporters.EmailableReporter{
 		reader.readValue(_hashCustomers,"C:\\Movies\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
 		reader.readValue(_hashLogins,"C:\\Movies\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
 		
+		loginPage.login(_hashLogins);
 	}
 
 }

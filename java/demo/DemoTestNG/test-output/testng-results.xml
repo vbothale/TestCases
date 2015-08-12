@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" total="1" passed="0">
+<testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Demo Search test suite" duration-ms="69212" started-at="2015-08-11T19:26:59Z" finished-at="2015-08-11T19:28:08Z">
+  <suite name="Demo Search test suite" duration-ms="74568" started-at="2015-08-12T03:25:31Z" finished-at="2015-08-12T03:26:46Z">
     <groups>
     </groups>
-    <test name="Chrome Test" duration-ms="69212" started-at="2015-08-11T19:26:59Z" finished-at="2015-08-11T19:28:08Z">
+    <test name="Chrome Test" duration-ms="74568" started-at="2015-08-12T03:25:31Z" finished-at="2015-08-12T03:26:46Z">
       <class name="credit.Credit360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:credit.Credit360@3d6bc07a]" name="beforeTest" is-config="true" duration-ms="68731" started-at="2015-08-11T15:26:59Z" finished-at="2015-08-11T15:28:07Z">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:credit.Credit360@6c9f45f4]" name="beforeTest" is-config="true" duration-ms="72779" started-at="2015-08-11T23:25:31Z" finished-at="2015-08-11T23:26:44Z">
           <params>
             <param index="0">
               <value>
@@ -18,22 +18,48 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="SKIP" signature="searchRequest(org.openqa.selenium.WebDriver)[pri:0, instance:credit.Credit360@3d6bc07a]" name="searchRequest" duration-ms="0" started-at="2015-08-11T15:28:07Z" finished-at="2015-08-11T15:28:07Z">
-          <exception class="org.testng.TestNGException">
+        <test-method status="FAIL" signature="addAndSaveBorrower()[pri:0, instance:credit.Credit360@6c9f45f4]" name="addAndSaveBorrower" duration-ms="1176" started-at="2015-08-11T23:26:44Z" finished-at="2015-08-11T23:26:45Z">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[
-Method searchRequest requires 1 parameters but 0 were supplied in the @Test annotation.]]>
+              <![CDATA[unknown error: Element is not clickable at point (221, 147). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; opacity: 0; cursor: default; position: fixed; background-color: rgb(0, 0, 0);"></div>
+  (Session info: chrome=44.0.2403.130)
+  (Driver info: chromedriver=2.16.333243 (0bfa1d3575fc1044244f21ddb82bf870944ef961),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 59 milliseconds
+Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
+System info: host: 'pbajpai', ip: '10.1.106.151', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+Session ID: 93530c37506a764910d8c0653331dbbf
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir9820_6730}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.130, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Method searchRequest requires 1 parameters but 0 were supplied in the @Test annotation.
-	at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:191)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:127)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:376)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:451)
-	at org.testng.internal.Invoker.handleParameters(Invoker.java:1287)
-	at org.testng.internal.Invoker.createParameters(Invoker.java:1004)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1093)
+              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: Element is not clickable at point (221, 147). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; opacity: 0; cursor: default; position: fixed; background-color: rgb(0, 0, 0);"></div>
+  (Session info: chrome=44.0.2403.130)
+  (Driver info: chromedriver=2.16.333243 (0bfa1d3575fc1044244f21ddb82bf870944ef961),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 59 milliseconds
+Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
+System info: host: 'pbajpai', ip: '10.1.106.151', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+Session ID: 93530c37506a764910d8c0653331dbbf
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir9820_6730}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.130, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:269)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:80)
+	at helper.Credit360Helper.clickCreditBorrowerAndAdd(Credit360Helper.java:36)
+	at credit.Credit360.addAndSaveBorrower(Credit360.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
 	at org.testng.TestRunner.privateRun(TestRunner.java:771)
@@ -48,11 +74,15 @@ Method searchRequest requires 1 parameters but 0 were supplied in the @Test anno
 	at java.lang.Thread.run(Unknown Source)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addAndSaveBorrower -->
+        <test-method status="PASS" signature="searchRequest()[pri:0, instance:credit.Credit360@6c9f45f4]" name="searchRequest" duration-ms="152" started-at="2015-08-11T23:26:45Z" finished-at="2015-08-11T23:26:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchRequest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:credit.Credit360@3d6bc07a]" name="afterTest" is-config="true" duration-ms="441" started-at="2015-08-11T15:28:07Z" finished-at="2015-08-11T15:28:08Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:credit.Credit360@6c9f45f4]" name="afterTest" is-config="true" duration-ms="422" started-at="2015-08-11T23:26:45Z" finished-at="2015-08-11T23:26:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
