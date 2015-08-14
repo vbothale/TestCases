@@ -22,14 +22,30 @@ public class LoginPage{
 	}
 	
 	@FindBy(how = How.ID, using = "j_username")
-	private WebElement usernameEdit;
+	private WebElement username;
 
 	@FindBy(how = How.ID, using = "j_password")
-	private WebElement passwordEdit;
+	private WebElement password;
 	
-	public void enterUsername(HashMap<String, Map<String, String>> _hashLogins)
+	@FindBy(how = How.XPATH, using = "//button[contains(.,'Login')]")
+	private WebElement loginBtn;
+	
+	public void login(HashMap<String, Map<String, String>> _hashLogins)
 	{
-		
+		try
+		{
+			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashLogins
+					.get("fmartin");
+			username.sendKeys(propertiesMap.get("username"));
+			password.sendKeys(propertiesMap.get("password"));
+			loginBtn.click();
+			Util.waitForAJAX(driver);
+			Util.waitForLoaderToFinish(driver);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 }

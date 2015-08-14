@@ -1,63 +1,89 @@
 package credit;
 
+import helper.AdvanceSearchHelper;
+import helper.Credit360Helper;
 import helper.LoginHelper;
+import helper.SearchHelper;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import utility.TestDataReader;
 import utility.Util;
-import collateral.Collateral360Helper;
 
 public class Credit360 {
-	
-	LoginHelper loginPage;
-	Collateral360Helper collateral360Helper;
+
 	WebDriver driver;
+	LoginHelper loginPage;
+	Credit360Helper credit360Helper;
+	AdvanceSearchHelper advanceSearchHelper;
+	SearchHelper searchHelper;
+
+//	public Credit360(WebDriver driver) {
+//		advanceSearchHelper = new AdvanceSearchHelper(driver);
+//		credit360Helper = new Credit360Helper(driver);
+//	}
+
 	private String option;
 	private TestDataReader reader = new TestDataReader();
-	
+
 	private HashMap<String, Map<String, String>> _hashSearch = new HashMap<String, Map<String, String>>();
 	private HashMap<String, Map<String, String>> _hashLogins = new HashMap<String, Map<String, String>>();
-	
-	
+
+	@SuppressWarnings("static-access")
 	@Parameters({ "browser" })
-	
 	@BeforeTest
 	public void beforeTest(String browser) throws Exception {
-	
-		reader.readValue(_hashSearch,"C:\\Movies\\TestCases\\java\\demo\\DemoTestNG\\resources\\AdvanceSearch.json");
-		reader.readValue(_hashLogins,"C:\\Movies\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
-		
-		//browser being initialized/called 
+
+		reader.readValue(
+				_hashSearch,
+				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\AdvanceSearch.json");
+		reader.readValue(_hashLogins,
+				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
+
+		// browser being initialized/called
 		driver = utility.WebDriverSetUp.getDriver(browser);
 		driver.manage().window().maximize();
-		
-		//deletes the cache
+
+		// deletes the cache
 		driver.manage().deleteAllCookies();
-		
-		helper.LoginHelper.loginToPrism(driver,_hashLogins);
-//		loginPage = new LoginHelper(driver);
-//		loginPage.clickLoginBtn(driver);
-//		loginPage.clickLogin(driver);
-		
-		utility.Util.waitForLoaderToFinish(driver);
-		
+
+		loginPage.loginPrism(driver, _hashLogins);
+
+		advanceSearchHelper.clickOnAdvanceSearchLink(driver);
+		advanceSearchHelper.enterRequestType(driver, option);
+		advanceSearchHelper.enterCreditNameAndSubmit(driver);
+		advanceSearchHelper.clickReqOnGrid(driver);
 	}
-	
+
+	@SuppressWarnings("static-access")
 	@Test
-	public void searchRequest(WebDriver driver)
-	{
-		Util.waitForAJAX(driver);
-		Util.waitForElementPresent(By.xpath(".//*[@id='clientCreditReq']/div/a"), 20, driver);
-		driver.findElement(By.id(".//*[@id='clientCreditReq']/div/a")).click();
-		Util.waitForAJAX(driver);
+	public void searchRequest() {
+		//credit360Helper = advanceSearchHelper.verifyCreditTitle(driver);
+		credit360Helper.verifyCreditTitle(driver);
+		System.out.println("+++++++++++++++++++++++++++++++++++");
 	}
-	
+
+	@SuppressWarnings("static-access")
+	@Test
+	public void addAndSaveBorrower() {
+		credit360Helper.clickCreditBorrowerAndAdd(driver);
+		System.out.println("-----------------------------------------------");
+		credit360Helper.saveGuarantor(driver);
+	}
+
+	@AfterTest
+	public void afterTest() {
+		driver.close();
+		driver.quit();
+		System.gc();
+	}
+
 }

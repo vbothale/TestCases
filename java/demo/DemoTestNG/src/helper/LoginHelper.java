@@ -33,20 +33,13 @@ public class LoginHelper {
 					.get("fmartin");
 
 			driver.get("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb/");
-			
+		
 
 			driver.findElement(By.id("j_username")).sendKeys(
 					propertiesMap.get("username"));
 
 			driver.findElement(By.id("j_password")).sendKeys(
 					propertiesMap.get("password"));
-
-//			LoginPage.username.sendKeys(propertiesMap.get("username"));
-//			LoginPage.username.sendKeys("fmartin");
-			
-//		LoginPage.username.sendKeys(propertiesMap.get("username"));
-//		LoginPage.password.sendKeys(propertiesMap.get("password"));
-//		LoginPage.loginBtn.click();
 			
 			 driver.findElement(By.xpath("//button[contains(.,'Login')]"))
 			 .click();
@@ -62,6 +55,7 @@ public class LoginHelper {
 	public static void login(WebDriver driver,
 			HashMap<String, Map<String, String>> _hashLogins) {
 		try {
+			
 			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashLogins
 					.get("sdietz");
 
@@ -73,17 +67,10 @@ public class LoginHelper {
 
 			driver.findElement(By.id("j_password")).sendKeys(
 					propertiesMap.get("password"));
-
-//			LoginPage.username.sendKeys(propertiesMap.get("username"));
-//			LoginPage.username.sendKeys("fmartin");
-			
-//		LoginPage.username.sendKeys(propertiesMap.get("username"));
-//		LoginPage.password.sendKeys(propertiesMap.get("password"));
-//		LoginPage.loginBtn.click();
 			
 			 driver.findElement(By.xpath("//button[contains(.,'Login')]"))
 			 .click();
-		Util.waitForAJAX(driver);
+			 Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 			driver.manage().timeouts()
 					.implicitlyWait(70, TimeUnit.MILLISECONDS);
@@ -91,6 +78,32 @@ public class LoginHelper {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	public static void loginPrism(WebDriver driver,
+			HashMap<String, Map<String, String>> _hashLogins) {
+		try {
+			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashLogins
+					.get("jcarter");
 
+			driver.get("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb/");
+			
 
+			driver.findElement(By.id("j_username")).sendKeys(
+					propertiesMap.get("username"));
+
+			driver.findElement(By.id("j_password")).sendKeys(
+					propertiesMap.get("password"));
+			
+			 driver.findElement(By.xpath("//button[contains(.,'Login')]"))
+			 .click();
+		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
+		driver.manage().timeouts()
+		.implicitlyWait(70, TimeUnit.MILLISECONDS);
+		
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
 }

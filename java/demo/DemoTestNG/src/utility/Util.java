@@ -4,7 +4,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
@@ -16,7 +18,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import org.apache.log4j.Logger;
 
 public class Util {
@@ -27,6 +28,8 @@ public class Util {
 	public static final int DEFAULT_ELEMENT_WAIT = 5;
 	public static final int DEFAULT_PAGE_WAIT = 5;
 	public static final int DEFAULT_AJAX_WAIT = 10;
+	
+	private TestDataReader reader = new TestDataReader();
 
 	public static void waitForLoaderToFinish(WebDriver driver) {
 		try {
@@ -175,6 +178,28 @@ public class Util {
 				return false;
 		}
 		return false;
+	}
+	
+	public static void selectItemFromList(String customName, HashMap<String, Map<String, String>> hashMap, String option,
+			WebDriver driver) {
+		try {
+			WebElement searchTxtBox = driver.findElement(By
+					.cssSelector("input[customname='" + customName + "']"));
+
+			searchTxtBox.clear();
+			searchTxtBox.sendKeys(option);
+			Util.waitForElementPresent(
+					By.xpath(".//ul[@customid='" + customName + "']/li[1]"), 5,
+					driver);
+
+			driver.findElement(
+					By.xpath(".//ul[@customid='" + customName + "']/li[1]"))
+					.click();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		driver.manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS); // nullify
+		// implicitlyWait()
 	}
 
 }

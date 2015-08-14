@@ -7,10 +7,10 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface TestStepDetails {
-	String stepDescription();
-
-	String expectedResult();
-
-	boolean continueAfterFailure();
+public @interface Test {
+//	String stepDescription();
+//
+//	String expectedResult();
+//
+//	boolean continueAfterFailure();
 }

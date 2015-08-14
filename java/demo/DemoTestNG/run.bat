@@ -1,1 +1,1 @@
-java -cp ./libs/*;./bin org.testng.TestNG "C:/Movies/TestCases/java/demo/DemoTestNG/src/configs/TestAll-Search.xml"
+java -cp ./libs/*;./bin org.testng.TestNG "src/configs/TestAll.xml"
