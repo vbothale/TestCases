@@ -12,6 +12,42 @@
           <include name="addAndSaveBorrower"/>
         </methods>
       </class> <!-- credit.Credit360 -->
+      <class name="collateral.Collateral360">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- collateral.Collateral360 -->
+      <class name="customer.Cust360">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- customer.Cust360 -->
     </classes>
   </test> <!-- Chrome Test(failed) -->
+  <test name="Firefox Test(failed)" parallel="tests">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="credit.Credit360">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- credit.Credit360 -->
+      <class name="collateral.Collateral360">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- collateral.Collateral360 -->
+      <class name="customer.Cust360">
+        <methods>
+          <include name="verifyAddressTitleOnAddressPage"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- customer.Cust360 -->
+    </classes>
+  </test> <!-- Firefox Test(failed) -->
 </suite> <!-- Failed suite [Demo Search test suite] -->
