@@ -39,8 +39,8 @@ public class Cust360 extends org.testng.reporters.EmailableReporter{
 	@BeforeTest
 	public void beforeTest(String browser) throws Exception {
 	
-		reader.readValue(_hashCustomers,"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
-		reader.readValue(_hashLogins,"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
+		reader.readValue(_hashCustomers,"C:\\Users\\Gulshan\\AppData\\Roaming\\Skype\\My Skype Received Files\\resources\\Customers.json");
+		reader.readValue(_hashLogins,"C:\\Users\\Gulshan\\AppData\\Roaming\\Skype\\My Skype Received Files\\resources\\Login.json");
 		
 		//browser being initialized/called 
 		driver = utility.WebDriverSetUp.getDriver(browser);

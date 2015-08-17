@@ -44,9 +44,9 @@ public class Credit360 {
 
 		reader.readValue(
 				_hashSearch,
-				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\AdvanceSearch.json");
+				"C:\\Users\\Gulshan\\AppData\\Roaming\\Skype\\My Skype Received Files\\resources\\AdvanceSearch.json");
 		reader.readValue(_hashLogins,
-				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
+				"C:\\Users\\Gulshan\\AppData\\Roaming\\Skype\\My Skype Received Files\\resources\\Login.json");
 
 		// browser being initialized/called
 		driver = utility.WebDriverSetUp.getDriver(browser);
@@ -64,7 +64,7 @@ public class Credit360 {
 	}
 
 	@SuppressWarnings("static-access")
-	@Test
+	@Test(priority=0)
 	public void searchRequest() {
 		//credit360Helper = advanceSearchHelper.verifyCreditTitle(driver);
 		credit360Helper.verifyCreditTitle(driver);
@@ -72,7 +72,7 @@ public class Credit360 {
 	}
 
 	@SuppressWarnings("static-access")
-	@Test
+	@Test(priority=1)
 	public void addAndSaveBorrower() {
 		credit360Helper.clickCreditBorrowerAndAdd(driver);
 		System.out.println("-----------------------------------------------");

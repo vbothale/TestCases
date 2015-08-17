@@ -87,5 +87,6 @@ public class Customer360Helper {
 		driver.findElement(By.xpath("//span[contains(.,'Save')]")).click();
 		Util.waitForLoaderToFinish(driver);
 	}
+	
 
 }

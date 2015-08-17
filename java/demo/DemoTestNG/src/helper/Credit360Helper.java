@@ -1,5 +1,7 @@
 package helper;
 
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,6 +26,8 @@ public class Credit360Helper {
 				.getText().trim();
 		Assert.assertEquals("Credit 360", title);
 	}
+	
+	
 	
 	public static void clickCreditBorrowerAndAdd(WebDriver driver)
 	{
@@ -52,5 +56,15 @@ public class Credit360Helper {
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForAJAX(driver);
 	}
+	
 
+	public Boolean IsElementPresent(WebDriver driver, By by) {
+        try
+        {
+            driver.findElement(by);
+            return true;
+        }
+        catch (NoSuchElementException e) { return false; 
+        }
+    }
 }

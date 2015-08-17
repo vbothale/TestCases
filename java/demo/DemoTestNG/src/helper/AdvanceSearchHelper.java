@@ -1,5 +1,7 @@
 package helper;
 
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -62,7 +64,22 @@ public class AdvanceSearchHelper {
 				.findElement(By.xpath("//h2[contains(.,'Credit 360')]"))
 				.getText().trim();
 		Assert.assertEquals("Credit 360", title);
+		
+		Boolean isFound = IsElementPresent(driver, By.xpath(".//*[@id='c360r']"));
+		Assert.assertEquals("Basic Collateral Information", title);
+		Assert.assertTrue(isFound);
 		return new Credit360Helper(driver);
 	}
+	
 
+	public static Boolean IsElementPresent(WebDriver driver, By by) {
+        try
+        {
+            driver.findElement(by);
+            return true;
+        }
+        catch (NoSuchElementException e) { return false; 
+        }
+
+		}
 }
