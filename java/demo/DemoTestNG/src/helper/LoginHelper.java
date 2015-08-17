@@ -32,7 +32,8 @@ public class LoginHelper {
 			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashLogins
 					.get("fmartin");
 
-			driver.get("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb/");
+			String str = driver.get("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb/");
+	System.out.println("qa = " + url);
 		
 
 			driver.findElement(By.id("j_username")).sendKeys(
