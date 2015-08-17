@@ -29,20 +29,18 @@ public class Listener implements IReporter {
         extent = new ExtentReports(outputDirectory + File.separator + "AutomationReport.html", true);
         extent.config().reportName(suites.get(0).getName());
         extent.config().reportHeadline("Automation Report");
-              
-        
+                      
         for (ISuite suite : suites) {
             Map<String, ISuiteResult> result = suite.getResults();
  
-            for (ISuiteResult r : result.values()) {
-                ITestContext context = r.getTestContext();
+        for (ISuiteResult r : result.values()) {
+            ITestContext context = r.getTestContext();
  
                 buildTestNodes(context.getPassedTests(), LogStatus.PASS);
                 buildTestNodes(context.getFailedTests(), LogStatus.FAIL);
                 buildTestNodes(context.getSkippedTests(), LogStatus.SKIP);
             }
         }
- 
         extent.flush();
         extent.close();
     }
