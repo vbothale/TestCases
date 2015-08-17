@@ -64,13 +64,14 @@ public class Collateral360 extends org.testng.reporters.EmailableReporter{
 	
 	@Test(priority=0)
 	public void verifyCollateralTitleOnCollateral() {
+		{
 		collateral360Helper = new Collateral360Helper();
 		collateral360Helper.collateralAdd(driver);
 		collateral360Helper.clickOnAddBtn(driver);
 		collateral360Helper.verifyCollateralTitle(driver);
 		System.out.println("test 1");
 	}
-	
+	}
 
 	@Test(priority=1)
 	public void saveCollateralDetails() throws InterruptedException {
