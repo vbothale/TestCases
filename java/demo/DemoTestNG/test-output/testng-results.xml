@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" total="7" passed="5">
+<testng-results skipped="0" failed="3" total="7" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Demo Search test suite" duration-ms="168800" started-at="2015-08-13T17:03:10Z" finished-at="2015-08-13T17:05:59Z">
+  <suite name="Demo Search test suite" duration-ms="198972" started-at="2015-08-17T21:18:32Z" finished-at="2015-08-17T21:21:51Z">
     <groups>
     </groups>
-    <test name="Chrome Test" duration-ms="96335" started-at="2015-08-13T17:03:10Z" finished-at="2015-08-13T17:04:46Z">
+    <test name="Chrome Test" duration-ms="85191" started-at="2015-08-17T21:18:32Z" finished-at="2015-08-17T21:19:57Z">
       <class name="credit.Credit360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:credit.Credit360@2717f065]" name="beforeTest" is-config="true" duration-ms="93107" started-at="2015-08-13T13:03:10Z" finished-at="2015-08-13T13:04:43Z">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:credit.Credit360@14a78af0]" name="beforeTest" is-config="true" duration-ms="82811" started-at="2015-08-17T17:18:32Z" finished-at="2015-08-17T17:19:55Z">
           <params>
             <param index="0">
               <value>
@@ -18,29 +18,29 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="FAIL" signature="addAndSaveBorrower()[pri:0, instance:credit.Credit360@2717f065]" name="addAndSaveBorrower" duration-ms="1392" started-at="2015-08-13T13:04:43Z" finished-at="2015-08-13T13:04:44Z">
+        <test-method status="FAIL" signature="addAndSaveBorrower()[pri:0, instance:credit.Credit360@14a78af0]" name="addAndSaveBorrower" duration-ms="1327" started-at="2015-08-17T17:19:55Z" finished-at="2015-08-17T17:19:56Z">
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
               <![CDATA[unknown error: Element is not clickable at point (221, 147). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; opacity: 0; cursor: default; position: fixed; background-color: rgb(0, 0, 0);"></div>
-  (Session info: chrome=44.0.2403.130)
+  (Session info: chrome=44.0.2403.155)
   (Driver info: chromedriver=2.16.333243 (0bfa1d3575fc1044244f21ddb82bf870944ef961),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 93 milliseconds
+Command duration or timeout: 78 milliseconds
 Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
 System info: host: 'pbajpai', ip: '192.168.1.160', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
-Session ID: a09c9225f465a75bd9f5a4dff626481e
+Session ID: 46eccdf72d88488f7f78615c3f55f32f
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir9508_21748}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.130, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]]]>
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir10696_18864}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.155, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.WebDriverException: unknown error: Element is not clickable at point (221, 147). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; opacity: 0; cursor: default; position: fixed; background-color: rgb(0, 0, 0);"></div>
-  (Session info: chrome=44.0.2403.130)
+  (Session info: chrome=44.0.2403.155)
   (Driver info: chromedriver=2.16.333243 (0bfa1d3575fc1044244f21ddb82bf870944ef961),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 93 milliseconds
+Command duration or timeout: 78 milliseconds
 Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
 System info: host: 'pbajpai', ip: '192.168.1.160', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
-Session ID: a09c9225f465a75bd9f5a4dff626481e
+Session ID: 46eccdf72d88488f7f78615c3f55f32f
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir9508_21748}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.130, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\provenir\AppData\Local\Temp\scoped_dir10696_18864}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.155, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -78,19 +78,19 @@ Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browser
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addAndSaveBorrower -->
-        <test-method status="PASS" signature="searchRequest()[pri:0, instance:credit.Credit360@2717f065]" name="searchRequest" duration-ms="227" started-at="2015-08-13T13:04:44Z" finished-at="2015-08-13T13:04:44Z">
+        <test-method status="PASS" signature="searchRequest()[pri:0, instance:credit.Credit360@14a78af0]" name="searchRequest" duration-ms="291" started-at="2015-08-17T17:19:56Z" finished-at="2015-08-17T17:19:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchRequest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:credit.Credit360@2717f065]" name="afterTest" is-config="true" duration-ms="1557" started-at="2015-08-13T13:04:45Z" finished-at="2015-08-13T13:04:46Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:credit.Credit360@14a78af0]" name="afterTest" is-config="true" duration-ms="741" started-at="2015-08-17T17:19:56Z" finished-at="2015-08-17T17:19:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
       </class> <!-- credit.Credit360 -->
     </test> <!-- Chrome Test -->
-    <test name="Firefox Test" duration-ms="167826" started-at="2015-08-13T17:03:10Z" finished-at="2015-08-13T17:05:58Z">
+    <test name="Firefox Test" duration-ms="132401" started-at="2015-08-17T21:18:32Z" finished-at="2015-08-17T21:20:44Z">
       <class name="customer.Cust360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:customer.Cust360@acf3c39]" name="beforeTest" is-config="true" duration-ms="103814" started-at="2015-08-13T13:03:10Z" finished-at="2015-08-13T13:04:54Z">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:customer.Cust360@2b7ac7ba]" name="beforeTest" is-config="true" duration-ms="80079" started-at="2015-08-17T17:18:32Z" finished-at="2015-08-17T17:19:52Z">
           <params>
             <param index="0">
               <value>
@@ -101,15 +101,15 @@ Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browser
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="clickAddressAndAdd()[pri:0, instance:customer.Cust360@acf3c39]" name="clickAddressAndAdd" duration-ms="9092" started-at="2015-08-13T13:04:54Z" finished-at="2015-08-13T13:05:03Z">
+        <test-method status="PASS" signature="clickAddressAndAdd()[pri:0, instance:customer.Cust360@2b7ac7ba]" name="clickAddressAndAdd" duration-ms="4226" started-at="2015-08-17T17:19:52Z" finished-at="2015-08-17T17:19:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickAddressAndAdd -->
-        <test-method status="PASS" signature="saveAddress()[pri:0, instance:customer.Cust360@acf3c39]" name="saveAddress" duration-ms="21063" started-at="2015-08-13T13:05:03Z" finished-at="2015-08-13T13:05:24Z">
+        <test-method status="PASS" signature="saveAddress()[pri:0, instance:customer.Cust360@2b7ac7ba]" name="saveAddress" duration-ms="15966" started-at="2015-08-17T17:19:56Z" finished-at="2015-08-17T17:20:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveAddress -->
-        <test-method status="FAIL" signature="verifyAddressTitleOnAddressPage()[pri:0, instance:customer.Cust360@acf3c39]" name="verifyAddressTitleOnAddressPage" duration-ms="31787" started-at="2015-08-13T13:05:24Z" finished-at="2015-08-13T13:05:55Z">
+        <test-method status="FAIL" signature="verifyAddressTitleOnAddressPage()[pri:0, instance:customer.Cust360@2b7ac7ba]" name="verifyAddressTitleOnAddressPage" duration-ms="30542" started-at="2015-08-17T17:20:12Z" finished-at="2015-08-17T17:20:43Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[Unable to locate element: {"method":"xpath","selector":"//h2[contains(.,'Add Address')]"}
@@ -118,9 +118,9 @@ For documentation on this error, please visit: http://seleniumhq.org/exceptions/
 Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
 System info: host: 'pbajpai', ip: '192.168.1.160', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
 *** Element info: {Using=xpath, value=//h2[contains(.,'Add Address')]}
-Session ID: 65e82f74-4242-4d21-8333-96f4c96d9412
+Session ID: f087a898-79da-44c8-9d33-0d1e1c914dc6
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0.3}]]]>
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=40.0.2}]]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//h2[contains(.,'Add Address')]"}
@@ -129,9 +129,9 @@ For documentation on this error, please visit: http://seleniumhq.org/exceptions/
 Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
 System info: host: 'pbajpai', ip: '192.168.1.160', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
 *** Element info: {Using=xpath, value=//h2[contains(.,'Add Address')]}
-Session ID: 65e82f74-4242-4d21-8333-96f4c96d9412
+Session ID: f087a898-79da-44c8-9d33-0d1e1c914dc6
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0.3}]
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=40.0.2}]
 	at sun.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
 	at java.lang.reflect.Constructor.newInstance(Unknown Source)
@@ -169,26 +169,26 @@ For documentation on this error, please visit: http://seleniumhq.org/exceptions/
 Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
 System info: host: 'pbajpai', ip: '192.168.1.160', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
 Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/provenir/AppData/Local/Temp/anonymous5047013134911459255webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10299)
-	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///C:/Users/provenir/AppData/Local/Temp/anonymous5047013134911459255webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10308)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/provenir/AppData/Local/Temp/anonymous5047013134911459255webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12282)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/provenir/AppData/Local/Temp/anonymous5047013134911459255webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12287)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/provenir/AppData/Local/Temp/anonymous5047013134911459255webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12229)
+	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/provenir/AppData/Local/Temp/anonymous476715060989578774webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10299)
+	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///C:/Users/provenir/AppData/Local/Temp/anonymous476715060989578774webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10308)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/provenir/AppData/Local/Temp/anonymous476715060989578774webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12282)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/provenir/AppData/Local/Temp/anonymous476715060989578774webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12287)
+	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/provenir/AppData/Local/Temp/anonymous476715060989578774webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12229)
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAddressTitleOnAddressPage -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:customer.Cust360@acf3c39]" name="afterTest" is-config="true" duration-ms="2041" started-at="2015-08-13T13:05:56Z" finished-at="2015-08-13T13:05:58Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:customer.Cust360@2b7ac7ba]" name="afterTest" is-config="true" duration-ms="1570" started-at="2015-08-17T17:20:43Z" finished-at="2015-08-17T17:20:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
       </class> <!-- customer.Cust360 -->
     </test> <!-- Firefox Test -->
-    <test name="IE Test" duration-ms="168800" started-at="2015-08-13T17:03:10Z" finished-at="2015-08-13T17:05:59Z">
+    <test name="IE Test" duration-ms="198972" started-at="2015-08-17T21:18:32Z" finished-at="2015-08-17T21:21:51Z">
       <class name="collateral.Collateral360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.Collateral360@4ca92a58]" name="beforeTest" is-config="true" duration-ms="95229" started-at="2015-08-13T13:03:10Z" finished-at="2015-08-13T13:04:45Z">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.Collateral360@761b1eb9]" name="beforeTest" is-config="true" duration-ms="78802" started-at="2015-08-17T17:18:32Z" finished-at="2015-08-17T17:19:51Z">
           <params>
             <param index="0">
               <value>
@@ -199,15 +199,72 @@ Driver info: driver.version: unknown
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="verifyCollateralTitleOnCollateral()[pri:0, instance:collateral.Collateral360@4ca92a58]" name="verifyCollateralTitleOnCollateral" duration-ms="11236" started-at="2015-08-13T13:04:45Z" finished-at="2015-08-13T13:04:56Z">
+        <test-method status="PASS" signature="verifyCollateralTitleOnCollateral()[pri:0, instance:collateral.Collateral360@761b1eb9]" name="verifyCollateralTitleOnCollateral" duration-ms="14324" started-at="2015-08-17T17:19:51Z" finished-at="2015-08-17T17:20:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCollateralTitleOnCollateral -->
-        <test-method status="PASS" signature="saveCollateralDetails()[pri:0, instance:collateral.Collateral360@4ca92a58]" name="saveCollateralDetails" duration-ms="61865" started-at="2015-08-13T13:04:56Z" finished-at="2015-08-13T13:05:58Z">
+        <test-method status="FAIL" signature="saveCollateralDetails()[pri:0, instance:collateral.Collateral360@761b1eb9]" name="saveCollateralDetails" duration-ms="105327" started-at="2015-08-17T17:20:05Z" finished-at="2015-08-17T17:21:50Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Unable to find element with id == useCurrentCust (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 5.08 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
+System info: host: 'pbajpai', ip: '192.168.1.160', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=id, value=useCurrentCust}
+Session ID: 6c2ac1e2-d2cc-4911-b57e-177123ff2cb4
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:24092/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with id == useCurrentCust (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 5.08 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
+System info: host: 'pbajpai', ip: '192.168.1.160', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=id, value=useCurrentCust}
+Session ID: 6c2ac1e2-d2cc-4911-b57e-177123ff2cb4
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:24092/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+	at sun.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
+	at org.openqa.selenium.By$ById.findElement(By.java:215)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at helper.Collateral360Helper.clickOnSaveCollateral(Collateral360Helper.java:122)
+	at collateral.Collateral360.saveCollateralDetails(Collateral360.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:38)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:391)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveCollateralDetails -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.Collateral360@4ca92a58]" name="afterTest" is-config="true" duration-ms="445" started-at="2015-08-13T13:05:58Z" finished-at="2015-08-13T13:05:59Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.Collateral360@761b1eb9]" name="afterTest" is-config="true" duration-ms="494" started-at="2015-08-17T17:21:50Z" finished-at="2015-08-17T17:21:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

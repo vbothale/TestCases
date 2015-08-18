@@ -32,13 +32,15 @@ public class LoginHelper {
 			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashLogins
 					.get("fmartin");
 
-			String str = driver.get("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb/");
-	System.out.println("qa = " + url);
-		
-
+			driver.get("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb/");
+			driver.navigate().to("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb/");
+			String url = driver.getPageSource();
+			System.out.println(url);
+			
 			driver.findElement(By.id("j_username")).sendKeys(
 					propertiesMap.get("username"));
 
+			
 			driver.findElement(By.id("j_password")).sendKeys(
 					propertiesMap.get("password"));
 			
