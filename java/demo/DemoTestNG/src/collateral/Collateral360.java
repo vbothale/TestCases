@@ -41,8 +41,8 @@ public class Collateral360 extends org.testng.reporters.EmailableReporter{
 	@BeforeTest
 	public void beforeTest(String browser) throws Exception {
 	
-		reader.readValue(_hashCustomers,"D:\\Workspace_TestCases\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
-		reader.readValue(_hashLogins,"D:\\Workspace_TestCases\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
+		reader.readValue(_hashCustomers,"D:\\workspace_selenium\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
+		reader.readValue(_hashLogins,"D:\\workspace_selenium\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
 		
 		//browser being initialized/called 
 		driver = utility.WebDriverSetUp.getDriver(browser);
@@ -64,14 +64,13 @@ public class Collateral360 extends org.testng.reporters.EmailableReporter{
 	
 	@Test(priority=0)
 	public void verifyCollateralTitleOnCollateral() {
-		{
 		collateral360Helper = new Collateral360Helper();
 		collateral360Helper.collateralAdd(driver);
 		collateral360Helper.clickOnAddBtn(driver);
 		collateral360Helper.verifyCollateralTitle(driver);
 		System.out.println("test 1");
 	}
-	}
+	
 
 	@Test(priority=1)
 	public void saveCollateralDetails() throws InterruptedException {

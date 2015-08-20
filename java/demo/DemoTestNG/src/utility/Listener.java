@@ -28,44 +28,45 @@ public class Listener implements IReporter {
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
         extent = new ExtentReports(outputDirectory + File.separator + "AutomationReport.html", true);
         extent.config().reportName(suites.get(0).getName());
-        extent.config().reportHeadline("Automation Report");
-                      
+      
+        
         for (ISuite suite : suites) {
             Map<String, ISuiteResult> result = suite.getResults();
  
-        for (ISuiteResult r : result.values()) {
-            ITestContext context = r.getTestContext();
+            for (ISuiteResult r : result.values()) {
+                ITestContext context = r.getTestContext();
  
                 buildTestNodes(context.getPassedTests(), LogStatus.PASS);
                 buildTestNodes(context.getFailedTests(), LogStatus.FAIL);
                 buildTestNodes(context.getSkippedTests(), LogStatus.SKIP);
             }
         }
+ 
         extent.flush();
         extent.close();
     }
  
     private void buildTestNodes(IResultMap tests, LogStatus status) {
-        ExtentTest report;
+        ExtentTest test;
  
         if (tests.size() > 0) {
             for (ITestResult result : tests.getAllResults()) {
-            	report = extent.startTest(result.getMethod().getMethodName());
+                test = extent.startTest(result.getMethod().getMethodName());
  
-            	report.getTest().startedTime = getTime(result.getStartMillis());
-            	report.getTest().endedTime = getTime(result.getEndMillis());
+                test.getTest().startedTime = getTime(result.getStartMillis());
+                test.getTest().endedTime = getTime(result.getEndMillis());
                 
                 for (String group : result.getMethod().getGroups())
-                	report.assignCategory(group);
+                    test.assignCategory(group);
  
                 String message = "Test " + status.toString().toLowerCase() + "ed";
  
                 if (result.getThrowable() != null)
                     message = result.getThrowable().getMessage();
  
-                report.log(status, message);
+                test.log(status, message);
  
-                extent.endTest(report);
+                extent.endTest(test);
             }
         }
     }

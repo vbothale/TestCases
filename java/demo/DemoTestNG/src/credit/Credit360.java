@@ -44,9 +44,9 @@ public class Credit360 {
 
 		reader.readValue(
 				_hashSearch,
-				"C:\\Users\\Gulshan\\AppData\\Roaming\\Skype\\My Skype Received Files\\resources\\AdvanceSearch.json");
+				"D:\\workspace_selenium\\TestCases\\java\\demo\\DemoTestNG\\resources\\AdvanceSearch.json");
 		reader.readValue(_hashLogins,
-				"C:\\Users\\Gulshan\\AppData\\Roaming\\Skype\\My Skype Received Files\\resources\\Login.json");
+				"D:\\workspace_selenium\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
 
 		// browser being initialized/called
 		driver = utility.WebDriverSetUp.getDriver(browser);

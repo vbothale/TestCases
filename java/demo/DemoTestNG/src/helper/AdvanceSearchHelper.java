@@ -60,8 +60,9 @@ public class AdvanceSearchHelper {
 	
 		Util.waitForElementPresent(By.xpath("//h2[contains(.,'Credit 360')]"),
 				20, driver);
-	String title = driver.findElement(By.xpath("//h2[contains(.,'Credit 360')]")).getText().trim();
-				
+		String title = driver
+				.findElement(By.xpath("//h2[contains(.,'Credit 360')]"))
+				.getText().trim();
 		Assert.assertEquals("Credit 360", title);
 		
 		Boolean isFound = IsElementPresent(driver, By.xpath(".//*[@id='c360r']"));
@@ -79,5 +80,6 @@ public class AdvanceSearchHelper {
         }
         catch (NoSuchElementException e) { return false; 
         }
+
 		}
 }

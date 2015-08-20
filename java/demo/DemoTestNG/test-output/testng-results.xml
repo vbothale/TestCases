@@ -1,5 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="0" passed="0">
+<testng-results skipped="2" failed="0" total="6" passed="4">
   <reporter-output>
   </reporter-output>
+  <suite name="Demo Search test suite" duration-ms="132607" started-at="2015-08-20T07:06:46Z" finished-at="2015-08-20T07:08:59Z">
+    <groups>
+    </groups>
+    <test name="IE Test" duration-ms="17745" started-at="2015-08-20T07:06:46Z" finished-at="2015-08-20T07:07:04Z">
+      <class name="collateral.Collateral360">
+        <test-method status="FAIL" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.Collateral360@57799932]" name="beforeTest" is-config="true" duration-ms="0" started-at="2015-08-20T12:36:46Z" finished-at="2015-08-20T12:36:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[InternetExplorer]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Unable to find element with id == srchTxt (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 1.09 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
+System info: host: 'gulshango-w7', ip: '172.27.103.85', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=id, value=srchTxt}
+Session ID: a7e9fc7f-356c-444e-af8b-1190d5dda99c
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:38327/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with id == srchTxt (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 1.09 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
+System info: host: 'gulshango-w7', ip: '172.27.103.85', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+*** Element info: {Using=id, value=srchTxt}
+Session ID: a7e9fc7f-356c-444e-af8b-1190d5dda99c
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:38327/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
+	at org.openqa.selenium.By$ById.findElement(By.java:215)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at helper.SearchHelper.searchCustomer(SearchHelper.java:24)
+	at collateral.Collateral360.beforeTest(Collateral360.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:552)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:140)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:641)
+	at org.testng.TestRunner.run(TestRunner.java:609)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:38)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:382)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="SKIP" signature="verifyCollateralTitleOnCollateral()[pri:0, instance:collateral.Collateral360@57799932]" name="verifyCollateralTitleOnCollateral" duration-ms="0" started-at="2015-08-20T12:37:04Z" finished-at="2015-08-20T12:37:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCollateralTitleOnCollateral -->
+        <test-method status="SKIP" signature="saveCollateralDetails()[pri:0, instance:collateral.Collateral360@57799932]" name="saveCollateralDetails" duration-ms="0" started-at="2015-08-20T12:37:04Z" finished-at="2015-08-20T12:37:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveCollateralDetails -->
+        <test-method status="SKIP" signature="afterTest()[pri:0, instance:collateral.Collateral360@57799932]" name="afterTest" is-config="true" duration-ms="0" started-at="2015-08-20T12:37:04Z" finished-at="2015-08-20T12:37:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- collateral.Collateral360 -->
+    </test> <!-- IE Test -->
+    <test name="Chrome Test" duration-ms="124550" started-at="2015-08-20T07:06:46Z" finished-at="2015-08-20T07:08:51Z">
+      <class name="collateral.Collateral360">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.Collateral360@6faa7dbc]" name="beforeTest" is-config="true" duration-ms="66288" started-at="2015-08-20T12:36:46Z" finished-at="2015-08-20T12:37:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="verifyCollateralTitleOnCollateral()[pri:0, instance:collateral.Collateral360@6faa7dbc]" name="verifyCollateralTitleOnCollateral" duration-ms="8929" started-at="2015-08-20T12:37:53Z" finished-at="2015-08-20T12:38:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCollateralTitleOnCollateral -->
+        <test-method status="PASS" signature="saveCollateralDetails()[pri:0, instance:collateral.Collateral360@6faa7dbc]" name="saveCollateralDetails" duration-ms="47568" started-at="2015-08-20T12:38:02Z" finished-at="2015-08-20T12:38:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveCollateralDetails -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.Collateral360@6faa7dbc]" name="afterTest" is-config="true" duration-ms="1760" started-at="2015-08-20T12:38:49Z" finished-at="2015-08-20T12:38:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- collateral.Collateral360 -->
+    </test> <!-- Chrome Test -->
+    <test name="Firefox Test" duration-ms="132607" started-at="2015-08-20T07:06:46Z" finished-at="2015-08-20T07:08:59Z">
+      <class name="collateral.Collateral360">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.Collateral360@586ca3ef]" name="beforeTest" is-config="true" duration-ms="74779" started-at="2015-08-20T12:36:46Z" finished-at="2015-08-20T12:38:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="verifyCollateralTitleOnCollateral()[pri:0, instance:collateral.Collateral360@586ca3ef]" name="verifyCollateralTitleOnCollateral" duration-ms="8820" started-at="2015-08-20T12:38:01Z" finished-at="2015-08-20T12:38:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCollateralTitleOnCollateral -->
+        <test-method status="PASS" signature="saveCollateralDetails()[pri:0, instance:collateral.Collateral360@586ca3ef]" name="saveCollateralDetails" duration-ms="48578" started-at="2015-08-20T12:38:10Z" finished-at="2015-08-20T12:38:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveCollateralDetails -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.Collateral360@586ca3ef]" name="afterTest" is-config="true" duration-ms="425" started-at="2015-08-20T12:38:59Z" finished-at="2015-08-20T12:38:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- collateral.Collateral360 -->
+    </test> <!-- Firefox Test -->
+  </suite> <!-- Demo Search test suite -->
 </testng-results>

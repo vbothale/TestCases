@@ -32,7 +32,7 @@ public class LoginHelper {
 			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashLogins
 					.get("fmartin");
 
-			driver.get("https://qa.provapps.com/ProvAppCLWeb/#");
+			driver.get("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb");
 		
 
 			driver.findElement(By.id("j_username")).sendKeys(
@@ -59,7 +59,7 @@ public class LoginHelper {
 			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashLogins
 					.get("sdietz");
 
-			driver.get("https://qa.provapps.com/ProvAppCLWeb/#");
+			driver.get("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb");
 			
 
 			driver.findElement(By.id("j_username")).sendKeys(
@@ -85,7 +85,7 @@ public class LoginHelper {
 			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashLogins
 					.get("jcarter");
 
-			driver.get("https://qa.provapps.com/ProvAppCLWeb/#");
+			driver.get("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb");
 			
 
 			driver.findElement(By.id("j_username")).sendKeys(

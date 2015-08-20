@@ -14,6 +14,7 @@
 	</test>
 	
 	
+	
 	<test name="IE Test">
 	<parameter name="browser" value="InternetExplorer" />
 		<classes>
@@ -21,13 +22,13 @@
 		</classes>
 	</test>
 
-<!--
+
 	<test name="Chrome Test">
 	<parameter name="browser" value="Chrome" />
 		<classes>
-			<class name="customer.Cust360" />
+			<class name="collateral.Collateral360" />
 		</classes>
 	</test>
-	-->
+	
 	
 </suite>
