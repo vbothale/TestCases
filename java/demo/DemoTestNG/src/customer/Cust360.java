@@ -63,12 +63,6 @@ public class Cust360 extends org.testng.reporters.EmailableReporter{
 		customer360Hepler = new Customer360Helper();
 		customer360Hepler.clickAddress(driver);
 		customer360Hepler.clickAddBtnOnAddress(driver);
-	}
-	
-	@Test
-	public void verifyAddressTitleOnAddressPage()
-	{
-		customer360Hepler = new Customer360Helper();
 		customer360Hepler.verifyAddressTitle(driver);
 	}
 	

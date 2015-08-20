@@ -66,17 +66,7 @@ public class Credit360 {
 	@SuppressWarnings("static-access")
 	@Test
 	public void searchRequest() {
-		//credit360Helper = advanceSearchHelper.verifyCreditTitle(driver);
-		credit360Helper.verifyCreditTitle(driver);
-		System.out.println("+++++++++++++++++++++++++++++++++++");
-	}
-
-	@SuppressWarnings("static-access")
-	@Test
-	public void addAndSaveBorrower() {
-		credit360Helper.clickCreditBorrowerAndAdd(driver);
-		System.out.println("-----------------------------------------------");
-		credit360Helper.saveGuarantor(driver);
+		credit360Helper = advanceSearchHelper.verifyCreditTitle(driver);
 	}
 
 	@AfterTest

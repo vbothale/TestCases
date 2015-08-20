@@ -57,8 +57,7 @@ public class Collateral360 extends org.testng.reporters.EmailableReporter{
 		
 		//search for customer
 		searchHelper.searchCustomer(driver,_hashCustomers);
-		
-		
+
 		
 	}
 	

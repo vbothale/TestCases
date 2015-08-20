@@ -8,7 +8,7 @@
 			<class name="customer.Cust360" />
 		</classes>
 	</test>
-	
+
 	<test name="IE Test">
 	<parameter name="browser" value="InternetExplorer" />
 		<classes>
@@ -23,6 +23,6 @@
 			<class name="credit.Credit360" />
 		</classes>
 	</test>
-	
+
 	
 </suite>

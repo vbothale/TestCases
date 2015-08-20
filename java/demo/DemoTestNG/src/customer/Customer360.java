@@ -7,9 +7,12 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 import utility.Test;
 import utility.TestDataReader;
+import utility.Util;
 import Page.LoginPage;
 import static utility.TestDataReader.*;
 
@@ -28,7 +31,20 @@ org.testng.reporters.EmailableReporter{
 	
 	static Logger log = Logger.getLogger(Customer360.class);
 	
+@Parameters({ "browser" })
 	
+	@BeforeTest
+	public void beforeTest(String browser) throws Exception {
+	
+		reader.readValue(_hashCustomers,"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
+		reader.readValue(_hashLogins,"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
+		
+		//browser being initialized/called 
+		utility.WebDriverSetUp.getDriver(browser);
+		
+		loginPage.login(_hashLogins);
+		
+	}
 	
 	@Test
 	public void step_001_verifySuccessfullogin() {

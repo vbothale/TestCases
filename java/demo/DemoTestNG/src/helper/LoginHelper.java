@@ -33,9 +33,9 @@ public class LoginHelper {
 					.get("fmartin");
 
 			driver.get("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb/");
-			driver.navigate().to("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb/");
-			String url = driver.getPageSource();
-			System.out.println(url);
+//			driver.navigate().to("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb/");
+//			String url = driver.getPageSource();
+//			System.out.println(url);
 			
 			driver.findElement(By.id("j_username")).sendKeys(
 					propertiesMap.get("username"));
@@ -63,7 +63,6 @@ public class LoginHelper {
 					.get("sdietz");
 
 			driver.get("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb/");
-			
 
 			driver.findElement(By.id("j_username")).sendKeys(
 					propertiesMap.get("username"));
@@ -77,6 +76,7 @@ public class LoginHelper {
 		Util.waitForLoaderToFinish(driver);
 			driver.manage().timeouts()
 					.implicitlyWait(70, TimeUnit.MILLISECONDS);
+			Util.waitForAJAX(driver);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

@@ -23,17 +23,17 @@ public class Credit360Helper {
 				.findElement(By.xpath("//h2[contains(.,'Credit 360')]"))
 				.getText().trim();
 		Assert.assertEquals("Credit 360", title);
+		Util.waitForLoaderToFinish(driver);
 	}
 	
 	public static void clickCreditBorrowerAndAdd(WebDriver driver)
 	{
 		Util.waitForAJAX(driver);
 		Util.scrollDown(driver);
-		Util.waitForElementPresent(By.id("credBorr"), 20, driver);
+		Util.waitForElementPresent(By.id("credBorr"), 40, driver);
 		driver.findElement(By.id("credBorr")).click();
 		Util.waitForLoaderToFinish(driver);
-		Util.waitForAJAX(driver);
-		Util.waitForElementPresent(By.xpath(".//*[@id='credBorrowers']/a"), 20, driver);
+		Util.waitForElementPresent(By.xpath(".//*[@id='credBorrowers']/a"), 40, driver);
 		driver.findElement(By.xpath(".//*[@id='credBorrowers']/a")).click();
 		Util.waitForLoaderToFinish(driver);
 	}
@@ -52,5 +52,6 @@ public class Credit360Helper {
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForAJAX(driver);
 	}
+	
 
 }
