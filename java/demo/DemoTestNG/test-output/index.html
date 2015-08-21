@@ -53,7 +53,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Demo_Search_test_suite">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">3 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,7 +101,27 @@
                     <div class="method-list-content passed suite-Demo_Search_test_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Demo_Search_test_suite" title="customer.Cust360" hash-for-method="clickAddressAndAdd">clickAddressAndAdd</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Demo_Search_test_suite" title="customer.Cust360" hash-for-method="saveAddress">saveAddress</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Demo_Search_test_suite" title="collateral.Collateral360" hash-for-method="saveCollateralDetails">saveCollateralDetails</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Demo_Search_test_suite" title="credit.Credit360" hash-for-method="searchRequest">searchRequest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Demo_Search_test_suite" title="collateral.Collateral360" hash-for-method="verifyCollateralTitleOnCollateral">verifyCollateralTitleOnCollateral</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Demo_Search_test_suite -->
@@ -131,6 +151,50 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Demo_Search_test_suite-class-passed -->
+          <div class="suite-Demo_Search_test_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">customer.Cust360</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickAddressAndAdd">
+                  </a> <!-- clickAddressAndAdd -->
+                  <span class="method-name">clickAddressAndAdd</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="saveAddress">
+                  </a> <!-- saveAddress -->
+                  <span class="method-name">saveAddress</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Demo_Search_test_suite-class-passed -->
+          <div class="suite-Demo_Search_test_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">collateral.Collateral360</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="saveCollateralDetails">
+                  </a> <!-- saveCollateralDetails -->
+                  <span class="method-name">saveCollateralDetails</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCollateralTitleOnCollateral">
+                  </a> <!-- verifyCollateralTitleOnCollateral -->
+                  <span class="method-name">verifyCollateralTitleOnCollateral</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Demo_Search_test_suite-class-passed -->
         </div> <!-- panel Demo_Search_test_suite -->
         <div panel-name="test-xml-Demo_Search_test_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -140,7 +204,19 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;3&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Demo Search test suite&quot; parallel=&quot;tests&quot;&gt;
+&lt;suite thread-count=&quot;3&quot; name=&quot;Demo Search test suite&quot; parallel=&quot;tests&quot;&gt;
+  &lt;test name=&quot;Firefox Test&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;Firefox&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;customer.Cust360&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Firefox Test --&gt;
+  &lt;test name=&quot;IE Test&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;InternetExplorer&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;collateral.Collateral360&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- IE Test --&gt;
   &lt;test name=&quot;Chrome Test&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
     &lt;classes&gt;
@@ -157,6 +233,12 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
+              <li>
+                <span class="test-name">Firefox Test (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">IE Test (1 class)</span>
+              </li>
               <li>
                 <span class="test-name">Chrome Test (1 class)</span>
               </li>
@@ -184,16 +266,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'searchRequest')
-data.setCell(0, 2, 'credit.Credit360')
-data.setCell(0, 3, 146);
+data.setCell(0, 1, 'saveCollateralDetails')
+data.setCell(0, 2, 'collateral.Collateral360')
+data.setCell(0, 3, 52926);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'saveAddress')
+data.setCell(1, 2, 'customer.Cust360')
+data.setCell(1, 3, 16317);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'verifyCollateralTitleOnCollateral')
+data.setCell(2, 2, 'collateral.Collateral360')
+data.setCell(2, 3, 10482);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'clickAddressAndAdd')
+data.setCell(3, 2, 'customer.Cust360')
+data.setCell(3, 3, 5461);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'searchRequest')
+data.setCell(4, 2, 'credit.Credit360')
+data.setCell(4, 3, 217);
 window.suiteTableData['Demo_Search_test_suite']= { tableData: data, tableDiv: 'times-div-Demo_Search_test_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 146 ms</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Demo_Search_test_suite">
               </div> <!-- times-div-Demo_Search_test_suite -->
             </div> <!-- times-div -->
@@ -219,18 +317,74 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
+              <div class="chronological-class-name">customer.Cust360</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">beforeTest(Firefox)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
               <div class="chronological-class-name">credit.Credit360</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest(Chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">collateral.Collateral360</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">beforeTest(InternetExplorer)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">credit.Credit360</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">searchRequest</span>
-                <span class="method-start">39887 ms</span>
+                <span class="method-start">55531 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">40036 ms</span>
+                <span class="method-start">55750 ms</span>
+              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">collateral.Collateral360</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">verifyCollateralTitleOnCollateral</span>
+                <span class="method-start">61913 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">customer.Cust360</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">clickAddressAndAdd</span>
+                <span class="method-start">70938 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">collateral.Collateral360</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">saveCollateralDetails</span>
+                <span class="method-start">72397 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">customer.Cust360</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">saveAddress</span>
+                <span class="method-start">76400 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">afterTest</span>
+                <span class="method-start">92717 ms</span>
+              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">collateral.Collateral360</div> <!-- chronological-class-name -->
+              <div class="configuration-test after">
+                <span class="method-name">afterTest</span>
+                <span class="method-start">125323 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
