@@ -43,7 +43,6 @@ org.testng.reporters.EmailableReporter{
 		utility.WebDriverSetUp.getDriver(browser);
 		
 		loginPage.login(_hashLogins);
-		
 	}
 	
 	@Test
