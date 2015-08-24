@@ -20,7 +20,7 @@
 			<class name="credit.Credit360" />
 		</classes>
 	</test>
-	
+-->	
 
 	<test name="Chrome Test">
 	<parameter name="browser" value="InternetExplorer" />
@@ -31,6 +31,6 @@
       </methods>
 		</classes>
 	</test>
-	-->
+
 	
 </suite>

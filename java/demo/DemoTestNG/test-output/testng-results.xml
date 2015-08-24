@@ -1,63 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="5" passed="5">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Demo Search test suite" duration-ms="125889" started-at="2015-08-21T00:26:43Z" finished-at="2015-08-21T00:28:49Z">
+  <suite name="Demo Search test suite" duration-ms="116211" started-at="2015-08-24T17:14:42Z" finished-at="2015-08-24T17:16:39Z">
     <groups>
     </groups>
-    <test name="Chrome Test" duration-ms="57558" started-at="2015-08-21T00:26:43Z" finished-at="2015-08-21T00:27:40Z">
-      <class name="credit.Credit360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:credit.Credit360@7083ca27]" name="beforeTest" is-config="true" duration-ms="55519" started-at="2015-08-20T20:26:43Z" finished-at="2015-08-20T20:27:38Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="searchRequest()[pri:0, instance:credit.Credit360@7083ca27]" name="searchRequest" duration-ms="217" started-at="2015-08-20T20:27:38Z" finished-at="2015-08-20T20:27:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchRequest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:credit.Credit360@7083ca27]" name="afterTest" is-config="true" duration-ms="1807" started-at="2015-08-20T20:27:39Z" finished-at="2015-08-20T20:27:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- credit.Credit360 -->
-    </test> <!-- Chrome Test -->
-    <test name="Firefox Test" duration-ms="94367" started-at="2015-08-21T00:26:43Z" finished-at="2015-08-21T00:28:17Z">
-      <class name="customer.Cust360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:customer.Cust360@2810b7f7]" name="beforeTest" is-config="true" duration-ms="70937" started-at="2015-08-20T20:26:43Z" finished-at="2015-08-20T20:27:54Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Firefox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="clickAddressAndAdd()[pri:0, instance:customer.Cust360@2810b7f7]" name="clickAddressAndAdd" duration-ms="5461" started-at="2015-08-20T20:27:54Z" finished-at="2015-08-20T20:27:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickAddressAndAdd -->
-        <test-method status="PASS" signature="saveAddress()[pri:0, instance:customer.Cust360@2810b7f7]" name="saveAddress" duration-ms="16317" started-at="2015-08-20T20:27:59Z" finished-at="2015-08-20T20:28:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- saveAddress -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:customer.Cust360@2810b7f7]" name="afterTest" is-config="true" duration-ms="1648" started-at="2015-08-20T20:28:16Z" finished-at="2015-08-20T20:28:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- customer.Cust360 -->
-    </test> <!-- Firefox Test -->
-    <test name="IE Test" duration-ms="125889" started-at="2015-08-21T00:26:43Z" finished-at="2015-08-21T00:28:49Z">
+    <test name="Chrome Test" duration-ms="116211" started-at="2015-08-24T17:14:42Z" finished-at="2015-08-24T17:16:39Z">
       <class name="collateral.Collateral360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.Collateral360@31e956bd]" name="beforeTest" is-config="true" duration-ms="61909" started-at="2015-08-20T20:26:43Z" finished-at="2015-08-20T20:27:45Z">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.Collateral360@3f17d8d5]" name="beforeTest" is-config="true" duration-ms="41924" started-at="2015-08-24T13:14:42Z" finished-at="2015-08-24T13:15:24Z">
           <params>
             <param index="0">
               <value>
@@ -68,19 +18,64 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="verifyCollateralTitleOnCollateral()[pri:0, instance:collateral.Collateral360@31e956bd]" name="verifyCollateralTitleOnCollateral" duration-ms="10482" started-at="2015-08-20T20:27:45Z" finished-at="2015-08-20T20:27:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCollateralTitleOnCollateral -->
-        <test-method status="PASS" signature="saveCollateralDetails()[pri:0, instance:collateral.Collateral360@31e956bd]" name="saveCollateralDetails" duration-ms="52926" started-at="2015-08-20T20:27:55Z" finished-at="2015-08-20T20:28:48Z">
+        <test-method status="FAIL" signature="saveCollateralDetails()[pri:0, instance:collateral.Collateral360@3f17d8d5]" name="saveCollateralDetails" duration-ms="74206" started-at="2015-08-24T13:15:24Z" finished-at="2015-08-24T13:16:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveCollateralDetails -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.Collateral360@31e956bd]" name="afterTest" is-config="true" duration-ms="564" started-at="2015-08-20T20:28:48Z" finished-at="2015-08-20T20:28:49Z">
+        <test-method status="FAIL" signature="afterTest()[pri:0, instance:collateral.Collateral360@3f17d8d5]" name="afterTest" is-config="true" duration-ms="0" started-at="2015-08-24T13:16:39Z" finished-at="2015-08-24T13:16:39Z">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[Unable to get browser (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 33 milliseconds
+Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
+System info: host: 'pbajpai', ip: '192.168.1.160', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+Session ID: 55396415-991e-455f-b0d2-0b0d0443d18c
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:29363/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: Unable to get browser (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 33 milliseconds
+Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
+System info: host: 'pbajpai', ip: '192.168.1.160', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+Session ID: 55396415-991e-455f-b0d2-0b0d0443d18c
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:29363/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:628)
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:469)
+	at collateral.Collateral360.afterTest(Collateral360.java:95)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:140)
+	at org.testng.TestRunner.afterRun(TestRunner.java:1019)
+	at org.testng.TestRunner.run(TestRunner.java:625)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:38)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:391)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
       </class> <!-- collateral.Collateral360 -->
-    </test> <!-- IE Test -->
+    </test> <!-- Chrome Test -->
   </suite> <!-- Demo Search test suite -->
 </testng-results>

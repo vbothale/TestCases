@@ -22,6 +22,7 @@ import org.openqa.selenium.WebDriver;
 
 
 
+
 import utility.*;
 
 public class Collateral360Helper {
@@ -56,6 +57,7 @@ public class Collateral360Helper {
 	}
 
 	public void enterCollateralName(WebDriver driver) {
+		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForElementPresent(By.id("collAccName"), 40, driver);
 		driver.findElement(By.id("collAccName")).sendKeys("Test collateral");
