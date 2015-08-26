@@ -53,8 +53,6 @@ public class Collateral360 extends org.testng.reporters.EmailableReporter{
 		
 		loginPage.loginToPrism(driver, _hashLogins);
 		
-		Util.waitForLoaderToFinish(driver);
-		
 		//search for customer
 		searchHelper.searchCustomer(driver,_hashCustomers);
 
