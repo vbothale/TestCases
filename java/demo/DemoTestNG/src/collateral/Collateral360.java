@@ -74,9 +74,9 @@ public class Collateral360 extends org.testng.reporters.EmailableReporter{
 	@Test(priority=1)
 	public void saveCollateralDetails() throws InterruptedException {
 		collateral360Helper = new Collateral360Helper();
-		collateral360Helper.collateralAdd(driver);
-		collateral360Helper.clickOnAddBtn(driver);
-		collateral360Helper.verifyCollateralTitle(driver);
+//		collateral360Helper.collateralAdd(driver);
+//		collateral360Helper.clickOnAddBtn(driver);
+//		collateral360Helper.verifyCollateralTitle(driver);
 		collateral360Helper.enterCollateralName(driver);
 		collateral360Helper.enterColateralCode(driver);
 		collateral360Helper.selectCollateralType(driver, option);

@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [Demo Search test suite]" parallel="tests">
-  <parameter name="browser" value="InternetExplorer"/>
-  <listeners>
-    <listener class-name="utility.Listener"/>
-  </listeners>
-  <test name="Chrome Test(failed)" parallel="tests">
+  <parameter name="browser" value="Chrome"/>
+  <test name="Firefox Test(failed)" parallel="tests">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="credit.Credit360">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- credit.Credit360 -->
+      <class name="customer.Cust360">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="saveAddress"/>
+        </methods>
+      </class> <!-- customer.Cust360 -->
+      <class name="collateral.Collateral360">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- collateral.Collateral360 -->
+    </classes>
+  </test> <!-- Firefox Test(failed) -->
+  <test name="IE Test(failed)" parallel="tests">
     <parameter name="browser" value="InternetExplorer"/>
     <classes>
+      <class name="credit.Credit360">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- credit.Credit360 -->
+      <class name="customer.Cust360">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- customer.Cust360 -->
       <class name="collateral.Collateral360">
         <methods>
           <include name="saveCollateralDetails"/>
@@ -16,5 +49,5 @@
         </methods>
       </class> <!-- collateral.Collateral360 -->
     </classes>
-  </test> <!-- Chrome Test(failed) -->
+  </test> <!-- IE Test(failed) -->
 </suite> <!-- Failed suite [Demo Search test suite] -->
