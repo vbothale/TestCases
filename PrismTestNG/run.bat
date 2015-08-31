@@ -1,1 +1,0 @@
-java -cp bin;libs/* org.testng.TestNG src\search_demo\TestAll-Search.xml
