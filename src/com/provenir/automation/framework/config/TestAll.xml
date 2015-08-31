@@ -11,7 +11,6 @@
 			<class name="com.provenir.automation.framework.testcases.Credit360" />
 		</classes>
 	</test>
-
 	
 	<test name="IE Test">
 	<parameter name="browser" value="InternetExplorer" />
