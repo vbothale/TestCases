@@ -18,14 +18,6 @@ public class LoginHelper {
 	
 	WebDriver driver;
 
-//	public LoginHelper(WebDriver driver){
-//		this.driver = driver;	
-////		LoginPage loginPage = new LoginPage(driver);
-//	}
-	
-//	LoginPage loginPage = LoginPage.getInstance(driver);
-	
-
 	public static void loginToPrism(WebDriver driver,
 			HashMap<String, Map<String, String>> _hashLogins) {
 		try {
@@ -33,11 +25,9 @@ public class LoginHelper {
 					.get("fmartin");
 
 			driver.get("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb/");
-//			driver.navigate().to("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb/");
-//			String url = driver.getPageSource();
-//			System.out.println(url);
 			
-			driver.findElement(By.id("j_username")).sendKeys(
+			driver.findElement(By.id("j_username")).se
+			ndKeys(
 					propertiesMap.get("username"));
 
 			
