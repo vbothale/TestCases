@@ -26,8 +26,7 @@ public class LoginHelper {
 
 			driver.get("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb/");
 			
-			driver.findElement(By.id("j_username")).se
-			ndKeys(
+			driver.findElement(By.id("j_username")).sendKeys(
 					propertiesMap.get("username"));
 
 			

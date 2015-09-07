@@ -6,10 +6,8 @@ import helper.SearchHelper;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.openqa.selenium.By;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -17,7 +15,6 @@ import org.testng.annotations.Test;
 
 import utility.TestDataReader;
 import utility.Util;
-import utility.WebDriverSetUp;
 
 public class Cust360 extends org.testng.reporters.EmailableReporter{
 
@@ -42,18 +39,18 @@ public class Cust360 extends org.testng.reporters.EmailableReporter{
 		reader.readValue(_hashCustomers,"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
 		reader.readValue(_hashLogins,"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
 		
-		//browser being initialized/called 
+		PropertyConfigurator
+		.configure("src/configs/log4j.properties");
+		 
 		driver = utility.WebDriverSetUp.getDriver(browser);
 		driver.manage().window().maximize();
 		
-		//deletes the cache
 		driver.manage().deleteAllCookies();
 		
 		loginPage = new LoginHelper();
 		loginPage.login(driver, _hashLogins);
 		
 		Util.waitForLoaderToFinish(driver);
-		//search for customer
 		searchHelper.searchCustomer(driver,_hashCustomers);
 	}
 	

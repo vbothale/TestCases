@@ -20,7 +20,7 @@
 	<test name="Chrome Test">
 	<parameter name="browser" value="Chrome" />
 		<classes>
-			<class name="credit.Credit360" />
+			<class name="collateral.Collateral360" />
 		</classes>
 	</test>
 
