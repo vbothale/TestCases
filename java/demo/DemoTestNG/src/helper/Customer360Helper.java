@@ -8,6 +8,13 @@ import org.testng.Assert;
 import utility.Util;
 
 public class Customer360Helper {
+	
+	WebDriver driver;
+	
+	public Customer360Helper(WebDriver driver)
+	{
+		this.driver = driver;
+	}
 
 	public void clickAddress(WebDriver driver) {
 		Util.waitForAJAX(driver);
@@ -86,6 +93,17 @@ public class Customer360Helper {
 		Util.waitForElementPresent(By.xpath("//span[contains(.,'Save')]"), 15, driver);
 		driver.findElement(By.xpath("//span[contains(.,'Save')]")).click();
 		Util.waitForLoaderToFinish(driver);
+	}
+	
+	public Collateral360Helper clickadd(WebDriver driver)
+	{
+		Util.waitForLoaderToFinish(driver);
+		driver.findElement(By.id("ctrl")).click();
+		Util.scrollDown(driver);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+		return new Collateral360Helper(driver);
+		
 	}
 
 }

@@ -1,6 +1,7 @@
 package collateral;
 
 import helper.Collateral360Helper;
+import helper.Customer360Helper;
 import helper.LoginHelper;
 import helper.SearchHelper;
 
@@ -22,6 +23,7 @@ public class Collateral360 extends org.testng.reporters.EmailableReporter {
 	LoginHelper loginPage;
 	Collateral360Helper collateral360Helper;
 	SearchHelper searchHelper;
+	Customer360Helper customer360Helper;
 
 	WebDriver driver;
 	private String option;
@@ -58,7 +60,7 @@ public class Collateral360 extends org.testng.reporters.EmailableReporter {
 
 	@Test(priority = 0)
 	public void verifyCollateralTitleOnCollateral() {
-		collateral360Helper = new Collateral360Helper();
+		collateral360Helper = new Collateral360Helper(driver);
 		collateral360Helper.collateralAdd(driver);
 		collateral360Helper.clickOnAddBtn(driver);
 		collateral360Helper.verifyCollateralTitle(driver);
@@ -67,7 +69,7 @@ public class Collateral360 extends org.testng.reporters.EmailableReporter {
 
 	@Test(priority = 1)
 	public void saveCollateralDetails() throws InterruptedException {
-		collateral360Helper = new Collateral360Helper();
+		collateral360Helper = new Collateral360Helper(driver);
 		collateral360Helper.enterCollateralName(driver);
 		collateral360Helper.enterColateralCode(driver);
 		collateral360Helper.selectCollateralType(driver, option);
@@ -78,6 +80,51 @@ public class Collateral360 extends org.testng.reporters.EmailableReporter {
 		collateral360Helper.clickOnSaveCollateral(driver);
 		System.out.println("test 2");
 	}
+	
+	@Test(priority = 2)
+	public void verifyLeftHandNavigationForVehicle()
+	{
+		collateral360Helper = new Collateral360Helper(driver);
+		customer360Helper = new Customer360Helper(driver);
+		customer360Helper = collateral360Helper.clickBackButton(driver);
+		collateral360Helper.clickOnAddBtn(driver);
+		collateral360Helper.selectCollateralTypeAsVehicle(driver, option);
+		collateral360Helper.verifyLeftHandMenuOnCollateralTypeAsVehicle(driver);
+	}
+	
+	@Test(priority = 3)
+	public void verifyLeftHandNavigationForShares()
+	{
+		collateral360Helper = new Collateral360Helper(driver);
+		customer360Helper = new Customer360Helper(driver);
+		customer360Helper = collateral360Helper.clickBackButton(driver);
+		collateral360Helper.clickOnAddBtn(driver);
+		collateral360Helper.selectCollateralTypeAsShares(driver, option);
+		collateral360Helper.verifyLeftHandMenuOnCollateralTypeAsShares(driver);
+	}
+	
+	@Test(priority = 4)
+	public void verifyLeftHandNavigationForAccountsReceivable()
+	{
+		collateral360Helper = new Collateral360Helper(driver);
+		customer360Helper = new Customer360Helper(driver);
+		customer360Helper = collateral360Helper.clickBackButton(driver);
+		collateral360Helper.clickOnAddBtn(driver);
+		collateral360Helper.selectCollateralTypeAsAccountsReceivable(driver, option);
+		collateral360Helper.verifyLeftHandMenuOnCollateralTypeAsAccountsReceivable(driver);
+	}
+	
+	@Test(priority = 5)
+	public void verifyLeftHandNavigationForRealEstate()
+	{
+		collateral360Helper = new Collateral360Helper(driver);
+		customer360Helper = new Customer360Helper(driver);
+		customer360Helper = collateral360Helper.clickBackButton(driver);
+		collateral360Helper.clickOnAddBtn(driver);
+		collateral360Helper.selectCollateralTypeAsRealEstate(driver, option);
+		collateral360Helper.verifyLeftHandMenuOnCollateralTypeAsRealEstate(driver);
+	}
+	
 
 	@AfterTest
 	public void afterTest() {

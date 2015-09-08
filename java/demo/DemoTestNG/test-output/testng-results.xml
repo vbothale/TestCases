@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Demo Search test suite" duration-ms="126730" started-at="2015-09-04T18:04:17Z" finished-at="2015-09-04T18:06:24Z">
+  <suite name="Demo Search test suite" duration-ms="171918" started-at="2015-09-08T03:37:13Z" finished-at="2015-09-08T03:40:05Z">
     <groups>
     </groups>
-    <test name="Chrome Test" duration-ms="55819" started-at="2015-09-04T18:04:17Z" finished-at="2015-09-04T18:05:13Z">
-      <class name="credit.Credit360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:credit.Credit360@6e7e4042]" name="beforeTest" is-config="true" duration-ms="54229" started-at="2015-09-04T14:04:17Z" finished-at="2015-09-04T14:05:12Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="searchRequest()[pri:0, instance:credit.Credit360@6e7e4042]" name="searchRequest" duration-ms="114" started-at="2015-09-04T14:05:12Z" finished-at="2015-09-04T14:05:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchRequest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:credit.Credit360@6e7e4042]" name="afterTest" is-config="true" duration-ms="1452" started-at="2015-09-04T14:05:12Z" finished-at="2015-09-04T14:05:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- credit.Credit360 -->
-    </test> <!-- Chrome Test -->
-    <test name="Firefox Test" duration-ms="94548" started-at="2015-09-04T18:04:17Z" finished-at="2015-09-04T18:05:52Z">
-      <class name="customer.Cust360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:customer.Cust360@33b54d4e]" name="beforeTest" is-config="true" duration-ms="72093" started-at="2015-09-04T14:04:17Z" finished-at="2015-09-04T14:05:29Z">
+    <test name="Firefox Test" duration-ms="171918" started-at="2015-09-08T03:37:13Z" finished-at="2015-09-08T03:40:05Z">
+      <class name="collateral.Collateral360">
+        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.Collateral360@380febb9]" name="beforeTest" is-config="true" duration-ms="41609" started-at="2015-09-07T23:37:13Z" finished-at="2015-09-07T23:37:54Z">
           <params>
             <param index="0">
               <value>
@@ -41,46 +18,35 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="clickAddressAndAdd()[pri:0, instance:customer.Cust360@33b54d4e]" name="clickAddressAndAdd" duration-ms="4498" started-at="2015-09-04T14:05:29Z" finished-at="2015-09-04T14:05:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickAddressAndAdd -->
-        <test-method status="PASS" signature="saveAddress()[pri:0, instance:customer.Cust360@33b54d4e]" name="saveAddress" duration-ms="16821" started-at="2015-09-04T14:05:34Z" finished-at="2015-09-04T14:05:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- saveAddress -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:customer.Cust360@33b54d4e]" name="afterTest" is-config="true" duration-ms="1120" started-at="2015-09-04T14:05:51Z" finished-at="2015-09-04T14:05:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- customer.Cust360 -->
-    </test> <!-- Firefox Test -->
-    <test name="IE Test" duration-ms="126730" started-at="2015-09-04T18:04:17Z" finished-at="2015-09-04T18:06:24Z">
-      <class name="collateral.Collateral360">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:collateral.Collateral360@19f67d34]" name="beforeTest" is-config="true" duration-ms="67225" started-at="2015-09-04T14:04:17Z" finished-at="2015-09-04T14:05:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[InternetExplorer]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="verifyCollateralTitleOnCollateral()[pri:0, instance:collateral.Collateral360@19f67d34]" name="verifyCollateralTitleOnCollateral" duration-ms="11456" started-at="2015-09-04T14:05:25Z" finished-at="2015-09-04T14:05:36Z">
+        <test-method status="PASS" signature="verifyCollateralTitleOnCollateral()[pri:0, instance:collateral.Collateral360@380febb9]" name="verifyCollateralTitleOnCollateral" duration-ms="7176" started-at="2015-09-07T23:37:54Z" finished-at="2015-09-07T23:38:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCollateralTitleOnCollateral -->
-        <test-method status="PASS" signature="saveCollateralDetails()[pri:0, instance:collateral.Collateral360@19f67d34]" name="saveCollateralDetails" duration-ms="47530" started-at="2015-09-04T14:05:36Z" finished-at="2015-09-04T14:06:24Z">
+        <test-method status="PASS" signature="saveCollateralDetails()[pri:0, instance:collateral.Collateral360@380febb9]" name="saveCollateralDetails" duration-ms="47581" started-at="2015-09-07T23:38:01Z" finished-at="2015-09-07T23:38:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveCollateralDetails -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.Collateral360@19f67d34]" name="afterTest" is-config="true" duration-ms="508" started-at="2015-09-04T14:06:24Z" finished-at="2015-09-04T14:06:24Z">
+        <test-method status="PASS" signature="verifyLeftHandNavigationForVehicle()[pri:0, instance:collateral.Collateral360@380febb9]" name="verifyLeftHandNavigationForVehicle" duration-ms="18661" started-at="2015-09-07T23:38:49Z" finished-at="2015-09-07T23:39:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLeftHandNavigationForVehicle -->
+        <test-method status="PASS" signature="verifyLeftHandNavigationForShares()[pri:0, instance:collateral.Collateral360@380febb9]" name="verifyLeftHandNavigationForShares" duration-ms="18819" started-at="2015-09-07T23:39:08Z" finished-at="2015-09-07T23:39:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLeftHandNavigationForShares -->
+        <test-method status="PASS" signature="verifyLeftHandNavigationForAccountsReceivable()[pri:0, instance:collateral.Collateral360@380febb9]" name="verifyLeftHandNavigationForAccountsReceivable" duration-ms="17994" started-at="2015-09-07T23:39:27Z" finished-at="2015-09-07T23:39:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLeftHandNavigationForAccountsReceivable -->
+        <test-method status="PASS" signature="verifyLeftHandNavigationForRealEstate()[pri:0, instance:collateral.Collateral360@380febb9]" name="verifyLeftHandNavigationForRealEstate" duration-ms="19222" started-at="2015-09-07T23:39:45Z" finished-at="2015-09-07T23:40:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLeftHandNavigationForRealEstate -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:collateral.Collateral360@380febb9]" name="afterTest" is-config="true" duration-ms="830" started-at="2015-09-07T23:40:04Z" finished-at="2015-09-07T23:40:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
       </class> <!-- collateral.Collateral360 -->
-    </test> <!-- IE Test -->
+    </test> <!-- Firefox Test -->
   </suite> <!-- Demo Search test suite -->
 </testng-results>

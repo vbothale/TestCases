@@ -25,10 +25,6 @@ org.testng.reporters.EmailableReporter{
 	private HashMap<String, Map<String, String>> _hashCustomers = new HashMap<String, Map<String, String>>();
 	private HashMap<String, Map<String, String>> _hashLogins = new HashMap<String, Map<String, String>>();
 	
-	public Customer360(WebDriver driver) {
-		loginPage = new LoginPage(driver);
-	}
-	
 	static Logger log = Logger.getLogger(Customer360.class);
 	
 @Parameters({ "browser" })
@@ -40,7 +36,7 @@ org.testng.reporters.EmailableReporter{
 		reader.readValue(_hashLogins,"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
 		
 		//browser being initialized/called 
-		utility.WebDriverSetUp.getDriver(browser);
+		WebDriver driver = utility.WebDriverSetUp.getDriver(browser);
 		
 		loginPage.login(_hashLogins);
 	}

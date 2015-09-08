@@ -15,11 +15,6 @@ import utility.Util;
 public class LoginPage{
 	
 	WebDriver driver;
-
-	public LoginPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
 	
 	@FindBy(how = How.ID, using = "j_username")
 	private WebElement username;
@@ -36,11 +31,11 @@ public class LoginPage{
 		{
 			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashLogins
 					.get("fmartin");
+			driver.get("http://provappsvpcqa01.provapps.com:6080/ProvAppCLWeb/");
 			username.sendKeys(propertiesMap.get("username"));
 			password.sendKeys(propertiesMap.get("password"));
 			loginBtn.click();
-			Util.waitForAJAX(driver);
-			Util.waitForLoaderToFinish(driver);
+			
 		}
 		catch(Exception e)
 		{
