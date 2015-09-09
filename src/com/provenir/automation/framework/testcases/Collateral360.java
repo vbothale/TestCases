@@ -5,15 +5,16 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.provenir.automation.framework.helper.Collateral360Helper;
 import com.provenir.automation.framework.helper.LoginPage;
 import com.provenir.automation.framework.helper.SearchHelper;
-import com.provenir.automation.framework.utility.TestCaseInitializer;
+import com.provenir.automation.framework.utility.TestCaseExecutor;
 import com.provenir.automation.framework.utility.TestDataReader;
 
-public class Collateral360 extends TestCaseInitializer {
+public class Collateral360 extends TestCaseExecutor {
 
 	LoginPage loginPage;
 	SearchHelper searchHelper;
@@ -28,10 +29,11 @@ public class Collateral360 extends TestCaseInitializer {
 	static Logger log = Logger.getLogger(Collateral360.class);
 
 	@BeforeMethod
-	public void beforeMethod() {
-		loginPage = new LoginPage(driver);
-		searchHelper = new SearchHelper(driver);
-		collateral360Helper = new Collateral360Helper(driver);
+	@Parameters({ "browser"})
+	public void beforeMethod(String browserValue) {
+		loginPage = new LoginPage(getDriver(browserValue));
+		searchHelper = new SearchHelper(getDriver(browserValue));
+		collateral360Helper = new Collateral360Helper(getDriver(browserValue));
 	}
 
 	@Test
@@ -49,14 +51,14 @@ public class Collateral360 extends TestCaseInitializer {
 	}
 
 	@Test
-	public void test2_clickOnCollateralAndAdd() throws InterruptedException {
+	public void test2_verifyCollateralTitle() throws InterruptedException {
 		log.info("Click on collateral and Add");
-		System.out.println("test 1");
 		collateral360Helper.verifyCollateralTitle();
+		System.out.println("test 1");
 	}
 
 	@Test
-	public void test3_verifyCollateralTitle() {
+	public void test3_saveCollateralDetails() {
 		collateral360Helper.enterCollateralName();
 		collateral360Helper.enterCollateralCode();
 		collateral360Helper.selectCollType(option);

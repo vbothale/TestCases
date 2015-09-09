@@ -23,7 +23,7 @@
 		<classes>
 			<class name="com.provenir.automation.framework.testcases.Collateral360" />
 			<methods>
-        	<include name="verifyCollateralTitle" />
+        	<include name="test3_saveCollateralDetails" />
       </methods>
 		</classes>
 	</test>

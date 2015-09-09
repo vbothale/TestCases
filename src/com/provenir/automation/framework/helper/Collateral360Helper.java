@@ -59,75 +59,75 @@ public class Collateral360Helper {
 	private String collSubType = "collSubType";
 
 	public void selectCollType(String option) {
-		Util.enableAllDropdowns();
-		Util.waitForLoaderToFinish();
-		Util.waitForElementPresent(
+		Util.enableAllDropdowns(driver);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForElementPresent(driver,
 				By.xpath("//input[contains(@customname,'collType')]"), 10);
 		option = "Deposits";
-		Util.selectItemFromList(collType, option);
-		Util.waitForAJAX();
+		Util.selectItemFromList(driver,collType, option);
+		Util.waitForAJAX(driver);
 	}
 
 	public void selectCollSubType(String option) {
-		Util.enableAllDropdowns();
-		Util.waitForLoaderToFinish();
-		Util.waitForElementPresent(
+		Util.enableAllDropdowns(driver);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForElementPresent(driver,
 				By.xpath("//input[contains(@customname,'collSubType')]"), 10);
 		option = "Deposit Account, External";
-		Util.selectItemFromList(collSubType, option);
-		Util.waitForAJAX();
+		Util.selectItemFromList(driver,collSubType, option);
+		Util.waitForAJAX(driver);
 	}
 
 	public void clickCollateralLink() throws InterruptedException {
-		Util.waitForLoaderToFinish();
+		Util.waitForLoaderToFinish(driver);
 //		Thread.sleep(4000);
 //		Util.waitForElement(collateralLink, 20);
 		collateralLink.click();
-		Util.scrollDown();
-		Util.waitForLoaderToFinish();
+		Util.scrollDown(driver);
+		Util.waitForLoaderToFinish(driver);
 	}
 
 	public void clickOnAddCollateralLink() {
 		collateralLink.click();
-		Util.waitForElement(addBtnOnCollateral, 20);
+		Util.waitForElement(driver,addBtnOnCollateral, 20);
 		addBtnOnCollateral.click();
-		Util.waitForLoaderToFinish();
-		Util.waitForAJAX();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
 	}
 
 	public void verifyCollateralTitle() throws InterruptedException {
-		Util.waitForLoaderToFinish();
-		Util.waitForLoaderToFinish();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForLoaderToFinish(driver);
 //		Thread.sleep(3000);
-		Util.waitForElement(collateralTitle, 20);
+		Util.waitForElement(driver,collateralTitle, 20);
 		String title = collateralTitle.getText().trim();
 		Assert.assertEquals("Basic Collateral Information", title);
 	}
 
 	public void enterCollateralName() {
-		Util.waitForLoaderToFinish();
-		Util.waitForElement(collateralName, 20);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForElement(driver,collateralName, 20);
 		collateralName.sendKeys("Test collateral");
 	}
 
 	public void enterCollateralCode() {
-		Util.waitForElement(collateralCode, 10);
+		Util.waitForElement(driver,collateralCode, 10);
 		collateralCode.sendKeys("coll1");
 	}
 
 	public void enterCollateralOwnerName() {
-		Util.waitForLoaderToFinish();
+		Util.waitForLoaderToFinish(driver);
 		collateralOwnerName.sendKeys("intex");
-		Util.scrollUp();
+		Util.scrollUp(driver);
 		clickSearchedCollateralOwner.click();
-		Util.waitForLoaderToFinish();
-		Util.waitForElement(loadCollateralOwner, 10);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForElement(driver,loadCollateralOwner, 10);
 		loadCollateralOwner.click();
-		Util.waitForAJAX();
+		Util.waitForAJAX(driver);
 	}
 
 	public void enterCollateralPercentage() {
-		Util.waitForLoaderToFinish();
+		Util.waitForLoaderToFinish(driver);
 		collateralOwnerPercentage.sendKeys("100");
 	}
 
@@ -137,12 +137,12 @@ public class Collateral360Helper {
 
 	public void clickOnSaveCollateral() {
 		saveCollateralDetails.click();
-		Util.waitForLoaderToFinish();
+		Util.waitForLoaderToFinish(driver);
 		if (useCurrentCustomer.isDisplayed()) {
 			useCurrentCustomer.click();
-			Util.waitForLoaderToFinish();
+			Util.waitForLoaderToFinish(driver);
 		}
-		Util.waitForAJAX();
+		Util.waitForAJAX(driver);
 	}
 
 }

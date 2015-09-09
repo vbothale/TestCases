@@ -39,32 +39,32 @@ public class Credit360Helper {
 	private WebElement saveBtnOnCreditBorrower;
 
 	public void clickCreditBorrowerAndAdd() {
-		Util.waitForAJAX();
-		Util.scrollDown();
-		Util.waitForElement(creditBorrowerLink, 20);
+		Util.waitForAJAX(driver);
+		Util.scrollDown(driver);
+		Util.waitForElement(driver,creditBorrowerLink, 20);
 		creditBorrowerLink.click();
-		Util.waitForLoaderToFinish();
-		Util.waitForAJAX();
-		Util.waitForElement(addBtnOfCreditBorrower, 20);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver,addBtnOfCreditBorrower, 20);
 		addBtnOfCreditBorrower.click();
-		Util.waitForLoaderToFinish();
+		Util.waitForLoaderToFinish(driver);
 	}
 
 	public void saveGuarantor() {
-		Util.waitForAJAX();
-		Util.waitForElement(srchBorrower, 20);
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver,srchBorrower, 20);
 		srchBorrower.sendKeys("intex");
 		imgBtn.click();
-		Util.waitForLoaderToFinish();
-		Util.waitForAJAX();
-		Util.waitForElement(selectedCustomer, 20);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver,selectedCustomer, 20);
 		selectedCustomer.click();
 		selectBtnOnCreditBorrower.click();
-		Util.waitForLoaderToFinish();
-		Util.waitForElement(saveBtnOnCreditBorrower, 20);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForElement(driver,saveBtnOnCreditBorrower, 20);
 		saveBtnOnCreditBorrower.click();
-		Util.waitForLoaderToFinish();
-		Util.waitForAJAX();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
 	}
 
 }

@@ -7,11 +7,11 @@
     <classes>
       <class name="com.provenir.automation.framework.testcases.Collateral360">
         <methods>
+          <include name="test3_saveCollateralDetails"/>
           <include name="beforeMethod"/>
-          <include name="setUp"/>
-          <include name="test3_verifyCollateralTitle"/>
-          <include name="initialize"/>
+          <include name="beforeTest"/>
           <include name="tearDown"/>
+          <include name="initialize"/>
         </methods>
       </class> <!-- com.provenir.automation.framework.testcases.Collateral360 -->
     </classes>

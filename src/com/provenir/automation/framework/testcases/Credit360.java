@@ -5,33 +5,37 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.provenir.automation.framework.helper.Collateral360Helper;
+import com.provenir.automation.framework.helper.AdvanceSearchHelper;
 import com.provenir.automation.framework.helper.Credit360Helper;
 import com.provenir.automation.framework.helper.LoginPage;
 import com.provenir.automation.framework.helper.SearchHelper;
-import com.provenir.automation.framework.utility.TestCaseInitializer;
+import com.provenir.automation.framework.utility.TestCaseExecutor;
 import com.provenir.automation.framework.utility.TestDataReader;
 
-public class Credit360 extends TestCaseInitializer{
+public class Credit360 extends TestCaseExecutor{
 	
 	LoginPage loginPage;
 	SearchHelper searchHelper;
-	Credit360Helper credit360Helper;
+	Credit360Helper credit360;
+	AdvanceSearchHelper advanceSearch;
 	
 	public TestDataReader reader = new TestDataReader();
 
-	private String option;
 	private HashMap<String, Map<String, String>> _hashLogins = new HashMap<String, Map<String, String>>();
 	private HashMap<String, Map<String, String>> _hashCustomers = new HashMap<String, Map<String, String>>();
 
 	static Logger log = Logger.getLogger(Credit360.class);
 	
 	@BeforeMethod
-	public void beforeMethod() {
-		loginPage = new LoginPage(driver);
-		searchHelper = new SearchHelper(driver);
+	@Parameters({ "browser"})
+	public void beforeMethod(String browserValue) {
+		loginPage = new LoginPage(getDriver(browserValue));
+		searchHelper = new SearchHelper(getDriver(browserValue));
+		credit360 = new Credit360Helper(getDriver(browserValue));
+		advanceSearch = new AdvanceSearchHelper(getDriver(browserValue));
 	}
 	
 	@Test
@@ -42,8 +46,11 @@ public class Credit360 extends TestCaseInitializer{
 		loginPage.login1(_hashLogins);
 		reader.readValue(_hashCustomers,
 				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
-		searchHelper.searchCustomer(_hashCustomers);
+//		searchHelper.searchCustomer(_hashCustomers);
+		advanceSearch.clickAdvanceSearchLink();
 		System.out.println("test 0");
 	}
+	
+	
 
 }
