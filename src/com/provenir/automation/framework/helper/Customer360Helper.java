@@ -103,6 +103,7 @@ public class Customer360Helper {
 	}
 
 	public void enterRegion(String option) {
+		postalCodeImage.click();
 		Util.enableAllDropdowns(driver);
 		Util.waitForElementPresent(driver,By.xpath(region), 20);
 		option = "New York";

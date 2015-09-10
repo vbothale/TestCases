@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Demo Search test suite" parallel="tests" thread-count="3">
+<suite name="Automation test suite" parallel="tests" thread-count="3">
 
 
 	<parameter name="environment"  value="src/com/provenir/automation/framework/config/Env.properties"/>

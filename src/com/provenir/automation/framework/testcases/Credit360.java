@@ -25,9 +25,8 @@ public class Credit360 extends TestCaseExecutor{
 	
 	public TestDataReader reader = new TestDataReader();
 
+	private String option;
 	private HashMap<String, Map<String, String>> _hashLogins = new HashMap<String, Map<String, String>>();
-	private HashMap<String, Map<String, String>> _hashCustomers = new HashMap<String, Map<String, String>>();
-
 	static Logger log = Logger.getLogger(Credit360.class);
 	
 	@BeforeClass
@@ -41,20 +40,22 @@ public class Credit360 extends TestCaseExecutor{
 	
 	@BeforeMethod
 	public void landingPage() {
-		log.info("Login to Prism and search customer");
+		log.info("Login to Prism and search request");
 		reader.readValue(_hashLogins,
 				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
 
 		loginPage.login(_hashLogins);
+		advanceSearch.clickAdvanceSearchLink();
+		advanceSearch.enterRequestType(option);
+		advanceSearch.enterCreditNameAndSubmit();
+		advanceSearch.clickReqOnGrid();
+		credit360 = advanceSearch.verifyCreditTitle();
 	}
 	
 	@Test
-	public void test1_gotoAdvanceSearch() {
-		log.info("Go to Advance search page");
-		reader.readValue(_hashCustomers,
-				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
-//		searchHelper.searchCustomer(_hashCustomers);
-		advanceSearch.clickAdvanceSearchLink();
+	public void test1_addAndSaveBorrower() {
+		log.info("Add and save credit borrower");
+		credit360.clickCreditBorrowerAndAdd();
 		System.out.println("test 0");
 	}
 	
