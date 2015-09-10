@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -28,20 +29,27 @@ public class Collateral360 extends TestCaseExecutor {
 
 	static Logger log = Logger.getLogger(Collateral360.class);
 
-	@BeforeMethod
-	@Parameters({ "browser"})
+	@BeforeClass
+	@Parameters({ "browser" })
 	public void beforeMethod(String browserValue) {
 		loginPage = new LoginPage(getDriver(browserValue));
 		searchHelper = new SearchHelper(getDriver(browserValue));
 		collateral360Helper = new Collateral360Helper(getDriver(browserValue));
+
 	}
 
-	@Test
-	public void test1_login() throws InterruptedException {
+	@BeforeMethod
+	public void landingPage() {
 		log.info("Login to Prism and search customer");
 		reader.readValue(_hashLogins,
 				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
+
 		loginPage.login(_hashLogins);
+	}
+
+	@Test
+	public void test1_gotoCollateral360() throws InterruptedException {
+		log.info("Click on collateral and Add");
 		reader.readValue(_hashCustomers,
 				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
 		searchHelper.searchCustomer(_hashCustomers);
@@ -49,6 +57,15 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.clickOnAddCollateralLink();
 		System.out.println("test 0");
 	}
+
+	// PUBLIC VOID PRE_METHOD{
+	// reader.readValue(_hashCustomers,
+	// "C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
+	// searchHelper.searchCustomer(_hashCustomers);
+	// collateral360Helper.clickCollateralLink();
+	// collateral360Helper.clickOnAddCollateralLink();
+	// System.out.println("test 0");
+	// }
 
 	@Test
 	public void test2_verifyCollateralTitle() throws InterruptedException {
@@ -70,4 +87,9 @@ public class Collateral360 extends TestCaseExecutor {
 		System.out.println("test 2");
 	}
 
+	@Test
+	public void test_new_page_by_madhu() {
+		// know what starting page is
+
+	}
 }

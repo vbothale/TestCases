@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -29,7 +30,7 @@ public class Credit360 extends TestCaseExecutor{
 
 	static Logger log = Logger.getLogger(Credit360.class);
 	
-	@BeforeMethod
+	@BeforeClass
 	@Parameters({ "browser"})
 	public void beforeMethod(String browserValue) {
 		loginPage = new LoginPage(getDriver(browserValue));
@@ -38,12 +39,18 @@ public class Credit360 extends TestCaseExecutor{
 		advanceSearch = new AdvanceSearchHelper(getDriver(browserValue));
 	}
 	
-	@Test
-	public void test1_login() {
+	@BeforeMethod
+	public void landingPage() {
 		log.info("Login to Prism and search customer");
 		reader.readValue(_hashLogins,
 				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
-		loginPage.login1(_hashLogins);
+
+		loginPage.login(_hashLogins);
+	}
+	
+	@Test
+	public void test1_gotoAdvanceSearch() {
+		log.info("Go to Advance search page");
 		reader.readValue(_hashCustomers,
 				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
 //		searchHelper.searchCustomer(_hashCustomers);

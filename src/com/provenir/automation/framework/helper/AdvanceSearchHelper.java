@@ -38,7 +38,7 @@ public class AdvanceSearchHelper {
 
 	public void clickAdvanceSearchLink() {
 		Util.waitForAJAX(driver);
-		Util.waitForElement(driver,advanceSearchLink, 20);
+		Util.waitForElement(driver,advanceSearchLink, 30);
 		advanceSearchLink.click();
 		Util.waitForLoaderToFinish(driver);
 	}
