@@ -19,7 +19,6 @@
 -->	
 
 
-
 	<test name="Chrome Test">
 	<parameter name="browser" value="Chrome" />
 		<classes>
