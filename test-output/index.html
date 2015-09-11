@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Automation_test_suite">
-              <span class="suite-name border-passed">Automation test suite</span>
+              <span class="suite-name border-skipped">Automation test suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,7 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">8 methods,   8 passed</span>
+                    <span class="method-stats">8 methods,  1 skipped,  7 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Automation_test_suite" class="hide-methods skipped suite-Automation_test_suite"> (hide)</a> <!-- hide-methods skipped suite-Automation_test_suite -->
+                      <a href="#" panel-name="suite-Automation_test_suite" class="show-methods skipped suite-Automation_test_suite"> (show)</a> <!-- show-methods skipped suite-Automation_test_suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Automation_test_suite">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Automation_test_suite" title="com.provenir.automation.framework.testcases.Credit360" hash-for-method="test123">test123</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Automation_test_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -99,11 +113,6 @@
                       <a href="#" panel-name="suite-Automation_test_suite" class="show-methods passed suite-Automation_test_suite"> (show)</a> <!-- show-methods passed suite-Automation_test_suite -->
                     </span>
                     <div class="method-list-content passed suite-Automation_test_suite">
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Automation_test_suite" title="com.provenir.automation.framework.testcases.Credit360" hash-for-method="test123">test123</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Automation_test_suite" title="com.provenir.automation.framework.testcases.Collateral360" hash-for-method="test1_gotoCollateral360">test1_gotoCollateral360</a> <!-- method navigator-link -->
@@ -151,9 +160,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Automation_test_suite" class="panel Automation_test_suite">
-          <div class="suite-Automation_test_suite-class-passed">
+          <div class="suite-Automation_test_suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">com.provenir.automation.framework.testcases.Credit360</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -165,7 +174,7 @@
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Automation_test_suite-class-passed -->
+          </div> <!-- suite-Automation_test_suite-class-skipped -->
           <div class="suite-Automation_test_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -307,35 +316,35 @@ data.addRows(8);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'test3_saveAddress')
 data.setCell(0, 2, 'com.provenir.automation.framework.testcases.Customer360')
-data.setCell(0, 3, 72009);
+data.setCell(0, 3, 71316);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'test3_saveCollateralDetails')
 data.setCell(1, 2, 'com.provenir.automation.framework.testcases.Collateral360')
-data.setCell(1, 3, 50163);
+data.setCell(1, 3, 67878);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'test1_gotoCollateral360')
 data.setCell(2, 2, 'com.provenir.automation.framework.testcases.Collateral360')
-data.setCell(2, 3, 31534);
+data.setCell(2, 3, 36998);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'test1_gotoCustomer360')
 data.setCell(3, 2, 'com.provenir.automation.framework.testcases.Customer360')
-data.setCell(3, 3, 18865);
+data.setCell(3, 3, 20365);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'test2_verifyCollateralTitle')
 data.setCell(4, 2, 'com.provenir.automation.framework.testcases.Collateral360')
-data.setCell(4, 3, 10521);
+data.setCell(4, 3, 10415);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'test2_verifyAddressTitle')
 data.setCell(5, 2, 'com.provenir.automation.framework.testcases.Customer360')
-data.setCell(5, 3, 124);
+data.setCell(5, 3, 127);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'test_new_page_by_madhu')
 data.setCell(6, 2, 'com.provenir.automation.framework.testcases.Collateral360')
-data.setCell(6, 3, 3);
+data.setCell(6, 3, 2);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'test123')
 data.setCell(7, 2, 'com.provenir.automation.framework.testcases.Credit360')
-data.setCell(7, 3, 0);
+data.setCell(7, 3, 1);
 window.suiteTableData['Automation_test_suite']= { tableData: data, tableDiv: 'times-div-Automation_test_suite'}
 return data;
 }
@@ -371,140 +380,117 @@ return data;
                 <span class="method-name">initialize</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.provenir.automation.framework.testcases.Collateral360</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
-                <span class="method-start">72 ms</span>
-              </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.provenir.automation.framework.testcases.Credit360</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">beforeTest</span>
-                <span class="method-start">77 ms</span>
+                <span class="method-start">40 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.provenir.automation.framework.testcases.Customer360</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
-                <span class="method-start">81 ms</span>
+                <span class="method-start">41 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.provenir.automation.framework.testcases.Collateral360</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">beforeTest</span>
+                <span class="method-start">43 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.provenir.automation.framework.testcases.Credit360</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">beforeMethod(InternetExplorer)</span>
-                <span class="method-start">16221 ms</span>
+                <span class="method-name">beforeMethod(Chrome)</span>
+                <span class="method-start">12560 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">landingPage</span>
-                <span class="method-start">16248 ms</span>
+                <span class="method-start">12586 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">test1_gotoCollateral360</span>
-                <span class="method-start">40956 ms</span>
+                <span class="method-name">test123</span>
+                <span class="method-start">32557 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.provenir.automation.framework.testcases.Customer360</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">beforeMethod(Firefox)</span>
-                <span class="method-start">46729 ms</span>
+                <span class="method-start">46100 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">landingPage</span>
-                <span class="method-start">46749 ms</span>
+                <span class="method-start">46104 ms</span>
               </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.provenir.automation.framework.testcases.Collateral360</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">landingPage</span>
-                <span class="method-start">72492 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.provenir.automation.framework.testcases.Customer360</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">test1_gotoCustomer360</span>
-                <span class="method-start">72494 ms</span>
+                <span class="method-start">75868 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.provenir.automation.framework.testcases.Collateral360</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">test2_verifyCollateralTitle</span>
-                <span class="method-start">77790 ms</span>
-              </div> <!-- test-method -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeMethod(InternetExplorer)</span>
+                <span class="method-start">92383 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">landingPage</span>
-                <span class="method-start">88312 ms</span>
+                <span class="method-start">92392 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">test3_saveCollateralDetails</span>
-                <span class="method-start">88621 ms</span>
-              </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.provenir.automation.framework.testcases.Customer360</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">landingPage</span>
-                <span class="method-start">91361 ms</span>
+                <span class="method-start">96234 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">test2_verifyAddressTitle</span>
-                <span class="method-start">91376 ms</span>
+                <span class="method-start">96250 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">landingPage</span>
-                <span class="method-start">91502 ms</span>
+                <span class="method-start">96378 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">test3_saveAddress</span>
-                <span class="method-start">91523 ms</span>
+                <span class="method-start">96394 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.provenir.automation.framework.testcases.Credit360</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">beforeMethod(Chrome)</span>
-                <span class="method-start">93108 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="configuration-method before">
-                <span class="method-name">landingPage</span>
-                <span class="method-start">93114 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
               <div class="chronological-class-name">com.provenir.automation.framework.testcases.Collateral360</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">landingPage</span>
-                <span class="method-start">138785 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.provenir.automation.framework.testcases.Credit360</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">test123</span>
-                <span class="method-start">143751 ms</span>
+                <span class="method-name">test1_gotoCollateral360</span>
+                <span class="method-start">121608 ms</span>
               </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.provenir.automation.framework.testcases.Collateral360</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">landingPage</span>
+                <span class="method-start">158608 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">test2_verifyCollateralTitle</span>
+                <span class="method-start">163685 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">landingPage</span>
+                <span class="method-start">174101 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">test3_saveCollateralDetails</span>
+                <span class="method-start">174396 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">landingPage</span>
+                <span class="method-start">242275 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">test_new_page_by_madhu</span>
-                <span class="method-start">144008 ms</span>
+                <span class="method-start">247390 ms</span>
               </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.provenir.automation.framework.testcases.Credit360</div> <!-- chronological-class-name -->
-              <div class="configuration-suite after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">163539 ms</span>
-              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

@@ -43,7 +43,7 @@ public class Customer360 extends TestCaseExecutor{
 	public void landingPage() {
 		log.info("Login to Prism and search customer");
 		reader.readValue(_hashLogins,
-				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
+				"resources/Login.json");
 
 		loginPage.login(_hashLogins);
 	}
@@ -51,7 +51,7 @@ public class Customer360 extends TestCaseExecutor{
 	@Test
 	public void test1_gotoCustomer360() {
 		reader.readValue(_hashCustomers,
-				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
+				"resources/Customers.json");
 		searchHelper.searchCustomer(_hashCustomers);
 		customer360.clickAddressLink();
 		customer360.clickAddBtnOfAddressLink();

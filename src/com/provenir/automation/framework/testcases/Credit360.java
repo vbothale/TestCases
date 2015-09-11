@@ -42,7 +42,7 @@ public class Credit360 extends TestCaseExecutor{
 	public void landingPage() {
 		log.info("Login to Prism and search request");
 		reader.readValue(_hashLogins,
-				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
+				"resources/Login.json");
 
 		loginPage.login(_hashLogins);
 		advanceSearch.clickAdvanceSearchLink();

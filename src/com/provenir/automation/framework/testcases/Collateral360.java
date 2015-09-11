@@ -42,7 +42,7 @@ public class Collateral360 extends TestCaseExecutor {
 	public void landingPage() {
 		log.info("Login to Prism and search customer");
 		reader.readValue(_hashLogins,
-				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
+				"resources/Login.json");
 
 		loginPage.login(_hashLogins);
 	}
@@ -51,21 +51,12 @@ public class Collateral360 extends TestCaseExecutor {
 	public void test1_gotoCollateral360() throws InterruptedException {
 		log.info("Click on collateral and Add");
 		reader.readValue(_hashCustomers,
-				"C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
+				"resources/Customers.json");
 		searchHelper.searchCustomer(_hashCustomers);
 		collateral360Helper.clickCollateralLink();
 		collateral360Helper.clickOnAddCollateralLink();
 		System.out.println("test 0");
 	}
-
-	// PUBLIC VOID PRE_METHOD{
-	// reader.readValue(_hashCustomers,
-	// "C:\\New folder\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
-	// searchHelper.searchCustomer(_hashCustomers);
-	// collateral360Helper.clickCollateralLink();
-	// collateral360Helper.clickOnAddCollateralLink();
-	// System.out.println("test 0");
-	// }
 
 	@Test
 	public void test2_verifyCollateralTitle() throws InterruptedException {
