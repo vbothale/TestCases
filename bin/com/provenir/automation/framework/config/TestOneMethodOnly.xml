@@ -25,7 +25,7 @@
 		<classes>
 			<class name="com.provenir.automation.framework.testcases.Credit360" />
 			<methods>
-        	<include name="test1_addAndSaveBorrower" />
+        	<include name="" />
       </methods>
 		</classes>
 	</test>

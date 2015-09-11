@@ -53,11 +53,12 @@ public class Credit360 extends TestCaseExecutor{
 	}
 	
 	@Test
-	public void test1_addAndSaveBorrower() {
-		log.info("Add and save credit borrower");
-		credit360.clickCreditBorrowerAndAdd();
-		System.out.println("test 0");
+	public void test123()
+	{
+		
 	}
+	
+
 	
 	
 
