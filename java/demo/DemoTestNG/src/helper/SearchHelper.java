@@ -20,7 +20,7 @@ public class SearchHelper {
 		HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashCustomers
 				.get("searchCustomer");
 		
-		System.out.println("**************************************" + propertiesMap.get("searchCustomer"));
+		//System.out.println("**************************************" + propertiesMap.get("searchCustomer"));
 		driver.findElement(By.id("srchTxt")).sendKeys(
 				propertiesMap.get("searchCustomer"));
 		

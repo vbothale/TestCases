@@ -1,7 +1,13 @@
 package helper;
 
+import java.util.Enumeration;
 import java.util.NoSuchElementException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.*;
 
 import org.testng.Assert;
@@ -23,18 +29,37 @@ import org.openqa.selenium.WebDriver;
 
 
 
-
-
 import utility.*;
 
 public class Collateral360Helper {
 	
+	Properties prop = null;
+
+	
+	public void Propertyfile(){
+		File file = new File
+
+				("D:\\Workspace_TestCases\\TestCases\\java\\demo\\DemoTestNG\\src\\collateral\\CollateralLocators.properties");
+			   Properties prop = new Properties();
+				  //Creating InputStream object to read data
+		   FileInputStream objInput = null;
+				   try {
+		   objInput = new FileInputStream(file);
+				    //Reading properties key/values in file
+			   prop.load(objInput);
+				objInput.close();
+				    } catch (FileNotFoundException e) {
+				     System.out.println(e.getMessage());   
+				    } catch (IOException e) {
+				   System.out.println(e.getMessage());
+				  }
+}
 //	@FindBy(how = How.XPATH, using = ".//*[@id='ctrl']")
 //	public WebElement collateralLink;
 	
 	public void collateralAdd(WebDriver driver) {
 		Util.waitForLoaderToFinish(driver);
-		driver.findElement(By.id("ctrl")).click();
+		driver.findElement(By.id((prop.getProperty("Address")))).click();
 		Util.scrollDown(driver);
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForAJAX(driver);
@@ -51,7 +76,7 @@ public class Collateral360Helper {
 
 	public void verifyCollateralTitle(WebDriver driver) {
 		Util.waitForLoaderToFinish(driver);
-		Util.waitForElementPresent(By.xpath(".//*[@id='c360r']"), 60, driver);
+		Util.waitForElementPresent(By.xpath(prop.getProperty("collateral")), 60, driver);
 		Util.waitForLoaderToFinish(driver);
 		String title = driver.findElement(By.xpath(".//*[@id='c360r']"))
 				.getText().trim();

@@ -3,8 +3,13 @@ import helper.Collateral360Helper;
 import helper.LoginHelper;
 import helper.SearchHelper;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -40,9 +45,12 @@ public class Collateral360 extends org.testng.reporters.EmailableReporter{
 	
 	@BeforeTest
 	public void beforeTest(String browser) throws Exception {
-	
-		reader.readValue(_hashCustomers,"D:\\workspace_selenium\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
-		reader.readValue(_hashLogins,"D:\\workspace_selenium\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
+		try{
+			reader.readValue(_hashCustomers,"D:\\Workspace_TestCases\\TestCases\\java\\demo\\DemoTestNG\\resources\\Customers.json");
+			reader.readValue(_hashLogins,"D:\\Workspace_TestCases\\TestCases\\java\\demo\\DemoTestNG\\resources\\Login.json");
+		}catch(Exception e){
+			log.error(e);
+		}
 		
 		//browser being initialized/called 
 		driver = utility.WebDriverSetUp.getDriver(browser);
@@ -58,13 +66,27 @@ public class Collateral360 extends org.testng.reporters.EmailableReporter{
 		//search for customer
 		searchHelper.searchCustomer(driver,_hashCustomers);
 		
-		
-		
+	 File file = new File("D:\\Workspace_TestCases\\TestCases\\java\\demo\\DemoTestNG\\src\\collateral\\CollateralLocators.properties");
+	   Properties prop = new Properties();
+			  //Creating InputStream object to read data
+	   FileInputStream objInput = null;
+			   try {
+	   objInput = new FileInputStream(file);
+			    //Reading properties key/values in file
+		   prop.load(objInput);
+			objInput.close();
+			    } catch (FileNotFoundException e) {
+			     System.out.println(e.getMessage());   
+			    } catch (IOException e) {
+			   System.out.println(e.getMessage());
+			  }
+		   
 	}
 	
 	@Test(priority=0)
 	public void verifyCollateralTitleOnCollateral() {
 		collateral360Helper = new Collateral360Helper();
+		collateral360Helper.Propertyfile();
 		collateral360Helper.collateralAdd(driver);
 		collateral360Helper.clickOnAddBtn(driver);
 		collateral360Helper.verifyCollateralTitle(driver);

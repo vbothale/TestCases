@@ -1,12 +1,15 @@
 package utility;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Map.Entry;
 
 import org.apache.log4j.Logger;
@@ -94,7 +97,43 @@ public class TestDataReader {
 	
 	public static void deleteValue(
 			HashMap<String, Map<String, String>> hashMap, String str, String value) {
-		
-		
 	}
-}
+	
+	public void PropertyFileCollateral(){
+	
+		  File file = new File("C://Users//gulshango//workspace//TestReport//src//GlobalLibary//Test.properties");
+		     Properties prop = new Properties();
+			   FileInputStream objInput = null;
+		   try {
+		    objInput = new FileInputStream(file);
+		   	    prop.load(objInput);
+		    objInput.close();
+		    } catch (FileNotFoundException e) {
+		     System.out.println(e.getMessage());   
+		     		    } catch (IOException e) {
+		   System.out.println(e.getMessage());
+		  }
+	
+		   
+		 
+	
+	}
+	
+	  public void PropertyFileCredit(){
+		   
+		   File file = new File("C://Users//gulshango//workspace//TestReport//src//GlobalLibary//Test.properties");
+		  		   Properties prop = new Properties();
+				   FileInputStream objInput = null;
+		   try {
+		    objInput = new FileInputStream(file);
+		    	    prop.load(objInput);
+		    		    objInput.close();
+		    } catch (FileNotFoundException e) {
+		     System.out.println(e.getMessage());   
+		     		    } catch (IOException e) {
+		   System.out.println(e.getMessage());
+		  }
+	   }
+
+	}
+
