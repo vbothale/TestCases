@@ -151,6 +151,8 @@ public class Collateral360Helper {
 		}
 		Util.waitForAJAX(driver);
 	}
+	
+	
 	public Boolean IsElementPresent(WebDriver driver, By by) {
         try
         {
