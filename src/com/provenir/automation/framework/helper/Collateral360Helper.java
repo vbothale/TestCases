@@ -1,5 +1,7 @@
 package com.provenir.automation.framework.helper;
 
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -102,6 +104,11 @@ public class Collateral360Helper {
 		Util.waitForElement(driver,collateralTitle, 20);
 		String title = collateralTitle.getText().trim();
 		Assert.assertEquals("Basic Collateral Information", title);
+		
+//		Boolean isFound = IsElementPresent(driver, By.xpath(".//*[@id='c360r']"));
+////		Assert.assertEquals("Basic Collateral Information", title);
+//		Assert.assertTrue(isFound);
+	
 	}
 
 	public void enterCollateralName() {
@@ -144,5 +151,13 @@ public class Collateral360Helper {
 		}
 		Util.waitForAJAX(driver);
 	}
-
+	public Boolean IsElementPresent(WebDriver driver, By by) {
+        try
+        {
+            driver.findElement(by);
+            return true;
+        }
+        catch (NoSuchElementException e) { return false; 
+        }
+	}
 }
