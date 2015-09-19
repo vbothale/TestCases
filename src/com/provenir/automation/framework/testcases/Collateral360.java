@@ -134,7 +134,7 @@ public class Collateral360 extends TestCaseExecutor {
 	}
 
 	@Test
-	public void test9_verifyActionMenuDisplayed() {
+	public void test9_verifyActionMenuDisplayedOnVehicle() {
 		collateral360Helper.clickOnTitledMotorVehicleSection();
 		collateral360Helper.clickEditOnTitledMotorVehicle();
 		collateral360Helper.addOnTitledMotorVehicle();
@@ -188,6 +188,12 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.enterCollateralPercentage();
 		collateral360Helper.setPrimaryCollateralOwner();
 		collateral360Helper.clickOnSaveCollateral();
+	}
+	
+	@Test
+	public void test16_verifyActionMenuDisplayedOnUCC()
+	{
+		
 	}
 
 }

@@ -148,6 +148,30 @@ public class Collateral360Helper {
 	@FindBy(how = How.ID, using = "addNewTitledMotor")
 	private WebElement addBtnOnTitledMotorVehicle;
 
+	@FindBy(how = How.XPATH, using = ".//*[@id='UPSERTCOLLUCCFORM']/div[4]/a")
+	private WebElement editBtnOnUCC;
+
+	@FindBy(how = How.ID, using = "addNewUccLock")
+	private WebElement addBtnOnUCC;
+
+	@FindBy(how = How.ID, using = "")
+	private WebElement lastSrchDateOnUCC;
+
+	@FindBy(how = How.NAME, using = "filingDate0")
+	private WebElement fillingDate;
+
+	@FindBy(how = How.NAME, using = "filingNumber0")
+	private WebElement fillingNumber;
+
+	@FindBy(how = How.NAME, using = "facilityName0")
+	private WebElement facilityName;
+
+	@FindBy(how = How.NAME, using = "fillingComments0")
+	private WebElement comments;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='data_content']/div/div/table/tbody/tr/td[5]/a")
+	private WebElement actionMenuOnUCC;
+
 	@FindBy(how = How.XPATH, using = ".//*[@id='titledMotorGrid']/div/table/tbody/tr/td[1]/input")
 	private WebElement typeOfVehicle;
 
@@ -177,6 +201,9 @@ public class Collateral360Helper {
 
 	@FindBy(how = How.ID, using = "errorMsgForTitledMotor")
 	private WebElement errMsgOnTitledVehicle;
+
+	@FindBy(how = How.ID, using = "cReq")
+	private WebElement creditReq;
 
 	private String collType = "collType";
 	private String collSubType = "collSubType";
@@ -569,6 +596,21 @@ public class Collateral360Helper {
 			return true;
 		} else
 			return false;
+	}
+
+	public void clickOnUCC() {
+		Util.waitForElement(driver, ucc, 10);
+		ucc.click();
+		Util.waitForLoaderToFinish(driver);
+	}
+
+	public void clickEditOnUCC() {
+
+	}
+
+	public void clickCreditRequest() {
+		Util.waitForElement(driver, creditReq, 10);
+		creditReq.click();
 	}
 
 }
