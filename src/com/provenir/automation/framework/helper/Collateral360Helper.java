@@ -3,6 +3,7 @@ package com.provenir.automation.framework.helper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -13,10 +14,12 @@ import com.provenir.automation.framework.utility.Util;
 public class Collateral360Helper {
 
 	WebDriver driver;
+	Actions actions = null;
 
 	public Collateral360Helper(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		actions = new Actions(driver);
 	}
 
 	@FindBy(how = How.ID, using = "ctrl")
@@ -139,6 +142,42 @@ public class Collateral360Helper {
 	@FindBy(how = How.ID, using = "pMgmt")
 	private WebElement propertyManagement;
 
+	@FindBy(how = How.ID, using = "editBtn")
+	private WebElement editBtnOnTitledMotorVehicle;
+
+	@FindBy(how = How.ID, using = "addNewTitledMotor")
+	private WebElement addBtnOnTitledMotorVehicle;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='titledMotorGrid']/div/table/tbody/tr/td[1]/input")
+	private WebElement typeOfVehicle;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='titledMotorGrid']/div/table/tbody/tr/td[2]/input")
+	private WebElement vehicleYear;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='titledMotorGrid']/div/table/tbody/tr/td[3]/input")
+	private WebElement make;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='titledMotorGrid']/div/table/tbody/tr/td[4]/input")
+	private WebElement model;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='titledMotorGrid']/div/table/tbody/tr/td[5]/input")
+	private WebElement vin;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='titledMotorGrid']/div/table/tbody/tr/td[6]/a")
+	private WebElement actionMenuOnTitledMotorVehicle;
+
+	@FindBy(how = How.LINK_TEXT, using = "Delete")
+	private WebElement deleteLnk;
+
+	@FindBy(how = How.ID, using = "saveTitledMotorDetails")
+	private WebElement saveTitledMotorVehicle;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='UPSERTTITLEDMOTORFORM']/div/div[3]/div/a[1]")
+	private WebElement cancelTitledMotorVehicle;
+
+	@FindBy(how = How.ID, using = "errorMsgForTitledMotor")
+	private WebElement errMsgOnTitledVehicle;
+
 	private String collType = "collType";
 	private String collSubType = "collSubType";
 	private String movable = ".//*[@id='collaterTypePage']/div[1]/div[2]/div[1]/select";
@@ -249,7 +288,7 @@ public class Collateral360Helper {
 		Util.waitForElementPresent(driver,
 				By.xpath("//input[contains(@customname,'collSubType')]"), 10);
 		option = "Titled Motor Vehicles";
-		Util.selectItemFromList(driver, collType, option);
+		Util.selectItemFromList(driver, collSubType, option);
 		Util.waitForAJAX(driver);
 	}
 
@@ -371,6 +410,18 @@ public class Collateral360Helper {
 		Util.waitForAJAX(driver);
 	}
 
+	public void selectCollateralSubTypeASAccountsReceivable(String option) {
+		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
+		Util.enableAllDropdowns(driver);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForElementPresent(driver,
+				By.xpath("//input[contains(@customname,'collSubType')]"), 10);
+		option = "Accounts Receivable";
+		Util.selectItemFromList(driver, collSubType, option);
+		Util.waitForAJAX(driver);
+	}
+
 	public boolean verifyLeftHandMenuOnCollateralTypeAsAccountsReceivable() {
 		Util.waitForAJAX(driver);
 		String s1 = basicCollateralInformation.getText().trim();
@@ -453,12 +504,71 @@ public class Collateral360Helper {
 
 			return false;
 	}
-	
-	public void clickOnAddBtn(){
+
+	public void clickOnAddBtn() {
 		Util.waitForAJAX(driver);
 		collateralLink.click();
-		Util.waitForElementPresent(driver, By.xpath(".//*[@id='clientCollateral']/div/a"), 20);
+		Util.waitForElementPresent(driver,
+				By.xpath(".//*[@id='clientCollateral']/div/a"), 20);
 		addBtnOnCollateral.click();
+	}
+
+	public void clickOnTitledMotorVehicleSection() {
+		Util.waitForElement(driver, titledMotorVehicle, 20);
+		titledMotorVehicle.click();
+		Util.waitForLoaderToFinish(driver);
+	}
+
+	public void clickEditOnTitledMotorVehicle() {
+		Util.waitForElement(driver, editBtnOnTitledMotorVehicle, 10);
+		editBtnOnTitledMotorVehicle.click();
+	}
+
+	public void addOnTitledMotorVehicle() {
+		Util.waitForElement(driver, addBtnOnTitledMotorVehicle, 10);
+		addBtnOnTitledMotorVehicle.click();
+	}
+
+	public void saveTitledMotorVehicleDetails() {
+		typeOfVehicle.sendKeys("Truck");
+		vehicleYear.sendKeys("2010");
+		make.sendKeys("2008");
+		model.sendKeys("NJ1234");
+		vin.sendKeys("12345");
+		saveTitledMotorVehicle.click();
+		Util.waitForAJAX(driver);
+	}
+
+	public void cancelTitledMotorVehicle() {
+		typeOfVehicle.sendKeys("Truck");
+		vehicleYear.sendKeys("2010");
+		make.sendKeys("2008");
+		model.sendKeys("NJ1234");
+		vin.sendKeys("12345");
+		cancelTitledMotorVehicle.click();
+		Util.waitForAJAX(driver);
+	}
+
+	public boolean verifyActionMenuPresentOnTitledMotorVehicle() {
+		if (actionMenuOnTitledMotorVehicle.isDisplayed()) {
+			return true;
+		} else
+			return false;
+	}
+
+	public void clickDeleteOnTitledMotorVehicle() {
+		actions.moveToElement(actionMenuOnTitledMotorVehicle).click().perform();
+		Util.waitForElement(driver, deleteLnk, 15);
+		deleteLnk.click();
+		Util.waitForAJAX(driver);
+	}
+
+	public boolean verifyMandatoryDetailsOnTitledMotorVehicle() {
+		saveTitledMotorVehicle.click();
+		if (errMsgOnTitledVehicle.isDisplayed()) {
+			return true;
+		} else
+			return false;
 	}
 
 }
