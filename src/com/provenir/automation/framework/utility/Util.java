@@ -220,5 +220,25 @@ public class Util {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+	public static void selectOptionFromDropDown(WebDriver driver,
+			   String customName, String option) {
+			  try {
+			   WebElement searchTxtBox = driver.findElement(By
+			     .cssSelector("input[customname='" + customName + "']"));
+
+			   searchTxtBox.clear();
+			   searchTxtBox.sendKeys(option);
+
+			   WebElement ele = driver.findElement(By.xpath(".//ul[@customid='"
+			     + customName + "']/li[1]"));
+			   Select select = new Select(ele);
+			   select.selectByVisibleText(option);
+			   ele.click();
+
+			  } catch (Exception e) {
+			   e.printStackTrace();
+			  }
+			  driver.manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS); // nullify
+			  // implicitlyWait()
+			 }
 }

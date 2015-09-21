@@ -56,6 +56,20 @@ public class Collateral360Helper {
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='partySrchRes']//span[contains(.,'Load')]")
 	private WebElement loadCollateralOwner;
+	
+	private String country = ".//*[@id='collaterTypePage']/div[1]/div[2]/div[2]/span/input";
+	
+	@FindBy(how = How.ID, using = "city")
+	 private WebElement city;
+
+	 @FindBy(how = How.ID, using = "addr2")
+	 private WebElement street;
+
+	 @FindBy(how = How.ID, using = "addr1")
+	 private WebElement number;
+
+	 @FindBy(how = How.ID, using = "zip")
+	 private WebElement zipcode;
 
 	private String collType = "collType";
 	private String collSubType = "collSubType";
@@ -152,6 +166,17 @@ public class Collateral360Helper {
 		Util.waitForAJAX(driver);
 	}
 	
+	public void selectCollateralTypeAsRealState(String option) {
+		  Util.waitForAJAX(driver);
+		  Util.waitForLoaderToFinish(driver);
+		  Util.enableAllDropdowns(driver);
+		  Util.waitForLoaderToFinish(driver);
+		  Util.waitForElementPresent(driver,
+		    By.xpath("//input[contains(@customname,'collType')]"), 10);
+		  option = "RealState";
+		  Util.selectItemFromList(driver, collType, option);
+		  Util.waitForAJAX(driver);
+		 }
 	
 	public Boolean IsElementPresent(WebDriver driver, By by) {
         try
@@ -162,4 +187,44 @@ public class Collateral360Helper {
         catch (NoSuchElementException e) { return false; 
         }
 	}
+
+	public void enterCountry(String option) {
+		  Util.enableAllDropdowns(driver);
+		  Util.waitForLoaderToFinish(driver);
+		  Util.waitForElementPresent(
+		    driver,
+		    By.xpath(".//*[@id='collaterTypePage']/div[1]/div[2]/div[2]/span/input"),
+		    10);
+		  option = "United States";
+		  Util.selectOptionFromDropDown(driver, country, option);
+		  // Util.selectItemFromList(driver, country, option);
+		 }
+
+		 public void enterCity() {
+		  Util.waitForAJAX(driver);
+		  city.sendKeys("Parsipanny");
+		 }
+
+		 public void enterStreet() {
+		  street.sendKeys("address 2");
+		 }
+
+		 public void enterNumber() {
+		  number.sendKeys("address 1");
+		 }
+
+		 public void enterZipCode() {
+		  zipcode.sendKeys("07054");
+		 }	
+
+
+		 public void selectCollateralSubTypeAsTitledMotorVehicles(String option) {
+			  Util.enableAllDropdowns(driver);
+			  Util.waitForLoaderToFinish(driver);
+			  Util.waitForElementPresent(driver,
+			    By.xpath("//input[contains(@customname,'collSubType')]"), 10);
+			  option = "Retail Office";
+			  Util.selectItemFromList(driver, collSubType, option);
+			  Util.waitForAJAX(driver);
+			 }
 }

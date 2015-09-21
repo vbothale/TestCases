@@ -79,8 +79,22 @@ public class Collateral360 extends TestCaseExecutor {
 	}
 
 	@Test
-	public void test_new_page_by_madhu() {
-		// know what starting page is
+	 public void test9_saveCollateralDetailsAsRealState() {
+	  collateral360Helper.enterCollateralName();
+	  collateral360Helper.enterCollateralCode();
+	  collateral360Helper.selectCollateralTypeAsRealState(option);
+	  collateral360Helper
+	    .selectCollateralSubTypeAsTitledMotorVehicles(option);
+	  collateral360Helper.enterCountry(option);
+	  collateral360Helper.enterCity();
+	  collateral360Helper.enterStreet();
+	  collateral360Helper.enterNumber();
+	  collateral360Helper.enterZipCode();
 
-	}
+	  collateral360Helper.enterCollateralOwnerName();
+	  collateral360Helper.enterCollateralPercentage();
+	  collateral360Helper.setPrimaryCollateralOwner();
+	  collateral360Helper.clickOnSaveCollateral();
+	 }
+	
 }
