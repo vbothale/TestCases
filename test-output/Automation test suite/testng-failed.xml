@@ -2,15 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="3" name="Failed suite [Automation test suite]" parallel="tests">
   <parameter name="environment" value="src/com/provenir/automation/framework/config/Env.properties"/>
-  <parameter name="browser" value="Chrome"/>
+  <parameter name="browser" value="Firefox"/>
   <listeners>
     <listener class-name="com.provenir.automation.framework.utility.Listener"/>
   </listeners>
-  <test name="IE Test(failed)" parallel="tests">
-    <parameter name="browser" value="InternetExplorer"/>
+  <test name="Firefox Test(failed)" parallel="tests">
+    <parameter name="browser" value="Firefox"/>
     <classes>
       <class name="com.provenir.automation.framework.testcases.Collateral360">
         <methods>
+<<<<<<< HEAD
           <include name="test3_saveCollateralDetails"/>
           <include name="beforeMethod"/>
           <include name="landingPage"/>
@@ -40,11 +41,16 @@
       </class> <!-- com.provenir.automation.framework.testcases.Customer360 -->
       <class name="com.provenir.automation.framework.testcases.Credit360">
         <methods>
+=======
+>>>>>>> 2f0cc87abc1ab0d060f6f9ecdcd194af458d3e96
           <include name="beforeMethod"/>
           <include name="landingPage"/>
+          <include name="test9_saveCollateralDetailsAsRealState"/>
           <include name="beforeTest"/>
+          <include name="tearDown"/>
           <include name="initialize"/>
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.provenir.automation.framework.testcases.Credit360 -->
 <<<<<<< HEAD
 =======
@@ -77,6 +83,9 @@
         </methods>
       </class> <!-- com.provenir.automation.framework.testcases.Credit360 -->
 >>>>>>> f3d93f2d33644c08c724cd42938163248aae61b8
+=======
+      </class> <!-- com.provenir.automation.framework.testcases.Collateral360 -->
+>>>>>>> 2f0cc87abc1ab0d060f6f9ecdcd194af458d3e96
     </classes>
-  </test> <!-- Chrome Test(failed) -->
+  </test> <!-- Firefox Test(failed) -->
 </suite> <!-- Failed suite [Automation test suite] -->
