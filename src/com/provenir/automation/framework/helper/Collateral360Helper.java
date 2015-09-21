@@ -612,5 +612,6 @@ public class Collateral360Helper {
 		Util.waitForElement(driver, creditReq, 10);
 		creditReq.click();
 	}
+	
 
 }
