@@ -91,7 +91,7 @@ public class Customer360Helper {
 
 	public void enterPostalCode() {
 		Util.waitForAJAX(driver);
-		Util.waitForElement(driver,postalCode, 10);
+		Util.waitForElement(driver,postalCode, 20);
 		postalCode.sendKeys("10005");
 		postalCodeImage.click();
 		Util.waitForLoaderToFinish(driver);
@@ -103,9 +103,9 @@ public class Customer360Helper {
 	}
 
 	public void enterRegion(String option) {
-//		postalCodeImage.click();
+		postalCodeImage.click();
 		Util.enableAllDropdowns(driver);
-		Util.waitForElementPresent(driver,By.xpath(region), 10);
+		Util.waitForElementPresent(driver,By.xpath(region), 20);
 		option = "New York";
 		Util.selectItemFromList(driver,country, option);
 	}

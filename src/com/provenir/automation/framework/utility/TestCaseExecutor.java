@@ -43,9 +43,9 @@ public class TestCaseExecutor {
 
 				firefox.get(applicationUrl);
 
-//				if (firefox instanceof FirefoxDriver) {
-//					firefox.navigate().to("javascript:document.getElementById('overridelink').click()");
-//				}
+				if (firefox instanceof FirefoxDriver) {
+					firefox.navigate().to("javascript:document.getElementById('overridelink').click()");
+				}
 
 				firefox.manage().window().maximize();
 
@@ -54,9 +54,9 @@ public class TestCaseExecutor {
 
 				chrome.get(applicationUrl);
 
-//				if (chrome instanceof ChromeDriver) {
-//					chrome.navigate().to("javascript:document.getElementById('overridelink').click()");
-//				}
+				if (chrome instanceof ChromeDriver) {
+					chrome.navigate().to("javascript:document.getElementById('overridelink').click()");
+				}
 
 				chrome.manage().window().maximize();
 				

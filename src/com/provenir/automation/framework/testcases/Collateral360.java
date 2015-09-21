@@ -10,7 +10,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.provenir.automation.framework.helper.Collateral360Helper;
-import com.provenir.automation.framework.helper.Customer360Helper;
 import com.provenir.automation.framework.helper.LoginPage;
 import com.provenir.automation.framework.helper.SearchHelper;
 import com.provenir.automation.framework.utility.TestCaseExecutor;
@@ -21,7 +20,6 @@ public class Collateral360 extends TestCaseExecutor {
 	LoginPage loginPage;
 	SearchHelper searchHelper;
 	Collateral360Helper collateral360Helper;
-	Customer360Helper customer360Helper;
 
 	public TestDataReader reader = new TestDataReader();
 
@@ -37,13 +35,14 @@ public class Collateral360 extends TestCaseExecutor {
 		loginPage = new LoginPage(getDriver(browserValue));
 		searchHelper = new SearchHelper(getDriver(browserValue));
 		collateral360Helper = new Collateral360Helper(getDriver(browserValue));
-		customer360Helper = new Customer360Helper(getDriver(browserValue));
+
 	}
 
 	@BeforeMethod
 	public void landingPage() {
 		log.info("Login to Prism and search customer");
-		reader.readValue(_hashLogins, "resources/Login.json");
+		reader.readValue(_hashLogins,
+				"resources/Login.json");
 
 		loginPage.login(_hashLogins);
 	}
@@ -51,7 +50,8 @@ public class Collateral360 extends TestCaseExecutor {
 	@Test
 	public void test1_gotoCollateral360() throws InterruptedException {
 		log.info("Click on collateral and Add");
-		reader.readValue(_hashCustomers, "resources/Customers.json");
+		reader.readValue(_hashCustomers,
+				"resources/Customers.json");
 		searchHelper.searchCustomer(_hashCustomers);
 		collateral360Helper.clickCollateralLink();
 		collateral360Helper.clickOnAddCollateralLink();
@@ -79,54 +79,10 @@ public class Collateral360 extends TestCaseExecutor {
 	}
 
 	@Test
-	public void test4_verifyLeftHandNavigationForVehicle() {
-		customer360Helper = collateral360Helper.clickBackButton();
-		collateral360Helper.clickOnAddBtn();
-		collateral360Helper.selectCollateralTypeAsVehicle(option);
-		collateral360Helper.verifyLeftHandMenuOnCollateralTypeAsVehicle();
-	}
+	public void test_new_page_by_madhu() {
+		// know what starting page is
 
-	@Test
-	public void test5_verifyLeftHandNavigationForShares() {
-		customer360Helper = collateral360Helper.clickBackButton();
-		collateral360Helper.clickOnAddBtn();
-		collateral360Helper.selectCollateralTypeAsShares(option);
-		collateral360Helper.verifyLeftHandMenuOnCollateralTypeAsShares();
-	}
-
-	@Test
-	public void test6_verifyLeftHandNavigationForAccountsReceivable() {
-		customer360Helper = collateral360Helper.clickBackButton();
-		collateral360Helper.clickOnAddBtn();
-		collateral360Helper.selectCollateralTypeAsAccountsReceivable(option);
-		collateral360Helper
-				.verifyLeftHandMenuOnCollateralTypeAsAccountsReceivable();
-	}
-
-	@Test
-	public void test7_verifyLeftHandNavigationForRealEstate() {
-		customer360Helper = collateral360Helper.clickBackButton();
-		collateral360Helper.clickOnAddBtn();
-		collateral360Helper.selectCollateralTypeAsRealEstate(option);
-		collateral360Helper.verifyLeftHandMenuOnCollateralTypeAsRealEstate();
-	}
-
-	// Titled Motor Vehicle
-
-	@Test
-	public void test8_saveCollateralDetailsAsVehicle() {
-		collateral360Helper.enterCollateralName();
-		collateral360Helper.enterCollateralCode();
-		collateral360Helper.selectCollateralTypeAsVehicle(option);
-		collateral360Helper
-				.selectCollateralSubTypeAsTitledMotorVehicles(option);
-		collateral360Helper.enterMovable(option);
-		collateral360Helper.enterCountry(option);
-		collateral360Helper.enterCity();
-		collateral360Helper.enterStreet();
-		collateral360Helper.enterNumber();
-		collateral360Helper.enterZipCode();
-
+<<<<<<< HEAD
 		collateral360Helper.enterCollateralOwnerName();
 		collateral360Helper.enterCollateralPercentage();
 		collateral360Helper.setPrimaryCollateralOwner();
@@ -197,3 +153,7 @@ public class Collateral360 extends TestCaseExecutor {
 	}
 
 }
+=======
+	}
+}
+>>>>>>> f3d93f2d33644c08c724cd42938163248aae61b8

@@ -3,13 +3,18 @@
 <suite thread-count="3" name="Failed suite [Automation test suite]" parallel="tests">
   <parameter name="environment" value="src/com/provenir/automation/framework/config/Env.properties"/>
   <parameter name="browser" value="Chrome"/>
-  <test name="Firefox Test(failed)" parallel="tests">
-    <parameter name="browser" value="Firefox"/>
+  <listeners>
+    <listener class-name="com.provenir.automation.framework.utility.Listener"/>
+  </listeners>
+  <test name="IE Test(failed)" parallel="tests">
+    <parameter name="browser" value="InternetExplorer"/>
     <classes>
       <class name="com.provenir.automation.framework.testcases.Collateral360">
         <methods>
+          <include name="test3_saveCollateralDetails"/>
           <include name="beforeMethod"/>
           <include name="landingPage"/>
+<<<<<<< HEAD
           <include name="test11_saveOnTitledMotorVehicle"/>
           <include name="test8_saveCollateralDetailsAsVehicle"/>
           <include name="test15_saveCollateralDetailsAsUCC"/>
@@ -19,6 +24,11 @@
           <include name="test9_verifyActionMenuDisplayedOnVehicle"/>
           <include name="test14_cancelOnTitledMotorVehicle"/>
           <include name="test13_deleteTitledMotorVehicleInfo"/>
+=======
+          <include name="beforeTest"/>
+          <include name="test2_verifyCollateralTitle"/>
+          <include name="test1_gotoCollateral360"/>
+>>>>>>> f3d93f2d33644c08c724cd42938163248aae61b8
         </methods>
       </class> <!-- com.provenir.automation.framework.testcases.Collateral360 -->
       <class name="com.provenir.automation.framework.testcases.Customer360">
@@ -33,10 +43,40 @@
           <include name="beforeMethod"/>
           <include name="landingPage"/>
           <include name="beforeTest"/>
-          <include name="tearDown"/>
           <include name="initialize"/>
         </methods>
       </class> <!-- com.provenir.automation.framework.testcases.Credit360 -->
+<<<<<<< HEAD
+=======
     </classes>
-  </test> <!-- Firefox Test(failed) -->
+  </test> <!-- IE Test(failed) -->
+  <test name="Chrome Test(failed)" parallel="tests">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="com.provenir.automation.framework.testcases.Collateral360">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="landingPage"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- com.provenir.automation.framework.testcases.Collateral360 -->
+      <class name="com.provenir.automation.framework.testcases.Customer360">
+        <methods>
+          <include name="landingPage"/>
+          <include name="beforeTest"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- com.provenir.automation.framework.testcases.Customer360 -->
+      <class name="com.provenir.automation.framework.testcases.Credit360">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="landingPage"/>
+          <include name="beforeTest"/>
+          <include name="test123"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.provenir.automation.framework.testcases.Credit360 -->
+>>>>>>> f3d93f2d33644c08c724cd42938163248aae61b8
+    </classes>
+  </test> <!-- Chrome Test(failed) -->
 </suite> <!-- Failed suite [Automation test suite] -->

@@ -1,9 +1,10 @@
 package com.provenir.automation.framework.helper;
 
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -14,12 +15,10 @@ import com.provenir.automation.framework.utility.Util;
 public class Collateral360Helper {
 
 	WebDriver driver;
-	Actions actions = null;
 
 	public Collateral360Helper(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		actions = new Actions(driver);
 	}
 
 	@FindBy(how = How.ID, using = "ctrl")
@@ -58,6 +57,7 @@ public class Collateral360Helper {
 	@FindBy(how = How.XPATH, using = ".//*[@id='partySrchRes']//span[contains(.,'Load')]")
 	private WebElement loadCollateralOwner;
 
+<<<<<<< HEAD
 	@FindBy(how = How.ID, using = "city")
 	private WebElement city;
 
@@ -209,6 +209,10 @@ public class Collateral360Helper {
 	private String collSubType = "collSubType";
 	private String movable = ".//*[@id='collaterTypePage']/div[1]/div[2]/div[1]/span/input";
 	private String country = ".//*[@id='collaterTypePage']/div[1]/div[2]/div[2]/span/input";
+=======
+	private String collType = "collType";
+	private String collSubType = "collSubType";
+>>>>>>> f3d93f2d33644c08c724cd42938163248aae61b8
 
 	public void selectCollType(String option) {
 		Util.enableAllDropdowns(driver);
@@ -216,7 +220,7 @@ public class Collateral360Helper {
 		Util.waitForElementPresent(driver,
 				By.xpath("//input[contains(@customname,'collType')]"), 10);
 		option = "Deposits";
-		Util.selectItemFromList(driver, collType, option);
+		Util.selectItemFromList(driver,collType, option);
 		Util.waitForAJAX(driver);
 	}
 
@@ -226,14 +230,14 @@ public class Collateral360Helper {
 		Util.waitForElementPresent(driver,
 				By.xpath("//input[contains(@customname,'collSubType')]"), 10);
 		option = "Deposit Account, External";
-		Util.selectItemFromList(driver, collSubType, option);
+		Util.selectItemFromList(driver,collSubType, option);
 		Util.waitForAJAX(driver);
 	}
 
 	public void clickCollateralLink() throws InterruptedException {
 		Util.waitForLoaderToFinish(driver);
-		// Thread.sleep(4000);
-		// Util.waitForElement(collateralLink, 20);
+//		Thread.sleep(4000);
+//		Util.waitForElement(collateralLink, 20);
 		collateralLink.click();
 		Util.scrollDown(driver);
 		Util.waitForLoaderToFinish(driver);
@@ -241,7 +245,7 @@ public class Collateral360Helper {
 
 	public void clickOnAddCollateralLink() {
 		collateralLink.click();
-		Util.waitForElement(driver, addBtnOnCollateral, 20);
+		Util.waitForElement(driver,addBtnOnCollateral, 20);
 		addBtnOnCollateral.click();
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForAJAX(driver);
@@ -250,20 +254,25 @@ public class Collateral360Helper {
 	public void verifyCollateralTitle() throws InterruptedException {
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForLoaderToFinish(driver);
-		// Thread.sleep(3000);
-		Util.waitForElement(driver, collateralTitle, 20);
+//		Thread.sleep(3000);
+		Util.waitForElement(driver,collateralTitle, 20);
 		String title = collateralTitle.getText().trim();
 		Assert.assertEquals("Basic Collateral Information", title);
+		
+//		Boolean isFound = IsElementPresent(driver, By.xpath(".//*[@id='c360r']"));
+////		Assert.assertEquals("Basic Collateral Information", title);
+//		Assert.assertTrue(isFound);
+	
 	}
 
 	public void enterCollateralName() {
 		Util.waitForLoaderToFinish(driver);
-		Util.waitForElement(driver, collateralName, 20);
+		Util.waitForElement(driver,collateralName, 20);
 		collateralName.sendKeys("Test collateral");
 	}
 
 	public void enterCollateralCode() {
-		Util.waitForElement(driver, collateralCode, 10);
+		Util.waitForElement(driver,collateralCode, 10);
 		collateralCode.sendKeys("coll1");
 	}
 
@@ -273,7 +282,7 @@ public class Collateral360Helper {
 		Util.scrollUp(driver);
 		clickSearchedCollateralOwner.click();
 		Util.waitForLoaderToFinish(driver);
-		Util.waitForElement(driver, loadCollateralOwner, 10);
+		Util.waitForElement(driver,loadCollateralOwner, 10);
 		loadCollateralOwner.click();
 		Util.waitForAJAX(driver);
 	}
@@ -296,6 +305,7 @@ public class Collateral360Helper {
 		}
 		Util.waitForAJAX(driver);
 	}
+<<<<<<< HEAD
 
 	public void selectCollateralTypeAsVehicle(String option) {
 		Util.waitForAJAX(driver);
@@ -613,4 +623,17 @@ public class Collateral360Helper {
 		creditReq.click();
 	}
 
+=======
+	
+	
+	public Boolean IsElementPresent(WebDriver driver, By by) {
+        try
+        {
+            driver.findElement(by);
+            return true;
+        }
+        catch (NoSuchElementException e) { return false; 
+        }
+	}
+>>>>>>> f3d93f2d33644c08c724cd42938163248aae61b8
 }
