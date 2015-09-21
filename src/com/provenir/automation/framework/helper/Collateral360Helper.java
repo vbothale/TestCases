@@ -207,7 +207,7 @@ public class Collateral360Helper {
 
 	private String collType = "collType";
 	private String collSubType = "collSubType";
-	private String movable = ".//*[@id='collaterTypePage']/div[1]/div[2]/div[1]/select";
+	private String movable = ".//*[@id='collaterTypePage']/div[1]/div[2]/div[1]/span/input";
 	private String country = ".//*[@id='collaterTypePage']/div[1]/div[2]/div[2]/span/input";
 
 	public void selectCollType(String option) {
@@ -324,11 +324,11 @@ public class Collateral360Helper {
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForElementPresent(
 				driver,
-				By.xpath(".//*[@id='collaterTypePage']/div[1]/div[2]/div[1]/select"),
+				By.xpath(".//*[@id='collaterTypePage']/div[1]/div[2]/div[1]/span/input"),
 				10);
 		option = "N/A";
-		Util.selectOptionFromDropDown(driver, movable, option);
-		// Util.selectItemFromList(driver, movable, option);
+		// Util.selectOptionFromDropDown(driver, movable, option);
+		Util.selectItemFromList(driver, movable, option);
 	}
 
 	public void enterCountry(String option) {
@@ -339,8 +339,8 @@ public class Collateral360Helper {
 				By.xpath(".//*[@id='collaterTypePage']/div[1]/div[2]/div[2]/span/input"),
 				10);
 		option = "United States";
-		Util.selectOptionFromDropDown(driver, country, option);
-		// Util.selectItemFromList(driver, country, option);
+		// Util.selectOptionFromDropDown(driver, country, option);
+		Util.selectItemFromList(driver, country, option);
 	}
 
 	public void enterCity() {
@@ -605,7 +605,7 @@ public class Collateral360Helper {
 	}
 
 	public void clickEditOnUCC() {
-
+		
 	}
 
 	public void clickCreditRequest() {
