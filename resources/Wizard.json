@@ -1,0 +1,34 @@
+{
+    "newCreditReq": {
+        "request": "Credit"
+    },
+    "newCustomer": {
+        "business": "Test FMC",
+        "individual": "Cust"
+    },
+    "existingCustomer": {
+        "existingCustomer1": "Blackberry",
+        "existingCustomer2": "Intex",
+        "existingCustomer3": "Dell"
+    },
+    "newFacility": {
+        "newFacility": "Facility"
+    },
+    "existingFacility": {
+        "existingFacility": "Fac for Intex"
+    },
+    "newCollateral": {
+        "newCollateral": "Collateral"
+    },
+    "existingCollateral": {
+        "existingCollateral": "Test Collateral"
+    },
+    "userInDealTeam": {
+        "user1InDealTeam": "fmartin",
+        "user2InDEalTeam": "sdietz"
+    },
+    "reqSummaryDetails": {
+        "agreementDate": "2015-09-30",
+        "projectedCloseDate": "2015-11-11"
+    }
+}

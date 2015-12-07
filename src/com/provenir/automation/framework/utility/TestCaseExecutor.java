@@ -31,9 +31,6 @@ public class TestCaseExecutor {
 	public static String applicationUrl;
 	public static TestDataReader reader = new TestDataReader();
 
-//	public TestCaseExecutor() {
-//		setUp(browserValue);
-//	}
 	
 	@BeforeTest
 	public void beforeTest() {
@@ -103,7 +100,7 @@ public class TestCaseExecutor {
 
 		localProperties.load(new FileReader(env));
 		
-		applicationUrl = localProperties.getProperty("QA");
+		applicationUrl = localProperties.getProperty("url");
 		System.out.println("url	=	" + applicationUrl);
 
 		PropertyConfigurator.configure("src/com/provenir/automation/framework/config/log4j.properties");

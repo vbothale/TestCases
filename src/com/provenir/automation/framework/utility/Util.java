@@ -227,9 +227,11 @@ public class Util {
 
 	public static void selectOptionFromDropDown(WebDriver driver,
 			String customName, String option) {
+
 		try {
+
 			WebElement searchTxtBox = driver.findElement(By
-					.cssSelector("input[customname='" + customName + "']"));
+					.cssSelector("input[name='" + customName + "']"));
 
 			searchTxtBox.clear();
 			searchTxtBox.sendKeys(option);

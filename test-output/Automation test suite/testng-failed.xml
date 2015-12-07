@@ -1,42 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="3" name="Failed suite [Automation test suite]" parallel="tests">
+<suite thread-count="1" name="Failed suite [Automation test suite]" parallel="tests">
   <parameter name="environment" value="src/com/provenir/automation/framework/config/Env.properties"/>
-  <parameter name="browser" value="Chrome"/>
+  <parameter name="browser" value="Firefox"/>
   <test name="Firefox Test(failed)" parallel="tests">
     <parameter name="browser" value="Firefox"/>
     <classes>
-      <class name="com.provenir.automation.framework.testcases.Collateral360">
+      <class name="com.provenir.automation.framework.testcases.FacilityLevelWorkflow">
         <methods>
+          <include name="test19_verifyTaskManagementSection"/>
           <include name="beforeMethod"/>
-          <include name="landingPage"/>
-          <include name="test11_saveOnTitledMotorVehicle"/>
-          <include name="test8_saveCollateralDetailsAsVehicle"/>
-          <include name="test15_saveCollateralDetailsAsUCC"/>
-          <include name="test10_verifyMandatoryDetails"/>
-          <include name="test12_updateTitledMotorVehicle"/>
-          <include name="beforeTest"/>
-          <include name="test9_verifyActionMenuDisplayedOnVehicle"/>
-          <include name="test14_cancelOnTitledMotorVehicle"/>
-          <include name="test13_deleteTitledMotorVehicleInfo"/>
-        </methods>
-      </class> <!-- com.provenir.automation.framework.testcases.Collateral360 -->
-      <class name="com.provenir.automation.framework.testcases.Customer360">
-        <methods>
-          <include name="landingPage"/>
-          <include name="beforeTest"/>
-          <include name="beforeMethod"/>
-        </methods>
-      </class> <!-- com.provenir.automation.framework.testcases.Customer360 -->
-      <class name="com.provenir.automation.framework.testcases.Credit360">
-        <methods>
-          <include name="beforeMethod"/>
-          <include name="landingPage"/>
           <include name="beforeTest"/>
           <include name="tearDown"/>
           <include name="initialize"/>
         </methods>
-      </class> <!-- com.provenir.automation.framework.testcases.Credit360 -->
+      </class> <!-- com.provenir.automation.framework.testcases.FacilityLevelWorkflow -->
     </classes>
   </test> <!-- Firefox Test(failed) -->
 </suite> <!-- Failed suite [Automation test suite] -->

@@ -65,7 +65,7 @@ public class WebDriverSetUp {
 	}
 
 	public static void stopService() {
-		IEservice.stop();
 		chromeService.stop();
+		IEservice.stop();
 	}
 }
