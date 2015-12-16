@@ -25,67 +25,69 @@ public class TestCaseExecutor {
 	private static WebDriver firefox;
 	private static WebDriver chrome;
 	private static WebDriver internetExplorer;
-	
+
 	private final static Logger log = Logger.getLogger(TestCaseExecutor.class);
 	public static Properties localProperties = new Properties();
 	public static String applicationUrl;
 	public static TestDataReader reader = new TestDataReader();
 
-	
 	@BeforeTest
 	public void beforeTest() {
 		try {
-				// Initialize Firefox
-				firefox = WebDriverSetUp.getDriver("Firefox");
+			// Initialize Firefox
+			firefox = WebDriverSetUp.getDriver("Firefox");
+//			WebDriverSetUp.setFFPrefernece();
 
-				firefox.get(applicationUrl);
+			firefox.get(applicationUrl);
 
-//				if (firefox instanceof FirefoxDriver) {
-//					firefox.navigate().to("javascript:document.getElementById('overridelink').click()");
-//				}
+			// if (firefox instanceof FirefoxDriver) {
+			// firefox.navigate().to("javascript:document.getElementById('overridelink').click()");
+			// }
 
-				firefox.manage().window().maximize();
+			firefox.manage().window().maximize();
 
-				// Initialize Chrome
-				chrome = WebDriverSetUp.getDriver("Chrome");
+			// Initialize Chrome
+			chrome = WebDriverSetUp.getDriver("Chrome");
 
-				chrome.get(applicationUrl);
+			chrome.get(applicationUrl);
 
-//				if (chrome instanceof ChromeDriver) {
-//					chrome.navigate().to("javascript:document.getElementById('overridelink').click()");
-//				}
+			// if (chrome instanceof ChromeDriver) {
+			// chrome.navigate().to("javascript:document.getElementById('overridelink').click()");
+			// }
 
-				chrome.manage().window().maximize();
-				
-				// Initialize IE
-				internetExplorer = WebDriverSetUp.getDriver("InternetExplorer");
+			chrome.manage().window().maximize();
 
-				internetExplorer.get(applicationUrl);
+			// Initialize IE
+			internetExplorer = WebDriverSetUp.getDriver("InternetExplorer");
 
-				if (internetExplorer instanceof InternetExplorerDriver) {
-					internetExplorer.navigate().to("javascript:document.getElementById('overridelink').click()");
-				}
+			internetExplorer.get(applicationUrl);
 
-				internetExplorer.manage().window().maximize();				
+			if (internetExplorer instanceof InternetExplorerDriver) {
+				internetExplorer
+						.navigate()
+						.to("javascript:document.getElementById('overridelink').click()");
+			}
+
+			internetExplorer.manage().window().maximize();
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}
 	}
 
 	public WebDriver getDriver(String browserValue) {
-		if(browserValue.toLowerCase().equals("firefox")) {
+		if (browserValue.toLowerCase().equals("firefox")) {
 			return firefox;
-		} else if(browserValue.toLowerCase().equals("chrome")) {
+		} else if (browserValue.toLowerCase().equals("chrome")) {
 			return chrome;
 		} else {
-			return internetExplorer;				
+			return internetExplorer;
 		}
 	}
-	
+
 	@AfterSuite
 	public static void tearDown() {
-		firefox.close();
-		firefox.quit();
+//		firefox.close();
+//		firefox.quit();
 		chrome.close();
 		chrome.quit();
 		internetExplorer.close();
@@ -96,13 +98,15 @@ public class TestCaseExecutor {
 
 	@BeforeSuite
 	public void initialize() throws IOException, FileNotFoundException {
-		File env = new File("src/com/provenir/automation/framework/config/Env.properties");
+		File env = new File(
+				"src/com/provenir/automation/framework/config/Env.properties");
 
 		localProperties.load(new FileReader(env));
-		
+
 		applicationUrl = localProperties.getProperty("url");
 		System.out.println("url	=	" + applicationUrl);
 
-		PropertyConfigurator.configure("src/com/provenir/automation/framework/config/log4j.properties");
+		PropertyConfigurator
+				.configure("src/com/provenir/automation/framework/config/log4j.properties");
 	}
 }

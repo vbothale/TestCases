@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>IE Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>19/7/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Sep 22 16:02:31 IST 2015</td>
+<td>Started on:</td><td>Wed Dec 16 17:38:30 IST 2015</td>
 </tr>
-<tr><td>Total time:</td><td>206 seconds (206948 ms)</td>
+<tr><td>Total time:</td><td>917 seconds (917081 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,500 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test20_verifyTaskManagementSection()'><b>test20_verifyTaskManagementSection</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.provenir.automation.framework.helper.Credit360Helper.clickActionColumnAndVerifyAddedWorkflow(Credit360Helper.java:136)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test20_verifyTaskManagementSection(FacilityLevelWorkflow.java:247)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace275895093", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace275895093'><pre>java.lang.NullPointerException
+	at com.provenir.automation.framework.helper.Credit360Helper.clickActionColumnAndVerifyAddedWorkflow(Credit360Helper.java:136)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test20_verifyTaskManagementSection(FacilityLevelWorkflow.java:247)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>15</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test23_verifyNoWorkflowIsDisplayedInTaskMgmtOfFacility360()'><b>test23_verifyNoWorkflowIsDisplayedInTaskMgmtOfFacility360</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == .//*[@id=&apos;taskManagmntContainer&apos;]/div (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 423 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+*** Element info: {Using=xpath, value=.//*[@id=&apos;taskManagmntContainer&apos;]/div}
+Session ID: b27771e8-1982-4780-b007-ddebb074e57d
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:5981/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.getText(Unknown Source)
+	at com.provenir.automation.framework.helper.Facility360Details.verifyNoWorkflowIsDisplayed(Facility360Details.java:1534)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test23_verifyNoWorkflowIsDisplayedInTaskMgmtOfFacility360(FacilityLevelWorkflow.java:266)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1987748716", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1987748716'><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == .//*[@id=&apos;taskManagmntContainer&apos;]/div (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 423 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+*** Element info: {Using=xpath, value=.//*[@id=&apos;taskManagmntContainer&apos;]/div}
+Session ID: b27771e8-1982-4780-b007-ddebb074e57d
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:5981/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+	at sun.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.getText(Unknown Source)
+	at com.provenir.automation.framework.helper.Facility360Details.verifyNoWorkflowIsDisplayed(Facility360Details.java:1534)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test23_verifyNoWorkflowIsDisplayedInTaskMgmtOfFacility360(FacilityLevelWorkflow.java:266)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>11</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test24_gotoFacility360()'><b>test24_gotoFacility360</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with id == selCredLine (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 511 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+*** Element info: {Using=id, value=selCredLine}
+Session ID: b27771e8-1982-4780-b007-ddebb074e57d
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:5981/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
+	at org.openqa.selenium.By$ById.findElement(By.java:215)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.click(Unknown Source)
+	at com.provenir.automation.framework.helper.MyRequests.searchExistingFacility(MyRequests.java:301)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test24_gotoFacility360(FacilityLevelWorkflow.java:272)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace855900550", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace855900550'><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with id == selCredLine (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 511 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+*** Element info: {Using=id, value=selCredLine}
+Session ID: b27771e8-1982-4780-b007-ddebb074e57d
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:5981/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+	at sun.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
+	at org.openqa.selenium.By$ById.findElement(By.java:215)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.click(Unknown Source)
+	at com.provenir.automation.framework.helper.MyRequests.searchExistingFacility(MyRequests.java:301)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test24_gotoFacility360(FacilityLevelWorkflow.java:272)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>42</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test25_verifyTaskManagementLoadedOnFacility360()'><b>test25_verifyTaskManagementLoadedOnFacility360</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with id == taskMangmntr (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 405 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+*** Element info: {Using=id, value=taskMangmntr}
+Session ID: b27771e8-1982-4780-b007-ddebb074e57d
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:5981/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
+	at org.openqa.selenium.By$ById.findElement(By.java:215)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.click(Unknown Source)
+	at com.provenir.automation.framework.helper.Facility360Details.clickTaskManagement(Facility360Details.java:1494)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test25_verifyTaskManagementLoadedOnFacility360(FacilityLevelWorkflow.java:280)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace806839813", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace806839813'><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with id == taskMangmntr (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 405 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+*** Element info: {Using=id, value=taskMangmntr}
+Session ID: b27771e8-1982-4780-b007-ddebb074e57d
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:5981/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+	at sun.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
+	at org.openqa.selenium.By$ById.findElement(By.java:215)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.click(Unknown Source)
+	at com.provenir.automation.framework.helper.Facility360Details.clickTaskManagement(Facility360Details.java:1494)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test25_verifyTaskManagementLoadedOnFacility360(FacilityLevelWorkflow.java:280)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>16</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test26_triggerFacilityWorkflow()'><b>test26_triggerFacilityWorkflow</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == //b[contains(.,&apos;Facility level workflow&apos;)] (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 339 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+*** Element info: {Using=xpath, value=//b[contains(.,&apos;Facility level workflow&apos;)]}
+Session ID: b27771e8-1982-4780-b007-ddebb074e57d
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:5981/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.getText(Unknown Source)
+	at com.provenir.automation.framework.helper.Facility360Details.verifyWorkflowTriggeredOrNot(Facility360Details.java:1585)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test26_triggerFacilityWorkflow(FacilityLevelWorkflow.java:291)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1741552926", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1741552926'><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == //b[contains(.,&apos;Facility level workflow&apos;)] (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 339 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+*** Element info: {Using=xpath, value=//b[contains(.,&apos;Facility level workflow&apos;)]}
+Session ID: b27771e8-1982-4780-b007-ddebb074e57d
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:5981/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+	at sun.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:455)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.getText(Unknown Source)
+	at com.provenir.automation.framework.helper.Facility360Details.verifyWorkflowTriggeredOrNot(Facility360Details.java:1585)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test26_triggerFacilityWorkflow(FacilityLevelWorkflow.java:291)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>16</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test31_deleteFacility()'><b>test31_deleteFacility</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with id == selCredReq (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 351 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+*** Element info: {Using=id, value=selCredReq}
+Session ID: b27771e8-1982-4780-b007-ddebb074e57d
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:5981/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
+	at org.openqa.selenium.By$ById.findElement(By.java:215)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.click(Unknown Source)
+	at com.provenir.automation.framework.helper.MyRequests.searchExistingRequest1(MyRequests.java:342)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test31_deleteFacility(FacilityLevelWorkflow.java:327)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace177386805", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace177386805'><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with id == selCredReq (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 351 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+*** Element info: {Using=id, value=selCredReq}
+Session ID: b27771e8-1982-4780-b007-ddebb074e57d
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:5981/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+	at sun.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
+	at org.openqa.selenium.By$ById.findElement(By.java:215)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.click(Unknown Source)
+	at com.provenir.automation.framework.helper.MyRequests.searchExistingRequest1(MyRequests.java:342)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test31_deleteFacility(FacilityLevelWorkflow.java:327)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>50</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test32_VerifyAssociatedWorkflowIsDeletedOrNot()'><b>test32_VerifyAssociatedWorkflowIsDeletedOrNot</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with id == taskMangmnt (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 335 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+*** Element info: {Using=id, value=taskMangmnt}
+Session ID: b27771e8-1982-4780-b007-ddebb074e57d
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:5981/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
+	at org.openqa.selenium.By$ById.findElement(By.java:215)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.click(Unknown Source)
+	at com.provenir.automation.framework.helper.Credit360Helper.clickTaskManagement(Credit360Helper.java:155)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test32_VerifyAssociatedWorkflowIsDeletedOrNot(FacilityLevelWorkflow.java:334)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace159055558", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace159055558'><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with id == taskMangmnt (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 335 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+*** Element info: {Using=id, value=taskMangmnt}
+Session ID: b27771e8-1982-4780-b007-ddebb074e57d
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:5981/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
+	at sun.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
+	at org.openqa.selenium.By$ById.findElement(By.java:215)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.click(Unknown Source)
+	at com.provenir.automation.framework.helper.Credit360Helper.clickTaskManagement(Credit360Helper.java:155)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test32_VerifyAssociatedWorkflowIsDeletedOrNot(FacilityLevelWorkflow.java:334)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>32</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,20 +569,100 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.Customer360.test1_gotoCustomer360()'><b>test1_gotoCustomer360</b><br>Test class: com.provenir.automation.framework.testcases.Customer360</td>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.landingPage()'><b>landingPage</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
 <td></td>
-<td>33</td>
-<td>com.provenir.automation.framework.testcases.Customer360@5b1b138a</td></tr>
+<td>129</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.Customer360.test2_verifyAddressTitle()'><b>test2_verifyAddressTitle</b><br>Test class: com.provenir.automation.framework.testcases.Customer360</td>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test11_goToHomePage()'><b>test11_goToHomePage</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>10</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test12_clickNewCreditRequest()'><b>test12_clickNewCreditRequest</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>8</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test13_verifyDefaultCreditLevelWorkflow()'><b>test13_verifyDefaultCreditLevelWorkflow</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
 <td></td>
 <td>0</td>
-<td>com.provenir.automation.framework.testcases.Customer360@5b1b138a</td></tr>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.Customer360.test3_saveAddress()'><b>test3_saveAddress</b><br>Test class: com.provenir.automation.framework.testcases.Customer360</td>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test14_verifySavedWorkflow()'><b>test14_verifySavedWorkflow</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
 <td></td>
-<td>75</td>
-<td>com.provenir.automation.framework.testcases.Customer360@5b1b138a</td></tr>
+<td>19</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test15_clickTransactionInfoPage()'><b>test15_clickTransactionInfoPage</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>28</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test16_verifyDefaultFacilityLevelWorkflow()'><b>test16_verifyDefaultFacilityLevelWorkflow</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>13</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test17_verifysavedFacilityWorkflow()'><b>test17_verifysavedFacilityWorkflow</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>18</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test18_gotoHomePage()'><b>test18_gotoHomePage</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>10</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test19_searchRequest()'><b>test19_searchRequest</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>29</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test1_verifyResultsAccToWorkflowType()'><b>test1_verifyResultsAccToWorkflowType</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>27</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test21_gotoFacility360()'><b>test21_gotoFacility360</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>91</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test22_verifyTaskManagementLoadedOnFacility360()'><b>test22_verifyTaskManagementLoadedOnFacility360</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>3</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test27_verifyWorkflowOrderInCredit360()'><b>test27_verifyWorkflowOrderInCredit360</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>96</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test28_gotoMyRequestPage()'><b>test28_gotoMyRequestPage</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>62</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test29_verifyWorkflowDDLReadOnlyWhenEdit()'><b>test29_verifyWorkflowDDLReadOnlyWhenEdit</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>0</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test2_clickOnAddBtnOfWorkflowSummary()'><b>test2_clickOnAddBtnOfWorkflowSummary</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>27</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test30_expandReqAndGotoFacility360()'><b>test30_expandReqAndGotoFacility360</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>55</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test3_verifyMandatoryDetailsOnManageWorkflow()'><b>test3_verifyMandatoryDetailsOnManageWorkflow</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>26</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@26319e5b</td></tr>
 </table><p>
 </body>
 </html>

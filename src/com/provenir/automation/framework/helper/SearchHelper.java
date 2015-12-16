@@ -43,6 +43,12 @@ public class SearchHelper {
 	@FindBy(how = How.XPATH, using = ".//*[@id='transSrchRes']//span[contains(.,'Load')]")
 	private WebElement loadFacility;
 
+	@FindBy(how = How.XPATH, using = ".//*[@id='credSumm']")
+	private WebElement creditSummary;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='credLnSum']")
+	private WebElement facilityLnk;
+
 	public void searchCustomer(
 			HashMap<String, Map<String, String>> _hashCustomers) {
 		HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashCustomers
@@ -95,6 +101,65 @@ public class SearchHelper {
 				+ propertiesMap.get("searchFacility"));
 
 		searchBox.sendKeys(propertiesMap.get("searchFacility"));
+		searchBox.sendKeys(Keys.ENTER);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+
+		Util.waitForElementPresent(driver,
+				By.xpath(".//*[@id='transSrchRes']//span[contains(.,'Load')]"),
+				20);
+		searchedFacility.click();
+		loadFacility.click();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void searchExistingRequest() {
+
+		searchBox.sendKeys("Request HCL Corporation");
+		searchBox.sendKeys(Keys.ENTER);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+
+		Util.waitForElementPresent(driver, By
+				.xpath(".//*[@id='requestSrchRes']//span[contains(.,'Load')]"),
+				20);
+		searchedReq.click();
+		loadReq.click();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public Credit360Helper clickCreditSummary() {
+		Util.waitForElement(driver, creditSummary, 10);
+		creditSummary.click();
+		return new Credit360Helper(driver);
+	}
+
+	public MyRequests srchAssociatedFacility() {
+		searchBox.sendKeys("Fac 1234");
+		searchBox.sendKeys(Keys.ENTER);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+
+		Util.waitForElementPresent(driver,
+				By.xpath(".//*[@id='transSrchRes']//span[contains(.,'Load')]"),
+				20);
+		searchedFacility.click();
+		loadFacility.click();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+		return new MyRequests(driver);
+	}
+
+	public Facility360Details clickFacSummary() {
+		Util.waitForElement(driver, facilityLnk, 10);
+		facilityLnk.click();
+		return new Facility360Details(driver);
+	}
+
+	public void searchExistingFacility() {
+		searchBox.sendKeys("Fac for intex");
 		searchBox.sendKeys(Keys.ENTER);
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForAJAX(driver);

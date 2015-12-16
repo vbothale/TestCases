@@ -1,15 +1,21 @@
 package com.provenir.automation.framework.helper;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import com.gargoylesoftware.htmlunit.javascript.host.Element;
 import com.provenir.automation.framework.utility.Util;
+import com.sun.jna.platform.win32.WinNT.WELL_KNOWN_SID_TYPE;
 
 public class MyRequests {
 
@@ -41,13 +47,83 @@ public class MyRequests {
 	@FindBy(how = How.XPATH, using = ".//*[@id='data_content']/div/table/tbody/tr[1]/td[2]/a")
 	private WebElement clickCustomerOnDashboard;
 
-	@FindBy(how = How.XPATH, using = ".//*[@id='data_content']/div/table/tbody/tr[1]/td[4]/a")
+	@FindBy(how = How.XPATH, using = "//a[contains(@name,'credLineLnk00')]")
 	private WebElement clickFacilityOnDashboard;
 
 	@FindBy(how = How.ID, using = "home")
 	private WebElement homeLink;
 
+	@FindBy(how = How.ID, using = "srchTxt")
+	private WebElement searchBox;
+
+	@FindBy(how = How.ID, using = "selCredLine")
+	private WebElement searchedFacility;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='transSrchRes']//span[contains(.,'Load')]")
+	private WebElement loadFacility;
+
+	@FindBy(how = How.ID, using = "selCredReq")
+	private WebElement searchedReq;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='requestSrchRes']//span[contains(.,'Load')]")
+	private WebElement loadReq;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='data_content']/div/table/tbody/tr[1]/td[1]/img[@id='binddone']")
+	private WebElement expand;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='pgexpanded']/td/div/div[3]/div/a")
+	private WebElement facWorkFlow;
+
+	@FindBy(how = How.XPATH, using = "//label[contains(.,'Workflow Milestone')]")
+	private WebElement workflowMilestoneText;
+
+	@FindBy(how = How.XPATH, using = "//label[contains(.,'Decision')]")
+	private WebElement decisionText;
+
+	@FindBy(how = How.XPATH, using = "//label[contains(.,'Date From')]")
+	private WebElement dateFromText;
+
+	@FindBy(how = How.XPATH, using = "//label[contains(.,'Date To')]")
+	private WebElement dateToText;
+
+	@FindBy(how = How.ID, using = "saveFilterDetails")
+	private WebElement filterBtnOnMyReq;
+
+	@FindBy(how = How.ID, using = "testPG")
+	private WebElement paginationGrid;
+
+	@FindBy(how = How.XPATH, using = "//button[contains(.,'All Selected')]")
+	private WebElement ddlValue;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[1]/p/div/button")
+	private WebElement workFlowMilestone;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[2]/p/div/button")
+	private WebElement decisionMilestone;
+
+	@FindBy(how = How.XPATH, using = ".//*[@name='selectAllworkflowmilestone']")
+	private WebElement allOnWorkflowMilestone;
+
+	@FindBy(how = How.XPATH, using = ".//*[@name='selectAlldecision']")
+	private WebElement allOnDecision;
+
+	@FindBy(how = How.ID, using = "datefrom")
+	private WebElement fromDate;
+
+	@FindBy(how = How.ID, using = "dateto")
+	private WebElement toDate;
+
+	@FindBy(how = How.XPATH, using = "//span[@class='getcount']")
+	private WebElement reqCount;
+
 	private String dashboardRows = "//*[@id='data_content']/div/table/tbody/tr";
+	private String wFlowMilestone = ".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[1]/p/div/div/ul/li";
+
+	private WebElement element = null;
+	List<WebElement> lstWebElements = null;
+
+	final Calendar cal = Calendar.getInstance();
+	final DateFormat dForm = new SimpleDateFormat("yyyy-MM-dd");
 
 	/*
 	 * Service
@@ -158,7 +234,7 @@ public class MyRequests {
 		Util.waitForAJAX(driver);
 	}
 
-	public void clickFacilityOnDashboard() {
+	public void clickFacilityOnDashboard1() {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, clickFacilityOnDashboard, 20);
 		clickFacilityOnDashboard.click();
@@ -177,6 +253,244 @@ public class MyRequests {
 		homeLink.click();
 		Util.waitForAJAX(driver);
 		return new TransactionInfoPage(driver);
+	}
+
+	public SearchHelper srchAssociatedFacility() {
+		Util.waitForWorkflowToLoad(driver);
+		Util.waitForLoaderToFinish(driver);
+		searchBox.sendKeys("Fac 1234");
+		searchBox.sendKeys(Keys.ENTER);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+
+		Util.waitForElementPresent(driver,
+				By.xpath(".//*[@id='transSrchRes']//span[contains(.,'Load')]"),
+				20);
+		searchedFacility.click();
+		loadFacility.click();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+		return new SearchHelper(driver);
+	}
+
+	public SearchHelper searchExistingRequest() {
+		searchBox.sendKeys("Request HCL Corporation");
+		searchBox.sendKeys(Keys.ENTER);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+
+		Util.waitForElementPresent(driver, By
+				.xpath(".//*[@id='requestSrchRes']//span[contains(.,'Load')]"),
+				20);
+		searchedReq.click();
+		loadReq.click();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+		return new SearchHelper(driver);
+	}
+
+	public SearchHelper searchExistingFacility() {
+		searchBox.sendKeys("Fac for HCL Corporation");
+		searchBox.sendKeys(Keys.ENTER);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+
+		Util.waitForElementPresent(driver,
+				By.xpath(".//*[@id='transSrchRes']//span[contains(.,'Load')]"),
+				20);
+		searchedFacility.click();
+		loadFacility.click();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+		return new SearchHelper(driver);
+	}
+
+	public Facility360Details clickFacilityOnDashboard() {
+		Util.waitForWorkflowToLoad(driver);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForElement(driver, clickFacilityOnDashboard, 15);
+		clickFacilityOnDashboard.click();
+		Util.waitForAJAX(driver);
+		return new Facility360Details(driver);
+	}
+
+	public void expandRequest() {
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, expand, 10);
+		expand.click();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForLoaderToFinish(driver);
+	}
+
+	public Facility360Details clickOnAddedWorkflow() {
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, facWorkFlow, 15);
+		facWorkFlow.click();
+		Util.waitForLoaderToFinish(driver);
+		return new Facility360Details(driver);
+	}
+
+	public SearchHelper searchExistingRequest1() {
+		searchBox.sendKeys("Testcreditmilestone");
+		searchBox.sendKeys(Keys.ENTER);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+
+		Util.waitForElementPresent(driver, By
+				.xpath(".//*[@id='requestSrchRes']//span[contains(.,'Load')]"),
+				20);
+		searchedReq.click();
+		loadReq.click();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+		return new SearchHelper(driver);
+	}
+
+	public boolean verifyAllFiltersDisplayed() {
+		String s1 = workflowMilestoneText.getText().trim();
+		String s2 = decisionText.getText().trim();
+		String s3 = dateFromText.getText().trim();
+		String s4 = dateToText.getText().trim();
+		if (s1.equalsIgnoreCase("Workflow Milestone")
+				&& s2.equalsIgnoreCase("Decision")
+				&& s3.equalsIgnoreCase("Date From")
+				&& s4.equalsIgnoreCase("Date To")) {
+			return true;
+		} else
+			return false;
+	}
+
+	public boolean verifyFilterBtnDisplayed() {
+		if (filterBtnOnMyReq.isDisplayed()) {
+			return true;
+		} else
+			return false;
+	}
+
+	public void clickFilterBtn() {
+		Util.waitForElement(driver, filterBtnOnMyReq, 10);
+		filterBtnOnMyReq.click();
+		Util.waitForLoaderToFinish(driver);
+	}
+
+	public boolean verifyPageIndicatorsDisplayed() {
+		if (paginationGrid.isDisplayed()) {
+			return true;
+		} else
+			return false;
+	}
+
+	public boolean verifyDefaultValues() {
+		if (ddlValue.isDisplayed()) {
+			return true;
+		} else
+			return false;
+	}
+
+	public void selectWorkflowMilestone() {
+		Util.enableAllDropdowns(driver);
+		Util.waitForElementPresent(
+				driver,
+				By.xpath(".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[1]/p/div/button"),
+				20);
+		element = null;
+		workFlowMilestone.click();
+		allOnWorkflowMilestone.click();
+
+		WebElement ele = driver
+				.findElement(By
+						.xpath(".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[1]/p/div/div/ul/li[3]/label/input"));
+		ele.click();
+		workFlowMilestone.click();
+	}
+
+	public void selectDecisionMilestone() {
+		Util.waitForElementPresent(
+				driver,
+				By.xpath(".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[2]/p/div/button"),
+				20);
+		element = null;
+		decisionMilestone.click();
+		allOnDecision.click();
+
+		WebElement ele = driver
+				.findElement(By
+						.xpath(".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[2]/p/div/div/ul/li[3]/label/input"));
+		ele.click();
+		decisionMilestone.click();
+	}
+
+	public void enterFromDate() {
+		Util.waitForElement(driver, fromDate, 5);
+		fromDate.clear();
+		fromDate.sendKeys(fromDate());
+		WebElement ele = driver
+				.findElement(By
+						.xpath(".//*[@id='ui-datepicker-div']/table/tbody/tr[1]/td[3]/a"));
+		ele.click();
+	}
+
+	public String fromDate() {
+		cal.add(Calendar.DATE, -15);
+		final String fromDate = dForm.format(cal.getTime());
+		return fromDate;
+	}
+
+	public void enterToDate() {
+		Util.waitForElement(driver, toDate, 5);
+		toDate.clear();
+		toDate.sendKeys(toDate());
+	}
+
+	public String toDate() {
+		cal.add(Calendar.DATE, 10);
+		final String toDate = dForm.format(cal.getTime());
+		return toDate;
+	}
+
+	public boolean verifyWorkflowStatusAsInProgress() {
+		WebElement ele = driver.findElement(By
+				.xpath("//td[contains(.,'In Progress')]"));
+		String s1 = ele.getText().trim();
+		if (s1.equalsIgnoreCase("In Progress")) {
+			return true;
+		} else
+			return false;
+	}
+
+	public boolean verifyDecisionStatusAsUndecided() {
+		WebElement ele = driver.findElement(By
+				.xpath("//td[contains(.,'Undecided')]"));
+		String s1 = ele.getText().trim();
+		if (s1.equalsIgnoreCase("Undecided")) {
+			return true;
+		} else
+			return false;
+	}
+
+	public void selectDecisionMilestoneAsUndecided() {
+		Util.waitForElementPresent(
+				driver,
+				By.xpath(".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[2]/p/div/button"),
+				20);
+		element = null;
+		decisionMilestone.click();
+		allOnDecision.click();
+
+		WebElement ele = driver
+				.findElement(By
+						.xpath(".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[2]/p/div/div/ul/li[4]/label/input"));
+		ele.click();
+		decisionMilestone.click();
+	}
+
+	public boolean verifyReqCount() {
+		String s1 = reqCount.getText().trim();
+		if (s1.equalsIgnoreCase("Request Count 20")) {
+			return true;
+		} else
+			return false;
+
 	}
 
 }

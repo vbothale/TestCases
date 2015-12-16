@@ -209,6 +209,10 @@ public class Util {
 	public static void scrollDown(WebDriver driver) {
 		((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 200)");
 	}
+	
+	public static void scrollBottom(WebDriver driver) {
+		((JavascriptExecutor) driver).executeScript("window.scrollTo(0,document.body.scrollHeight)");
+	}
 
 	public static void scrollUp(WebDriver driver) {
 		((JavascriptExecutor) driver).executeScript("window.scrollBy(0, -200)");
@@ -219,6 +223,18 @@ public class Util {
 			new WebDriverWait(driver, 180).until(ExpectedConditions
 					.invisibilityOfElementLocated(By
 							.xpath(".//img[contains(@src,'loader.gif')]")));
+			// System.out.println("loader no longer exists");
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public static void waitForWorkflowToLoad(WebDriver driver)
+	{
+		try {
+			new WebDriverWait(driver, 180).until(ExpectedConditions
+					.invisibilityOfElementLocated(By
+							.xpath(".//*[@id='loader']/img")));
 			// System.out.println("loader no longer exists");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

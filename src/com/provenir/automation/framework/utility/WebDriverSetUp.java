@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -22,34 +23,36 @@ public class WebDriverSetUp {
 		switch (browserType) {
 		case "Firefox":
 			driver = new FirefoxDriver();
+			
 			break;
 
 		case "InternetExplorer":
-			File file = new File("src/com/provenir/automation/framework/drivers/IEDriverServer.exe");
+			File file = new File(
+					"src/com/provenir/automation/framework/drivers/IEDriverServer.exe");
 
 			IEservice = new InternetExplorerDriverService.Builder()
-			.usingDriverExecutable(file).usingAnyFreePort()
-			.build();
+					.usingDriverExecutable(file).usingAnyFreePort().build();
 			IEservice.start();
 
-			//   System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+			// System.setProperty("webdriver.ie.driver",
+			// file.getAbsolutePath());
 
 			capabilities = DesiredCapabilities.internetExplorer();
 			capabilities
-			.setCapability(
-					InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
-					true);
+					.setCapability(
+							InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
+							true);
 			capabilities.setCapability("ignoreZoomSetting", true);
 
-			driver = new RemoteWebDriver(IEservice.getUrl(),capabilities);
+			driver = new RemoteWebDriver(IEservice.getUrl(), capabilities);
 			break;
 
 		case "Chrome":
 			File fileChrome = new File(
 					"src/com/provenir/automation/framework/drivers/chromedriver.exe");
 			chromeService = new ChromeDriverService.Builder()
-			.usingDriverExecutable(fileChrome).usingAnyFreePort()
-			.build();
+					.usingDriverExecutable(fileChrome).usingAnyFreePort()
+					.build();
 			chromeService.start();
 			capabilities = DesiredCapabilities.chrome();
 			driver = new RemoteWebDriver(chromeService.getUrl(), capabilities);
@@ -67,5 +70,11 @@ public class WebDriverSetUp {
 	public static void stopService() {
 		chromeService.stop();
 		IEservice.stop();
+	}
+
+	public static void setFFPrefernece() {
+		FirefoxProfile profile = new FirefoxProfile();
+		profile.setPreference("javascript.enabled", false);
+		WebDriver driver = new FirefoxDriver(profile);
 	}
 }

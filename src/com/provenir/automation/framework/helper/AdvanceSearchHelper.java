@@ -27,7 +27,7 @@ public class AdvanceSearchHelper {
 
 	@FindBy(how = How.ID, using = "submitCrt")
 	private WebElement submitBtn;
-	
+
 	@FindBy(how = How.XPATH, using = "//h2[contains(.,'Credit 360')]")
 	private WebElement creditTitle;
 
@@ -38,37 +38,37 @@ public class AdvanceSearchHelper {
 
 	public void clickAdvanceSearchLink() {
 		Util.waitForAJAX(driver);
-		Util.waitForElement(driver,advanceSearchLink, 30);
+		Util.waitForElement(driver, advanceSearchLink, 30);
 		advanceSearchLink.click();
 		Util.waitForLoaderToFinish(driver);
 	}
 
 	public void enterRequestType(String option) {
 		Util.enableAllDropdowns(driver);
-		Util.waitForElementPresent(driver,By.xpath(advanceSearchType), 20);
+		Util.waitForElementPresent(driver, By.xpath(advanceSearchType), 10);
 		option = "Request Search";
-		Util.selectItemFromList(driver,advanceSearchType, option);
+		Util.selectItemFromList(driver, advanceSearchType, option);
 	}
 
 	public void enterCreditNameAndSubmit() {
 		Util.waitForAJAX(driver);
-		Util.waitForElement(driver,creditName, 20);
+		Util.waitForElement(driver, creditName, 20);
 		creditName.sendKeys("Credit Req 1234");
-		Util.waitForElement(driver,submitBtn, 10);
+		Util.waitForElement(driver, submitBtn, 10);
 		submitBtn.click();
 		Util.waitForLoaderToFinish(driver);
 	}
 
-	public void clickReqOnGrid() {
+	public Credit360Helper clickReqOnGrid() {
 		Util.waitForAJAX(driver);
-		Util.waitForElement(driver,reqOnGrid, 30);
+		Util.waitForElement(driver, reqOnGrid, 30);
 		reqOnGrid.click();
 		Util.waitForLoaderToFinish(driver);
+		return new Credit360Helper(driver);
 	}
-	
-	public Credit360Helper verifyCreditTitle()
-	{
-		Util.waitForElement(driver,creditTitle, 20);
+
+	public Credit360Helper verifyCreditTitle() {
+		Util.waitForElement(driver, creditTitle, 20);
 		String title = creditTitle.getText().trim();
 		Assert.assertEquals("Credit 360", title);
 		return new Credit360Helper(driver);

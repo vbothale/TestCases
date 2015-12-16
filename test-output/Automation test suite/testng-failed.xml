@@ -6,15 +6,15 @@
   <test name="Firefox Test(failed)" parallel="tests">
     <parameter name="browser" value="Firefox"/>
     <classes>
-      <class name="com.provenir.automation.framework.testcases.FacilityLevelWorkflow">
+      <class name="com.provenir.automation.framework.testcases.FilteredQueues">
         <methods>
-          <include name="test19_verifyTaskManagementSection"/>
-          <include name="beforeMethod"/>
+          <include name="test4_verifyFiltersFunctionality"/>
           <include name="beforeTest"/>
           <include name="tearDown"/>
+          <include name="beforeMethod"/>
           <include name="initialize"/>
         </methods>
-      </class> <!-- com.provenir.automation.framework.testcases.FacilityLevelWorkflow -->
+      </class> <!-- com.provenir.automation.framework.testcases.FilteredQueues -->
     </classes>
   </test> <!-- Firefox Test(failed) -->
 </suite> <!-- Failed suite [Automation test suite] -->

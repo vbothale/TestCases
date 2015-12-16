@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="12" passed="11">
+<testng-results skipped="0" failed="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Automation test suite" duration-ms="195546" started-at="2015-12-07T05:24:38Z" finished-at="2015-12-07T05:27:53Z">
+  <suite name="Automation test suite" duration-ms="76609" started-at="2015-12-16T13:17:00Z" finished-at="2015-12-16T13:18:17Z">
     <groups>
     </groups>
-    <test name="Firefox Test" duration-ms="195546" started-at="2015-12-07T05:24:38Z" finished-at="2015-12-07T05:27:53Z">
-      <class name="com.provenir.automation.framework.testcases.FacilityLevelWorkflow">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="initialize" is-config="true" duration-ms="49" started-at="2015-12-07T10:54:38Z" finished-at="2015-12-07T10:54:38Z">
+    <test name="Firefox Test" duration-ms="76609" started-at="2015-12-16T13:17:00Z" finished-at="2015-12-16T13:18:17Z">
+      <class name="com.provenir.automation.framework.testcases.FilteredQueues">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@7904f4c8]" name="initialize" is-config="true" duration-ms="49" started-at="2015-12-16T18:47:00Z" finished-at="2015-12-16T18:47:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="beforeTest" is-config="true" duration-ms="22256" started-at="2015-12-07T10:54:38Z" finished-at="2015-12-07T10:55:00Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@7904f4c8]" name="beforeTest" is-config="true" duration-ms="24299" started-at="2015-12-16T18:47:00Z" finished-at="2015-12-16T18:47:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.String)[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="beforeMethod" is-config="true" duration-ms="140" started-at="2015-12-07T10:55:00Z" finished-at="2015-12-07T10:55:00Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String)[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@7904f4c8]" name="beforeMethod" is-config="true" duration-ms="49" started-at="2015-12-16T18:47:25Z" finished-at="2015-12-16T18:47:25Z">
           <params>
             <param index="0">
               <value>
@@ -26,136 +26,39 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="landingPage()[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="landingPage" duration-ms="46242" started-at="2015-12-07T10:55:00Z" finished-at="2015-12-07T10:55:46Z">
+        <test-method status="PASS" signature="test1_landingPage()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@7904f4c8]" name="test1_landingPage" duration-ms="34412" started-at="2015-12-16T18:47:25Z" finished-at="2015-12-16T18:47:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- landingPage -->
-        <test-method status="PASS" signature="test10_goToHomePage()[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="test10_goToHomePage" duration-ms="6413" started-at="2015-12-07T10:55:46Z" finished-at="2015-12-07T10:55:53Z">
+        </test-method> <!-- test1_landingPage -->
+        <test-method status="PASS" signature="test2_verifyFiltersOnMyRequestsPage()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@7904f4c8]" name="test2_verifyFiltersOnMyRequestsPage" duration-ms="584" started-at="2015-12-16T18:47:59Z" finished-at="2015-12-16T18:48:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test10_goToHomePage -->
-        <test-method status="PASS" signature="test11_clickNewCreditRequest()[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="test11_clickNewCreditRequest" duration-ms="3144" started-at="2015-12-07T10:55:53Z" finished-at="2015-12-07T10:55:56Z">
+        </test-method> <!-- test2_verifyFiltersOnMyRequestsPage -->
+        <test-method status="PASS" signature="test3_verifyDefaultValuesOfFilters()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@7904f4c8]" name="test3_verifyDefaultValuesOfFilters" duration-ms="52" started-at="2015-12-16T18:48:00Z" finished-at="2015-12-16T18:48:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test11_clickNewCreditRequest -->
-        <test-method status="PASS" signature="test12_verifyDefaultCreditLevelWorkflow()[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="test12_verifyDefaultCreditLevelWorkflow" duration-ms="117" started-at="2015-12-07T10:55:56Z" finished-at="2015-12-07T10:55:56Z">
+        </test-method> <!-- test3_verifyDefaultValuesOfFilters -->
+        <test-method status="PASS" signature="test4_verifyFiltersFunctionality()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@7904f4c8]" name="test4_verifyFiltersFunctionality" duration-ms="5629" started-at="2015-12-16T18:48:00Z" finished-at="2015-12-16T18:48:05Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test12_verifyDefaultCreditLevelWorkflow -->
-        <test-method status="PASS" signature="test13_verifySavedWorkflow()[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="test13_verifySavedWorkflow" duration-ms="17510" started-at="2015-12-07T10:55:56Z" finished-at="2015-12-07T10:56:14Z">
+        </test-method> <!-- test4_verifyFiltersFunctionality -->
+        <test-method status="PASS" signature="test5_verifyInitialWorkflowStatusOfNewlyCreatedRequest()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@7904f4c8]" name="test5_verifyInitialWorkflowStatusOfNewlyCreatedRequest" duration-ms="5390" started-at="2015-12-16T18:48:05Z" finished-at="2015-12-16T18:48:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test13_verifySavedWorkflow -->
-        <test-method status="PASS" signature="test14_clickTransactionInfoPage()[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="test14_clickTransactionInfoPage" duration-ms="16858" started-at="2015-12-07T10:56:14Z" finished-at="2015-12-07T10:56:30Z">
+        </test-method> <!-- test5_verifyInitialWorkflowStatusOfNewlyCreatedRequest -->
+        <test-method status="PASS" signature="test6_verifyInitialDecisionStatusOfNewlyCreatedRequest()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@7904f4c8]" name="test6_verifyInitialDecisionStatusOfNewlyCreatedRequest" duration-ms="6116" started-at="2015-12-16T18:48:11Z" finished-at="2015-12-16T18:48:17Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test14_clickTransactionInfoPage -->
-        <test-method status="PASS" signature="test15_verifyDefaultFacilityLevelWorkflow()[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="test15_verifyDefaultFacilityLevelWorkflow" duration-ms="10220" started-at="2015-12-07T10:56:30Z" finished-at="2015-12-07T10:56:41Z">
+        </test-method> <!-- test6_verifyInitialDecisionStatusOfNewlyCreatedRequest -->
+        <test-method status="PASS" signature="test7_verifyReqCount()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@7904f4c8]" name="test7_verifyReqCount" duration-ms="46" started-at="2015-12-16T18:48:17Z" finished-at="2015-12-16T18:48:17Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test15_verifyDefaultFacilityLevelWorkflow -->
-        <test-method status="PASS" signature="test16_verifysavedFacilityWorkflow()[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="test16_verifysavedFacilityWorkflow" duration-ms="11284" started-at="2015-12-07T10:56:41Z" finished-at="2015-12-07T10:56:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test16_verifysavedFacilityWorkflow -->
-        <test-method status="PASS" signature="test17_gotoHomePage()[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="test17_gotoHomePage" duration-ms="5885" started-at="2015-12-07T10:56:52Z" finished-at="2015-12-07T10:56:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test17_gotoHomePage -->
-        <test-method status="PASS" signature="test18_searchRequest()[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="test18_searchRequest" duration-ms="42383" started-at="2015-12-07T10:56:58Z" finished-at="2015-12-07T10:57:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test18_searchRequest -->
-        <test-method status="FAIL" signature="test19_verifyTaskManagementSection()[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="test19_verifyTaskManagementSection" duration-ms="1711" started-at="2015-12-07T10:57:40Z" finished-at="2015-12-07T10:57:42Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at com.provenir.automation.framework.helper.Credit360Helper.clickActionColumnAndVerifyAddedWorkflow(Credit360Helper.java:99)
-	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test19_verifyTaskManagementSection(FacilityLevelWorkflow.java:248)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test19_verifyTaskManagementSection -->
-        <test-method status="PASS" signature="test20_gotoFacility360()[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="test20_gotoFacility360" duration-ms="11342" started-at="2015-12-07T10:57:42Z" finished-at="2015-12-07T10:57:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test20_gotoFacility360 -->
-        <test-method status="FAIL" signature="tearDown()[pri:0, instance:com.provenir.automation.framework.testcases.FacilityLevelWorkflow@7670fb6]" name="tearDown" is-config="true" duration-ms="0" started-at="2015-12-07T10:57:53Z" finished-at="2015-12-07T10:57:53Z">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
-            <message>
-              <![CDATA[Unable to get browser (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 4 milliseconds
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-Session ID: 9f286e6c-5163-41bb-abe3-2502f33c1c61
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:21290/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: Unable to get browser (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 4 milliseconds
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-Session ID: 9f286e6c-5163-41bb-abe3-2502f33c1c61
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=true, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=11, ie.usePerProcessProxy=false, ignoreProtectedModeSettings=true, cssSelectorsEnabled=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:21290/, handlesAlerts=true, ie.forceCreateProcessApi=false, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:628)
-	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:469)
-	at com.provenir.automation.framework.utility.TestCaseExecutor.tearDown(TestCaseExecutor.java:91)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:308)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+        </test-method> <!-- test7_verifyReqCount -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@7904f4c8]" name="tearDown" is-config="true" duration-ms="3358" started-at="2015-12-16T18:48:17Z" finished-at="2015-12-16T18:48:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.provenir.automation.framework.testcases.FacilityLevelWorkflow -->
+      </class> <!-- com.provenir.automation.framework.testcases.FilteredQueues -->
     </test> <!-- Firefox Test -->
   </suite> <!-- Automation test suite -->
 </testng-results>

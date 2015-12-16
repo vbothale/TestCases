@@ -1,5 +1,6 @@
 {
-    "searchReq": {
-        "searchReq": "Credit 420"
-    }
+	"searchReq": {
+		"searchReq": "Credit 420",
+		"searchExistingReq": "Request HCL Corporation"
+	}
 }

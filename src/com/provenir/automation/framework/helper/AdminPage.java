@@ -1,5 +1,7 @@
 package com.provenir.automation.framework.helper;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -37,8 +39,11 @@ public class AdminPage {
 	@FindBy(how = How.XPATH, using = "//span[contains(.,'Manage Workflows')]")
 	private WebElement manageWorkflows;
 
-	@FindBy(how = How.XPATH, using = "//a[contains(.,'Add')]")
+	@FindBy(how = How.XPATH, using = "//a[contains(@title,'Add')]")
 	private WebElement addOnManageWorkflows;
+
+	@FindBy(how = How.XPATH, using = "//a[contains(.,'Add')]")
+	private WebElement addOnManageWorkflows1;
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='content']/tbody/tr/td[3]/div/div[1]/div[1]/a[2]/span")
 	private WebElement verifyWorkflowPage;
@@ -67,7 +72,7 @@ public class AdminPage {
 	@FindBy(how = How.ID, using = ".//*[@id='processGrid']/div[2]/div[5]/div/div/div[5]")
 	private WebElement roleAssignmentOnGrid;
 
-	@FindBy(how = How.ID, using = ".//*[@id='processGrid']/div[2]/div[5]/div/div/div[5]/select[@id='roleListDD']")
+	@FindBy(how = How.ID, using = ".//*[@id='roleListDD']")
 	private WebElement roleAssignment;
 
 	// @FindBy(how = How.XPATH, using =
@@ -110,16 +115,17 @@ public class AdminPage {
 	@FindBy(how = How.ID, using = "imgSearchWorkflow")
 	private WebElement srchIconOnWorkflowSummary;
 
-	@FindBy(how = How.XPATH, using = ".//*[@id='myGrid']/div/div[5]/div/div/div[1]")
+	@FindBy(how = How.XPATH, using = ".//*[@id='myGrid']/div/div[5]/div/div[1]/div[1]")
 	private WebElement workflowName;
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='myGrid']/div/div[5]/div/div/div[2]")
 	private WebElement savedWorkflowType;
 
-//	@FindBy(how = How.XPATH, using = ".//*[@id='myGrid']/div/div[5]/div/div/div[4]/a")
-//	private WebElement actionMenuOnSearchedWorkflow;
-	
-	@FindBy(how = How.XPATH, using = ".//*[@class='slickActionmenu_icon']")
+	// @FindBy(how = How.XPATH, using =
+	// ".//*[@id='myGrid']/div/div[5]/div/div/div[4]/a")
+	// private WebElement actionMenuOnSearchedWorkflow;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='myGrid']/div/div[5]/div/div[1]/div[4]/a")
 	private WebElement actionMenuOnSearchedWorkflow;
 
 	@FindBy(how = How.LINK_TEXT, using = "Set As Default")
@@ -127,6 +133,9 @@ public class AdminPage {
 
 	@FindBy(how = How.LINK_TEXT, using = "Edit")
 	private WebElement editWorkflow;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='container']/div[9]/div/div/div/ul/li[3]/a")
+	private WebElement copyWorkflow;
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='valdationMsg']/div/h2")
 	private WebElement aftersaveConfirmation;
@@ -155,6 +164,12 @@ public class AdminPage {
 	}
 
 	public void clickAddBtnOnWorkflowSummary() {
+		Util.waitForElement(driver, addOnManageWorkflows1, 10);
+		addOnManageWorkflows1.click();
+		Util.waitForAJAX(driver);
+	}
+
+	public void clickAddBtnOnWorkflowSummary1() {
 		Util.waitForElement(driver, addOnManageWorkflows, 10);
 		addOnManageWorkflows.click();
 		Util.waitForAJAX(driver);
@@ -241,98 +256,247 @@ public class AdminPage {
 		Util.waitForElementPresent(driver, By
 				.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[2]"),
 				15);
-		// WebElement ele =
-		// driver.findElement(By.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[1]/input"));
-		// ele.click();
-		taskNameOnGrid.click();
+		WebElement ele = driver
+				.findElement(By
+						.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[1]/input"));
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		System.out.println("Count - " + elements.size());
+		elements.get(1).click();
+
 		option = "Add Customer Address";
 		Util.selectItemFromList(driver, taskName, option);
 	}
 
 	public void selectTaskName1(String option) {
-		Util.waitForElement(driver, taskNameOnGrid, 10);
-		taskNameOnGrid.click();
+		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(driver, By
+				.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[2]"),
+				15);
+		WebElement ele = driver
+				.findElement(By
+						.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[1]/input"));
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		System.out.println("Count - " + elements.size());
+		elements.get(1).click();
+
 		option = "Annual Review Documents";
 		Util.selectItemFromList(driver, taskName, option);
 	}
 
 	public void selectTaskName2(String option) {
-		Util.waitForElement(driver, taskNameOnGrid, 10);
-		taskNameOnGrid.click();
+		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(driver, By
+				.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[2]"),
+				15);
+		WebElement ele = driver
+				.findElement(By
+						.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[1]/input"));
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		System.out.println("Count - " + elements.size());
+		elements.get(1).click();
+
 		option = "Compliance";
 		Util.selectItemFromList(driver, taskName, option);
 	}
 
 	public void selectTaskName3(String option) {
-		Util.waitForElement(driver, taskNameOnGrid, 10);
-		taskNameOnGrid.click();
+		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(driver, By
+				.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[2]"),
+				15);
+		WebElement ele = driver
+				.findElement(By
+						.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[1]/input"));
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		System.out.println("Count - " + elements.size());
+		elements.get(1).click();
+
 		option = "General Task";
 		Util.selectItemFromList(driver, taskName, option);
 	}
 
 	public void selectTaskName4(String option) {
-		Util.waitForElement(driver, taskNameOnGrid, 10);
-		taskNameOnGrid.click();
+		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(driver, By
+				.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[2]"),
+				15);
+		WebElement ele = driver
+				.findElement(By
+						.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[1]/input"));
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		System.out.println("Count - " + elements.size());
+		elements.get(1).click();
+
 		option = "ABCQueue";
 		Util.selectItemFromList(driver, taskName, option);
 	}
 
 	public void enterTaskCode() {
-		Util.waitForElement(driver, taskCodeOnGrid, 5);
-		taskCodeOnGrid.click();
+		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(driver, By
+				.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[3]"),
+				5);
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		System.out.println("Count - " + elements.size());
+		elements.get(2).click();
 	}
 
 	public void selectRoleAssignment(String option) {
-		Util.waitForElement(driver, roleAssignmentOnGrid, 5);
-		roleAssignmentOnGrid.click();
+		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(driver, By
+				.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[5]"),
+				5);
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		System.out.println("Count - " + elements.size());
+		elements.get(4).click();
+
 		option = "Automation Engineer";
 		Util.selectItemFromList(driver, roleAssignment, option);
 	}
 
 	public void clickMilestone() {
-		Util.waitForElement(driver, milestoneOnGrid, 5);
-		milestoneOnGrid.click();
+		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(driver, By
+				.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[9]"),
+				5);
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		System.out.println("Count - " + elements.size());
+		elements.get(8).click();
 		milestone.click();
 	}
 
 	public void enterMilestoneAsOnboarded(String option) {
-		Util.waitForElement(driver, milestoneName, 5);
+		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(
+				driver,
+				By.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[10]"),
+				5);
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		System.out.println("Count - " + elements.size());
+		elements.get(9).click();
 		option = "Onboarded";
 		Util.selectItemFromList(driver, milestoneName, option);
 	}
 
 	public void enterMilestoneAsComplianceComplete(String option) {
-		Util.waitForElement(driver, milestoneName, 5);
+		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(
+				driver,
+				By.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[10]"),
+				5);
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		System.out.println("Count - " + elements.size());
+		elements.get(9).click();
 		option = "Compliance Complete";
 		Util.selectItemFromList(driver, milestoneName, option);
 	}
 
 	public void enterMilestoneAsUnderwritingComplete(String option) {
-		Util.waitForElement(driver, milestoneName, 5);
+		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(
+				driver,
+				By.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[10]"),
+				5);
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		System.out.println("Count - " + elements.size());
+		elements.get(9).click();
 		option = "Underwriting Complete";
 		Util.selectItemFromList(driver, milestoneName, option);
 	}
 
 	public void enterMilestoneAsFinancialsReviewed(String option) {
-		Util.waitForElement(driver, milestoneName, 5);
+		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(
+				driver,
+				By.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[10]"),
+				5);
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		System.out.println("Count - " + elements.size());
+		elements.get(9).click();
 		option = "Financials Reviewed";
 		Util.selectItemFromList(driver, milestoneName, option);
 	}
 
 	public void enterMilestoneAsPreliminaryAcceptance(String option) {
-		Util.waitForElement(driver, milestoneName, 5);
+		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(
+				driver,
+				By.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[10]"),
+				5);
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		System.out.println("Count - " + elements.size());
+		elements.get(9).click();
 		option = "Preliminary Acceptance";
 		Util.selectItemFromList(driver, milestoneName, option);
 	}
 
 	public void enterMilestoneAsReadyForReview(String option) {
-		Util.waitForElement(driver, milestoneName, 5);
+		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(
+				driver,
+				By.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[10]"),
+				5);
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		System.out.println("Count - " + elements.size());
+		elements.get(9).click();
 		option = "Ready for Review";
 		Util.selectItemFromList(driver, milestoneName, option);
 	}
 
 	public void enterMilestoneAsCompleted(String option) {
-		Util.waitForElement(driver, milestoneName, 5);
+		Util.waitForAJAX(driver);
+		Util.waitForElementPresent(
+				driver,
+				By.xpath(".//*[@id='processGrid']/div[2]/div[5]/div/div/div[10]"),
+				5);
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		System.out.println("Count - " + elements.size());
+		elements.get(9).click();
 		option = "Completed";
 		Util.selectItemFromList(driver, milestoneName, option);
 	}
@@ -385,10 +549,22 @@ public class AdminPage {
 		srchboxOnWorkflowSummary.sendKeys("Credit level workflow");
 	}
 
+	public void enterDefaultCreditWorkflow() {
+		Util.waitForElement(driver, srchboxOnWorkflowSummary, 15);
+		srchboxOnWorkflowSummary.clear();
+		srchboxOnWorkflowSummary.sendKeys("New Request for Money");
+	}
+
 	public void enterFacilityWorkflowNameToSearch() {
 		Util.waitForElement(driver, srchboxOnWorkflowSummary, 15);
 		srchboxOnWorkflowSummary.clear();
 		srchboxOnWorkflowSummary.sendKeys("Facility level workflow");
+	}
+
+	public void enterDefaultFacilityWorkflow() {
+		Util.waitForElement(driver, srchboxOnWorkflowSummary, 15);
+		srchboxOnWorkflowSummary.clear();
+		srchboxOnWorkflowSummary.sendKeys("New Request for Money");
 	}
 
 	public boolean verifySavedWorkflowAsCredit() {
@@ -434,11 +610,52 @@ public class AdminPage {
 
 	public void editWorkflow() {
 		Util.waitForAJAX(driver);
-		Util.waitForElement(driver, actionMenuOnSearchedWorkflow, 10);
-		actions.moveToElement(actionMenuOnSearchedWorkflow).click().build().perform();
-		Util.waitForElement(driver, editWorkflow, 10);
-		editWorkflow.click();
+		Util.waitForElementPresent(driver,
+				By.xpath(".//*[@id='myGrid']/div/div[5]/div/div[1]/div[4]/a"),
+				10);
+		List<WebElement> elements = driver
+				.findElements(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div"));
+
+		WebElement ele = driver
+				.findElement(By
+						.xpath("//div[contains(@class, 'ui-widget-content slick-row even')]/div/div/div/div/div/ul/li"));
+
+		actions.moveToElement(ele).build().perform();
+		for (int i = 1; i <= elements.size(); i++) {
+			WebElement ele1 = driver.findElement(By.xpath(ele + "[" + i
+					+ "]//a[@oper='Edit']"));
+			if (ele1.getText().equalsIgnoreCase("Edit")) {
+
+				ele1.click();
+			}
+		}
+			
+//		actions.moveToElement(ele).click().build().perform();
+//		Util.waitForElement(driver, editWorkflow, 5);
+//		editWorkflow.click();
 		Util.waitForAJAX(driver);
+	}
+
+	public void copyWorkflow() {
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, actionMenuOnSearchedWorkflow, 10);
+		actions.moveToElement(actionMenuOnSearchedWorkflow).click().build()
+				.perform();
+		Util.waitForElement(driver, copyWorkflow, 10);
+		copyWorkflow.click();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public boolean verifyCopiedWorkflowName() {
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, facilityWorkflow, 10);
+		String title = facilityWorkflow.getText().trim();
+		if (title.equalsIgnoreCase("Copy of Facility level workflow")) {
+			return true;
+		} else
+			return false;
 	}
 
 	public boolean verifyWorkflowSummaryTitle() {

@@ -102,6 +102,9 @@ public class TransactionInfoPage {
 	@FindBy(how = How.XPATH, using = ".//*[@id='transactionList']/div[2]/h2")
 	private WebElement transListHeading;
 
+	@FindBy(how = How.XPATH, using = ".//*[@id='dragbar']/div[2]/a")
+	private WebElement crossOnPopup;
+
 	private String lstProdCata = ".//div[@id='prodCatalogContentDiv']/div[2]/table/tbody/tr";
 
 	private String facilityBorrowerList = "//*[@id='borrSelect']/div/table/tbody/tr";
@@ -593,7 +596,7 @@ public class TransactionInfoPage {
 	public boolean verifySavedFacilityWorkflow() {
 		Util.waitForElement(driver, getFacilityWorkflow, 5);
 		String str = getFacilityWorkflow.getText();
-		if (str.equalsIgnoreCase("Facility level workflow")) {
+		if (str.equalsIgnoreCase("Copy of Facility level workflow")) {
 			return true;
 		} else
 			return false;
@@ -607,7 +610,12 @@ public class TransactionInfoPage {
 		} else
 			return false;
 	}
-	
-	
+
+	public void clickCrossOnTransactionPopup() {
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, crossOnPopup, 10);
+		crossOnPopup.click();
+
+	}
 
 }

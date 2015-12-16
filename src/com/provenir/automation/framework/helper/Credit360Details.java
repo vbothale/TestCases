@@ -312,6 +312,9 @@ public class Credit360Details {
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='credSumm']")
 	private WebElement creditSummary;
+	
+	@FindBy(how = How.LINK_TEXT, using = "Delete")
+	private WebElement delete;
 
 	private String backToPage = "//div[contains(@class,'breadcrumbGrid')]/ul/li";
 	private WebElement element = null;
@@ -1244,6 +1247,13 @@ public class Credit360Details {
 	public void clickCreditSummary() {
 		Util.waitForElement(driver,creditSummary, 15);
 		creditSummary.click();
+		Util.waitForAJAX(driver);
+	}
+	
+	public void clickDeleteOnFacilityDetails() {
+		actions.moveToElement(actionMenuOnFacilitySummary).click().perform();
+		Util.waitForElement(driver,delete, 20);
+		delete.click();
 		Util.waitForAJAX(driver);
 	}
 
