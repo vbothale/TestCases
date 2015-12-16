@@ -73,8 +73,7 @@ public class FilteredQueues extends TestCaseExecutor {
 		myRequests.selectWorkflowMilestone();
 		myRequests.selectDecisionMilestone();
 		myRequests.enterFromDate();
-		myRequests.enterToDate();
-		
+		myRequests.enterToDate();	
 		myRequests.clickFilterBtn();
 	}
 
