@@ -43,14 +43,14 @@ public class Collateral360 extends TestCaseExecutor {
 		customer360Helper = new Customer360Helper(getDriver(browserValue));
 	}
 
-	@BeforeMethod
-	public void landingPage() {
+	@Test(priority = 0)
+	public void test0_landingPage() {
 		log.info("Login to Prism and search customer");
 		reader.readValue(_hashLogins, "resources/Login.json");
 		loginPage.login(_hashLogins);
 	}
 
-	@Test(priority = 0)
+	@Test(priority = 1)
 	public void test1_gotoCollateral360() throws InterruptedException {
 		log.info("Click on collateral and Add");
 		reader.readValue(_hashCustomers, "resources/Customers.json");
@@ -60,14 +60,14 @@ public class Collateral360 extends TestCaseExecutor {
 		System.out.println("test 0");
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 2)
 	public void test2_verifyCollateralTitle() throws InterruptedException {
 		log.info("Click on collateral and Add");
 		collateral360Helper.verifyCollateralTitle();
 		System.out.println("test 1");
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 3)
 	public void test3_saveCollateralDetails() {
 		collateral360Helper.enterCollateralName();
 		collateral360Helper.enterCollateralCode();
@@ -80,7 +80,7 @@ public class Collateral360 extends TestCaseExecutor {
 		System.out.println("test 2");
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 4)
 	public void test4_verifyLeftHandNavigationForVehicle() {
 		customer360Helper = collateral360Helper.clickBackButton();
 		collateral360Helper.clickOnAddBtn();
@@ -88,7 +88,7 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.verifyLeftHandMenuOnCollateralTypeAsVehicle();
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 5)
 	public void test5_verifyLeftHandNavigationForShares() {
 		customer360Helper = collateral360Helper.clickBackButton();
 		collateral360Helper.clickOnAddBtn();
@@ -96,7 +96,7 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.verifyLeftHandMenuOnCollateralTypeAsShares();
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 6)
 	public void test6_verifyLeftHandNavigationForAccountsReceivable() {
 		customer360Helper = collateral360Helper.clickBackButton();
 		collateral360Helper.clickOnAddBtn();
@@ -105,7 +105,7 @@ public class Collateral360 extends TestCaseExecutor {
 				.verifyLeftHandMenuOnCollateralTypeAsAccountsReceivable();
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 7)
 	public void test7_verifyLeftHandNavigationForRealEstate() {
 		customer360Helper = collateral360Helper.clickBackButton();
 		collateral360Helper.clickOnAddBtn();
@@ -115,7 +115,7 @@ public class Collateral360 extends TestCaseExecutor {
 
 	// Titled Motor Vehicle
 
-	@Test(priority = 7)
+	@Test(priority = 8)
 	public void test8_saveCollateralDetailsAsVehicle() {
 		collateral360Helper.enterCollateralName();
 		collateral360Helper.enterCollateralCode();
@@ -139,7 +139,7 @@ public class Collateral360 extends TestCaseExecutor {
 
 	}
 
-	@Test(priority = 8)
+	@Test(priority = 9)
 	public void test9_verifyActionMenuDisplayedOnVehicle()
 			throws InterruptedException {
 
@@ -149,24 +149,19 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.verifyActionMenuPresentOnTitledMotorVehicle();
 	}
 
-	// @Test(priority = 9)
-	// public void test10_verifyMandatoryDetailsOnTitledMotorVehicle() {
-	// collateral360Helper.verifyMandatoryDetailsOnTitledMotorVehicle();
-	// }
-
 	@Test(priority = 10)
-	public void test11_deleteOnTitledMotorVehicle() {
+	public void test11_saveOnTitledMotorVehicle() {
 		collateral360Helper.saveTitledMotorVehicleDetails();
 	}
 
 	@Test(priority = 11)
-	public void test12_saveTitledMotorVehicle() {
+	public void test12_updateTitledMotorVehicle() {
 		collateral360Helper.clickEditOnTitledMotorVehicle();
 		collateral360Helper.updateTitledMotorVehicle();
 	}
 
 	@Test(priority = 12)
-	public void test13_updateTitledMotorVehicleInfo() {
+	public void test13_deleteTitledMotorVehicleInfo() {
 		collateral360Helper.clickDeleteOnTitledMotorVehicle();
 	}
 

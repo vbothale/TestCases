@@ -36,7 +36,7 @@ public class TestCaseExecutor {
 		try {
 			// Initialize Firefox
 			firefox = WebDriverSetUp.getDriver("Firefox");
-//			WebDriverSetUp.setFFPrefernece();
+			// WebDriverSetUp.setFFPrefernece();
 
 			firefox.get(applicationUrl);
 
@@ -61,6 +61,7 @@ public class TestCaseExecutor {
 			internetExplorer = WebDriverSetUp.getDriver("InternetExplorer");
 
 			internetExplorer.get(applicationUrl);
+			WebDriverSetUp.setIEcapabilities();
 
 			if (internetExplorer instanceof InternetExplorerDriver) {
 				internetExplorer
@@ -86,8 +87,8 @@ public class TestCaseExecutor {
 
 	@AfterSuite
 	public static void tearDown() {
-//		firefox.close();
-//		firefox.quit();
+		// firefox.close();
+		// firefox.quit();
 		chrome.close();
 		chrome.quit();
 		internetExplorer.close();

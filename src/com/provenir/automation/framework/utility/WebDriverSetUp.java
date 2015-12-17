@@ -23,7 +23,7 @@ public class WebDriverSetUp {
 		switch (browserType) {
 		case "Firefox":
 			driver = new FirefoxDriver();
-			
+
 			break;
 
 		case "InternetExplorer":
@@ -76,5 +76,18 @@ public class WebDriverSetUp {
 		FirefoxProfile profile = new FirefoxProfile();
 		profile.setPreference("javascript.enabled", false);
 		WebDriver driver = new FirefoxDriver(profile);
+	}
+
+	public static void setIEcapabilities() {
+		DesiredCapabilities ieCapabilities = DesiredCapabilities
+				.internetExplorer();
+
+		ieCapabilities.setCapability("nativeEvents", false);
+		ieCapabilities.setCapability("unexpectedAlertBehaviour", "accept");
+		ieCapabilities.setCapability("ignoreProtectedModeSettings", true);
+		ieCapabilities.setCapability("disable-popup-blocking", true);
+		ieCapabilities.setCapability("enablePersistentHover", true);
+
+		driver = new InternetExplorerDriver(ieCapabilities);
 	}
 }

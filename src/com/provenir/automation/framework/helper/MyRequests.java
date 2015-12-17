@@ -117,6 +117,7 @@ public class MyRequests {
 	private WebElement reqCount;
 
 	private String dashboardRows = "//*[@id='data_content']/div/table/tbody/tr";
+	private String reqOnDashboard = "//*[@id='data_content']/div/table/tbody/tr[1]";
 	private String wFlowMilestone = ".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[1]/p/div/div/ul/li";
 
 	private WebElement element = null;
@@ -150,7 +151,6 @@ public class MyRequests {
 			}
 		}
 		return cnt;
-
 	}
 
 	public int getCountOfAddedCustomerName(String customerName) {
@@ -162,11 +162,9 @@ public class MyRequests {
 					+ "[" + i + "]/td[2]"));
 			if (element.getText().equals(customerName)) {
 				cnt++;
-
 			}
 		}
 		return cnt;
-
 	}
 
 	public void clickExpandIcon() {
@@ -253,6 +251,12 @@ public class MyRequests {
 		homeLink.click();
 		Util.waitForAJAX(driver);
 		return new TransactionInfoPage(driver);
+	}
+
+	public void clickHome() {
+		Util.waitForElement(driver, homeLink, 10);
+		homeLink.click();
+		Util.waitForAJAX(driver);
 	}
 
 	public SearchHelper srchAssociatedFacility() {
@@ -490,7 +494,21 @@ public class MyRequests {
 			return true;
 		} else
 			return false;
+	}
 
+	public Credit360Helper clickOnAnyReqFromDashboard() {
+		Util.waitForElementPresent(driver, By.xpath(reqOnDashboard), 10);
+		element = null;
+		List<WebElement> reqListOnDashboard = driver.findElements(By
+				.xpath(reqOnDashboard));
+
+		for (int i = 1; i < reqListOnDashboard.size(); i++) {
+			element = driver.findElement(By.xpath(reqOnDashboard + "[" + i
+					+ "]/td[2]"));
+			System.out.println("Count  =  " + reqListOnDashboard.size());
+			reqListOnDashboard.get(1).click();
+		}
+		return new Credit360Helper(driver);
 	}
 
 }

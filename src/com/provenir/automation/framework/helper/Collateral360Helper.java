@@ -203,35 +203,35 @@ public class Collateral360Helper {
 	// ".//*[@id='titledMotorGrid']/div/table/tbody/tr/td[1]/input")
 	// private WebElement typeOfVehicle;
 
-	@FindBy(how = How.XPATH, using = "//input[@name='typeInfo1']")
+	@FindBy(how = How.XPATH, using = "//input[contains(@name,'typeInfo0')]")
 	private WebElement typeOfVehicle;
 
 	// @FindBy(how = How.XPATH, using =
 	// ".//*[@id='titledMotorGrid']/div/table/tbody/tr/td[2]/input")
 	// private WebElement vehicleYear;
 
-	@FindBy(how = How.XPATH, using = "//input[@name='year1']")
+	@FindBy(how = How.XPATH, using = "//input[contains(@name,'year0')]")
 	private WebElement vehicleYear;
 
 	// @FindBy(how = How.XPATH, using =
 	// ".//*[@id='titledMotorGrid']/div/table/tbody/tr/td[3]/input")
 	// private WebElement make;
 
-	@FindBy(how = How.XPATH, using = "//input[@name='make1']")
+	@FindBy(how = How.XPATH, using = "//input[contains(@name,'make0')]")
 	private WebElement make;
 
 	// @FindBy(how = How.XPATH, using =
 	// ".//*[@id='titledMotorGrid']/div/table/tbody/tr/td[4]/input")
 	// private WebElement model;
 
-	@FindBy(how = How.XPATH, using = "//input[@name='model1']")
+	@FindBy(how = How.XPATH, using = "//input[contains(@name,'model0')]")
 	private WebElement model;
 
 	// @FindBy(how = How.XPATH, using =
 	// ".//*[@id='titledMotorGrid']/div/table/tbody/tr/td[5]/input")
 	// private WebElement vin;
 
-	@FindBy(how = How.XPATH, using = "//input[@name='vinDesc1']")
+	@FindBy(how = How.XPATH, using = "//input[contains(@name,'vinDesc0')]")
 	private WebElement vin;
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='titledMotorGrid']/div/table/tbody/tr/td[6]/a")
@@ -854,11 +854,17 @@ public class Collateral360Helper {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, typeOfVehicle, 10);
 		typeOfVehicle.click();
+		typeOfVehicle.clear();
 		typeOfVehicle.sendKeys("Truck");
+		vehicleYear.clear();
 		vehicleYear.sendKeys("2010");
+		make.clear();
 		make.sendKeys("2008");
+		model.clear();
 		model.sendKeys("NJ1234");
+		vin.clear();
 		vin.sendKeys("12345");
+
 		saveTitledMotorVehicle.click();
 		Util.waitForAJAX(driver);
 	}
@@ -881,6 +887,7 @@ public class Collateral360Helper {
 	}
 
 	public void cancelTitledMotorVehicle() {
+
 		typeOfVehicle.sendKeys("Truck");
 		vehicleYear.sendKeys("2010");
 		make.sendKeys("2008");
@@ -898,6 +905,8 @@ public class Collateral360Helper {
 	}
 
 	public void clickDeleteOnTitledMotorVehicle() {
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, actionMenuOnTitledMotorVehicle, 10);
 		actions.moveToElement(actionMenuOnTitledMotorVehicle).click().perform();
 		Util.waitForElement(driver, deleteLnk, 15);
 		deleteLnk.click();
@@ -961,7 +970,6 @@ public class Collateral360Helper {
 		Util.waitForAJAX(driver);
 		collateralPoolOnFacility.click();
 		Util.waitForLoaderToFinish(driver);
-
 	}
 
 	public void clickDetailsOnCollateralPool() {

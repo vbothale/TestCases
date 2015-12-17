@@ -73,12 +73,13 @@ public class FilteredQueues extends TestCaseExecutor {
 		myRequests.selectWorkflowMilestone();
 		myRequests.selectDecisionMilestone();
 		myRequests.enterFromDate();
-		myRequests.enterToDate();	
+		myRequests.enterToDate();
 		myRequests.clickFilterBtn();
 	}
 
 	@Test(priority = 4)
 	public void test5_verifyInitialWorkflowStatusOfNewlyCreatedRequest() {
+		myRequests.clickHome();
 		myRequests.selectWorkflowMilestone();
 		myRequests.verifyWorkflowStatusAsInProgress();
 		myRequests.clickFilterBtn();
@@ -94,6 +95,13 @@ public class FilteredQueues extends TestCaseExecutor {
 	@Test(priority = 6)
 	public void test7_verifyReqCount() {
 		myRequests.verifyReqCount();
+	}
+	
+	@Test(priority = 7)
+	public void test8_verifyHeaderOnTMActAsHyperlink()
+	{
+		credit360 = myRequests.clickOnAnyReqFromDashboard();
+		
 	}
 
 }
