@@ -27,7 +27,7 @@ public class AdvanceSearchHelper {
 
 	@FindBy(how = How.ID, using = "submitCrt")
 	private WebElement submitBtn;
-	
+
 	@FindBy(how = How.XPATH, using = "//h2[contains(.,'Credit 360')]")
 	private WebElement creditTitle;
 
@@ -37,38 +37,38 @@ public class AdvanceSearchHelper {
 	private String advanceSearchType = "advSrchTyp";
 
 	public void clickAdvanceSearchLink() {
-		Util.waitForAJAX();
-		Util.waitForElement(advanceSearchLink, 20);
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, advanceSearchLink, 30);
 		advanceSearchLink.click();
-		Util.waitForLoaderToFinish();
+		Util.waitForLoaderToFinish(driver);
 	}
 
 	public void enterRequestType(String option) {
-		Util.enableAllDropdowns();
-		Util.waitForElementPresent(By.xpath(advanceSearchType), 20);
+		Util.enableAllDropdowns(driver);
+		Util.waitForElementPresent(driver, By.xpath(advanceSearchType), 10);
 		option = "Request Search";
-		Util.selectItemFromList(advanceSearchType, option);
+		Util.selectItemFromList(driver, advanceSearchType, option);
 	}
 
 	public void enterCreditNameAndSubmit() {
-		Util.waitForAJAX();
-		Util.waitForElement(creditName, 20);
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, creditName, 20);
 		creditName.sendKeys("Credit Req 1234");
-		Util.waitForElement(submitBtn, 10);
+		Util.waitForElement(driver, submitBtn, 10);
 		submitBtn.click();
-		Util.waitForLoaderToFinish();
+		Util.waitForLoaderToFinish(driver);
 	}
 
-	public void clickReqOnGrid() {
-		Util.waitForAJAX();
-		Util.waitForElement(reqOnGrid, 30);
+	public Credit360Helper clickReqOnGrid() {
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, reqOnGrid, 30);
 		reqOnGrid.click();
-		Util.waitForLoaderToFinish();
+		Util.waitForLoaderToFinish(driver);
+		return new Credit360Helper(driver);
 	}
-	
-	public Credit360Helper verifyCreditTitle()
-	{
-		Util.waitForElement(creditTitle, 20);
+
+	public Credit360Helper verifyCreditTitle() {
+		Util.waitForElement(driver, creditTitle, 20);
 		String title = creditTitle.getText().trim();
 		Assert.assertEquals("Credit 360", title);
 		return new Credit360Helper(driver);

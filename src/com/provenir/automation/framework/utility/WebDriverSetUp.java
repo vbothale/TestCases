@@ -6,44 +6,46 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class WebDriverSetUp {
-	
+	private static WebDriver driver = null;
+
+	private static InternetExplorerDriverService IEservice;
+	private static ChromeDriverService chromeService;
+	private static DesiredCapabilities capabilities;
+
 	public static WebDriver getDriver(String browserType) throws IOException {
-		WebDriver driver = null;
-
-		InternetExplorerDriverService IEservice;
-		ChromeDriverService chromeService;
-		DesiredCapabilities capabilities;
-
 		switch (browserType) {
 		case "Firefox":
 			driver = new FirefoxDriver();
+
 			break;
 
 		case "InternetExplorer":
-			   File file = new File("src/com/provenir/automation/framework/drivers/IEDriverServer.exe");
-			  
-			      IEservice = new InternetExplorerDriverService.Builder()
-			      .usingDriverExecutable(file).usingAnyFreePort()
-			      .build();
-			      IEservice.start();
-			      
-			   //   System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
-			      
-			      capabilities = DesiredCapabilities.internetExplorer();
-			      capabilities
-			    .setCapability(
-			      InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
-			      true);
-			  capabilities.setCapability("ignoreZoomSetting", true);
+			File file = new File(
+					"src/com/provenir/automation/framework/drivers/IEDriverServer.exe");
 
-			      driver = new RemoteWebDriver(IEservice.getUrl(),capabilities);
-			      break;
+			IEservice = new InternetExplorerDriverService.Builder()
+					.usingDriverExecutable(file).usingAnyFreePort().build();
+			IEservice.start();
+
+			// System.setProperty("webdriver.ie.driver",
+			// file.getAbsolutePath());
+
+			capabilities = DesiredCapabilities.internetExplorer();
+			capabilities
+					.setCapability(
+							InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
+							true);
+			capabilities.setCapability("ignoreZoomSetting", true);
+
+			driver = new RemoteWebDriver(IEservice.getUrl(), capabilities);
+			break;
 
 		case "Chrome":
 			File fileChrome = new File(
@@ -61,8 +63,31 @@ public class WebDriverSetUp {
 			break;
 
 		}
+
 		return driver;
 	}
 
+	public static void stopService() {
+		chromeService.stop();
+		IEservice.stop();
+	}
 
+	public static void setFFPrefernece() {
+		FirefoxProfile profile = new FirefoxProfile();
+		profile.setPreference("javascript.enabled", false);
+		WebDriver driver = new FirefoxDriver(profile);
+	}
+
+	public static void setIEcapabilities() {
+		DesiredCapabilities ieCapabilities = DesiredCapabilities
+				.internetExplorer();
+
+		ieCapabilities.setCapability("nativeEvents", false);
+		ieCapabilities.setCapability("unexpectedAlertBehaviour", "accept");
+		ieCapabilities.setCapability("ignoreProtectedModeSettings", true);
+		ieCapabilities.setCapability("disable-popup-blocking", true);
+		ieCapabilities.setCapability("enablePersistentHover", true);
+
+		driver = new InternetExplorerDriver(ieCapabilities);
+	}
 }
