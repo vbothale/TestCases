@@ -976,7 +976,7 @@ public class Collateral360Helper {
 		Util.waitForElementPresent(
 				driver,
 				By.xpath(".//*[@id='CredLnCollPoolDetails']/div/div/table/tbody/tr/td[5]/a"),
-				15);
+				10);
 		actions.moveToElement(actionMenuOnCollateralPool).click().perform();
 		Util.waitForElement(driver, detailsLnk, 15);
 		detailsLnk.click();
@@ -1003,10 +1003,13 @@ public class Collateral360Helper {
 	public void saveUCC(String option) {
 		lastSrchDateOnUCC.clear();
 		lastSrchDateOnUCC.sendKeys(Util.getCurrentDate());
+		fillingDate.clear();
 		fillingDate.sendKeys("2015-09-30");
+		fillingNumber.clear();
 		fillingNumber.sendKeys("123456789");
 		option = "Fac for intex";
 		Util.selectItemFromList(driver, facilityName, option);
+		comments.clear();
 		comments.sendKeys("NA");
 		saveUCC.click();
 		Util.waitForAJAX(driver);
@@ -1030,6 +1033,7 @@ public class Collateral360Helper {
 
 	public void editOnBasicCollateralInformation() {
 		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, editOnBasicCollateral, 10);
 		editOnBasicCollateral.click();
 		Util.waitForLoaderToFinish(driver);
 	}

@@ -363,11 +363,11 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.clickDetailsOnCollateralPool();
 		collateral360Helper.clickCollateralAccounts();
 		collateral360Helper.clickDetailsOnCollateralAccounts();
-		collateral360Helper.editOnBasicCollateralInformation();
 	}
 
 	@Test(priority = 37)
 	public void test38_saveCollateralDetailsAsRealState() {
+		collateral360Helper.editOnBasicCollateralInformation();
 		collateral360Helper.enterCollateralName();
 		collateral360Helper.selectCollateralTypeAsRealEstate(option);
 		collateral360Helper.selectCollateralSubTypeAsRetailOffice(option);
@@ -376,10 +376,10 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.enterStreet();
 		collateral360Helper.enterNumber();
 		collateral360Helper.enterZipCode();
-		collateral360Helper.Market(option);
-		collateral360Helper.OwnerOccupancyAndOccupancyofRent();
-		collateral360Helper.BusinessLine(option);
-		collateral360Helper.enterYearBuilt();
+//		collateral360Helper.Market(option);
+//		collateral360Helper.OwnerOccupancyAndOccupancyofRent();
+//		collateral360Helper.BusinessLine(option);
+//		collateral360Helper.enterYearBuilt();
 		collateral360Helper.newlybuilt(option);
 
 		collateral360Helper.checkForProceedBtn();
