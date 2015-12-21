@@ -72,8 +72,8 @@ public class FilteredQueues extends TestCaseExecutor {
 	public void test4_verifyFiltersFunctionality() {
 		myRequests.selectWorkflowMilestone();
 		myRequests.selectDecisionMilestone();
-		myRequests.enterFromDate();
-		myRequests.enterToDate();
+		// myRequests.enterFromDate();
+		// myRequests.enterToDate();
 		myRequests.clickFilterBtn();
 	}
 
@@ -96,12 +96,37 @@ public class FilteredQueues extends TestCaseExecutor {
 	public void test7_verifyReqCount() {
 		myRequests.verifyReqCount();
 	}
-	
+
 	@Test(priority = 7)
-	public void test8_verifyHeaderOnTMActAsHyperlink()
-	{
-		credit360 = myRequests.clickOnAnyReqFromDashboard();
-		
+	public void test8_verifyExpandAllOnMyReqPage() {
+		myRequests.verifyExpandAllOption();
 	}
+
+	@Test(priority = 8)
+	public void test9_verifyHeaderOnTMActAsHyperlink() {
+		myRequests.expandReqToVerifyHyperlink();
+		myRequests.verifyHeaderOnTM();
+	}
+
+	@Test(priority = 9)
+	public void test10_verifyWorkflowExpandedOrNot() {
+		myRequests.expandWFlowByExpanding();
+	}
+
+	@Test(priority = 10)
+	public void test11_verifyTaskListDisplayedOnExpanding() {
+		myRequests.verifyTaskListDisplayed();
+	}
+
+	@Test(priority = 11)
+	public void test12_verifyExpandBtnAgainstEachTask() {
+		myRequests.verifyExpandAllOptionOfTasks();
+	}
+
+	@Test(priority = 12)
+	public void test13_verifyCollapseAllFunctionality() {
+		myRequests.verifyCollapseAllOption();
+	}
+	
 
 }

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="5" total="29" passed="24">
+<testng-results skipped="0" failed="0" total="13" passed="13">
   <reporter-output>
   </reporter-output>
-  <suite name="Automation test suite" duration-ms="536348" started-at="2015-12-17T12:15:02Z" finished-at="2015-12-17T12:23:58Z">
+  <suite name="Automation test suite" duration-ms="114571" started-at="2015-12-21T05:09:18Z" finished-at="2015-12-21T05:11:12Z">
     <groups>
     </groups>
-    <test name="Firefox Test" duration-ms="536348" started-at="2015-12-17T12:15:02Z" finished-at="2015-12-17T12:23:58Z">
-      <class name="com.provenir.automation.framework.testcases.Collateral360">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="initialize" is-config="true" duration-ms="42" started-at="2015-12-17T17:45:02Z" finished-at="2015-12-17T17:45:02Z">
+    <test name="Firefox Test" duration-ms="114571" started-at="2015-12-21T05:09:18Z" finished-at="2015-12-21T05:11:12Z">
+      <class name="com.provenir.automation.framework.testcases.FilteredQueues">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="initialize" is-config="true" duration-ms="44" started-at="2015-12-21T10:39:18Z" finished-at="2015-12-21T10:39:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="beforeTest" is-config="true" duration-ms="24967" started-at="2015-12-17T17:45:02Z" finished-at="2015-12-17T17:45:27Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="beforeTest" is-config="true" duration-ms="25533" started-at="2015-12-21T10:39:18Z" finished-at="2015-12-21T10:39:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.String)[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="beforeMethod" is-config="true" duration-ms="64" started-at="2015-12-17T17:45:27Z" finished-at="2015-12-17T17:45:27Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.String)[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="beforeMethod" is-config="true" duration-ms="67" started-at="2015-12-21T10:39:43Z" finished-at="2015-12-21T10:39:43Z">
           <params>
             <param index="0">
               <value>
@@ -26,466 +26,63 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test0_landingPage()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test0_landingPage" duration-ms="37265" started-at="2015-12-17T17:45:27Z" finished-at="2015-12-17T17:46:04Z">
+        <test-method status="PASS" signature="test1_landingPage()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="test1_landingPage" duration-ms="36182" started-at="2015-12-21T10:39:43Z" finished-at="2015-12-21T10:40:20Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test0_landingPage -->
-        <test-method status="PASS" signature="test15_gotoCollateralPool()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test15_gotoCollateralPool" duration-ms="43294" started-at="2015-12-17T17:46:04Z" finished-at="2015-12-17T17:46:47Z">
+        </test-method> <!-- test1_landingPage -->
+        <test-method status="PASS" signature="test2_verifyFiltersOnMyRequestsPage()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="test2_verifyFiltersOnMyRequestsPage" duration-ms="471" started-at="2015-12-21T10:40:20Z" finished-at="2015-12-21T10:40:20Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test15_gotoCollateralPool -->
-        <test-method status="PASS" signature="test16_saveCollateralDetailsAsUCC()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test16_saveCollateralDetailsAsUCC" duration-ms="55274" started-at="2015-12-17T17:46:47Z" finished-at="2015-12-17T17:47:43Z">
+        </test-method> <!-- test2_verifyFiltersOnMyRequestsPage -->
+        <test-method status="PASS" signature="test3_verifyDefaultValuesOfFilters()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="test3_verifyDefaultValuesOfFilters" duration-ms="41" started-at="2015-12-21T10:40:20Z" finished-at="2015-12-21T10:40:20Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test16_saveCollateralDetailsAsUCC -->
-        <test-method status="PASS" signature="test17_verifyDeleteOnUCC()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test17_verifyDeleteOnUCC" duration-ms="11267" started-at="2015-12-17T17:47:43Z" finished-at="2015-12-17T17:47:54Z">
+        </test-method> <!-- test3_verifyDefaultValuesOfFilters -->
+        <test-method status="PASS" signature="test4_verifyFiltersFunctionality()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="test4_verifyFiltersFunctionality" duration-ms="3940" started-at="2015-12-21T10:40:20Z" finished-at="2015-12-21T10:40:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test17_verifyDeleteOnUCC -->
-        <test-method status="PASS" signature="test18_verifyActionMenuDisplayedOnUCC()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test18_verifyActionMenuDisplayedOnUCC" duration-ms="4874" started-at="2015-12-17T17:47:54Z" finished-at="2015-12-17T17:47:59Z">
+        </test-method> <!-- test4_verifyFiltersFunctionality -->
+        <test-method status="PASS" signature="test5_verifyInitialWorkflowStatusOfNewlyCreatedRequest()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="test5_verifyInitialWorkflowStatusOfNewlyCreatedRequest" duration-ms="17053" started-at="2015-12-21T10:40:24Z" finished-at="2015-12-21T10:40:41Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test18_verifyActionMenuDisplayedOnUCC -->
-        <test-method status="PASS" signature="test19_verifyMandatoryDetailsOnUCCUCC()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test19_verifyMandatoryDetailsOnUCCUCC" duration-ms="1565" started-at="2015-12-17T17:47:59Z" finished-at="2015-12-17T17:48:00Z">
+        </test-method> <!-- test5_verifyInitialWorkflowStatusOfNewlyCreatedRequest -->
+        <test-method status="PASS" signature="test6_verifyInitialDecisionStatusOfNewlyCreatedRequest()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="test6_verifyInitialDecisionStatusOfNewlyCreatedRequest" duration-ms="8823" started-at="2015-12-21T10:40:41Z" finished-at="2015-12-21T10:40:50Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test19_verifyMandatoryDetailsOnUCCUCC -->
-        <test-method status="PASS" signature="test20_saveUCC()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test20_saveUCC" duration-ms="6894" started-at="2015-12-17T17:48:00Z" finished-at="2015-12-17T17:48:07Z">
+        </test-method> <!-- test6_verifyInitialDecisionStatusOfNewlyCreatedRequest -->
+        <test-method status="PASS" signature="test7_verifyReqCount()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="test7_verifyReqCount" duration-ms="60" started-at="2015-12-21T10:40:50Z" finished-at="2015-12-21T10:40:50Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test20_saveUCC -->
-        <test-method status="PASS" signature="test21_updateUCC()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test21_updateUCC" duration-ms="11216" started-at="2015-12-17T17:48:07Z" finished-at="2015-12-17T17:48:18Z">
+        </test-method> <!-- test7_verifyReqCount -->
+        <test-method status="PASS" signature="test8_verifyExpandAllOnMyReqPage()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="test8_verifyExpandAllOnMyReqPage" duration-ms="100" started-at="2015-12-21T10:40:50Z" finished-at="2015-12-21T10:40:50Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test21_updateUCC -->
-        <test-method status="PASS" signature="test22_cancelUCCDetails()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test22_cancelUCCDetails" duration-ms="21374" started-at="2015-12-17T17:48:18Z" finished-at="2015-12-17T17:48:40Z">
+        </test-method> <!-- test8_verifyExpandAllOnMyReqPage -->
+        <test-method status="PASS" signature="test9_verifyHeaderOnTMActAsHyperlink()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="test9_verifyHeaderOnTMActAsHyperlink" duration-ms="20117" started-at="2015-12-21T10:40:50Z" finished-at="2015-12-21T10:41:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test22_cancelUCCDetails -->
-        <test-method status="PASS" signature="test23_gotoCollateral360()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test23_gotoCollateral360" duration-ms="39103" started-at="2015-12-17T17:48:40Z" finished-at="2015-12-17T17:49:19Z">
+        </test-method> <!-- test9_verifyHeaderOnTMActAsHyperlink -->
+        <test-method status="PASS" signature="test10_verifyWorkflowExpandedOrNot()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="test10_verifyWorkflowExpandedOrNot" duration-ms="1820" started-at="2015-12-21T10:41:10Z" finished-at="2015-12-21T10:41:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test23_gotoCollateral360 -->
-        <test-method status="PASS" signature="test24_verifyMutualFundsSection()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test24_verifyMutualFundsSection" duration-ms="66708" started-at="2015-12-17T17:49:19Z" finished-at="2015-12-17T17:50:26Z">
+        </test-method> <!-- test10_verifyWorkflowExpandedOrNot -->
+        <test-method status="PASS" signature="test11_verifyTaskListDisplayedOnExpanding()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="test11_verifyTaskListDisplayedOnExpanding" duration-ms="112" started-at="2015-12-21T10:41:12Z" finished-at="2015-12-21T10:41:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test24_verifyMutualFundsSection -->
-        <test-method status="PASS" signature="test25_verifyMandatoryFieldsOnMutualFunds()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test25_verifyMandatoryFieldsOnMutualFunds" duration-ms="16067" started-at="2015-12-17T17:50:26Z" finished-at="2015-12-17T17:50:42Z">
+        </test-method> <!-- test11_verifyTaskListDisplayedOnExpanding -->
+        <test-method status="PASS" signature="test12_verifyExpandBtnAgainstEachTask()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="test12_verifyExpandBtnAgainstEachTask" duration-ms="120" started-at="2015-12-21T10:41:12Z" finished-at="2015-12-21T10:41:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test25_verifyMandatoryFieldsOnMutualFunds -->
-        <test-method status="PASS" signature="test26_saveOnMutualFunds()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test26_saveOnMutualFunds" duration-ms="24499" started-at="2015-12-17T17:50:42Z" finished-at="2015-12-17T17:51:06Z">
+        </test-method> <!-- test12_verifyExpandBtnAgainstEachTask -->
+        <test-method status="PASS" signature="test13_verifyCollapseAllFunctionality()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="test13_verifyCollapseAllFunctionality" duration-ms="98" started-at="2015-12-21T10:41:12Z" finished-at="2015-12-21T10:41:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test26_saveOnMutualFunds -->
-        <test-method status="PASS" signature="test27_updateMutualFunds()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test27_updateMutualFunds" duration-ms="4503" started-at="2015-12-17T17:51:06Z" finished-at="2015-12-17T17:51:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test27_updateMutualFunds -->
-        <test-method status="PASS" signature="test28_cancelMutualFunds()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test28_cancelMutualFunds" duration-ms="4855" started-at="2015-12-17T17:51:11Z" finished-at="2015-12-17T17:51:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test28_cancelMutualFunds -->
-        <test-method status="PASS" signature="test29_verifyCertificatedBondsSection()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test29_verifyCertificatedBondsSection" duration-ms="4484" started-at="2015-12-17T17:51:15Z" finished-at="2015-12-17T17:51:20Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test29_verifyCertificatedBondsSection -->
-        <test-method status="PASS" signature="test30_saveOnCertifiedBonds()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test30_saveOnCertifiedBonds" duration-ms="9901" started-at="2015-12-17T17:51:20Z" finished-at="2015-12-17T17:51:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test30_saveOnCertifiedBonds -->
-        <test-method status="PASS" signature="test31_updateCertifiedBonds()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test31_updateCertifiedBonds" duration-ms="4790" started-at="2015-12-17T17:51:30Z" finished-at="2015-12-17T17:51:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test31_updateCertifiedBonds -->
-        <test-method status="PASS" signature="test32_cancelCertifiedBonds()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test32_cancelCertifiedBonds" duration-ms="4624" started-at="2015-12-17T17:51:35Z" finished-at="2015-12-17T17:51:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test32_cancelCertifiedBonds -->
-        <test-method status="PASS" signature="test33_VerifyUncertifiedSecuritiesOrMutualFundsSection()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test33_VerifyUncertifiedSecuritiesOrMutualFundsSection" duration-ms="4697" started-at="2015-12-17T17:51:39Z" finished-at="2015-12-17T17:51:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test33_VerifyUncertifiedSecuritiesOrMutualFundsSection -->
-        <test-method status="PASS" signature="test34_saveOnUncertifiedSecurities()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test34_saveOnUncertifiedSecurities" duration-ms="15583" started-at="2015-12-17T17:51:44Z" finished-at="2015-12-17T17:52:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test34_saveOnUncertifiedSecurities -->
-        <test-method status="PASS" signature="test35_updateOnUncertifiedSecurities()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test35_updateOnUncertifiedSecurities" duration-ms="4920" started-at="2015-12-17T17:52:00Z" finished-at="2015-12-17T17:52:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test35_updateOnUncertifiedSecurities -->
-        <test-method status="PASS" signature="test36_cancelOnUncertifiedSecurities()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test36_cancelOnUncertifiedSecurities" duration-ms="5039" started-at="2015-12-17T17:52:04Z" finished-at="2015-12-17T17:52:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test36_cancelOnUncertifiedSecurities -->
-        <test-method status="PASS" signature="test37_goToCollateralPool()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test37_goToCollateralPool" duration-ms="46463" started-at="2015-12-17T17:52:10Z" finished-at="2015-12-17T17:52:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test37_goToCollateralPool -->
-        <test-method status="FAIL" signature="test38_saveCollateralDetailsAsRealState()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test38_saveCollateralDetailsAsRealState" duration-ms="204" started-at="2015-12-17T17:52:56Z" finished-at="2015-12-17T17:52:56Z">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Element must be user-editable in order to clear it.
-Command duration or timeout: 40 milliseconds
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-Session ID: 6263bd8b-4faf-4451-905c-b4facb9427d0
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=42.0}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Element must be user-editable in order to clear it.
-Command duration or timeout: 40 milliseconds
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-Session ID: 6263bd8b-4faf-4451-905c-b4facb9427d0
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=42.0}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:269)
-	at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:114)
-	at sun.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy9.clear(Unknown Source)
-	at com.provenir.automation.framework.helper.Collateral360Helper.enterCollateralName(Collateral360Helper.java:465)
-	at com.provenir.automation.framework.testcases.Collateral360.test38_saveCollateralDetailsAsRealState(Collateral360.java:371)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.WebDriverException: Element must be user-editable in order to clear it.
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-Driver info: driver.version: unknown
-	at <anonymous class>.bot.Error(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:4763)
-	at <anonymous class>.bot.action.clear(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:11308)
-	at <anonymous class>.WebElement.clearElement(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:11754)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12282)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12287)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12229)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test38_saveCollateralDetailsAsRealState -->
-        <test-method status="FAIL" signature="test39_ClickTaxInformation()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test39_ClickTaxInformation" duration-ms="20265" started-at="2015-12-17T17:52:56Z" finished-at="2015-12-17T17:53:16Z">
-          <exception class="org.openqa.selenium.ElementNotVisibleException">
-            <message>
-              <![CDATA[Element is not currently visible and so may not be interacted with
-Command duration or timeout: 15 milliseconds
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-Session ID: 6263bd8b-4faf-4451-905c-b4facb9427d0
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=42.0}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
-Command duration or timeout: 15 milliseconds
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-Session ID: 6263bd8b-4faf-4451-905c-b4facb9427d0
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=42.0}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:269)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:80)
-	at sun.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at com.provenir.automation.framework.helper.Collateral360Helper.clickOnTaxInformation(Collateral360Helper.java:939)
-	at com.provenir.automation.framework.testcases.Collateral360.test39_ClickTaxInformation(Collateral360.java:393)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-Driver info: driver.version: unknown
-	at <anonymous class>.fxdriver.preconditions.visible(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:9615)
-	at <anonymous class>.DelayedCommand.prototype.checkPreconditions_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12265)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12282)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12287)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12229)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementNotVisibleException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test39_ClickTaxInformation -->
-        <test-method status="FAIL" signature="test40_AddTaxInformation()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test40_AddTaxInformation" duration-ms="10184" started-at="2015-12-17T17:53:16Z" finished-at="2015-12-17T17:53:27Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Unable to locate element: {"method":"id","selector":"addTax"}
-Command duration or timeout: 25 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-*** Element info: {Using=id, value=addTax}
-Session ID: 6263bd8b-4faf-4451-905c-b4facb9427d0
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=42.0}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"addTax"}
-Command duration or timeout: 25 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-*** Element info: {Using=id, value=addTax}
-Session ID: 6263bd8b-4faf-4451-905c-b4facb9427d0
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=42.0}]
-	at sun.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
-	at org.openqa.selenium.By$ById.findElement(By.java:215)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at com.provenir.automation.framework.helper.Collateral360Helper.ClickonAddTax(Collateral360Helper.java:1278)
-	at com.provenir.automation.framework.testcases.Collateral360.test40_AddTaxInformation(Collateral360.java:400)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"addTax"}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10299)
-	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10308)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12282)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12287)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12229)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test40_AddTaxInformation -->
-        <test-method status="FAIL" signature="test41_verifyErrorMsgTaxApnDetails()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test41_verifyErrorMsgTaxApnDetails" duration-ms="10124" started-at="2015-12-17T17:53:27Z" finished-at="2015-12-17T17:53:37Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Unable to locate element: {"method":"id","selector":"savetaxapndetails"}
-Command duration or timeout: 14 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-*** Element info: {Using=id, value=savetaxapndetails}
-Session ID: 6263bd8b-4faf-4451-905c-b4facb9427d0
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=42.0}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"savetaxapndetails"}
-Command duration or timeout: 14 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-*** Element info: {Using=id, value=savetaxapndetails}
-Session ID: 6263bd8b-4faf-4451-905c-b4facb9427d0
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=42.0}]
-	at sun.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
-	at org.openqa.selenium.By$ById.findElement(By.java:215)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at com.provenir.automation.framework.helper.Collateral360Helper.SaveTaxApnDetails(Collateral360Helper.java:1288)
-	at com.provenir.automation.framework.testcases.Collateral360.test41_verifyErrorMsgTaxApnDetails(Collateral360.java:405)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"savetaxapndetails"}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10299)
-	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10308)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12282)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12287)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12229)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test41_verifyErrorMsgTaxApnDetails -->
-        <test-method status="FAIL" signature="test42_SaveTaxInformationDetails()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="test42_SaveTaxInformationDetails" duration-ms="21227" started-at="2015-12-17T17:53:37Z" finished-at="2015-12-17T17:53:58Z">
-          <exception class="org.openqa.selenium.ElementNotVisibleException">
-            <message>
-              <![CDATA[Element is not currently visible and so may not be interacted with
-Command duration or timeout: 12 milliseconds
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-Session ID: 6263bd8b-4faf-4451-905c-b4facb9427d0
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=42.0}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
-Command duration or timeout: 12 milliseconds
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-Session ID: 6263bd8b-4faf-4451-905c-b4facb9427d0
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=42.0}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:269)
-	at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:114)
-	at sun.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy9.clear(Unknown Source)
-	at com.provenir.automation.framework.helper.Collateral360Helper.EnterDetailsTaxApnInformation(Collateral360Helper.java:1294)
-	at com.provenir.automation.framework.testcases.Collateral360.test42_SaveTaxInformationDetails(Collateral360.java:412)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:17:10'
-System info: host: 'parasharb-w7', ip: '172.27.103.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_75'
-Driver info: driver.version: unknown
-	at <anonymous class>.fxdriver.preconditions.visible(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:9615)
-	at <anonymous class>.DelayedCommand.prototype.checkPreconditions_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12265)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12282)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12287)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous4880319341647292304webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12229)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementNotVisibleException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test42_SaveTaxInformationDetails -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.provenir.automation.framework.testcases.Collateral360@65ec4ad4]" name="tearDown" is-config="true" duration-ms="4178" started-at="2015-12-17T17:53:58Z" finished-at="2015-12-17T17:54:02Z">
+        </test-method> <!-- test13_verifyCollapseAllFunctionality -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.provenir.automation.framework.testcases.FilteredQueues@29240739]" name="tearDown" is-config="true" duration-ms="4228" started-at="2015-12-21T10:41:12Z" finished-at="2015-12-21T10:41:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.provenir.automation.framework.testcases.Collateral360 -->
+      </class> <!-- com.provenir.automation.framework.testcases.FilteredQueues -->
     </test> <!-- Firefox Test -->
   </suite> <!-- Automation test suite -->
 </testng-results>

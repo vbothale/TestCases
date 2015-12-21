@@ -380,9 +380,10 @@ public class Collateral360 extends TestCaseExecutor {
 //		collateral360Helper.OwnerOccupancyAndOccupancyofRent();
 //		collateral360Helper.BusinessLine(option);
 //		collateral360Helper.enterYearBuilt();
+		
 		collateral360Helper.newlybuilt(option);
-
 		collateral360Helper.checkForProceedBtn();
+		
 		// collateral360Helper.clickSaveCollateral();
 	}
 
