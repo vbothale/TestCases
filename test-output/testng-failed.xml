@@ -8,7 +8,8 @@
     <classes>
       <class name="com.provenir.automation.framework.testcases.FilteredQueues">
         <methods>
-          <include name="test4_verifyFiltersFunctionality"/>
+          <include name="test15_verifyExpansionOfTMOnCredit360"/>
+          <include name="test16_verifyExpansionOfTMOnFacility360"/>
           <include name="beforeTest"/>
           <include name="tearDown"/>
           <include name="beforeMethod"/>
