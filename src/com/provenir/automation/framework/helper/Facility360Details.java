@@ -387,6 +387,12 @@ public class Facility360Details {
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='UPSERTCREDLNSUMMFORM']/div[3]/div[12]/div[13]/a")
 	private WebElement editOnFacSummary;
+	
+	@FindBy(how = How.XPATH, using = ".//*[@id='taskManagmntContainer']/div[1]/a")
+	private WebElement expandIconOnTM;
+	
+	@FindBy(how = How.XPATH, using = ".//*[@id='taskManagmntContainer']/div[2]/div/div/div[3]/div/div/div[2]/div/div[4]/span")
+	private WebElement taskDescOnTM;
 
 	private int commentCnt;
 	private WebElement element = null;
@@ -1494,6 +1500,13 @@ public class Facility360Details {
 		taskMgmt.click();
 		Util.waitForLoaderToFinish(driver);
 	}
+	
+	public void clickExpandIconOnTM() {
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, expandIconOnTM, 20);
+		expandIconOnTM.click();
+		Util.waitForLoaderToFinish(driver);
+	}
 
 	// public void clickTaskManagement() {
 	// Util.waitForElementPresent(driver, By.xpath(leftHandNav), 30);
@@ -1631,6 +1644,15 @@ public class Facility360Details {
 		Util.waitForElement(driver, editOnFacSummary, 10);
 		editOnFacSummary.click();
 		Util.waitForLoaderToFinish(driver);
+	}
+	
+	public boolean verifyTaskDisplayedOrNot() {
+		Util.waitForAJAX(driver);
+		String s1 = taskDescOnTM.getText().trim();
+		if (s1.equalsIgnoreCase("Task Description")) {
+			return true;
+		} else
+			return false;
 	}
 
 }

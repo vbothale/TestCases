@@ -82,6 +82,12 @@ public class Credit360Helper {
 	@FindBy(how = How.XPATH, using = ".//*[@id='taskManagmntContainer']//b[contains(.,'Test_facility')]")
 	private WebElement verifyWFlow;
 
+	@FindBy(how = How.XPATH, using = ".//*[@id='taskManagmntContainer']/div[1]/a")
+	private WebElement expandIconOnTM;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='taskManagmntContainer']/div[2]/div/div/div[3]/div/div/div[2]/div/div[4]/span")
+	private WebElement taskDescOnTM;
+
 	private String creditWorkflowText = ".//*[@id='taskManagmntContainer']/div[1]/div/span/b";
 	private String creditTextOnWorkflow = ".//*[@id='taskManagmntContainer']/div[1]/div/a/span";
 	private String facilityWorkflowText = ".//*[@id='taskManagmntContainer']/div[3]/div/span/b";
@@ -241,6 +247,22 @@ public class Credit360Helper {
 		Util.waitForElement(driver, verifyWFlow, 20);
 		String str = verifyWFlow.getText().trim();
 		if (str.equalsIgnoreCase("Test_facility")) {
+			return true;
+		} else
+			return false;
+	}
+
+	public void clickExpandIconOnTM() {
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, expandIconOnTM, 20);
+		expandIconOnTM.click();
+		Util.waitForLoaderToFinish(driver);
+	}
+
+	public boolean verifyTaskDisplayedOrNot() {
+		Util.waitForAJAX(driver);
+		String s1 = taskDescOnTM.getText().trim();
+		if (s1.equalsIgnoreCase("Task Description")) {
 			return true;
 		} else
 			return false;

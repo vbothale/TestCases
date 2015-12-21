@@ -15,6 +15,8 @@ import com.provenir.automation.framework.helper.CustomerInfoPage;
 import com.provenir.automation.framework.helper.Facility360Details;
 import com.provenir.automation.framework.helper.LoginPage;
 import com.provenir.automation.framework.helper.MyRequests;
+import com.provenir.automation.framework.helper.MyTasks;
+import com.provenir.automation.framework.helper.MyTeamTasks;
 import com.provenir.automation.framework.helper.NewCreditRequest;
 import com.provenir.automation.framework.helper.SearchHelper;
 import com.provenir.automation.framework.helper.TransactionInfoPage;
@@ -33,6 +35,8 @@ public class FilteredQueues extends TestCaseExecutor {
 	Credit360Details credit360Details;
 	Facility360Details facility360;
 	SearchHelper searchHelper;
+	MyTeamTasks myTeamTasks;
+	MyTasks myTask;
 
 	public TestDataReader reader = new TestDataReader();
 
@@ -127,6 +131,77 @@ public class FilteredQueues extends TestCaseExecutor {
 	public void test13_verifyCollapseAllFunctionality() {
 		myRequests.verifyCollapseAllOption();
 	}
-	
+
+	@Test(priority = 13)
+	public void test14_clickCollapseOption() {
+		myRequests.clickCollapseOption();
+	}
+
+	@Test(priority = 14)
+	public void test15_verifyExpansionOfTMOnCredit360() {
+		credit360 = myRequests.clickOnAnyReqFromDashboard();
+		credit360.clickTaskManagement();
+		credit360.clickExpandIconOnTM();
+		credit360.verifyTaskDisplayedOrNot();
+	}
+
+	@Test(priority = 15)
+	public void test16_verifyExpansionOfTMOnFacility360() {
+		myRequests = credit360.clickHome();
+		facility360 = myRequests.clickOnAnyFacilityFromDashboard();
+		facility360.clickTaskManagement();
+		facility360.clickExpandIconOnTM();
+		facility360.verifyTaskDisplayedOrNot();
+	}
+
+	// my team tasks
+
+	@Test(priority = 16)
+	public void test17_verifyMyTeamTasksPage() {
+		myRequests = facility360.clickHome();
+		myTeamTasks = myRequests.clickMyTeamTasksLink();
+		myTeamTasks.verifyMyTeamTasksTitle();
+	}
+
+	@Test(priority = 17)
+	public void test18_verifyFiltersOnMyTeamTasksPage() {
+		myTeamTasks.verifyFiltersOnMyTeamTasks();
+	}
+
+	@Test(priority = 18)
+	public void test19_verifyDefaultValuesOfFiltersOnMyTeamTasksPage() {
+		myTeamTasks.verifyDefaultValueOfFilters();
+	}
+
+	@Test(priority = 19)
+	public void test20_verifyFilterationOnMyTeamTasksPage() {
+		myTeamTasks.selectEntityType();
+		myTeamTasks.selectStatus();
+		myTeamTasks.clickFilterBTn();
+	}
+
+	// my task page
+
+	@Test(priority = 20)
+	public void test21_verifyMyTaskPageDisplayed() {
+		myRequests = myTeamTasks.clickHome();
+		myTask = myRequests.clickMyTasksLink();
+		myTask.verifyMyTaskPage();
+	}
+
+	@Test(priority = 21)
+	public void test22_verifyFiltersOnMyTasksPAge() {
+		myTask.verifyFiltersOnMyTasks();
+	}
+
+	@Test(priority = 22)
+	public void test23_verifyDefaultValuesOfFiltersOnMyTasksPage() {
+		myTask.verifyDefaultValueOfFilters();
+	}
+
+	@Test(priority = 23)
+	public void test24_verifyFilterationOnMyTasksPage() {
+
+	}
 
 }
