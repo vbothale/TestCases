@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -20,6 +21,7 @@ import com.sun.jna.platform.win32.WinNT.WELL_KNOWN_SID_TYPE;
 public class MyRequests {
 
 	WebDriver driver;
+	Actions actions = null;
 
 	public MyRequests(WebDriver driver) {
 		this.driver = driver;
@@ -142,6 +144,12 @@ public class MyRequests {
 
 	@FindBy(how = How.XPATH, using = "//span[contains(.,'My Tasks')]")
 	private WebElement myTasks;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(.,'L West and Central Credit Group QUEUE')]")
+	private WebElement grpQueue;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(.,'Automation Engineer QUEUE')]")
+	private WebElement roleQueue;
 
 	private String dashboardRows = "//*[@id='data_content']/div/table/tbody/tr";
 	private String reqOnDashboard = "//*[@id='data_content']/div/table/tbody/tr[1]";
@@ -630,4 +638,19 @@ public class MyRequests {
 		return new MyTasks(driver);
 	}
 
+	public GroupQueue clickGroupQueue() {
+		Util.waitForElement(driver, grpQueue, 10);
+		grpQueue.click();
+		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
+		return new GroupQueue(driver);
+	}
+
+	public RoleQueue clickRoleQueue() {
+		Util.waitForElement(driver, roleQueue, 10);
+		roleQueue.click();
+		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
+		return new RoleQueue(driver);
+	}
 }

@@ -13,11 +13,13 @@ import com.provenir.automation.framework.helper.Credit360Details;
 import com.provenir.automation.framework.helper.Credit360Helper;
 import com.provenir.automation.framework.helper.CustomerInfoPage;
 import com.provenir.automation.framework.helper.Facility360Details;
+import com.provenir.automation.framework.helper.GroupQueue;
 import com.provenir.automation.framework.helper.LoginPage;
 import com.provenir.automation.framework.helper.MyRequests;
 import com.provenir.automation.framework.helper.MyTasks;
 import com.provenir.automation.framework.helper.MyTeamTasks;
 import com.provenir.automation.framework.helper.NewCreditRequest;
+import com.provenir.automation.framework.helper.RoleQueue;
 import com.provenir.automation.framework.helper.SearchHelper;
 import com.provenir.automation.framework.helper.TransactionInfoPage;
 import com.provenir.automation.framework.utility.TestCaseExecutor;
@@ -37,6 +39,8 @@ public class FilteredQueues extends TestCaseExecutor {
 	SearchHelper searchHelper;
 	MyTeamTasks myTeamTasks;
 	MyTasks myTask;
+	GroupQueue groupQueue;
+	RoleQueue roleQueue;
 
 	public TestDataReader reader = new TestDataReader();
 
@@ -201,7 +205,61 @@ public class FilteredQueues extends TestCaseExecutor {
 
 	@Test(priority = 23)
 	public void test24_verifyFilterationOnMyTasksPage() {
+		myTask.selectEntityType();
+		myTask.selectStatus();
+		myTask.clickFilterBTn();
+	}
 
+	// group queue
+
+	@Test(priority = 24)
+	public void test25_verifyGroupQueuePageDisplayed() {
+		myRequests = myTask.clickHome();
+		groupQueue = myRequests.clickGroupQueue();
+		groupQueue.verifyGroupQueueTitle();
+	}
+
+	@Test(priority = 25)
+	public void test26_verifyFiltersOnGroupQueue() {
+		groupQueue.verifyFiltersOnGroupQueue();
+	}
+
+	@Test(priority = 26)
+	public void test27_verifyDefaultValuesOfFiltersOnGroupQueue() {
+		groupQueue.verifyDefaultValueOfFilters();
+	}
+
+	@Test(priority = 27)
+	public void test28_verifyFilterationOnGroupQueue() {
+		groupQueue.selectEntityType();
+		groupQueue.selectStatus();
+		groupQueue.clickFilterBtn();
+	}
+
+	// role queue
+
+	@Test(priority = 28)
+	public void test29_verifyRoleQueuePageDisplayed() {
+		myRequests = groupQueue.clickHome();
+		roleQueue = myRequests.clickRoleQueue();
+		roleQueue.verifyRoleQueueTitle();
+	}
+	
+	@Test(priority = 29)
+	public void test30_verifyFiltersOnRoleQueue() {
+		roleQueue.verifyFiltersOnGroupQueue();
+	}
+
+	@Test(priority = 30)
+	public void test31_verifyDefaultValuesOfFiltersOnRoleQueue() {
+		roleQueue.verifyDefaultValueOfFilters();
+	}
+
+	@Test(priority = 31)
+	public void test32_verifyFilterationOnRoleQueue() {
+		roleQueue.selectEntityType();
+		roleQueue.selectStatus();
+		roleQueue.clickFilterBtn();
 	}
 
 }

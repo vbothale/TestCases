@@ -10,20 +10,20 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.provenir.automation.framework.utility.Util;
 
-public class MyTasks {
+public class GroupQueue {
 
 	WebDriver driver;
 	Actions actions = null;
 
-	public MyTasks(WebDriver driver) {
+	public GroupQueue(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		actions = new Actions(driver);
 	}
 
-	@FindBy(how = How.XPATH, using = "//label[contains(.,'My Tasks Queue')]")
-	private WebElement myTaskTitle;
-
+	@FindBy(how = How.XPATH, using = ".//*[@id='rightContent']/div/div/div/div[1]/label")
+	private WebElement grpQueTitle;
+	
 	@FindBy(how = How.XPATH, using = "//label[contains(.,'Entity Type:')]")
 	private WebElement entityTypeTitle;
 
@@ -33,9 +33,6 @@ public class MyTasks {
 	@FindBy(how = How.XPATH, using = "//label[contains(.,'Role:')]")
 	private WebElement roleTitle;
 
-	@FindBy(how = How.XPATH, using = "//label[contains(.,'Group:')]")
-	private WebElement groupTitle;
-
 	@FindBy(how = How.XPATH, using = "//label[contains(.,'Category:')]")
 	private WebElement categoryTitle;
 
@@ -44,59 +41,57 @@ public class MyTasks {
 
 	@FindBy(how = How.XPATH, using = "//label[contains(.,'To Date:')]")
 	private WebElement toDateTitle;
-
-	@FindBy(how = How.ID, using = "filterMyTask")
+	
+	@FindBy(how = How.ID, using = "filterRoleGrpQueue")
 	private WebElement filterBtn;
-
+	
 	@FindBy(how = How.XPATH, using = "//button[contains(.,'All Selected')]")
 	private WebElement defaultValue;
-
-	@FindBy(how = How.XPATH, using = ".//*[@id='myTaskGrid']/div[2]/div[1]/div[2]/div[1]/p/div/button")
+	
+	@FindBy(how = How.ID, using = "home")
+	private WebElement homeLink;
+	
+	@FindBy(how = How.XPATH, using = ".//*[@id='rightContent']/div/div/div/div[1]/div[2]/div[1]/p/div/button")
 	private WebElement entityTypeField;
 
 	@FindBy(how = How.XPATH, using = ".//*[@name='selectAllentity']")
 	private WebElement allOnEntityType;
 
-	@FindBy(how = How.XPATH, using = ".//*[@id='myTaskGrid']/div[2]/div[1]/div[2]/div[2]/p/div/button")
+	@FindBy(how = How.XPATH, using = ".//*[@id='rightContent']/div/div/div/div[1]/div[2]/div[2]/p/div/button")
 	private WebElement statusField;
 
 	@FindBy(how = How.XPATH, using = ".//*[@name='selectAllstatus']")
 	private WebElement allOnStatus;
-	
-	@FindBy(how = How.ID, using = "home")
-	private WebElement homeLink;
 
 	private WebElement element = null;
 
-	public boolean verifyMyTaskPage() {
+	public boolean verifyGroupQueueTitle() {
 		Util.waitForAJAX(driver);
-		Util.waitForElement(driver, myTaskTitle, 10);
-		if (myTaskTitle.isDisplayed())
+		Util.waitForElement(driver, grpQueTitle, 10);
+		if (grpQueTitle.isDisplayed())
 			return true;
 		else
 			return false;
 	}
-
-	public boolean verifyFiltersOnMyTasks() {
+	
+	public boolean verifyFiltersOnGroupQueue() {
 		String s1 = entityTypeTitle.getText().trim();
 		String s2 = statusTitle.getText().trim();
 		String s3 = roleTitle.getText().trim();
-		String s4 = groupTitle.getText().trim();
-		String s5 = categoryTitle.getText().trim();
-		String s6 = fromDateTitle.getText().trim();
-		String s7 = toDateTitle.getText().trim();
+		String s4 = categoryTitle.getText().trim();
+		String s5 = fromDateTitle.getText().trim();
+		String s6 = toDateTitle.getText().trim();
 		if (s1.equalsIgnoreCase("Entity Type:")
 				&& s2.equalsIgnoreCase("Status:")
 				&& s3.equalsIgnoreCase("Role:")
-				&& s4.equalsIgnoreCase("Group:")
-				&& s5.equalsIgnoreCase("Category:")
-				&& s6.equalsIgnoreCase("From Date:")
-				&& s7.equalsIgnoreCase("To Date:")) {
+				&& s4.equalsIgnoreCase("Category:")
+				&& s5.equalsIgnoreCase("From Date:")
+				&& s6.equalsIgnoreCase("To Date:")) {
 			return true;
 		} else
 			return false;
 	}
-
+	
 	public boolean verifyDefaultValueOfFilters() {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, defaultValue, 10);
@@ -105,42 +100,8 @@ public class MyTasks {
 		} else
 			return false;
 	}
-
-	public void selectEntityType() {
-		Util.enableAllDropdowns(driver);
-		Util.waitForElementPresent(
-				driver,
-				By.xpath(".//*[@id='myTaskGrid']/div[2]/div[1]/div[2]/div[1]/p/div/button"),
-				20);
-		element = null;
-		entityTypeField.click();
-		allOnEntityType.click();
-
-		WebElement ele = driver
-				.findElement(By
-						.xpath(".//*[@id='myTaskGrid']/div[2]/div[1]/div[2]/div[1]/p/div/div/ul/li[3]/label/input"));
-		ele.click();
-		entityTypeField.click();
-	}
-
-	public void selectStatus() {
-		Util.enableAllDropdowns(driver);
-		Util.waitForElementPresent(
-				driver,
-				By.xpath(".//*[@id='myTaskGrid']/div[2]/div[1]/div[2]/div[2]/p/div/button"),
-				20);
-		element = null;
-		statusField.click();
-		allOnStatus.click();
-
-		WebElement ele = driver
-				.findElement(By
-						.xpath(".//*[@id='myTaskGrid']/div[2]/div[1]/div[2]/div[2]/p/div/div/ul/li[4]/label"));
-		ele.click();
-		statusField.click();
-	}
-
-	public void clickFilterBTn() {
+	
+	public void clickFilterBtn() {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, filterBtn, 20);
 		filterBtn.click();
@@ -153,6 +114,40 @@ public class MyTasks {
 		homeLink.click();
 		Util.waitForAJAX(driver);
 		return new MyRequests(driver);
+	}
+	
+	public void selectEntityType() {
+		Util.enableAllDropdowns(driver);
+		Util.waitForElementPresent(
+				driver,
+				By.xpath(".//*[@id='rightContent']/div/div/div/div[1]/div[2]/div[1]/p/div/button"),
+				20);
+		element = null;
+		entityTypeField.click();
+		allOnEntityType.click();
+
+		WebElement ele = driver
+				.findElement(By
+						.xpath(".//*[@id='rightContent']/div/div/div/div[1]/div[2]/div[1]/p/div/div/ul/li[3]/label/input"));
+		ele.click();
+		entityTypeField.click();
+	}
+	
+	public void selectStatus() {
+		Util.enableAllDropdowns(driver);
+		Util.waitForElementPresent(
+				driver,
+				By.xpath(".//*[@id='rightContent']/div/div/div/div[1]/div[2]/div[2]/p/div/button"),
+				20);
+		element = null;
+		statusField.click();
+		allOnStatus.click();
+
+		WebElement ele = driver
+				.findElement(By
+						.xpath(".//*[@id='rightContent']/div/div/div/div[1]/div[2]/div[3]/p/div/div/ul/li[3]/label/input"));
+		ele.click();
+		statusField.click();
 	}
 
 }
