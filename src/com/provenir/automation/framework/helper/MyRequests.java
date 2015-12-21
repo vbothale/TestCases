@@ -137,6 +137,12 @@ public class MyRequests {
 	@FindBy(how = How.XPATH, using = ".//*[@class='main_content_div taskMgmtblock']/div[3]/div/div/div[2]/div/div[4]/span")
 	private WebElement taskDesc;
 
+	@FindBy(how = How.XPATH, using = "//span[contains(.,'My Team Tasks')]")
+	private WebElement myTeamTasks;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(.,'My Tasks')]")
+	private WebElement myTasks;
+
 	private String dashboardRows = "//*[@id='data_content']/div/table/tbody/tr";
 	private String reqOnDashboard = "//*[@id='data_content']/div/table/tbody/tr[1]";
 	private String wFlowMilestone = ".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[1]/p/div/div/ul/li";
@@ -533,6 +539,21 @@ public class MyRequests {
 		return new Credit360Helper(driver);
 	}
 
+	public Facility360Details clickOnAnyFacilityFromDashboard() {
+		Util.waitForElementPresent(driver, By.xpath(reqOnDashboard), 10);
+		element = null;
+		List<WebElement> reqListOnDashboard = driver.findElements(By
+				.xpath(reqOnDashboard));
+
+		for (int i = 1; i < reqListOnDashboard.size(); i++) {
+			element = driver.findElement(By.xpath(reqOnDashboard + "[" + i
+					+ "]/td[4]"));
+			System.out.println("Count  =  " + reqListOnDashboard.size());
+			reqListOnDashboard.get(1).click();
+		}
+		return new Facility360Details(driver);
+	}
+
 	public void expandReqToVerifyHyperlink() {
 		Util.waitForElement(driver, expandReq, 15);
 		expandReq.click();
@@ -592,6 +613,21 @@ public class MyRequests {
 		} else
 			return false;
 	}
-	
+
+	public MyTeamTasks clickMyTeamTasksLink() {
+		Util.waitForElement(driver, myTeamTasks, 10);
+		myTeamTasks.click();
+		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
+		return new MyTeamTasks(driver);
+	}
+
+	public MyTasks clickMyTasksLink() {
+		Util.waitForElement(driver, myTasks, 10);
+		myTasks.click();
+		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
+		return new MyTasks(driver);
+	}
 
 }
