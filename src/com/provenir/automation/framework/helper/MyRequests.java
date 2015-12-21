@@ -116,9 +116,31 @@ public class MyRequests {
 	@FindBy(how = How.XPATH, using = "//span[@class='getcount']")
 	private WebElement reqCount;
 
+	@FindBy(how = How.XPATH, using = ".//*[@class='blueColor']")
+	private WebElement reqName;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='data_content']/div/table/tbody/tr[1]/td[1]/img[1]")
+	private WebElement expandReq;
+
+	@FindBy(how = How.XPATH, using = "//img[contains(@src,'provenir/grid/images/minus.gif')]")
+	private WebElement collapseSign;
+
+	@FindBy(how = How.XPATH, using = "//img[@src='provenir/grid/images/plus.gif']")
+	private WebElement expandSignOnReq;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='pgexpanded']/td/div/div[1]/a")
+	private WebElement wFlowExpandSign;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(@class,'toggle expand')]")
+	private WebElement taskExpandSign;
+
+	@FindBy(how = How.XPATH, using = ".//*[@class='main_content_div taskMgmtblock']/div[3]/div/div/div[2]/div/div[4]/span")
+	private WebElement taskDesc;
+
 	private String dashboardRows = "//*[@id='data_content']/div/table/tbody/tr";
 	private String reqOnDashboard = "//*[@id='data_content']/div/table/tbody/tr[1]";
 	private String wFlowMilestone = ".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[1]/p/div/div/ul/li";
+	private String expandSign = "//td[contains(@class,'gridClickable')]";
 
 	private WebElement element = null;
 	List<WebElement> lstWebElements = null;
@@ -509,6 +531,66 @@ public class MyRequests {
 			reqListOnDashboard.get(1).click();
 		}
 		return new Credit360Helper(driver);
+	}
+
+	public void expandReqToVerifyHyperlink() {
+		Util.waitForElement(driver, expandReq, 15);
+		expandReq.click();
+		Util.waitForWorkflowToLoad(driver);
+		Util.waitForLoaderToFinish(driver);
+	}
+
+	public boolean verifyHeaderOnTM() {
+		Util.waitForElement(driver, reqName, 10);
+		if (reqName.isDisplayed()) {
+			return true;
+		} else
+			return false;
+	}
+
+	public void expandWFlowByExpanding() {
+		Util.waitForElement(driver, wFlowExpandSign, 15);
+		wFlowExpandSign.click();
+		Util.waitForLoaderToFinish(driver);
+	}
+
+	public boolean verifyCollapseAllOption() {
+		Util.waitForElement(driver, collapseSign, 10);
+		if (collapseSign.isDisplayed()) {
+			return true;
+		} else
+			return false;
+	}
+
+	public void clickCollapseOption() {
+		Util.waitForElement(driver, collapseSign, 5);
+		collapseSign.click();
+		Util.waitForAJAX(driver);
+	}
+
+	public boolean verifyExpandAllOption() {
+		Util.waitForElement(driver, expandSignOnReq, 10);
+		if (expandSignOnReq.isDisplayed()) {
+			return true;
+		} else
+			return false;
+	}
+
+	public boolean verifyExpandAllOptionOfTasks() {
+		Util.waitForElement(driver, taskExpandSign, 10);
+		if (taskExpandSign.isDisplayed()) {
+			return true;
+		} else
+			return false;
+	}
+
+	public boolean verifyTaskListDisplayed() {
+		Util.waitForElement(driver, taskDesc, 15);
+		String str = taskDesc.getText().trim();
+		if (str.equalsIgnoreCase("Task Description")) {
+			return true;
+		} else
+			return false;
 	}
 
 }
