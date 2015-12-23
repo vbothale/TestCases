@@ -23,7 +23,7 @@ public class GroupQueue {
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='rightContent']/div/div/div/div[1]/label")
 	private WebElement grpQueTitle;
-	
+
 	@FindBy(how = How.XPATH, using = "//label[contains(.,'Entity Type:')]")
 	private WebElement entityTypeTitle;
 
@@ -41,16 +41,16 @@ public class GroupQueue {
 
 	@FindBy(how = How.XPATH, using = "//label[contains(.,'To Date:')]")
 	private WebElement toDateTitle;
-	
+
 	@FindBy(how = How.ID, using = "filterRoleGrpQueue")
 	private WebElement filterBtn;
-	
+
 	@FindBy(how = How.XPATH, using = "//button[contains(.,'All Selected')]")
 	private WebElement defaultValue;
-	
+
 	@FindBy(how = How.ID, using = "home")
 	private WebElement homeLink;
-	
+
 	@FindBy(how = How.XPATH, using = ".//*[@id='rightContent']/div/div/div/div[1]/div[2]/div[1]/p/div/button")
 	private WebElement entityTypeField;
 
@@ -73,7 +73,7 @@ public class GroupQueue {
 		else
 			return false;
 	}
-	
+
 	public boolean verifyFiltersOnGroupQueue() {
 		String s1 = entityTypeTitle.getText().trim();
 		String s2 = statusTitle.getText().trim();
@@ -91,7 +91,7 @@ public class GroupQueue {
 		} else
 			return false;
 	}
-	
+
 	public boolean verifyDefaultValueOfFilters() {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, defaultValue, 10);
@@ -100,7 +100,7 @@ public class GroupQueue {
 		} else
 			return false;
 	}
-	
+
 	public void clickFilterBtn() {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, filterBtn, 20);
@@ -108,15 +108,16 @@ public class GroupQueue {
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForAJAX(driver);
 	}
-	
+
 	public MyRequests clickHome() {
 		Util.waitForElement(driver, homeLink, 10);
 		homeLink.click();
 		Util.waitForAJAX(driver);
 		return new MyRequests(driver);
 	}
-	
+
 	public void selectEntityType() {
+		Util.waitForAJAX(driver);
 		Util.enableAllDropdowns(driver);
 		Util.waitForElementPresent(
 				driver,
@@ -132,8 +133,9 @@ public class GroupQueue {
 		ele.click();
 		entityTypeField.click();
 	}
-	
+
 	public void selectStatus() {
+		Util.waitForAJAX(driver);
 		Util.enableAllDropdowns(driver);
 		Util.waitForElementPresent(
 				driver,
@@ -145,7 +147,7 @@ public class GroupQueue {
 
 		WebElement ele = driver
 				.findElement(By
-						.xpath(".//*[@id='rightContent']/div/div/div/div[1]/div[2]/div[3]/p/div/div/ul/li[3]/label/input"));
+						.xpath(".//*[@id='rightContent']/div/div/div/div[1]/div[2]/div[2]/p/div/div/ul/li[11]/label/input"));
 		ele.click();
 		statusField.click();
 	}

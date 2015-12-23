@@ -152,6 +152,21 @@ public class SearchHelper {
 		return new MyRequests(driver);
 	}
 
+	public void srchExistingReq() {
+		searchBox.sendKeys("Request HCL Corporation");
+		searchBox.sendKeys(Keys.ENTER);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+
+		Util.waitForElementPresent(driver, By
+				.xpath(".//*[@id='requestSrchRes']//span[contains(.,'Load')]"),
+				20);
+		searchedReq.click();
+		loadReq.click();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+	}
+
 	public Facility360Details clickFacSummary() {
 		Util.waitForElement(driver, facilityLnk, 10);
 		facilityLnk.click();

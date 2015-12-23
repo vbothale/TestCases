@@ -153,6 +153,9 @@ public class MyRequests {
 
 	private String dashboardRows = "//*[@id='data_content']/div/table/tbody/tr";
 	private String reqOnDashboard = "//*[@id='data_content']/div/table/tbody/tr[1]";
+	private String reqOnDashboard1 = "//*[@id='data_content']/div/table/tbody/tr";
+	private String reqOnDashboard2 = ".//*[@id='credLnk']";
+	private String facOnDashboard = ".//*[@id='credLineLnk0']";
 	private String wFlowMilestone = ".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[1]/p/div/div/ul/li";
 	private String expandSign = "//td[contains(@class,'gridClickable')]";
 
@@ -455,7 +458,7 @@ public class MyRequests {
 
 		WebElement ele = driver
 				.findElement(By
-						.xpath(".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[2]/p/div/div/ul/li[3]/label/input"));
+						.xpath(".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[2]/p/div/div/ul/li[4]/label/input"));
 		ele.click();
 		decisionMilestone.click();
 	}
@@ -533,31 +536,32 @@ public class MyRequests {
 	}
 
 	public Credit360Helper clickOnAnyReqFromDashboard() {
-		Util.waitForElementPresent(driver, By.xpath(reqOnDashboard), 10);
-		element = null;
+		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForElementPresent(driver, By.xpath(reqOnDashboard2), 20);
+		
 		List<WebElement> reqListOnDashboard = driver.findElements(By
-				.xpath(reqOnDashboard));
-
+				.xpath(reqOnDashboard2));
 		for (int i = 1; i < reqListOnDashboard.size(); i++) {
-			element = driver.findElement(By.xpath(reqOnDashboard + "[" + i
-					+ "]/td[2]"));
 			System.out.println("Count  =  " + reqListOnDashboard.size());
 			reqListOnDashboard.get(1).click();
+			Util.waitForLoaderToFinish(driver);
 		}
 		return new Credit360Helper(driver);
 	}
 
 	public Facility360Details clickOnAnyFacilityFromDashboard() {
-		Util.waitForElementPresent(driver, By.xpath(reqOnDashboard), 10);
-		element = null;
+		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForElementPresent(driver, By.xpath(facOnDashboard), 20);
+		
 		List<WebElement> reqListOnDashboard = driver.findElements(By
-				.xpath(reqOnDashboard));
-
+				.xpath(facOnDashboard));
 		for (int i = 1; i < reqListOnDashboard.size(); i++) {
-			element = driver.findElement(By.xpath(reqOnDashboard + "[" + i
-					+ "]/td[4]"));
 			System.out.println("Count  =  " + reqListOnDashboard.size());
 			reqListOnDashboard.get(1).click();
+			Util.waitForLoaderToFinish(driver);
+			
 		}
 		return new Facility360Details(driver);
 	}

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Firefox Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>23/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>25/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Dec 21 17:24:10 IST 2015</td>
+<td>Started on:</td><td>Wed Dec 23 16:13:56 IST 2015</td>
 </tr>
-<tr><td>Total time:</td><td>372 seconds (372864 ms)</td>
+<tr><td>Total time:</td><td>475 seconds (475489 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,155 +75,18 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test15_verifyExpansionOfTMOnCredit360()'><b>test15_verifyExpansionOfTMOnCredit360</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;taskMangmnt&quot;}
-Command duration or timeout: 10 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
-*** Element info: {Using=id, value=taskMangmnt}
-Session ID: f1523a2a-1d3c-483e-96da-e15e28b296d4
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=42.0}]
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
-	at org.openqa.selenium.By$ById.findElement(By.java:215)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at com.provenir.automation.framework.helper.Credit360Helper.clickTaskManagement(Credit360Helper.java:161)
-	at com.provenir.automation.framework.testcases.FilteredQueues.test15_verifyExpansionOfTMOnCredit360(FilteredQueues.java:143)
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test20_verifyTaskManagementSection()'><b>test20_verifyTaskManagementSection</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.provenir.automation.framework.helper.Credit360Helper.clickActionColumnAndVerifyAddedWorkflow(Credit360Helper.java:142)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test20_verifyTaskManagementSection(FacilityLevelWorkflow.java:247)
 	at java.util.concurrent.FutureTask.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;taskMangmnt&quot;}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
-Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous3343665722305606891webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10299)
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous3343665722305606891webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10308)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous3343665722305606891webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12282)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous3343665722305606891webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12287)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous3343665722305606891webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12229)
-... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2037796703", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2037796703'><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;taskMangmnt&quot;}
-Command duration or timeout: 10 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
-*** Element info: {Using=id, value=taskMangmnt}
-Session ID: f1523a2a-1d3c-483e-96da-e15e28b296d4
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=42.0}]
-	at sun.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
-	at org.openqa.selenium.By$ById.findElement(By.java:215)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at com.provenir.automation.framework.helper.Credit360Helper.clickTaskManagement(Credit360Helper.java:161)
-	at com.provenir.automation.framework.testcases.FilteredQueues.test15_verifyExpansionOfTMOnCredit360(FilteredQueues.java:143)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;taskMangmnt&quot;}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.46.0&apos;, revision: &apos;87c69e2&apos;, time: &apos;2015-06-04 16:17:10&apos;
-System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
-Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous3343665722305606891webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10299)
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous3343665722305606891webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10308)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous3343665722305606891webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12282)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous3343665722305606891webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12287)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous3343665722305606891webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12229)
-</pre></div></td>
-<td>30</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test16_verifyExpansionOfTMOnFacility360()'><b>test16_verifyExpansionOfTMOnFacility360</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td><div><pre>java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Number
-	at org.openqa.selenium.remote.ErrorHandler$FrameInfoToStackFrame.apply(ErrorHandler.java:297)
-	at org.openqa.selenium.remote.ErrorHandler$FrameInfoToStackFrame.apply(ErrorHandler.java:1)
-	at com.google.common.collect.Iterators$8.transform(Iterators.java:799)
-	at com.google.common.collect.TransformedIterator.next(TransformedIterator.java:48)
-	at com.google.common.collect.Iterators$7.computeNext(Iterators.java:651)
-	at com.google.common.collect.AbstractIterator.tryToComputeNext(AbstractIterator.java:143)
-	at com.google.common.collect.AbstractIterator.hasNext(AbstractIterator.java:138)
-	at com.google.common.collect.Iterators.addAll(Iterators.java:361)
-	at com.google.common.collect.Lists.newArrayList(Lists.java:160)
-	at com.google.common.collect.Iterables.toCollection(Iterables.java:337)
-	at com.google.common.collect.Iterables.toArray(Iterables.java:315)
-	at org.openqa.selenium.remote.ErrorHandler.rebuildServerError(ErrorHandler.java:270)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:118)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
-	at org.openqa.selenium.By$ById.findElement(By.java:215)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at com.provenir.automation.framework.helper.Facility360Details.clickTaskManagement(Facility360Details.java:1500)
-	at com.provenir.automation.framework.testcases.FilteredQueues.test16_verifyExpansionOfTMOnFacility360(FilteredQueues.java:152)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1136719061", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1136719061'><pre>java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Number
-	at org.openqa.selenium.remote.ErrorHandler$FrameInfoToStackFrame.apply(ErrorHandler.java:297)
-	at org.openqa.selenium.remote.ErrorHandler$FrameInfoToStackFrame.apply(ErrorHandler.java:1)
-	at com.google.common.collect.Iterators$8.transform(Iterators.java:799)
-	at com.google.common.collect.TransformedIterator.next(TransformedIterator.java:48)
-	at com.google.common.collect.Iterators$7.computeNext(Iterators.java:651)
-	at com.google.common.collect.AbstractIterator.tryToComputeNext(AbstractIterator.java:143)
-	at com.google.common.collect.AbstractIterator.hasNext(AbstractIterator.java:138)
-	at com.google.common.collect.Iterators.addAll(Iterators.java:361)
-	at com.google.common.collect.Lists.newArrayList(Lists.java:160)
-	at com.google.common.collect.Iterables.toCollection(Iterables.java:337)
-	at com.google.common.collect.Iterables.toArray(Iterables.java:315)
-	at org.openqa.selenium.remote.ErrorHandler.rebuildServerError(ErrorHandler.java:270)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:118)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:399)
-	at org.openqa.selenium.By$ById.findElement(By.java:215)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at com.provenir.automation.framework.helper.Facility360Details.clickTaskManagement(Facility360Details.java:1500)
-	at com.provenir.automation.framework.testcases.FilteredQueues.test16_verifyExpansionOfTMOnFacility360(FilteredQueues.java:152)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1190122095", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1190122095'><pre>java.lang.NullPointerException
+	at com.provenir.automation.framework.helper.Credit360Helper.clickActionColumnAndVerifyAddedWorkflow(Credit360Helper.java:142)
+	at com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test20_verifyTaskManagementSection(FacilityLevelWorkflow.java:247)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -245,8 +108,8 @@ Driver info: driver.version: unknown
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
 </pre></div></td>
-<td>12</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
+<td>23</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -256,120 +119,130 @@ Driver info: driver.version: unknown
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test10_verifyWorkflowExpandedOrNot()'><b>test10_verifyWorkflowExpandedOrNot</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.landingPage()'><b>landingPage</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
 <td></td>
-<td>2</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
+<td>48</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test11_verifyTaskListDisplayedOnExpanding()'><b>test11_verifyTaskListDisplayedOnExpanding</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>0</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test12_verifyExpandBtnAgainstEachTask()'><b>test12_verifyExpandBtnAgainstEachTask</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>0</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test13_verifyCollapseAllFunctionality()'><b>test13_verifyCollapseAllFunctionality</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>0</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test14_clickCollapseOption()'><b>test14_clickCollapseOption</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>0</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test17_verifyMyTeamTasksPage()'><b>test17_verifyMyTeamTasksPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>22</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test18_verifyFiltersOnMyTeamTasksPage()'><b>test18_verifyFiltersOnMyTeamTasksPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>0</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test19_verifyDefaultValuesOfFiltersOnMyTeamTasksPage()'><b>test19_verifyDefaultValuesOfFiltersOnMyTeamTasksPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>0</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test1_landingPage()'><b>test1_landingPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>32</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test20_verifyFilterationOnMyTeamTasksPage()'><b>test20_verifyFilterationOnMyTeamTasksPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>13</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test21_verifyMyTaskPageDisplayed()'><b>test21_verifyMyTaskPageDisplayed</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>191</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test22_verifyFiltersOnMyTasksPAge()'><b>test22_verifyFiltersOnMyTasksPAge</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>0</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test23_verifyDefaultValuesOfFiltersOnMyTasksPage()'><b>test23_verifyDefaultValuesOfFiltersOnMyTasksPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>0</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test24_verifyFilterationOnMyTasksPage()'><b>test24_verifyFilterationOnMyTasksPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test11_goToHomePage()'><b>test11_goToHomePage</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
 <td></td>
 <td>6</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test25_verifyGroupQueuePageDisplayed()'><b>test25_verifyGroupQueuePageDisplayed</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>5</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test2_verifyFiltersOnMyRequestsPage()'><b>test2_verifyFiltersOnMyRequestsPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>0</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test3_verifyDefaultValuesOfFilters()'><b>test3_verifyDefaultValuesOfFilters</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>0</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test4_verifyFiltersFunctionality()'><b>test4_verifyFiltersFunctionality</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test12_clickNewCreditRequest()'><b>test12_clickNewCreditRequest</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
 <td></td>
 <td>3</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test5_verifyInitialWorkflowStatusOfNewlyCreatedRequest()'><b>test5_verifyInitialWorkflowStatusOfNewlyCreatedRequest</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test13_verifyDefaultCreditLevelWorkflow()'><b>test13_verifyDefaultCreditLevelWorkflow</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>0</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test14_verifySavedWorkflow()'><b>test14_verifySavedWorkflow</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>17</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test15_clickTransactionInfoPage()'><b>test15_clickTransactionInfoPage</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>18</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test16_verifyDefaultFacilityLevelWorkflow()'><b>test16_verifyDefaultFacilityLevelWorkflow</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>10</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test17_verifysavedFacilityWorkflow()'><b>test17_verifysavedFacilityWorkflow</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>11</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test18_gotoHomePage()'><b>test18_gotoHomePage</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>6</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test19_searchRequest()'><b>test19_searchRequest</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>25</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test1_verifyResultsAccToWorkflowType()'><b>test1_verifyResultsAccToWorkflowType</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>19</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test21_gotoFacility360()'><b>test21_gotoFacility360</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>30</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test22_verifyTaskManagementLoadedOnFacility360()'><b>test22_verifyTaskManagementLoadedOnFacility360</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>2</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test23_verifyNoWorkflowIsDisplayedInTaskMgmtOfFacility360()'><b>test23_verifyNoWorkflowIsDisplayedInTaskMgmtOfFacility360</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>0</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test24_gotoFacility360()'><b>test24_gotoFacility360</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>18</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test25_verifyTaskManagementLoadedOnFacility360()'><b>test25_verifyTaskManagementLoadedOnFacility360</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
 <td></td>
 <td>13</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test6_verifyInitialDecisionStatusOfNewlyCreatedRequest()'><b>test6_verifyInitialDecisionStatusOfNewlyCreatedRequest</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
-<td></td>
-<td>8</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test7_verifyReqCount()'><b>test7_verifyReqCount</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test26_triggerFacilityWorkflow()'><b>test26_triggerFacilityWorkflow</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
 <td></td>
 <td>0</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test8_verifyExpandAllOnMyReqPage()'><b>test8_verifyExpandAllOnMyReqPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test27_verifyWorkflowOrderInCredit360()'><b>test27_verifyWorkflowOrderInCredit360</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>51</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test28_gotoMyRequestPage()'><b>test28_gotoMyRequestPage</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>22</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test29_verifyWorkflowDDLReadOnlyWhenEdit()'><b>test29_verifyWorkflowDDLReadOnlyWhenEdit</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
 <td></td>
 <td>0</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.FilteredQueues.test9_verifyHeaderOnTMActAsHyperlink()'><b>test9_verifyHeaderOnTMActAsHyperlink</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test2_clickOnAddBtnOfWorkflowSummary()'><b>test2_clickOnAddBtnOfWorkflowSummary</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
 <td></td>
-<td>7</td>
-<td>com.provenir.automation.framework.testcases.FilteredQueues@58093139</td></tr>
+<td>18</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test30_expandReqAndGotoFacility360()'><b>test30_expandReqAndGotoFacility360</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>26</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test31_deleteFacility()'><b>test31_deleteFacility</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>22</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test32_VerifyAssociatedWorkflowIsDeletedOrNot()'><b>test32_VerifyAssociatedWorkflowIsDeletedOrNot</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>30</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FacilityLevelWorkflow.test3_verifyMandatoryDetailsOnManageWorkflow()'><b>test3_verifyMandatoryDetailsOnManageWorkflow</b><br>Test class: com.provenir.automation.framework.testcases.FacilityLevelWorkflow</td>
+<td></td>
+<td>18</td>
+<td>com.provenir.automation.framework.testcases.FacilityLevelWorkflow@3937bf4</td></tr>
 </table><p>
 </body>
 </html>

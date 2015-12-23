@@ -62,9 +62,12 @@ public class MyTasks {
 
 	@FindBy(how = How.XPATH, using = ".//*[@name='selectAllstatus']")
 	private WebElement allOnStatus;
-	
+
 	@FindBy(how = How.ID, using = "home")
 	private WebElement homeLink;
+
+	@FindBy(how = How.XPATH, using = ".//*[@class='slick-sort-indicator slick-sort-indicator-asc']")
+	private WebElement dueOn;
 
 	private WebElement element = null;
 
@@ -147,12 +150,22 @@ public class MyTasks {
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForAJAX(driver);
 	}
-	
+
 	public MyRequests clickHome() {
 		Util.waitForElement(driver, homeLink, 10);
 		homeLink.click();
 		Util.waitForAJAX(driver);
 		return new MyRequests(driver);
+	}
+
+	public void clickDueOnIndicator() {
+		Util.waitForElementPresent(
+				driver,
+				By.xpath(".//*[@class='slick-sort-indicator slick-sort-indicator-asc']"),
+				20);
+		dueOn.click();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
 	}
 
 }
