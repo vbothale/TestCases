@@ -252,7 +252,7 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.editOnBasicCollateralInformation();
 		collateral360Helper.enterCollateralName();
 		collateral360Helper.selectCollateralTypeAsShares(option);
-		collateral360Helper.selectCollateralSubTypeAsGovBonds(option);
+//		collateral360Helper.selectCollateralSubTypeAsGovBonds(option);
 		collateral360Helper.clickSaveCollateral();
 		// collateral360Helper.clickOnProceedBtn();
 	}
@@ -376,15 +376,11 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.enterStreet();
 		collateral360Helper.enterNumber();
 		collateral360Helper.enterZipCode();
-//		collateral360Helper.Market(option);
-//		collateral360Helper.OwnerOccupancyAndOccupancyofRent();
-//		collateral360Helper.BusinessLine(option);
-//		collateral360Helper.enterYearBuilt();
 		
 		collateral360Helper.newlybuilt(option);
-		collateral360Helper.checkForProceedBtn();
+//		collateral360Helper.checkForProceedBtn();
 		
-		// collateral360Helper.clickSaveCollateral();
+		 collateral360Helper.clickSaveCollateral();
 	}
 
 	// APN/Tax Information
