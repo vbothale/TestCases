@@ -789,7 +789,7 @@ public class Collateral360Helper {
 		String s10 = siteVisit.getText().trim();
 		String s11 = existingLiens.getText().trim();
 		// String s12 = building.getText().trim();
-		String s13 = propDetails.getText().trim();
+//		String s13 = propDetails.getText().trim();
 		String s14 = propertyDesignation.getText().trim();
 		String s15 = propertyInspection.getText().trim();
 		String s16 = propertyHistory.getText().trim();
@@ -808,7 +808,6 @@ public class Collateral360Helper {
 				&& s9.equalsIgnoreCase("Collateral Valuation")
 				&& s10.equalsIgnoreCase("Site Visit/Audit")
 				&& s11.equalsIgnoreCase("Existing Liens")
-				&& s13.equalsIgnoreCase("Property Details")
 				&& s14.equalsIgnoreCase("Property Designation")
 				&& s15.equalsIgnoreCase("Property Inspection")
 				&& s16.equalsIgnoreCase("Property History")

@@ -61,7 +61,7 @@ public class Credit360Helper {
 	@FindBy(how = How.XPATH, using = ".//*[@id='credSumm']")
 	private WebElement creditSummary;
 
-	@FindBy(how = How.ID, using = "taskMangmnt")
+	@FindBy(how = How.ID, using = "taskMangmntr")
 	private WebElement taskMgmt;
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='credLineSumm']")
@@ -157,6 +157,7 @@ public class Credit360Helper {
 
 	public void clickTaskManagement() {
 		Util.waitForAJAX(driver);
+		Util.scrollBottom(driver);
 		Util.waitForElementPresent(driver, By.id("taskMangmnt"), 30);
 		taskMgmt.click();
 		Util.waitForLoaderToFinish(driver);

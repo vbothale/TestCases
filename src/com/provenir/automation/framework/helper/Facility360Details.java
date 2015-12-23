@@ -1496,7 +1496,7 @@ public class Facility360Details {
 
 	public void clickTaskManagement() {
 		Util.scrollBottom(driver);
-		Util.waitForElement(driver, taskMgmt, 15);
+		Util.waitForElement(driver, taskMgmt, 30);
 		taskMgmt.click();
 		Util.waitForLoaderToFinish(driver);
 	}
