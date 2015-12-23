@@ -789,7 +789,7 @@ public class Collateral360Helper {
 		String s10 = siteVisit.getText().trim();
 		String s11 = existingLiens.getText().trim();
 		// String s12 = building.getText().trim();
-//		String s13 = propDetails.getText().trim();
+		// String s13 = propDetails.getText().trim();
 		String s14 = propertyDesignation.getText().trim();
 		String s15 = propertyInspection.getText().trim();
 		String s16 = propertyHistory.getText().trim();
@@ -840,6 +840,7 @@ public class Collateral360Helper {
 	}
 
 	public void clickEditOnTitledMotorVehicle() {
+		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, editBtnOnTitledMotorVehicle, 10);
 		editBtnOnTitledMotorVehicle.click();
 	}
@@ -1095,6 +1096,7 @@ public class Collateral360Helper {
 	}
 
 	public void clickOnEDitBtnOfShares() {
+		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, editBtnOnShares, 15);
 		editBtnOnShares.click();
 		Util.waitForAJAX(driver);
