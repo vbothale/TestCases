@@ -150,6 +150,7 @@ public class AdminPage {
 	private String workflowType = "processTypeCd";
 
 	public LoginPage clickAdminLink() {
+		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, adminLink, 15);
 		adminLink.click();
 		Util.waitForAJAX(driver);
@@ -630,10 +631,10 @@ public class AdminPage {
 				ele1.click();
 			}
 		}
-			
-//		actions.moveToElement(ele).click().build().perform();
-//		Util.waitForElement(driver, editWorkflow, 5);
-//		editWorkflow.click();
+
+		// actions.moveToElement(ele).click().build().perform();
+		// Util.waitForElement(driver, editWorkflow, 5);
+		// editWorkflow.click();
 		Util.waitForAJAX(driver);
 	}
 

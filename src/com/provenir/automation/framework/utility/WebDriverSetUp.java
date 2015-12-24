@@ -3,6 +3,8 @@ package com.provenir.automation.framework.utility;
 import java.io.File;
 import java.io.IOException;
 
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -55,6 +57,7 @@ public class WebDriverSetUp {
 					.build();
 			chromeService.start();
 			capabilities = DesiredCapabilities.chrome();
+			
 			driver = new RemoteWebDriver(chromeService.getUrl(), capabilities);
 
 			break;
@@ -90,4 +93,18 @@ public class WebDriverSetUp {
 
 		driver = new InternetExplorerDriver(ieCapabilities);
 	}
+	
+//	public static void ChromeCapabilities()
+//	{
+//		Capabilities cp = ((RemoteWebDriver) driver).getCapabilities();
+//		try {
+//			((JavascriptExecutor) driver).executeScript(
+//                    "arguments[0].scrollIntoView(true);", WebElement);
+//			
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//		}
+//	}
+	
+	
 }

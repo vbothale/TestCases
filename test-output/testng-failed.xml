@@ -2,18 +2,20 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="1" name="Failed suite [Automation test suite]" parallel="tests">
   <parameter name="environment" value="src/com/provenir/automation/framework/config/Env.properties"/>
-  <parameter name="browser" value="Chrome"/>
-  <test name="Chrome Test(failed)" parallel="tests">
-    <parameter name="browser" value="Chrome"/>
+  <parameter name="browser" value="InternetExplorer"/>
+  <test name="IE Test(failed)" parallel="tests">
+    <parameter name="browser" value="InternetExplorer"/>
     <classes>
       <class name="com.provenir.automation.framework.testcases.FacilityLevelWorkflow">
         <methods>
           <include name="test25_verifyTaskManagementLoadedOnFacility360"/>
+          <include name="test1_verifyResultsAccToWorkflowType"/>
           <include name="test27_verifyWorkflowOrderInCredit360"/>
           <include name="test24_gotoFacility360"/>
           <include name="beforeTest"/>
           <include name="test21_gotoFacility360"/>
           <include name="test13_verifyDefaultCreditLevelWorkflow"/>
+          <include name="test18_gotoHomePage"/>
           <include name="test12_clickNewCreditRequest"/>
           <include name="test23_verifyNoWorkflowIsDisplayedInTaskMgmtOfFacility360"/>
           <include name="test17_verifysavedFacilityWorkflow"/>
@@ -28,14 +30,16 @@
           <include name="initialize"/>
           <include name="test3_verifyMandatoryDetailsOnManageWorkflow"/>
           <include name="test14_verifySavedWorkflow"/>
+          <include name="test11_goToHomePage"/>
           <include name="test28_gotoMyRequestPage"/>
-          <include name="test22_verifyTaskManagementLoadedOnFacility360"/>
           <include name="test32_VerifyAssociatedWorkflowIsDeletedOrNot"/>
+          <include name="test22_verifyTaskManagementLoadedOnFacility360"/>
+          <include name="landingPage"/>
           <include name="test30_expandReqAndGotoFacility360"/>
           <include name="test2_clickOnAddBtnOfWorkflowSummary"/>
           <include name="test15_clickTransactionInfoPage"/>
         </methods>
       </class> <!-- com.provenir.automation.framework.testcases.FacilityLevelWorkflow -->
     </classes>
-  </test> <!-- Chrome Test(failed) -->
+  </test> <!-- IE Test(failed) -->
 </suite> <!-- Failed suite [Automation test suite] -->
