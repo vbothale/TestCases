@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Firefox Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>42/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>31/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Dec 23 18:30:39 IST 2015</td>
+<td>Started on:</td><td>Mon Dec 28 15:32:32 IST 2015</td>
 </tr>
-<tr><td>Total time:</td><td>1331 seconds (1331368 ms)</td>
+<tr><td>Total time:</td><td>340 seconds (340981 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,109 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test12_verifyExpandBtnAgainstEachTask()'><b>test12_verifyExpandBtnAgainstEachTask</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(@class,&apos;toggle expand&apos;)]&quot;}
+Command duration or timeout: 61 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd&apos;, time: &apos;2015-10-09 19:55:52&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+*** Element info: {Using=xpath, value=//span[contains(@class,&apos;toggle expand&apos;)]}
+Session ID: e85f0bf4-e1e1-4e95-a146-d123af563ed9
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=43.0.2}]
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:647)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:490)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:345)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.isDisplayed(Unknown Source)
+	at com.provenir.automation.framework.helper.MyRequests.verifyExpandAllOptionOfTasks(MyRequests.java:624)
+	at com.provenir.automation.framework.testcases.FilteredQueues.test12_verifyExpandBtnAgainstEachTask(FilteredQueues.java:131)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(@class,&apos;toggle expand&apos;)]&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd&apos;, time: &apos;2015-10-09 19:55:52&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous5703867653054763153webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous5703867653054763153webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10668)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous5703867653054763153webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous5703867653054763153webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous5703867653054763153webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace415906133", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace415906133'><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(@class,&apos;toggle expand&apos;)]&quot;}
+Command duration or timeout: 61 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd&apos;, time: &apos;2015-10-09 19:55:52&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+*** Element info: {Using=xpath, value=//span[contains(@class,&apos;toggle expand&apos;)]}
+Session ID: e85f0bf4-e1e1-4e95-a146-d123af563ed9
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=43.0.2}]
+	at sun.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:647)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:490)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:345)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.isDisplayed(Unknown Source)
+	at com.provenir.automation.framework.helper.MyRequests.verifyExpandAllOptionOfTasks(MyRequests.java:624)
+	at com.provenir.automation.framework.testcases.FilteredQueues.test12_verifyExpandBtnAgainstEachTask(FilteredQueues.java:131)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:368)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(@class,&apos;toggle expand&apos;)]&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd&apos;, time: &apos;2015-10-09 19:55:52&apos;
+System info: host: &apos;parasharb-w7&apos;, ip: &apos;172.27.103.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_75&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous5703867653054763153webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous5703867653054763153webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10668)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous5703867653054763153webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous5703867653054763153webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///C:/Users/PARASH~1/AppData/Local/Temp/anonymous5703867653054763153webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)
+</pre></div></td>
+<td>26</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,215 +178,160 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test0_landingPage()'><b>test0_landingPage</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>34</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test11_saveOnTitledMotorVehicle()'><b>test11_saveOnTitledMotorVehicle</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>2</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test12_updateTitledMotorVehicle()'><b>test12_updateTitledMotorVehicle</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>36</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test13_deleteTitledMotorVehicleInfo()'><b>test13_deleteTitledMotorVehicleInfo</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>3</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test14_cancelOnTitledMotorVehicle()'><b>test14_cancelOnTitledMotorVehicle</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>3</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test15_gotoCollateralPool()'><b>test15_gotoCollateralPool</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>42</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test16_saveCollateralDetailsAsUCC()'><b>test16_saveCollateralDetailsAsUCC</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>127</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test17_verifyDeleteOnUCC()'><b>test17_verifyDeleteOnUCC</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>29</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test18_verifyActionMenuDisplayedOnUCC()'><b>test18_verifyActionMenuDisplayedOnUCC</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>4</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test19_verifyMandatoryDetailsOnUCCUCC()'><b>test19_verifyMandatoryDetailsOnUCCUCC</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>1</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test1_gotoCollateral360()'><b>test1_gotoCollateral360</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>44</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test20_saveUCC()'><b>test20_saveUCC</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>6</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test21_updateUCC()'><b>test21_updateUCC</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>10</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test22_cancelUCCDetails()'><b>test22_cancelUCCDetails</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>21</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test23_gotoCollateral360()'><b>test23_gotoCollateral360</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>36</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test24_verifyMutualFundsSection()'><b>test24_verifyMutualFundsSection</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>73</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test25_verifyMandatoryFieldsOnMutualFunds()'><b>test25_verifyMandatoryFieldsOnMutualFunds</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>13</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test26_saveOnMutualFunds()'><b>test26_saveOnMutualFunds</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>24</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test27_updateMutualFunds()'><b>test27_updateMutualFunds</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>5</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test28_cancelMutualFunds()'><b>test28_cancelMutualFunds</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>5</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test29_verifyCertificatedBondsSection()'><b>test29_verifyCertificatedBondsSection</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>5</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test2_verifyCollateralTitle()'><b>test2_verifyCollateralTitle</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>10</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test30_saveOnCertifiedBonds()'><b>test30_saveOnCertifiedBonds</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>10</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test31_updateCertifiedBonds()'><b>test31_updateCertifiedBonds</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>57</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test32_cancelCertifiedBonds()'><b>test32_cancelCertifiedBonds</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>21</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test33_VerifyUncertifiedSecuritiesOrMutualFundsSection()'><b>test33_VerifyUncertifiedSecuritiesOrMutualFundsSection</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>29</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test34_saveOnUncertifiedSecurities()'><b>test34_saveOnUncertifiedSecurities</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>15</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test35_updateOnUncertifiedSecurities()'><b>test35_updateOnUncertifiedSecurities</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>37</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test36_cancelOnUncertifiedSecurities()'><b>test36_cancelOnUncertifiedSecurities</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>22</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test37_goToCollateralPool()'><b>test37_goToCollateralPool</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>42</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test38_saveCollateralDetailsAsRealState()'><b>test38_saveCollateralDetailsAsRealState</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>133</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test39_ClickTaxInformation()'><b>test39_ClickTaxInformation</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>15</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test3_saveCollateralDetails()'><b>test3_saveCollateralDetails</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>57</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test40_AddTaxInformation()'><b>test40_AddTaxInformation</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>4</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test41_verifyErrorMsgTaxApnDetails()'><b>test41_verifyErrorMsgTaxApnDetails</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test10_verifyWorkflowExpandedOrNot()'><b>test10_verifyWorkflowExpandedOrNot</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
 <td></td>
 <td>0</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test42_SaveTaxInformationDetails()'><b>test42_SaveTaxInformationDetails</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>28</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test4_verifyLeftHandNavigationForVehicle()'><b>test4_verifyLeftHandNavigationForVehicle</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
-<td></td>
-<td>26</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
-<tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test5_verifyLeftHandNavigationForShares()'><b>test5_verifyLeftHandNavigationForShares</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test11_verifyTaskListDisplayedOnExpanding()'><b>test11_verifyTaskListDisplayedOnExpanding</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
 <td></td>
 <td>21</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test6_verifyLeftHandNavigationForAccountsReceivable()'><b>test6_verifyLeftHandNavigationForAccountsReceivable</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test13_verifyCollapseAllFunctionality()'><b>test13_verifyCollapseAllFunctionality</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
 <td></td>
-<td>20</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
+<td>0</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test7_verifyLeftHandNavigationForRealEstate()'><b>test7_verifyLeftHandNavigationForRealEstate</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test14_clickCollapseOption()'><b>test14_clickCollapseOption</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
 <td></td>
-<td>28</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
+<td>0</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test8_saveCollateralDetailsAsVehicle()'><b>test8_saveCollateralDetailsAsVehicle</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test17_verifyMyTeamTasksPage()'><b>test17_verifyMyTeamTasksPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
 <td></td>
-<td>149</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
+<td>12</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
 <tr>
-<td title='com.provenir.automation.framework.testcases.Collateral360.test9_verifyActionMenuDisplayedOnVehicle()'><b>test9_verifyActionMenuDisplayedOnVehicle</b><br>Test class: com.provenir.automation.framework.testcases.Collateral360</td>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test18_verifyFiltersOnMyTeamTasksPage()'><b>test18_verifyFiltersOnMyTeamTasksPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>0</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test19_verifyDefaultValuesOfFiltersOnMyTeamTasksPage()'><b>test19_verifyDefaultValuesOfFiltersOnMyTeamTasksPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>0</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test1_landingPage()'><b>test1_landingPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
 <td></td>
 <td>35</td>
-<td>com.provenir.automation.framework.testcases.Collateral360@21ca2b38</td></tr>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test20_verifyFilterationOnMyTeamTasksPage()'><b>test20_verifyFilterationOnMyTeamTasksPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>4</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test21_verifyMyTaskPageDisplayed()'><b>test21_verifyMyTaskPageDisplayed</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>28</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test22_verifyFiltersOnMyTasksPAge()'><b>test22_verifyFiltersOnMyTasksPAge</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>3</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test23_verifyDefaultValuesOfFiltersOnMyTasksPage()'><b>test23_verifyDefaultValuesOfFiltersOnMyTasksPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>1</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test24_verifyFilterationOnMyTasksPage()'><b>test24_verifyFilterationOnMyTasksPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>10</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test25_verifyGroupQueuePageDisplayed()'><b>test25_verifyGroupQueuePageDisplayed</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>38</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test26_verifyFiltersOnGroupQueue()'><b>test26_verifyFiltersOnGroupQueue</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>0</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test27_verifyDefaultValuesOfFiltersOnGroupQueue()'><b>test27_verifyDefaultValuesOfFiltersOnGroupQueue</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>0</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test28_verifyFilterationOnGroupQueue()'><b>test28_verifyFilterationOnGroupQueue</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>31</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test29_verifyRoleQueuePageDisplayed()'><b>test29_verifyRoleQueuePageDisplayed</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>8</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test2_verifyFiltersOnMyRequestsPage()'><b>test2_verifyFiltersOnMyRequestsPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>7</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test30_verifyFiltersOnRoleQueue()'><b>test30_verifyFiltersOnRoleQueue</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>0</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test31_verifyDefaultValuesOfFiltersOnRoleQueue()'><b>test31_verifyDefaultValuesOfFiltersOnRoleQueue</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>0</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test32_verifyFilterationOnRoleQueue()'><b>test32_verifyFilterationOnRoleQueue</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>3</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test33_gotoOnMTasks()'><b>test33_gotoOnMTasks</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>22</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test34_verifySortedColumnsOnMyTasks()'><b>test34_verifySortedColumnsOnMyTasks</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>12</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test3_verifyDefaultValuesOfFilters()'><b>test3_verifyDefaultValuesOfFilters</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>0</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test4_verifyFiltersFunctionality()'><b>test4_verifyFiltersFunctionality</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>4</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test5_verifyInitialWorkflowStatusOfNewlyCreatedRequest()'><b>test5_verifyInitialWorkflowStatusOfNewlyCreatedRequest</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>16</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test6_verifyInitialDecisionStatusOfNewlyCreatedRequest()'><b>test6_verifyInitialDecisionStatusOfNewlyCreatedRequest</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>8</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test7_verifyReqCount()'><b>test7_verifyReqCount</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>0</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test8_verifyExpandAllOnMyReqPage()'><b>test8_verifyExpandAllOnMyReqPage</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>0</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
+<tr>
+<td title='com.provenir.automation.framework.testcases.FilteredQueues.test9_verifyHeaderOnTMActAsHyperlink()'><b>test9_verifyHeaderOnTMActAsHyperlink</b><br>Test class: com.provenir.automation.framework.testcases.FilteredQueues</td>
+<td></td>
+<td>15</td>
+<td>com.provenir.automation.framework.testcases.FilteredQueues@4ee2f574</td></tr>
 </table><p>
 </body>
 </html>

@@ -102,6 +102,9 @@ public class MyRequests {
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[2]/p/div/button")
 	private WebElement decisionMilestone;
+	
+	@FindBy(how = How.ID, using = "newCredRequest")
+	private WebElement newCreditRequestLink;
 
 	@FindBy(how = How.XPATH, using = ".//*[@name='selectAllworkflowmilestone']")
 	private WebElement allOnWorkflowMilestone;
@@ -283,6 +286,13 @@ public class MyRequests {
 		homeLink.click();
 		Util.waitForAJAX(driver);
 		return new AdminPage(driver);
+	}
+	
+	public NewCreditRequest newCreditRequestLink() {
+		Util.waitForElement(driver, newCreditRequestLink, 5);
+		newCreditRequestLink.click();
+		Util.waitForAJAX(driver);
+		return new NewCreditRequest(driver);
 	}
 
 	public TransactionInfoPage clickHomePage() {
