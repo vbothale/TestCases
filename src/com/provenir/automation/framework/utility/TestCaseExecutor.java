@@ -50,6 +50,7 @@ public class TestCaseExecutor {
 			chrome = WebDriverSetUp.getDriver("Chrome");
 
 			chrome.get(applicationUrl);
+			WebDriverSetUp.ChromeCapabilities();
 
 			// if (chrome instanceof ChromeDriver) {
 			// chrome.navigate().to("javascript:document.getElementById('overridelink').click()");

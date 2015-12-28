@@ -137,6 +137,7 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.clickSaveCollateral();
 		// collateral360Helper.clickOnProceedBtn();
 
+		
 	}
 
 	@Test(priority = 9)
@@ -199,7 +200,6 @@ public class Collateral360 extends TestCaseExecutor {
 	public void test17_verifyDeleteOnUCC() {
 		collateral360Helper.clickOnUCC();
 		collateral360Helper.clickDeleteOnUCC();
-
 	}
 
 	@Test(priority = 17)

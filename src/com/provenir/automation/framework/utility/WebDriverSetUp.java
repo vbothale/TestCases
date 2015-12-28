@@ -7,6 +7,7 @@ import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -57,7 +58,7 @@ public class WebDriverSetUp {
 					.build();
 			chromeService.start();
 			capabilities = DesiredCapabilities.chrome();
-			
+
 			driver = new RemoteWebDriver(chromeService.getUrl(), capabilities);
 
 			break;
@@ -88,23 +89,19 @@ public class WebDriverSetUp {
 		ieCapabilities.setCapability("nativeEvents", false);
 		ieCapabilities.setCapability("unexpectedAlertBehaviour", "accept");
 		ieCapabilities.setCapability("ignoreProtectedModeSettings", true);
-		ieCapabilities.setCapability("disable-popup-blocking", true);
+//		ieCapabilities.setCapability("disable-popup-blocking", false);
 		ieCapabilities.setCapability("enablePersistentHover", true);
 
 		driver = new InternetExplorerDriver(ieCapabilities);
 	}
-	
-//	public static void ChromeCapabilities()
-//	{
-//		Capabilities cp = ((RemoteWebDriver) driver).getCapabilities();
-//		try {
-//			((JavascriptExecutor) driver).executeScript(
-//                    "arguments[0].scrollIntoView(true);", WebElement);
-//			
-//		} catch (Exception e) {
-//			// TODO: handle exception
-//		}
-//	}
-	
-	
+
+	public static void ChromeCapabilities() {
+		DesiredCapabilities chromeCapabilities = DesiredCapabilities.chrome();
+
+		chromeCapabilities.setJavascriptEnabled(true);
+		chromeCapabilities.setCapability("nativeEvents", false);
+		chromeCapabilities.setCapability("enablePersistentHover", true);
+		chromeCapabilities.setCapability("disable-popup-blocking", true);
+	}
+
 }
