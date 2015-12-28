@@ -93,6 +93,7 @@ public class FacilityLevelWorkflow extends TestCaseExecutor {
 		adminPage.verifyMandatoryDetailsOnManageWorkflow();
 		adminPage.clickBackBtnOnWorkflow();
 	}
+	
 
 	// @Test(priority = 3)
 	// public void test4_clickAddAndSaveFacilityLevelWorkflow() {
@@ -186,7 +187,8 @@ public class FacilityLevelWorkflow extends TestCaseExecutor {
 
 	@Test(priority = 11)
 	public void test12_clickNewCreditRequest() {
-		creditRequest.newCreditRequestLink();
+		creditRequest = myRequests.newCreditRequestLink();
+//		creditRequest.newCreditRequestLink();
 		creditRequest.getRequestSummaryPgTitle();
 	}
 
