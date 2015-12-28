@@ -667,6 +667,7 @@ public class Collateral360Helper {
 	}
 
 	public Customer360Helper clickBackButton() {
+		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, backBtn, 10);
 		backBtn.click();
 		Util.waitForLoaderToFinish(driver);
