@@ -141,32 +141,32 @@ public class FilteredQueues extends TestCaseExecutor {
 		myRequests.clickCollapseOption();
 	}
 
-//	@Test(priority = 14)
-//	public void test15_verifyExpansionOfTMOnCredit360() {
-//		credit360 = myRequests.clickOnAnyReqFromDashboard();
-//		
-////		searchHelper.srchExistingReq();
-////		credit360 = searchHelper.clickCreditSummary();
-//		
-//		credit360.clickTaskManagement();
-//		credit360.clickExpandIconOnTM();
-//		credit360.verifyTaskDisplayedOrNot();
-//	}
-//
-//	@Test(priority = 15)
-//	public void test16_verifyExpansionOfTMOnFacility360() {
-//		myRequests = credit360.clickHome();
-//		facility360 = myRequests.clickOnAnyFacilityFromDashboard();
-//		facility360.clickTaskManagement();
-//		facility360.clickExpandIconOnTM();
-//		facility360.verifyTaskDisplayedOrNot();
-//	}
+	// @Test(priority = 14)
+	// public void test15_verifyExpansionOfTMOnCredit360() {
+	// credit360 = myRequests.clickOnAnyReqFromDashboard();
+	//
+	// // searchHelper.srchExistingReq();
+	// // credit360 = searchHelper.clickCreditSummary();
+	//
+	// credit360.clickTaskManagement();
+	// credit360.clickExpandIconOnTM();
+	// credit360.verifyTaskDisplayedOrNot();
+	// }
+	//
+	// @Test(priority = 15)
+	// public void test16_verifyExpansionOfTMOnFacility360() {
+	// myRequests = credit360.clickHome();
+	// facility360 = myRequests.clickOnAnyFacilityFromDashboard();
+	// facility360.clickTaskManagement();
+	// facility360.clickExpandIconOnTM();
+	// facility360.verifyTaskDisplayedOrNot();
+	// }
 
 	// my team tasks
 
 	@Test(priority = 16)
 	public void test17_verifyMyTeamTasksPage() {
-//		myRequests = facility360.clickHome();
+		// myRequests = facility360.clickHome();
 		myTeamTasks = myRequests.clickMyTeamTasksLink();
 		myTeamTasks.verifyMyTeamTasksTitle();
 	}
@@ -248,7 +248,7 @@ public class FilteredQueues extends TestCaseExecutor {
 		roleQueue = myRequests.clickRoleQueue();
 		roleQueue.verifyRoleQueueTitle();
 	}
-	
+
 	@Test(priority = 29)
 	public void test30_verifyFiltersOnRoleQueue() {
 		roleQueue.verifyFiltersOnGroupQueue();
@@ -265,20 +265,18 @@ public class FilteredQueues extends TestCaseExecutor {
 		roleQueue.selectStatus();
 		roleQueue.clickFilterBtn();
 	}
-	
+
 	// sorting of columns on My Requests page
-	
+
 	@Test(priority = 32)
-	public void test33_gotoOnMTasks()
-	{
+	public void test33_gotoOnMTasks() {
 		myRequests = roleQueue.clickHome();
 		myTask = myRequests.clickMyTasksLink();
 		myTask.verifyMyTaskPage();
 	}
-	
+
 	@Test(priority = 33)
-	public void test34_verifySortedColumnsOnMyTasks()
-	{
+	public void test34_verifySortedColumnsOnMyTasks() {
 		myTask.clickDueOnIndicator();
 	}
 
