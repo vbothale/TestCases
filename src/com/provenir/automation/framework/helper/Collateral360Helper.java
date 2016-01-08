@@ -680,7 +680,7 @@ public class Collateral360Helper {
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForElementPresent(driver,
 				By.xpath("//input[contains(@customname,'collType')]"), 10);
-		option = "Shares/Stocks/Bonds/Mutual Funds";
+		option = "Shares";
 		Util.selectItemFromList(driver, collType, option);
 		Util.waitForAJAX(driver);
 	}
@@ -1070,9 +1070,11 @@ public class Collateral360Helper {
 		lastSrchDateOnUCC.clear();
 		lastSrchDateOnUCC.sendKeys(Util.getCurrentDate());
 		fillingDate.sendKeys("2015-09-30");
+		fillingNumber.clear();
 		fillingNumber.sendKeys("123456789");
 		option = "Fac for intex";
 		Util.selectItemFromList(driver, facilityName, option);
+		comments.clear();
 		comments.sendKeys("NA");
 		cancelUCC.click();
 		Util.waitForLoaderToFinish(driver);
