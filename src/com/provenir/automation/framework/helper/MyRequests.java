@@ -102,8 +102,8 @@ public class MyRequests {
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='SAVEREQUESTFILTERFORM']/div[2]/div/div[2]/p/div/button")
 	private WebElement decisionMilestone;
-	
-	@FindBy(how = How.ID, using = "newCredRequest")
+
+	@FindBy(how = How.XPATH, using = "//span[contains(.,'New Credit Request')]")
 	private WebElement newCreditRequestLink;
 
 	@FindBy(how = How.XPATH, using = ".//*[@name='selectAllworkflowmilestone']")
@@ -153,6 +153,9 @@ public class MyRequests {
 
 	@FindBy(how = How.XPATH, using = "//span[contains(.,'Automation Engineer QUEUE')]")
 	private WebElement roleQueue;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(.,'My Requests')]")
+	private WebElement myRequests;
 
 	private String dashboardRows = "//*[@id='data_content']/div/table/tbody/tr";
 	private String reqOnDashboard = "//*[@id='data_content']/div/table/tbody/tr[1]";
@@ -287,9 +290,9 @@ public class MyRequests {
 		Util.waitForAJAX(driver);
 		return new AdminPage(driver);
 	}
-	
+
 	public NewCreditRequest newCreditRequestLink() {
-		Util.waitForElement(driver, newCreditRequestLink, 5);
+		Util.waitForElement(driver, newCreditRequestLink, 15);
 		newCreditRequestLink.click();
 		Util.waitForAJAX(driver);
 		return new NewCreditRequest(driver);
@@ -549,7 +552,7 @@ public class MyRequests {
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForElementPresent(driver, By.xpath(reqOnDashboard2), 20);
-		
+
 		List<WebElement> reqListOnDashboard = driver.findElements(By
 				.xpath(reqOnDashboard2));
 		for (int i = 1; i < reqListOnDashboard.size(); i++) {
@@ -564,14 +567,14 @@ public class MyRequests {
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForElementPresent(driver, By.xpath(facOnDashboard), 20);
-		
+
 		List<WebElement> reqListOnDashboard = driver.findElements(By
 				.xpath(facOnDashboard));
 		for (int i = 1; i < reqListOnDashboard.size(); i++) {
 			System.out.println("Count  =  " + reqListOnDashboard.size());
 			reqListOnDashboard.get(1).click();
 			Util.waitForLoaderToFinish(driver);
-			
+
 		}
 		return new Facility360Details(driver);
 	}
@@ -666,5 +669,11 @@ public class MyRequests {
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 		return new RoleQueue(driver);
+	}
+
+	public void clickMyRequests() {
+		Util.waitForElement(driver, myRequests, 10);
+		myRequests.click();
+		Util.waitForAJAX(driver);
 	}
 }

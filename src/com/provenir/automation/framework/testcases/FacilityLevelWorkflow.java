@@ -183,6 +183,7 @@ public class FacilityLevelWorkflow extends TestCaseExecutor {
 	@Test(priority = 10)
 	public void test11_goToHomePage() {
 		adminPage = myRequests.clickHomeLink();
+		myRequests.clickMyRequests();
 	}
 
 	@Test(priority = 11)
@@ -288,8 +289,7 @@ public class FacilityLevelWorkflow extends TestCaseExecutor {
 
 	@Test(priority = 25)
 	public void test26_triggerFacilityWorkflow() {
-		// facility360.triggerWorkflow();
-		// facility360.clickConfirmBtnOnConfirmationPopup();
+		
 		facility360.verifyWorkflowTriggeredOrNot();
 	}
 
@@ -328,7 +328,6 @@ public class FacilityLevelWorkflow extends TestCaseExecutor {
 		myRequests = facility360.clickHome();
 		searchHelper = myRequests.searchExistingRequest1();
 		credit360 = searchHelper.clickCreditSummary();
-		// credit360.clickDeleteOnFacilityDetails();
 	}
 
 	@Test(priority = 31)
