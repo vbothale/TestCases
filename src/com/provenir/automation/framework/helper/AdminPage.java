@@ -3,6 +3,7 @@ package com.provenir.automation.framework.helper;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -27,7 +28,7 @@ public class AdminPage {
 	@FindBy(how = How.ID, using = "PGADMIN")
 	private WebElement adminLink;
 
-	@FindBy(how = How.XPATH, using = "//span[contains(.,'Security Settings')]")
+	@FindBy(how = How.XPATH, using = "//*[@id='left']/div/div/ul/li[18]/a/span")
 	private WebElement securitySettings;
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='roleSec']/div[2]/span/input")
@@ -50,6 +51,9 @@ public class AdminPage {
 
 	@FindBy(how = How.XPATH, using = "//a[contains(@title,'Save')]")
 	private WebElement saveWorkflow;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='valiadtionOther']/h2/a[2]")
+	private WebElement crossBtn;
 
 	@FindBy(how = How.ID, using = "nameError")
 	private WebElement errMsgOnManageWorkflow;
@@ -121,10 +125,6 @@ public class AdminPage {
 	@FindBy(how = How.XPATH, using = ".//*[@id='myGrid']/div/div[5]/div/div/div[2]")
 	private WebElement savedWorkflowType;
 
-	// @FindBy(how = How.XPATH, using =
-	// ".//*[@id='myGrid']/div/div[5]/div/div/div[4]/a")
-	// private WebElement actionMenuOnSearchedWorkflow;
-
 	@FindBy(how = How.XPATH, using = ".//*[@id='myGrid']/div/div[5]/div/div[1]/div[4]/a")
 	private WebElement actionMenuOnSearchedWorkflow;
 
@@ -146,8 +146,27 @@ public class AdminPage {
 	@FindBy(how = How.ID, using = "backBC")
 	private WebElement backBtnOnWorkflow;
 
+	@FindBy(how = How.XPATH, using = ".//*[@id='securityData']/table/thead/th[2]/input")
+	private WebElement parentEditBtn;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='securityData']/table/tbody/tr[11]/td[5]/input[2]")
+	private WebElement createCust;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='securityData']/table/tbody/tr[11]/td[5]/div[3]")
+	private WebElement DEPopup;
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='securityData']/table/tbody/tr[18]/td/div/a[2]")
+	private WebElement saveOnSecuritySettings;
+
+	@FindBy(how = How.XPATH, using = "//button[contains(.,'Ok')]")
+	private WebElement okOnSecurityPopup;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='securityData']/table/thead/th[5]")
+	private WebElement rule;
+
 	private String roleOnSecurity = ".//*[@id='roleSec']/div[2]/span/input";
 	private String workflowType = "processTypeCd";
+	private String s = ".//*[@id='securityData']/table/tbody/tr[11]/td[5]/div[3]";
 
 	public LoginPage clickAdminLink() {
 		Util.waitForAJAX(driver);
@@ -183,22 +202,17 @@ public class AdminPage {
 		return new ManageWorkflow(driver);
 	}
 
-	public void clickSecuritySettings() {
-		Util.waitForElement(driver, securitySettings, 10);
+	public void clickSecuritySettings() throws InterruptedException {
+		Thread.sleep(2000);
+		Util.waitForAJAX(driver);
+		// Util.scrollBottom(driver);
+		Util.waitForElementPresent(driver,
+				By.xpath("//*[@id='left']/div/div/ul/li[18]/a/span"), 10);
+		// Util.waitForElement(driver, securitySettings, 10);
 		securitySettings.click();
 		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
 	}
-
-	// public void selectRoleFromSecurity(String option) {
-	// Util.waitForAJAX(driver);
-	// Util.enableAllDropdowns(driver);
-	// Util.waitForElementPresent(driver,
-	// By.xpath(".//*[@id='roleSec']/div[2]/span/input"), 10);
-	//
-	// option = "Auto Engineer";
-	// Util.selectOptionFromDropDown(driver, getRoles(), option);
-	// Util.waitForAJAX(driver);
-	// }
 
 	public void selectCustomer360FromCategoryOnSecurity(String option) {
 		Util.waitForAJAX(driver);
@@ -210,6 +224,21 @@ public class AdminPage {
 		option = "Customer360";
 		Util.selectItemFromList(driver, category, option);
 		Util.waitForAJAX(driver);
+	}
+
+	public void selectCategoryFromSecurity() {
+		Util.enableAllDropdowns(driver);
+		driver.findElement(
+				By.xpath(".//*[@id='securityContainer']/div[2]/div[2]/span/input"))
+				.sendKeys("dash");
+		Util.waitForElementPresent(
+				driver,
+				By.xpath("//*[contains(@id,'ui-id-') and (@class='ui-corner-all')]"),
+				5);
+		driver.findElement(By.xpath("//a[contains(.,'DashBoardLinks')]"))
+				.click();
+		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
 	}
 
 	public String getRoles() {
@@ -232,6 +261,21 @@ public class AdminPage {
 		Util.waitForAJAX(driver);
 	}
 
+	public void selectGroupFromSecurity() {
+		Util.waitForAJAX(driver);
+		Util.enableAllDropdowns(driver);
+		driver.findElement(By.xpath(".//*[@id='groupSec']/div[2]/span/input"))
+				.sendKeys("insti");
+		Util.waitForElementPresent(
+				driver,
+				By.xpath("//*[contains(@id,'ui-id-') and (@class='ui-corner-all')]"),
+				5);
+		driver.findElement(
+				By.xpath("//*[contains(@id,'ui-id-') and (@class='ui-corner-all')]"))
+				.click();
+		Util.waitForAJAX(driver);
+	}
+
 	public void verifyWorkflowPageTitle() {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, verifyWorkflowPage, 10);
@@ -245,6 +289,11 @@ public class AdminPage {
 			return true;
 		} else
 			return false;
+	}
+
+	public void clickCrossOnManageWorkflow() {
+		Util.waitForElement(driver, crossBtn, 10);
+		crossBtn.click();
 	}
 
 	public void clickAddBtnOnManageWorkflow() {
@@ -631,10 +680,6 @@ public class AdminPage {
 				ele1.click();
 			}
 		}
-
-		// actions.moveToElement(ele).click().build().perform();
-		// Util.waitForElement(driver, editWorkflow, 5);
-		// editWorkflow.click();
 		Util.waitForAJAX(driver);
 	}
 
@@ -751,4 +796,53 @@ public class AdminPage {
 		workflowSummaryTitle.click();
 	}
 
+	public void clickEditPermissionOnSecurity() {
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, parentEditBtn, 10);
+		parentEditBtn.click();
+	}
+
+	public void clickCreateCustomerOnSecurityPage() {
+		Util.waitForElement(driver, createCust, 10);
+		createCust.click();
+		Util.waitForAJAX(driver);
+	}
+
+	public void selectRule() throws InterruptedException {
+
+		Thread.sleep(3000);
+		List<WebElement> upperLinks = driver
+				.findElements(By
+						.xpath("//*[@id='securityData']/table/tbody/tr[11]/td[5]/div[3]/ul/li"));
+
+		List<WebElement> ele1 = driver
+				.findElements(By
+						.xpath("//*[@id='securityData']//*[@class='RepoFolderTreeClass']"));
+		WebElement ele = ele1.get(0);
+		ele.findElement(By.xpath("//*[text()='Rules']")).click();
+		Thread.sleep(1000);
+		WebElement e = driver.findElement(By
+				.xpath("//div[@class='RepoFolderTreeClass']"));
+		e.sendKeys(Keys.PAGE_DOWN);
+		ele.findElement(
+				By.xpath("//*[text()='Rules']/..//*[text()='RuleBasedSecurity']"))
+				.click();
+		Thread.sleep(1000);
+		ele.findElement(
+				By.xpath("//*[text()='Rules']/..//*[text()='RuleBasedSecurity']/..//*[text()='SimpleReadPermission']"))
+				.click();
+	}
+
+	public LogoutPage clickSaveBtnOnSecuritySettings()
+			throws InterruptedException {
+		rule.click();
+		
+		List<WebElement> lst = driver.findElements(By.className("ui-button-text"));
+		WebElement e = lst.get(1);
+		e.findElement(By.xpath("//*[text()='Save']")).click();
+		Util.waitForAJAX(driver);
+		Thread.sleep(1000);
+		okOnSecurityPopup.click();
+		return new LogoutPage(driver);
+	}
 }

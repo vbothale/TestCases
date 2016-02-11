@@ -4,23 +4,23 @@
 
 	<parameter name="environment"  value="src/com/provenir/automation/framework/config/Env.properties"/>
 
-<!--
+
 	<test name="Firefox Test">
 	<parameter name="browser" value="Firefox" />
 		<classes>
-			<class name="com.provenir.automation.framework.testcases.FilteredQueues" />
+			<class name="com.provenir.automation.framework.testcases.RuleBasedSecurity" />
 		</classes>
 	</test>
 
 
-
+<!--
 	<test name="IE Test">
 	<parameter name="browser" value="InternetExplorer" />
 		<classes>
 			<class name="com.provenir.automation.framework.testcases.FacilityLevelWorkflow" />
 		</classes>
 	</test>
--->
+
 
 	<test name="Chrome Test">
 	<parameter name="browser" value="Chrome" />
@@ -28,6 +28,6 @@
 			<class name="com.provenir.automation.framework.testcases.FacilityLevelWorkflow" />
 		</classes>
 	</test>
-
+-->
 	
 </suite>

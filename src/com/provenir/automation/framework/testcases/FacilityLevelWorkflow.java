@@ -91,6 +91,7 @@ public class FacilityLevelWorkflow extends TestCaseExecutor {
 		adminPage.clickAddBtnOnWorkflowSummary();
 		adminPage.verifyWorkflowPageTitle();
 		adminPage.verifyMandatoryDetailsOnManageWorkflow();
+		adminPage.clickCrossOnManageWorkflow();
 		adminPage.clickBackBtnOnWorkflow();
 	}
 	
@@ -289,7 +290,6 @@ public class FacilityLevelWorkflow extends TestCaseExecutor {
 
 	@Test(priority = 25)
 	public void test26_triggerFacilityWorkflow() {
-		
 		facility360.verifyWorkflowTriggeredOrNot();
 	}
 

@@ -157,6 +157,9 @@ public class MyRequests {
 	@FindBy(how = How.XPATH, using = "//span[contains(.,'My Requests')]")
 	private WebElement myRequests;
 
+	@FindBy(how = How.XPATH, using = "//span[contains(.,'Create Customer')]")
+	private WebElement createCustomer;
+
 	private String dashboardRows = "//*[@id='data_content']/div/table/tbody/tr";
 	private String reqOnDashboard = "//*[@id='data_content']/div/table/tbody/tr[1]";
 	private String reqOnDashboard1 = "//*[@id='data_content']/div/table/tbody/tr";
@@ -675,5 +678,20 @@ public class MyRequests {
 		Util.waitForElement(driver, myRequests, 10);
 		myRequests.click();
 		Util.waitForAJAX(driver);
+	}
+
+	public void clickCreateCustomer() {
+		Util.scrollDown(driver);
+		Util.waitForElement(driver, createCustomer, 10);
+		createCustomer.click();
+		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
+	}
+
+	public boolean isCreateCustomerDisplayed() {
+		if (createCustomer.isDisplayed())
+			return false;
+		else
+			return true;
 	}
 }
