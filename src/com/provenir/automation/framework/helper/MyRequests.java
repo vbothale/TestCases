@@ -687,11 +687,16 @@ public class MyRequests {
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 	}
+	
+	// to check element is not present in the page
 
 	public boolean isCreateCustomerDisplayed() {
-		if (createCustomer.isDisplayed())
-			return false;
-		else
+		List<WebElement> lst = driver.findElements(By
+				.xpath("//span[contains(.,'Create Customer')]"));
+		if (lst.isEmpty()) {
+			System.out.println("element does not exist");
 			return true;
+		} else
+			return false;
 	}
 }
