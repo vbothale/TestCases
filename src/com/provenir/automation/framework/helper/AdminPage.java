@@ -841,6 +841,7 @@ public class AdminPage {
 		WebElement e = lst.get(1);
 		e.findElement(By.xpath("//*[text()='Save']")).click();
 		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
 		Thread.sleep(1000);
 		okOnSecurityPopup.click();
 		return new LogoutPage(driver);

@@ -78,6 +78,6 @@ public class RuleBasedSecurity extends TestCaseExecutor {
 		loginPage.clickHere();
 		loginPage.login3(_hashLogins);
 		myRequests = loginPage.clickMyRequetsLink();
-		Assert.assertTrue(myRequests.isCreateCustomerDisplayed());
+		myRequests.isCreateCustomerDisplayed();
 	}
 }
