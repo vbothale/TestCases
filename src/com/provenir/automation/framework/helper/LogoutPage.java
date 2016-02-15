@@ -25,8 +25,6 @@ public class LogoutPage {
 	@FindBy(how = How.XPATH, using = "//a[@id='logout1']")
 	private WebElement logout;
 
-
-
 	public LoginPage logoutCL() {
 		Actions action = new Actions(driver);
 		action.moveToElement(logoutArrow);

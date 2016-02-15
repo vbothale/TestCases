@@ -687,7 +687,7 @@ public class MyRequests {
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 	}
-	
+
 	// to check element is not present in the page
 
 	public boolean isCreateCustomerDisplayed() {
@@ -698,5 +698,12 @@ public class MyRequests {
 			return true;
 		} else
 			return false;
+	}
+
+	public LogoutPage clickMyRequetsLink() {
+		Util.waitForElement(driver, myRequests, 10);
+		myRequests.click();
+		Util.waitForAJAX(driver);
+		return new LogoutPage(driver);
 	}
 }

@@ -164,6 +164,12 @@ public class AdminPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='securityData']/table/thead/th[5]")
 	private WebElement rule;
 
+	@FindBy(how = How.XPATH, using = "//*[@id='securityData']/table/tbody/tr[2]/td/table/tbody/tr[1]/td[5]/input[2]")
+	private WebElement projectedClosedDate;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='securityData']/table/tbody/tr[5]/td[5]/input[2]")
+	private WebElement bookingDetails;
+
 	private String roleOnSecurity = ".//*[@id='roleSec']/div[2]/span/input";
 	private String workflowType = "processTypeCd";
 	private String s = ".//*[@id='securityData']/table/tbody/tr[11]/td[5]/div[3]";
@@ -241,6 +247,20 @@ public class AdminPage {
 		Util.waitForLoaderToFinish(driver);
 	}
 
+	public void selectCredit360AsCategoryFromSecurity() {
+		Util.enableAllDropdowns(driver);
+		driver.findElement(
+				By.xpath(".//*[@id='securityContainer']/div[2]/div[2]/span/input"))
+				.sendKeys("credit");
+		Util.waitForElementPresent(
+				driver,
+				By.xpath("//*[contains(@id,'ui-id-') and (@class='ui-corner-all')]"),
+				5);
+		driver.findElement(By.xpath("//a[contains(.,'Credit 360')]")).click();
+		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
+	}
+
 	public String getRoles() {
 		WebElement ele = driver.findElement(By.name("securityCd"));
 		String s = ele.getAttribute("name");
@@ -266,6 +286,21 @@ public class AdminPage {
 		Util.enableAllDropdowns(driver);
 		driver.findElement(By.xpath(".//*[@id='groupSec']/div[2]/span/input"))
 				.sendKeys("insti");
+		Util.waitForElementPresent(
+				driver,
+				By.xpath("//*[contains(@id,'ui-id-') and (@class='ui-corner-all')]"),
+				5);
+		driver.findElement(
+				By.xpath("//*[contains(@id,'ui-id-') and (@class='ui-corner-all')]"))
+				.click();
+		Util.waitForAJAX(driver);
+	}
+
+	public void selectRuleBasedGroupFromSecurity() {
+		Util.waitForAJAX(driver);
+		Util.enableAllDropdowns(driver);
+		driver.findElement(By.xpath(".//*[@id='groupSec']/div[2]/span/input"))
+				.sendKeys("rule");
 		Util.waitForElementPresent(
 				driver,
 				By.xpath("//*[contains(@id,'ui-id-') and (@class='ui-corner-all')]"),
@@ -808,6 +843,19 @@ public class AdminPage {
 		Util.waitForAJAX(driver);
 	}
 
+	public void clickProjectedClosedDate() {
+		Util.waitForElement(driver, projectedClosedDate, 10);
+		projectedClosedDate.click();
+		Util.waitForAJAX(driver);
+	}
+
+	public void clickBookingDetails() throws InterruptedException {
+		Thread.sleep(2000);
+		Util.waitForElement(driver, bookingDetails, 10);
+		bookingDetails.click();
+		Util.waitForAJAX(driver);
+	}
+
 	public void selectRule() throws InterruptedException {
 
 		Thread.sleep(3000);
@@ -833,14 +881,59 @@ public class AdminPage {
 				.click();
 	}
 
+	public void select5MRule() throws InterruptedException {
+		Thread.sleep(3000);
+		List<WebElement> upperLinks = driver
+				.findElements(By
+						.xpath("//*[@id='securityData']/table/tbody/tr[2]/td/table/tbody/tr[1]/td[5]/input[2]"));
+		List<WebElement> ele1 = driver
+				.findElements(By
+						.xpath("//*[@id='securityData']//*[@class='RepoFolderTreeClass']"));
+		WebElement ele = ele1.get(0);
+		ele.findElement(By.xpath("//*[text()='Rules']")).click();
+		Thread.sleep(1000);
+		WebElement e = driver.findElement(By
+				.xpath("//div[@class='RepoFolderTreeClass']"));
+		e.sendKeys(Keys.PAGE_DOWN);
+		ele.findElement(
+				By.xpath("//*[text()='Rules']/..//*[text()='RuleBasedSecurity']"))
+				.click();
+		Thread.sleep(1000);
+		ele.findElement(
+				By.xpath("//*[text()='Rules']/..//*[text()='RuleBasedSecurity']/..//*[text()='Credit360_ProposedAmtGrt5M_RlCdNotEqlCrdOfcr_Read_Edit']"))
+				.click();
+	}
+
+	public void select5MRuleForBookingDetails() throws InterruptedException {
+		Thread.sleep(3000);
+		List<WebElement> ele1 = driver
+				.findElements(By
+						.xpath("//*[@id='securityData']//*[@class='RepoFolderTreeClass']"));
+		WebElement ele = ele1.get(0);
+		ele.findElement(By.xpath("//*[text()='Rules']")).click();
+		Thread.sleep(1000);
+		WebElement e = driver.findElement(By
+				.xpath("//div[@class='RepoFolderTreeClass']"));
+		e.sendKeys(Keys.PAGE_DOWN);
+		ele.findElement(
+				By.xpath("//*[text()='Rules']/..//*[text()='RuleBasedSecurity']"))
+				.click();
+		Thread.sleep(1000);
+		e.sendKeys(Keys.PAGE_DOWN);
+		ele.findElement(
+				By.xpath("//*[text()='Rules']/..//*[text()='RuleBasedSecurity']/..//*[text()='Credit360_ProposedAmtGrt5M_Hide_Read']"))
+				.click();
+	}
+
 	public LogoutPage clickSaveBtnOnSecuritySettings()
 			throws InterruptedException {
 		rule.click();
-		
-		List<WebElement> lst = driver.findElements(By.className("ui-button-text"));
+		List<WebElement> lst = driver.findElements(By
+				.className("ui-button-text"));
 		WebElement e = lst.get(1);
 		e.findElement(By.xpath("//*[text()='Save']")).click();
 		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
 		Util.waitForLoaderToFinish(driver);
 		Thread.sleep(1000);
 		okOnSecurityPopup.click();
