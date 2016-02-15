@@ -1,5 +1,7 @@
 package com.provenir.automation.framework.helper;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -268,5 +270,17 @@ public class Credit360Helper {
 		} else
 			return false;
 	}
+	
+	// to check element is not present in the page
+
+		public boolean isBookingSummaryDisplayed() {
+			List<WebElement> lst = driver.findElements(By
+					.xpath("//a[@title='Booking Summary']"));
+			if (lst.isEmpty()) {
+				System.out.println("element does not exist");
+				return true;
+			} else
+				return false;
+		}
 
 }

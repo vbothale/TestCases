@@ -59,10 +59,20 @@ public class AdvanceSearchHelper {
 		Util.waitForLoaderToFinish(driver);
 	}
 
+	public void searchRequestAndSubmit() {
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, creditName, 20);
+		creditName.sendKeys("Credit 12345");
+		Util.waitForElement(driver, submitBtn, 10);
+		submitBtn.click();
+		Util.waitForLoaderToFinish(driver);
+	}
+
 	public Credit360Helper clickReqOnGrid() {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, reqOnGrid, 30);
 		reqOnGrid.click();
+		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 		return new Credit360Helper(driver);
 	}
