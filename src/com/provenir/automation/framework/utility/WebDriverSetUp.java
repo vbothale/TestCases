@@ -37,9 +37,6 @@ public class WebDriverSetUp {
 					.usingDriverExecutable(file).usingAnyFreePort().build();
 			IEservice.start();
 
-			// System.setProperty("webdriver.ie.driver",
-			// file.getAbsolutePath());
-
 			capabilities = DesiredCapabilities.internetExplorer();
 			capabilities
 					.setCapability(
@@ -89,8 +86,10 @@ public class WebDriverSetUp {
 		ieCapabilities.setCapability("nativeEvents", false);
 		ieCapabilities.setCapability("unexpectedAlertBehaviour", "accept");
 		ieCapabilities.setCapability("ignoreProtectedModeSettings", true);
-//		ieCapabilities.setCapability("disable-popup-blocking", false);
+		ieCapabilities.setCapability("disable-popup-blocking", false);
 		ieCapabilities.setCapability("enablePersistentHover", true);
+		ieCapabilities.setCapability("enableScrollIntoView", true);
+		ieCapabilities.setJavascriptEnabled(true);
 
 		driver = new InternetExplorerDriver(ieCapabilities);
 	}

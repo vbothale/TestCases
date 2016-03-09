@@ -64,7 +64,7 @@ public class FacilityLevelWorkflow extends TestCaseExecutor {
 	}
 
 	@Test(priority = 0)
-	public void landingPage() {
+	public void landingPage() throws InterruptedException {
 		log.info("Login to Prism and search customer");
 		reader.readValue(_hashLogins, "resources/Login.json");
 		loginPage.login(_hashLogins);

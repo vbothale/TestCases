@@ -4,14 +4,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -36,13 +40,8 @@ public class TestCaseExecutor {
 		try {
 			// Initialize Firefox
 			firefox = WebDriverSetUp.getDriver("Firefox");
-			// WebDriverSetUp.setFFPrefernece();
 
 			firefox.get(applicationUrl);
-
-			// if (firefox instanceof FirefoxDriver) {
-			// firefox.navigate().to("javascript:document.getElementById('overridelink').click()");
-			// }
 
 			firefox.manage().window().maximize();
 
@@ -50,27 +49,24 @@ public class TestCaseExecutor {
 			chrome = WebDriverSetUp.getDriver("Chrome");
 
 			chrome.get(applicationUrl);
-//			WebDriverSetUp.ChromeCapabilities();
-
-			// if (chrome instanceof ChromeDriver) {
-			// chrome.navigate().to("javascript:document.getElementById('overridelink').click()");
-			// }
-
 			chrome.manage().window().maximize();
 
 			// Initialize IE
 			internetExplorer = WebDriverSetUp.getDriver("InternetExplorer");
+//			WebDriverSetUp.setIEcapabilities();
 
 			internetExplorer.get(applicationUrl);
-			WebDriverSetUp.setIEcapabilities();
 
 			if (internetExplorer instanceof InternetExplorerDriver) {
+
 				internetExplorer
 						.navigate()
 						.to("javascript:document.getElementById('overridelink').click()");
 			}
 
 			internetExplorer.manage().window().maximize();
+//			setIEProperties(internetExplorer);
+
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}
@@ -88,8 +84,8 @@ public class TestCaseExecutor {
 
 	@AfterSuite
 	public static void tearDown() {
-		// firefox.close();
-		// firefox.quit();
+		firefox.close();
+		firefox.quit();
 		chrome.close();
 		chrome.quit();
 		internetExplorer.close();
