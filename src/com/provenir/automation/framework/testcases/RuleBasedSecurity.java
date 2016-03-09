@@ -52,7 +52,7 @@ public class RuleBasedSecurity extends TestCaseExecutor {
 	}
 
 	@Test(priority = 0)
-	public void landingPage() {
+	public void landingPage() throws InterruptedException {
 		log.info("Login to Prism and search customer");
 		reader.readValue(_hashLogins, "resources/Login.json");
 		loginPage.login(_hashLogins);
@@ -88,7 +88,7 @@ public class RuleBasedSecurity extends TestCaseExecutor {
 	}
 
 	@Test(priority = 5)
-	public void test5_loginWithOtherUser() {
+	public void test5_loginWithOtherUser() throws InterruptedException {
 		logout = myRequests.clickMyRequetsLink();
 		loginPage = logout.logoutCL();
 		loginPage.clickHere();

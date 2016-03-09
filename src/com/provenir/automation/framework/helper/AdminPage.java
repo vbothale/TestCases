@@ -25,7 +25,7 @@ public class AdminPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(how = How.ID, using = "PGADMIN")
+	@FindBy(how = How.XPATH, using = "//a[@title='Admin']")
 	private WebElement adminLink;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='left']/div/div/ul/li[18]/a/span")
@@ -174,8 +174,9 @@ public class AdminPage {
 	private String workflowType = "processTypeCd";
 	private String s = ".//*[@id='securityData']/table/tbody/tr[11]/td[5]/div[3]";
 
-	public LoginPage clickAdminLink() {
-		Util.waitForAJAX(driver);
+	public LoginPage clickAdminLink() throws InterruptedException {
+		Thread.sleep(8000);
+//		Util.waitForElementToPresent(driver, adminLink, 15);
 		Util.waitForElement(driver, adminLink, 15);
 		adminLink.click();
 		Util.waitForAJAX(driver);
@@ -211,10 +212,8 @@ public class AdminPage {
 	public void clickSecuritySettings() throws InterruptedException {
 		Thread.sleep(2000);
 		Util.waitForAJAX(driver);
-		// Util.scrollBottom(driver);
 		Util.waitForElementPresent(driver,
 				By.xpath("//*[@id='left']/div/div/ul/li[18]/a/span"), 10);
-		// Util.waitForElement(driver, securitySettings, 10);
 		securitySettings.click();
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);

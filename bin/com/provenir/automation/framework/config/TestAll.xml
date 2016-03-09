@@ -12,22 +12,21 @@
 		</classes>
 	</test>
 
-
 <!--
 	<test name="IE Test">
 	<parameter name="browser" value="InternetExplorer" />
 		<classes>
-			<class name="com.provenir.automation.framework.testcases.FacilityLevelWorkflow" />
+			<class name="com.provenir.automation.framework.testcases.RuleBasedSecurity" />
 		</classes>
 	</test>
 
-
+<!--
 	<test name="Chrome Test">
 	<parameter name="browser" value="Chrome" />
 		<classes>
-			<class name="com.provenir.automation.framework.testcases.FacilityLevelWorkflow" />
+			<class name="com.provenir.automation.framework.testcases.RuleBasedSecurity" />
 		</classes>
 	</test>
--->
+-->	
 	
 </suite>

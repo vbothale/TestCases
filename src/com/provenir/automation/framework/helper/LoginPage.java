@@ -28,7 +28,7 @@ public class LoginPage {
 
 	@FindBy(how = How.XPATH, using = "//button[contains(.,'Login')]")
 	private WebElement loginBtn;
-	
+
 	@FindBy(how = How.XPATH, using = "//a[contains(.,'click here')]")
 	private WebElement clickHereLink;
 
@@ -42,6 +42,7 @@ public class LoginPage {
 			username.sendKeys(propertiesMap.get("username"));
 			password.sendKeys(propertiesMap.get("password"));
 			loginBtn.click();
+			Thread.sleep(9000);
 			Util.waitForAJAX(driver);
 			Util.waitForLoaderToFinish(driver);
 			Util.waitForAJAX(driver);
@@ -77,7 +78,7 @@ public class LoginPage {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void login3(HashMap<String, Map<String, String>> _hashLogins) {
 		try {
 			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashLogins
@@ -97,7 +98,7 @@ public class LoginPage {
 		myRequests.click();
 		return new MyRequests(driver);
 	}
-	
+
 	public void clickHere() {
 		clickHereLink.click();
 		Util.waitForAJAX(driver);
