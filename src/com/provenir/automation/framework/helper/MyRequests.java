@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -82,10 +83,10 @@ public class MyRequests {
 	@FindBy(how = How.XPATH, using = "//label[contains(.,'Decision')]")
 	private WebElement decisionText;
 
-	@FindBy(how = How.XPATH, using = "//label[contains(.,'Date From')]")
+	@FindBy(how = How.XPATH, using = "//label[contains(.,'From')]")
 	private WebElement dateFromText;
 
-	@FindBy(how = How.XPATH, using = "//label[contains(.,'Date To')]")
+	@FindBy(how = How.XPATH, using = "//label[contains(.,'To')]")
 	private WebElement dateToText;
 
 	@FindBy(how = How.ID, using = "saveFilterDetails")
@@ -296,7 +297,9 @@ public class MyRequests {
 
 	public NewCreditRequest newCreditRequestLink() {
 		Util.waitForElement(driver, newCreditRequestLink, 15);
-		newCreditRequestLink.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", newCreditRequestLink);
+
 		Util.waitForAJAX(driver);
 		return new NewCreditRequest(driver);
 	}
@@ -376,7 +379,9 @@ public class MyRequests {
 	public void expandRequest() {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, expand, 10);
-		expand.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", expand);
+
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForLoaderToFinish(driver);
 	}
@@ -384,7 +389,9 @@ public class MyRequests {
 	public Facility360Details clickOnAddedWorkflow() {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, facWorkFlow, 15);
-		facWorkFlow.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", facWorkFlow);
+
 		Util.waitForLoaderToFinish(driver);
 		return new Facility360Details(driver);
 	}
@@ -412,8 +419,8 @@ public class MyRequests {
 		String s4 = dateToText.getText().trim();
 		if (s1.equalsIgnoreCase("Workflow Milestone")
 				&& s2.equalsIgnoreCase("Decision")
-				&& s3.equalsIgnoreCase("Date From")
-				&& s4.equalsIgnoreCase("Date To")) {
+				&& s3.equalsIgnoreCase("From")
+				&& s4.equalsIgnoreCase("To")) {
 			return true;
 		} else
 			return false;
@@ -599,8 +606,10 @@ public class MyRequests {
 
 	public void expandWFlowByExpanding() {
 		Util.waitForElement(driver, wFlowExpandSign, 15);
-		wFlowExpandSign.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", wFlowExpandSign);
 		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
 	}
 
 	public boolean verifyCollapseAllOption() {
@@ -612,8 +621,9 @@ public class MyRequests {
 	}
 
 	public void clickCollapseOption() {
-		Util.waitForElement(driver, collapseSign, 5);
-		collapseSign.click();
+		Util.waitForElement(driver, collapseSign, 10);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", collapseSign);
 		Util.waitForAJAX(driver);
 	}
 
@@ -634,6 +644,7 @@ public class MyRequests {
 	}
 
 	public boolean verifyTaskListDisplayed() {
+		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, taskDesc, 15);
 		String str = taskDesc.getText().trim();
 		if (str.equalsIgnoreCase("Task Description")) {
@@ -644,7 +655,8 @@ public class MyRequests {
 
 	public MyTeamTasks clickMyTeamTasksLink() {
 		Util.waitForElement(driver, myTeamTasks, 10);
-		myTeamTasks.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", myTeamTasks);
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 		return new MyTeamTasks(driver);
@@ -652,7 +664,8 @@ public class MyRequests {
 
 	public MyTasks clickMyTasksLink() {
 		Util.waitForElement(driver, myTasks, 10);
-		myTasks.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", myTasks);
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 		return new MyTasks(driver);
@@ -660,7 +673,8 @@ public class MyRequests {
 
 	public GroupQueue clickGroupQueue() {
 		Util.waitForElement(driver, grpQueue, 10);
-		grpQueue.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", grpQueue);
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 		return new GroupQueue(driver);
@@ -668,7 +682,8 @@ public class MyRequests {
 
 	public RoleQueue clickRoleQueue() {
 		Util.waitForElement(driver, roleQueue, 10);
-		roleQueue.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", roleQueue);
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 		return new RoleQueue(driver);

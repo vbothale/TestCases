@@ -32,10 +32,10 @@ public class RoleQueue {
 	@FindBy(how = How.XPATH, using = "//label[contains(.,'Category:')]")
 	private WebElement categoryTitle;
 
-	@FindBy(how = How.XPATH, using = "//label[contains(.,'From Date:')]")
+	@FindBy(how = How.XPATH, using = "//label[contains(.,'From')]")
 	private WebElement fromDateTitle;
 
-	@FindBy(how = How.XPATH, using = "//label[contains(.,'To Date:')]")
+	@FindBy(how = How.XPATH, using = "//label[contains(.,'To')]")
 	private WebElement toDateTitle;
 
 	@FindBy(how = How.ID, using = "filterRoleGrpQueue")
@@ -79,8 +79,8 @@ public class RoleQueue {
 		if (s1.equalsIgnoreCase("Entity Type:")
 				&& s2.equalsIgnoreCase("Status:")
 				&& s3.equalsIgnoreCase("Category:")
-				&& s4.equalsIgnoreCase("From Date:")
-				&& s5.equalsIgnoreCase("To Date:")) {
+				&& s4.equalsIgnoreCase("From")
+				&& s5.equalsIgnoreCase("To")) {
 			return true;
 		} else
 			return false;

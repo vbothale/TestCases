@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -348,10 +349,6 @@ public class Facility360Details {
 	@FindBy(how = How.ID, using = "taskMangmntr")
 	private WebElement taskMgmt;
 
-	// @FindBy(how = How.XPATH, using =
-	// ".//*[@id='credLine360cSliderMenu']/div[2]/div/ul/li[25]/a[@id='taskMangmnt']")
-	// private WebElement taskMgmt;
-
 	@FindBy(how = How.XPATH, using = ".//*[@id='taskMangmntr']/div/a")
 	private WebElement taskMgmtTitle;
 
@@ -378,19 +375,19 @@ public class Facility360Details {
 
 	@FindBy(how = How.ID, using = "backBC")
 	private WebElement backBtn;
-	
+
 	@FindBy(how = How.XPATH, using = ".//*[@id='actInfo']")
 	private WebElement header;
-	
+
 	@FindBy(how = How.XPATH, using = ".//*[@id='actInfoDiv']/div[2]/div[2]/label[2]/a")
 	private WebElement reqNoOnHeader;
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='UPSERTCREDLNSUMMFORM']/div[3]/div[12]/div[13]/a")
 	private WebElement editOnFacSummary;
-	
+
 	@FindBy(how = How.XPATH, using = ".//*[@id='taskManagmntContainer']/div[1]/a")
 	private WebElement expandIconOnTM;
-	
+
 	@FindBy(how = How.XPATH, using = ".//*[@id='taskManagmntContainer']/div[2]/div/div/div[3]/div/div/div[2]/div/div[4]/span")
 	private WebElement taskDescOnTM;
 
@@ -1223,10 +1220,6 @@ public class Facility360Details {
 		sectionLabelOnComment.click();
 	}
 
-	// public int getCommentCount() {
-	// return commentCnt;
-	// }
-
 	@SuppressWarnings("unchecked")
 	public int verifyCommentCount() {
 		lstWebElements = driver.findElements(By
@@ -1236,19 +1229,6 @@ public class Facility360Details {
 		}
 		return commentCnt;
 	}
-
-	// public int getCountOfAddedComment(String value) {
-	// int cnt = 0;
-	//
-	// if (driver
-	// .findElement(
-	// By.xpath(".//*[@id='acc_info']/div[2]/div[2]/div/a/div/b/label"))
-	// .getText().contains(value)) {
-	// cnt++;
-	// }
-	//
-	// return cnt;
-	// }
 
 	public int getCountOfAddedComment(String value) {
 		String str = driver
@@ -1295,7 +1275,7 @@ public class Facility360Details {
 				element.click();
 			}
 		}
-		// backBreadCrumBtn.click();
+
 		Util.waitForAJAX(driver);
 		return new MyRequests(driver);
 	}
@@ -1496,41 +1476,19 @@ public class Facility360Details {
 
 	public void clickTaskManagement() {
 		Util.scrollBottom(driver);
-		Util.waitForElement(driver, taskMgmt, 30);
-		taskMgmt.click();
-		Util.waitForLoaderToFinish(driver);
-	}
-	
-	public void clickExpandIconOnTM() {
-		Util.waitForAJAX(driver);
-		Util.waitForElement(driver, expandIconOnTM, 20);
-		expandIconOnTM.click();
+		Util.waitForElement(driver, taskMgmt, 20);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", taskMgmt);
 		Util.waitForLoaderToFinish(driver);
 	}
 
-	// public void clickTaskManagement() {
-	// Util.waitForElementPresent(driver, By.xpath(leftHandNav), 30);
-	// element = null;
-	// List<WebElement> lstCustNamesFromGrid = driver.findElements(By
-	// .xpath(leftHandNav));
-	// // System.out.println("Count = " + lstCustNamesFromGrid.size());
-	// // lstCustNamesFromGrid.get(25).click();
-	//
-	// for (int i = 1; i <= lstCustNamesFromGrid.size(); i++) {
-	// element = driver.findElement(By
-	// .xpath(leftHandNav + "[" + i + "]/a"));
-	//
-	// System.out.println("Count = " + lstCustNamesFromGrid.size());
-	// // lstCustNamesFromGrid.get(25).click();
-	//
-	// Util.waitForElement(driver, element, 20);
-	// String value = "Task Management";
-	// String str = element.getText().trim();
-	// if (str.equalsIgnoreCase(value)) {
-	// element.click();
-	// }
-	// }
-	// }
+	public void clickExpandIconOnTM() {
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, expandIconOnTM, 20);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", expandIconOnTM);
+		Util.waitForLoaderToFinish(driver);
+	}
 
 	public boolean verifyTaskMgmtSectionLoaded() {
 		Util.waitForAJAX(driver);
@@ -1574,14 +1532,10 @@ public class Facility360Details {
 	}
 
 	public void triggerWorkflow() {
-		Util.waitForElementPresent(driver, By.xpath("//a[contains(.,'Action')]"), 20);
+		Util.waitForElementPresent(driver,
+				By.xpath("//a[contains(.,'Action')]"), 20);
 		actionColumnOnFacility360.click();
-//		actions.moveToElement(actionColumnOnFacility360).click().build()
-//				.perform();
-		actions.moveToElement(actionList).click().build()
-		.perform();
-//		Util.waitForElement(driver, actionList, 15);
-//		actionList.click();
+		actions.moveToElement(actionList).click().build().perform();
 		Util.waitForLoaderToFinish(driver);
 	}
 
@@ -1645,7 +1599,7 @@ public class Facility360Details {
 		editOnFacSummary.click();
 		Util.waitForLoaderToFinish(driver);
 	}
-	
+
 	public boolean verifyTaskDisplayedOrNot() {
 		Util.waitForAJAX(driver);
 		String s1 = taskDescOnTM.getText().trim();

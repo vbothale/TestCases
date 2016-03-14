@@ -1,5 +1,6 @@
 package com.provenir.automation.framework.helper;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -26,10 +27,11 @@ public class LogoutPage {
 	private WebElement logout;
 
 	public LoginPage logoutCL() {
-		Actions action = new Actions(driver);
-		action.moveToElement(logoutArrow);
-		action.click().build().perform();
-		logout.click();
+		Util.waitForElement(driver, logoutArrow, 5);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", logoutArrow);
+		js.executeScript("arguments[0].click();", logout);
+		
 		return new LoginPage(driver);
 	}
 

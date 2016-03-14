@@ -80,8 +80,6 @@ public class FilteredQueues extends TestCaseExecutor {
 	public void test4_verifyFiltersFunctionality() {
 		myRequests.selectWorkflowMilestone();
 		myRequests.selectDecisionMilestone();
-		// myRequests.enterFromDate();
-		// myRequests.enterToDate();
 		myRequests.clickFilterBtn();
 	}
 

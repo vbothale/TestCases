@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -393,6 +394,9 @@ public class Collateral360Helper {
 	@FindBy(how = How.ID, using = "Delete")
 	private WebElement DeleteLnk;
 
+	@FindBy(how = How.XPATH, using = ".//*[@class='breadcrumbText']")
+	private WebElement breadCrumText;
+
 	private WebElement element = null;
 	List<WebElement> GridElements = null;
 
@@ -406,6 +410,8 @@ public class Collateral360Helper {
 	private String Market = "marketId";
 	private String Country = ".//*[@id='collaterTypePage']/div[1]/div[2]/div[2]/select";
 	private String propertyTaxesCurrent = "propertyTaxesCurrent";
+	private String backToPage = "//div[contains(@class,'breadcrumbGrid')]/ul/li";
+	private String facName = "facilityName0";
 
 	public void selectCollType(String option) {
 		Util.enableAllDropdowns(driver);
@@ -429,8 +435,7 @@ public class Collateral360Helper {
 
 	public void clickCollateralLink() throws InterruptedException {
 		Util.waitForLoaderToFinish(driver);
-		// Thread.sleep(4000);
-		// Util.waitForElement(collateralLink, 20);
+		
 		collateralLink.click();
 		Util.scrollDown(driver);
 		Util.waitForLoaderToFinish(driver);
@@ -447,15 +452,10 @@ public class Collateral360Helper {
 	public void verifyCollateralTitle() throws InterruptedException {
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForLoaderToFinish(driver);
-		// Thread.sleep(3000);
+	
 		Util.waitForElement(driver, collateralTitle, 20);
 		String title = collateralTitle.getText().trim();
 		Assert.assertEquals("Basic Collateral Information", title);
-
-		// Boolean isFound = IsElementPresent(driver,
-		// By.xpath(".//*[@id='c360r']"));
-		// // Assert.assertEquals("Basic Collateral Information", title);
-		// Assert.assertTrue(isFound);
 
 	}
 
@@ -555,8 +555,8 @@ public class Collateral360Helper {
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 		option = "No";
-		// Util.selectOptionFromDropDown(driver, NewlyBuilt, option);
 		Util.selectItemFromList(driver, getNewlybuiltValue(), option);
+		Util.waitForAJAX(driver);
 	}
 
 	public void BusinessLine(String option) {
@@ -668,9 +668,30 @@ public class Collateral360Helper {
 
 	public Customer360Helper clickBackButton() {
 		Util.waitForAJAX(driver);
-		Util.waitForElement(driver, backBtn, 10);
-		backBtn.click();
+		Util.waitForElementPresent(driver, By.id("backBC"), 20);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", backBtn);
+
 		Util.waitForLoaderToFinish(driver);
+		return new Customer360Helper(driver);
+	}
+
+	public Customer360Helper clickBackBreadCrum(String pageName) {
+		Util.waitForAJAX(driver);
+		Actions action = new Actions(driver);
+		action.moveToElement(breadCrumText).build().perform();
+		Util.waitForElementPresent(driver, By.xpath(backToPage), 30);
+		List<WebElement> lstPages = driver.findElements(By.xpath(backToPage));
+
+		for (int i = 1; i <= lstPages.size(); i++) {
+			element = driver.findElement(By.xpath(backToPage + "[" + i
+					+ "]/a[@id='breadCrumbLnk']"));
+			if (element.getText().equalsIgnoreCase(pageName)) {
+
+				element.click();
+			}
+		}
+		Util.waitForAJAX(driver);
 		return new Customer360Helper(driver);
 	}
 
@@ -789,8 +810,6 @@ public class Collateral360Helper {
 		String s9 = collateralEvaluation.getText().trim();
 		String s10 = siteVisit.getText().trim();
 		String s11 = existingLiens.getText().trim();
-		// String s12 = building.getText().trim();
-		// String s13 = propDetails.getText().trim();
 		String s14 = propertyDesignation.getText().trim();
 		String s15 = propertyInspection.getText().trim();
 		String s16 = propertyHistory.getText().trim();
@@ -822,16 +841,18 @@ public class Collateral360Helper {
 			return false;
 	}
 
-	public void clickOnAddBtn() {
+	public void clickOnAddBtn() throws InterruptedException {
 		Util.waitForAJAX(driver);
-		collateralLink.click();
+		clickCollateralLink();
 		Util.waitForElementPresent(driver,
 				By.xpath(".//*[@id='clientCollateral']/div/a"), 20);
-		addBtnOnCollateral.click();
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", addBtnOnCollateral);
+		Util.waitForAJAX(driver);
 	}
 
 	public void clickOnTitledMotorVehicleSection() {
-		// Util.waitForLoaderToFinish(driver);
 		Util.waitForElementPresent(
 				driver,
 				By.xpath(".//*[@id='coll360cSliderMenu']/div[2]/ul/div[14]/li[1]/a"),
@@ -843,27 +864,34 @@ public class Collateral360Helper {
 	public void clickEditOnTitledMotorVehicle() {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, editBtnOnTitledMotorVehicle, 10);
-		editBtnOnTitledMotorVehicle.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", editBtnOnTitledMotorVehicle);
 	}
 
 	public void addOnTitledMotorVehicle() {
 		Util.waitForElement(driver, addBtnOnTitledMotorVehicle, 10);
-		addBtnOnTitledMotorVehicle.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", addBtnOnTitledMotorVehicle);
 	}
 
 	public void saveTitledMotorVehicleDetails() {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, typeOfVehicle, 10);
-		typeOfVehicle.click();
-		typeOfVehicle.clear();
-		typeOfVehicle.sendKeys("Truck");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value='';", typeOfVehicle);
+		js.executeScript("arguments[0].value='Truck';", typeOfVehicle);
+
 		vehicleYear.clear();
+
 		vehicleYear.sendKeys("2010");
 		make.clear();
+
 		make.sendKeys("2008");
 		model.clear();
+
 		model.sendKeys("NJ1234");
 		vin.clear();
+
 		vin.sendKeys("12345");
 
 		saveTitledMotorVehicle.click();
@@ -873,8 +901,11 @@ public class Collateral360Helper {
 	public void updateTitledMotorVehicle() {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, typeOfVehicle, 15);
-		typeOfVehicle.clear();
-		typeOfVehicle.sendKeys("Truck");
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value='';", typeOfVehicle);
+		js.executeScript("arguments[0].value='Truck';", typeOfVehicle);
+
 		vehicleYear.clear();
 		vehicleYear.sendKeys("2012");
 		make.clear();
@@ -888,11 +919,17 @@ public class Collateral360Helper {
 	}
 
 	public void cancelTitledMotorVehicle() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value='';", typeOfVehicle);
+		js.executeScript("arguments[0].value='Truck';", typeOfVehicle);
 
-		typeOfVehicle.sendKeys("Truck");
+		vehicleYear.clear();
 		vehicleYear.sendKeys("2010");
+		make.clear();
 		make.sendKeys("2008");
+		model.clear();
 		model.sendKeys("NJ1234");
+		vin.clear();
 		vin.sendKeys("12345");
 		cancelTitledMotorVehicle.click();
 		Util.waitForAJAX(driver);
@@ -907,10 +944,15 @@ public class Collateral360Helper {
 
 	public void clickDeleteOnTitledMotorVehicle() {
 		Util.waitForAJAX(driver);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
 		Util.waitForElement(driver, actionMenuOnTitledMotorVehicle, 10);
-		actions.moveToElement(actionMenuOnTitledMotorVehicle).click().perform();
+		js.executeScript("arguments[0].click();",
+				actionMenuOnTitledMotorVehicle);
+
 		Util.waitForElement(driver, deleteLnk, 15);
-		deleteLnk.click();
+
+		js.executeScript("arguments[0].click();", deleteLnk);
 		Util.waitForAJAX(driver);
 	}
 
@@ -923,35 +965,40 @@ public class Collateral360Helper {
 	}
 
 	public void clickOnUCC() {
-		// Util.waitForElement(driver, uccLink, 10);
+		Util.waitForAJAX(driver);
 		Util.waitForElementPresent(
 				driver,
 				By.xpath(".//*[@id='coll360cSliderMenu']/div[2]/ul/div[3]/li[1]/a"),
 				20);
-		uccLink.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", uccLink);
 		Util.waitForLoaderToFinish(driver);
 	}
 
 	public void clickOnTaxInformation() {
-		// Util.waitForElement(driver, TaxInformation, 20);
 		Util.waitForElementPresent(driver, By
 				.xpath(".//*[@id='coll360cSliderMenu']/div/ul/div[2]/li[3]/a"),
 				20);
-		TaxInformation.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", TaxInformation);
 		Util.waitForLoaderToFinish(driver);
 	}
 
 	public void clickEditOnTaxInformation() {
 		Util.waitForElement(driver, editBtnTax, 20);
-		editBtnTax.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", editBtnTax);
+		Util.waitForAJAX(driver);
 	}
 
 	public void clickEditAndAddOnUCC() {
 		Util.waitForElement(driver, editBtnOnUCC, 10);
-		editBtnOnUCC.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", editBtnOnUCC);
+
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForElement(driver, addBtnOnUCC, 10);
-		addBtnOnUCC.click();
+		js.executeScript("arguments[0].click();", addBtnOnUCC);
 	}
 
 	public void clickCreditRequest() {
@@ -965,11 +1012,23 @@ public class Collateral360Helper {
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+	}
+	
+	public void saveCollateral()
+	{
+		Util.waitForAJAX(driver);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", saveCollateralDetails);
+		Util.waitForAJAX(driver);
 	}
 
 	public void clickOnCollateralPool() {
 		Util.waitForAJAX(driver);
-		collateralPoolOnFacility.click();
+		Util.waitForElement(driver, collateralPoolOnFacility, 10);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", collateralPoolOnFacility);
+
 		Util.waitForLoaderToFinish(driver);
 	}
 
@@ -984,20 +1043,32 @@ public class Collateral360Helper {
 		Util.waitForAJAX(driver);
 	}
 
+	public void clickDetailsLinkOnCollateralPool() {
+		Util.waitForAJAX(driver);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", actionMenuOnCollateralPool);
+		js.executeScript("arguments[0].click();", detailsLnk);
+		Util.waitForAJAX(driver);
+	}
+
 	public void clickCollateralAccounts() {
-		collateralAccounts.click();
+		Util.waitForAJAX(driver);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", collateralAccounts);
 		Util.waitForAJAX(driver);
 	}
 
 	public void clickDetailsOnCollateralAccounts() {
-		actions.moveToElement(actionMenuOnCollateralAccounts).click().perform();
-		Util.waitForElement(driver, detailsLnk, 15);
-		detailsLnk.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();",
+				actionMenuOnCollateralAccounts);
+		js.executeScript("arguments[0].click();", detailsLnk);
 		Util.waitForAJAX(driver);
 	}
 
 	public void clickAddOnCollateralAccounts() {
-		addBtnOncollateralAccounts.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", addBtnOncollateralAccounts);
 		Util.waitForLoaderToFinish(driver);
 	}
 
@@ -1008,8 +1079,10 @@ public class Collateral360Helper {
 		fillingDate.sendKeys("2015-09-30");
 		fillingNumber.clear();
 		fillingNumber.sendKeys("123456789");
+		Util.waitForElementPresent(driver, By.xpath(facName), 10);
 		option = "Fac for intex";
-		Util.selectItemFromList(driver, facilityName, option);
+		// Util.selectItemFromList(driver, facilityName, option);
+		Util.selectItemFromList(driver, facName, option);
 		comments.clear();
 		comments.sendKeys("NA");
 		saveUCC.click();
@@ -1035,11 +1108,13 @@ public class Collateral360Helper {
 	public void editOnBasicCollateralInformation() {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, editOnBasicCollateral, 10);
-		editOnBasicCollateral.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", editOnBasicCollateral);
 		Util.waitForLoaderToFinish(driver);
 	}
 
 	public boolean verifyActionMenuOnUCC() {
+		Util.waitForAJAX(driver);
 		if (actionMenuOnUCC.isDisplayed()) {
 			return true;
 		} else
@@ -1047,6 +1122,8 @@ public class Collateral360Helper {
 	}
 
 	public boolean verifyMandatoryDetailsOnUCC() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value='';", lastSrchDateOnUCC);
 		lastSrchDateOnUCC.sendKeys(Util.getCurrentDate());
 		saveUCC.click();
 		if (errMsgOnUCC.isDisplayed()) {
@@ -1066,9 +1143,16 @@ public class Collateral360Helper {
 		Util.waitForAJAX(driver);
 	}
 
+	public void clickCancelBtnOnUCC() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", cancelUCC);
+		Util.waitForAJAX(driver);
+	}
+
 	public void cancelUCC(String option) {
 		lastSrchDateOnUCC.clear();
 		lastSrchDateOnUCC.sendKeys(Util.getCurrentDate());
+		fillingDate.clear();
 		fillingDate.sendKeys("2015-09-30");
 		fillingNumber.clear();
 		fillingNumber.sendKeys("123456789");
@@ -1094,14 +1178,17 @@ public class Collateral360Helper {
 
 	public void clickOnShares() {
 		Util.waitForElement(driver, sharesLink, 15);
-		sharesLink.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", sharesLink);
+
 		Util.waitForAJAX(driver);
 	}
 
 	public void clickOnEDitBtnOfShares() {
 		Util.waitForAJAX(driver);
-		Util.waitForElement(driver, editBtnOnShares, 15);
-		editBtnOnShares.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementById('stockDiv').focus();");
+		js.executeScript("arguments[0].click();", editBtnOnShares);
 		Util.waitForAJAX(driver);
 	}
 
@@ -1154,7 +1241,8 @@ public class Collateral360Helper {
 
 	public void clickOnSaveBtnOfShares() {
 		Util.waitForElement(driver, saveSharesDetails, 10);
-		saveSharesDetails.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", saveSharesDetails);
 		Util.waitForAJAX(driver);
 	}
 
@@ -1218,7 +1306,8 @@ public class Collateral360Helper {
 
 	public void clickCancelOnShares() {
 		Util.waitForElement(driver, cancelOnShares, 10);
-		cancelOnShares.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", cancelOnShares);
 		Util.waitForAJAX(driver);
 	}
 
@@ -1283,7 +1372,8 @@ public class Collateral360Helper {
 	public void ClickonAddTax() {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, addTax, 10);
-		addTax.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", addTax);
 		Util.waitForAJAX(driver);
 	}
 
@@ -1293,7 +1383,8 @@ public class Collateral360Helper {
 
 	public void SaveTaxApnDetails() {
 		Util.waitForElement(driver, savetaxapndetails, 10);
-		savetaxapndetails.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", savetaxapndetails);
 		Util.waitForLoaderToFinish(driver);
 	}
 
@@ -1340,7 +1431,6 @@ public class Collateral360Helper {
 	public void ClickOnAddTaxPayment() {
 		Util.waitForElement(driver, addTaxPayment, 10);
 		addTaxPayment.click();
-
 	}
 
 	public void TaxPaymentInformation() {

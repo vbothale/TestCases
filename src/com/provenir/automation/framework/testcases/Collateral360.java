@@ -24,6 +24,8 @@ public class Collateral360 extends TestCaseExecutor {
 	Collateral360Helper collateral360Helper;
 	Customer360Helper customer360Helper;
 
+	String pageTitle = "Customer 360 Details";
+
 	public TestDataReader reader = new TestDataReader();
 
 	private String option;
@@ -81,24 +83,27 @@ public class Collateral360 extends TestCaseExecutor {
 	}
 
 	@Test(priority = 4)
-	public void test4_verifyLeftHandNavigationForVehicle() {
-		customer360Helper = collateral360Helper.clickBackButton();
+	public void test4_verifyLeftHandNavigationForVehicle()
+			throws InterruptedException {
+		customer360Helper = collateral360Helper.clickBackBreadCrum(pageTitle);
 		collateral360Helper.clickOnAddBtn();
 		collateral360Helper.selectCollateralTypeAsVehicle(option);
 		collateral360Helper.verifyLeftHandMenuOnCollateralTypeAsVehicle();
 	}
 
 	@Test(priority = 5)
-	public void test5_verifyLeftHandNavigationForShares() {
-		customer360Helper = collateral360Helper.clickBackButton();
+	public void test5_verifyLeftHandNavigationForShares()
+			throws InterruptedException {
+		customer360Helper = collateral360Helper.clickBackBreadCrum(pageTitle);
 		collateral360Helper.clickOnAddBtn();
 		collateral360Helper.selectCollateralTypeAsShares(option);
 		collateral360Helper.verifyLeftHandMenuOnCollateralTypeAsShares();
 	}
 
 	@Test(priority = 6)
-	public void test6_verifyLeftHandNavigationForAccountsReceivable() {
-		customer360Helper = collateral360Helper.clickBackButton();
+	public void test6_verifyLeftHandNavigationForAccountsReceivable()
+			throws InterruptedException {
+		customer360Helper = collateral360Helper.clickBackBreadCrum(pageTitle);
 		collateral360Helper.clickOnAddBtn();
 		collateral360Helper.selectCollateralTypeAsAccountsReceivable(option);
 		collateral360Helper
@@ -106,8 +111,9 @@ public class Collateral360 extends TestCaseExecutor {
 	}
 
 	@Test(priority = 7)
-	public void test7_verifyLeftHandNavigationForRealEstate() {
-		customer360Helper = collateral360Helper.clickBackButton();
+	public void test7_verifyLeftHandNavigationForRealEstate()
+			throws InterruptedException {
+		customer360Helper = collateral360Helper.clickBackBreadCrum(pageTitle);
 		collateral360Helper.clickOnAddBtn();
 		collateral360Helper.selectCollateralTypeAsRealEstate(option);
 		collateral360Helper.verifyLeftHandMenuOnCollateralTypeAsRealEstate();
@@ -133,11 +139,7 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.enterCollateralOwnerName();
 		collateral360Helper.enterCollateralPercentage();
 		collateral360Helper.setPrimaryCollateralOwner();
-		// collateral360Helper.clickOnSaveCollateral();
 		collateral360Helper.clickSaveCollateral();
-		// collateral360Helper.clickOnProceedBtn();
-
-		
 	}
 
 	@Test(priority = 9)
@@ -161,11 +163,6 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.updateTitledMotorVehicle();
 	}
 
-	@Test(priority = 12)
-	public void test13_deleteTitledMotorVehicleInfo() {
-		collateral360Helper.clickDeleteOnTitledMotorVehicle();
-	}
-
 	@Test(priority = 13)
 	public void test14_cancelOnTitledMotorVehicle() {
 		collateral360Helper.clickEditOnTitledMotorVehicle();
@@ -183,23 +180,28 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.clickOnCollateralPool();
 		collateral360Helper.clickDetailsOnCollateralPool();
 		collateral360Helper.clickCollateralAccounts();
-		collateral360Helper.clickDetailsOnCollateralAccounts();
+		collateral360Helper.clickAddOnCollateralAccounts();
 	}
 
 	@Test(priority = 15)
 	public void test16_saveCollateralDetailsAsUCC() {
-		collateral360Helper.editOnBasicCollateralInformation();
 		collateral360Helper.enterCollateralName();
+		collateral360Helper.enterCollateralCode();
 		collateral360Helper.selectCollateralTypeAsAccountsReceivable(option);
 		collateral360Helper.selectCollateralSubTypeASAccountsReceivable(option);
 		collateral360Helper.enterDaysUntilNextReview();
+		collateral360Helper.enterCollateralOwnerName();
+		collateral360Helper.enterCollateralPercentage();
+		collateral360Helper.setPrimaryCollateralOwner();
 		collateral360Helper.clickSaveCollateral();
 	}
 
 	@Test(priority = 16)
 	public void test17_verifyDeleteOnUCC() {
 		collateral360Helper.clickOnUCC();
+		collateral360Helper.clickEditAndAddOnUCC();
 		collateral360Helper.clickDeleteOnUCC();
+		collateral360Helper.clickCancelBtnOnUCC();
 	}
 
 	@Test(priority = 17)
@@ -240,21 +242,22 @@ public class Collateral360 extends TestCaseExecutor {
 		reader.readValue(_hashFacility, "resources/Facility.json");
 		searchHelper.searchFacility(_hashFacility);
 		collateral360Helper.clickOnCollateralPool();
-		collateral360Helper.clickDetailsOnCollateralPool();
+		collateral360Helper.clickDetailsLinkOnCollateralPool();
 		collateral360Helper.clickCollateralAccounts();
-		collateral360Helper.clickDetailsOnCollateralAccounts();
+		collateral360Helper.clickAddOnCollateralAccounts();
 	}
 
 	// Verify Certified Stocks or Mutual Funds section
 
 	@Test(priority = 23)
 	public void test24_verifyMutualFundsSection() {
-		collateral360Helper.editOnBasicCollateralInformation();
 		collateral360Helper.enterCollateralName();
+		collateral360Helper.enterCollateralCode();
 		collateral360Helper.selectCollateralTypeAsShares(option);
-//		collateral360Helper.selectCollateralSubTypeAsGovBonds(option);
+		collateral360Helper.enterCollateralOwnerName();
+		collateral360Helper.enterCollateralPercentage();
+		collateral360Helper.setPrimaryCollateralOwner();
 		collateral360Helper.clickSaveCollateral();
-		// collateral360Helper.clickOnProceedBtn();
 	}
 
 	@Test(priority = 24)
@@ -266,7 +269,6 @@ public class Collateral360 extends TestCaseExecutor {
 
 	@Test(priority = 25)
 	public void test26_saveOnMutualFunds() {
-		collateral360Helper.selectShareTypeAsMutualFunds(option);
 		collateral360Helper.enterAccountPledged(option);
 		collateral360Helper.clickOnSaveBtnOfShares();
 	}
@@ -297,9 +299,10 @@ public class Collateral360 extends TestCaseExecutor {
 
 	@Test(priority = 29)
 	public void test30_saveOnCertifiedBonds() {
-		collateral360Helper.selectShareTypeAsCertificatedBonds(option);
 		collateral360Helper.enterAccountPledged(option);
 		collateral360Helper.enterMarginRate();
+		collateral360Helper.selectShareTypeAsCertificatedBonds(option);
+		collateral360Helper.enterAccountPledged(option);
 		collateral360Helper.clickOnSaveBtnOfShares();
 	}
 
@@ -329,9 +332,9 @@ public class Collateral360 extends TestCaseExecutor {
 
 	@Test(priority = 33)
 	public void test34_saveOnUncertifiedSecurities() {
-		collateral360Helper.selectShareTypeAsUncertificatedSecurities(option);
 		collateral360Helper.enterAccountPledged(option);
 		collateral360Helper.enterMarginRate();
+		collateral360Helper.selectShareTypeAsUncertificatedSecurities(option);
 		collateral360Helper.clickOnSaveBtnOfShares();
 	}
 
@@ -340,6 +343,7 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.clickOnEDitBtnOfShares();
 		collateral360Helper.enterAccountType();
 		collateral360Helper.enterAccountNumber();
+		collateral360Helper.selectShareTypeAsUncertificatedSecurities(option);
 		collateral360Helper.clickOnSaveBtnOfShares();
 	}
 
@@ -360,15 +364,15 @@ public class Collateral360 extends TestCaseExecutor {
 		reader.readValue(_hashFacility, "resources/Facility.json");
 		searchHelper.searchFacility(_hashFacility);
 		collateral360Helper.clickOnCollateralPool();
-		collateral360Helper.clickDetailsOnCollateralPool();
+		collateral360Helper.clickDetailsLinkOnCollateralPool();
 		collateral360Helper.clickCollateralAccounts();
-		collateral360Helper.clickDetailsOnCollateralAccounts();
+		collateral360Helper.clickAddOnCollateralAccounts();
 	}
 
 	@Test(priority = 37)
 	public void test38_saveCollateralDetailsAsRealState() {
-		collateral360Helper.editOnBasicCollateralInformation();
 		collateral360Helper.enterCollateralName();
+		collateral360Helper.enterCollateralCode();
 		collateral360Helper.selectCollateralTypeAsRealEstate(option);
 		collateral360Helper.selectCollateralSubTypeAsRetailOffice(option);
 		collateral360Helper.enterCountry(option);
@@ -376,11 +380,14 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.enterStreet();
 		collateral360Helper.enterNumber();
 		collateral360Helper.enterZipCode();
-		
+
 		collateral360Helper.newlybuilt(option);
-//		collateral360Helper.checkForProceedBtn();
-		
-		 collateral360Helper.clickSaveCollateral();
+
+		collateral360Helper.enterCollateralOwnerName();
+		collateral360Helper.enterCollateralPercentage();
+		collateral360Helper.setPrimaryCollateralOwner();
+
+		collateral360Helper.saveCollateral();
 	}
 
 	// APN/Tax Information
@@ -412,25 +419,5 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.TaxPaymentInformation();
 		collateral360Helper.SaveTaxApnDetails();
 	}
-
-	// @Test(priority = 42)
-	// public void test43_EditTaxInformationDetails() {
-	// collateral360Helper.EditLinkButton();
-	// collateral360Helper.SaveTaxApnDetails();
-	// }
-	//
-	// @Test(priority = 43)
-	// public void test44_UpdateTaxInformationDetails() {
-	// collateral360Helper.EditLinkButton();
-	// collateral360Helper.UpdateTaxInfo();
-	// collateral360Helper.SaveTaxApnDetails();
-	// }
-
-	// @Test(priority = 44)
-	// public void test45_CancelTaxInformationDetails() {
-	// collateral360Helper.EditLinkButton();
-	// collateral360Helper.UpdateTaxInfo();
-	// collateral360Helper.CancelTaxInfoButton();
-	// }
 
 }

@@ -190,7 +190,6 @@ public class FacilityLevelWorkflow extends TestCaseExecutor {
 	@Test(priority = 11)
 	public void test12_clickNewCreditRequest() {
 		creditRequest = myRequests.newCreditRequestLink();
-//		creditRequest.newCreditRequestLink();
 		creditRequest.getRequestSummaryPgTitle();
 	}
 
@@ -312,7 +311,6 @@ public class FacilityLevelWorkflow extends TestCaseExecutor {
 	@Test(priority = 28)
 	public void test29_verifyWorkflowDDLReadOnlyWhenEdit() {
 		facility360.clickFacilityLnk();
-		// facility360.clickEditOnFacSummary();
 	}
 
 	@Test(priority = 29)

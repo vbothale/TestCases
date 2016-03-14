@@ -83,7 +83,7 @@ public class WebDriverSetUp {
 		DesiredCapabilities ieCapabilities = DesiredCapabilities
 				.internetExplorer();
 
-		ieCapabilities.setCapability("nativeEvents", false);
+//		ieCapabilities.setCapability("nativeEvents", false);
 		ieCapabilities.setCapability("unexpectedAlertBehaviour", "accept");
 		ieCapabilities.setCapability("ignoreProtectedModeSettings", true);
 		ieCapabilities.setCapability("disable-popup-blocking", false);
