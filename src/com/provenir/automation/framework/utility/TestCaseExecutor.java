@@ -65,7 +65,7 @@ public class TestCaseExecutor {
 			}
 
 			internetExplorer.manage().window().maximize();
-//			setIEProperties(internetExplorer);
+
 
 		} catch (Exception e) {
 			log.error(e.getMessage());

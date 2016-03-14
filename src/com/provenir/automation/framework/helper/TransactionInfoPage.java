@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -253,7 +254,9 @@ public class TransactionInfoPage {
 	}
 
 	public TransactionInfoPage clickProdCatalogButton() {
-		prodCatalogButton.click();
+		Util.waitForElement(driver, prodCatalogButton, 10);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", prodCatalogButton);
 		Util.waitForAJAX(driver);
 		Util.enableAllDropdowns(driver);
 		return this;

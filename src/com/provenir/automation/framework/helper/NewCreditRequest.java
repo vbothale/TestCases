@@ -134,7 +134,7 @@ public class NewCreditRequest {
 	public boolean getRequestSummaryPgTitle() {
 		Util.waitForElement(driver, requestSummaryTitle, 5);
 		String str = requestSummaryTitle.getText();
-		if (str.equalsIgnoreCase("Request summary")) {
+		if (str.equalsIgnoreCase("Request Summary")) {
 			return true;
 		} else
 			return false;

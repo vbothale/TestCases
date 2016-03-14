@@ -3,6 +3,7 @@ package com.provenir.automation.framework.helper;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import com.provenir.automation.framework.utility.Util;
+import com.thoughtworks.selenium.webdriven.commands.IsElementPresent;
 
 public class AdminPage {
 
@@ -25,7 +27,7 @@ public class AdminPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(how = How.XPATH, using = "//a[@title='Admin']")
+	@FindBy(how = How.ID, using = "PGADMIN")
 	private WebElement adminLink;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='left']/div/div/ul/li[18]/a/span")
@@ -175,9 +177,7 @@ public class AdminPage {
 	private String s = ".//*[@id='securityData']/table/tbody/tr[11]/td[5]/div[3]";
 
 	public LoginPage clickAdminLink() throws InterruptedException {
-		Thread.sleep(8000);
-//		Util.waitForElementToPresent(driver, adminLink, 15);
-		Util.waitForElement(driver, adminLink, 15);
+		Util.waitForElement(driver, adminLink, 10);
 		adminLink.click();
 		Util.waitForAJAX(driver);
 		return new LoginPage(driver);
@@ -185,14 +185,16 @@ public class AdminPage {
 
 	public void clickManageWorkflows() {
 		Util.waitForElement(driver, manageWorkflows, 10);
-		manageWorkflows.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", manageWorkflows);
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForAJAX(driver);
 	}
 
 	public void clickAddBtnOnWorkflowSummary() {
 		Util.waitForElement(driver, addOnManageWorkflows1, 10);
-		addOnManageWorkflows1.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", addOnManageWorkflows1);
 		Util.waitForAJAX(driver);
 	}
 
@@ -214,7 +216,9 @@ public class AdminPage {
 		Util.waitForAJAX(driver);
 		Util.waitForElementPresent(driver,
 				By.xpath("//*[@id='left']/div/div/ul/li[18]/a/span"), 10);
-		securitySettings.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", securitySettings);
+
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 	}
@@ -318,7 +322,8 @@ public class AdminPage {
 	}
 
 	public boolean verifyMandatoryDetailsOnManageWorkflow() {
-		saveWorkflow.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", saveWorkflow);
 		if (errMsgOnManageWorkflow.isDisplayed()) {
 			return true;
 		} else
@@ -780,8 +785,9 @@ public class AdminPage {
 				driver,
 				By.xpath(".//*[@id='myGrid']/div[2]/div[2]/div/div[2]/span[2]"),
 				10);
-		// selectWorkflowTypeInWorkflowSummary.click();
-		selectWorkflowTypeInWorkflowSummary.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", selectWorkflowTypeInWorkflowSummary);
+	
 		Util.waitForAJAX(driver);
 		if (driver
 				.findElement(
@@ -798,7 +804,9 @@ public class AdminPage {
 				driver,
 				By.xpath(".//*[@id='myGrid']/div[2]/div[2]/div/div[2]/span[2]"),
 				10);
-		selectWorkflowTypeInWorkflowSummary.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", selectWorkflowTypeInWorkflowSummary);
+
 		Util.waitForAJAX(driver);
 		if (driver
 				.findElement(
@@ -926,7 +934,6 @@ public class AdminPage {
 
 	public LogoutPage clickSaveBtnOnSecuritySettings()
 			throws InterruptedException {
-		rule.click();
 		List<WebElement> lst = driver.findElements(By
 				.className("ui-button-text"));
 		WebElement e = lst.get(1);

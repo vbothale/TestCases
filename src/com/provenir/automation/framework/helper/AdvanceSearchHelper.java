@@ -1,6 +1,7 @@
 package com.provenir.automation.framework.helper;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -71,7 +72,8 @@ public class AdvanceSearchHelper {
 	public Credit360Helper clickReqOnGrid() {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, reqOnGrid, 30);
-		reqOnGrid.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", reqOnGrid);
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 		return new Credit360Helper(driver);

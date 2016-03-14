@@ -39,10 +39,10 @@ public class MyTasks {
 	@FindBy(how = How.XPATH, using = "//label[contains(.,'Category:')]")
 	private WebElement categoryTitle;
 
-	@FindBy(how = How.XPATH, using = "//label[contains(.,'From Date:')]")
+	@FindBy(how = How.XPATH, using = "//label[contains(.,'From')]")
 	private WebElement fromDateTitle;
 
-	@FindBy(how = How.XPATH, using = "//label[contains(.,'To Date:')]")
+	@FindBy(how = How.XPATH, using = "//label[contains(.,'To')]")
 	private WebElement toDateTitle;
 
 	@FindBy(how = How.ID, using = "filterMyTask")
@@ -93,8 +93,8 @@ public class MyTasks {
 				&& s3.equalsIgnoreCase("Role:")
 				&& s4.equalsIgnoreCase("Group:")
 				&& s5.equalsIgnoreCase("Category:")
-				&& s6.equalsIgnoreCase("From Date:")
-				&& s7.equalsIgnoreCase("To Date:")) {
+				&& s6.equalsIgnoreCase("From")
+				&& s7.equalsIgnoreCase("To")) {
 			return true;
 		} else
 			return false;
