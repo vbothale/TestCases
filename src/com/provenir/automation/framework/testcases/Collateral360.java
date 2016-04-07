@@ -178,7 +178,7 @@ public class Collateral360 extends TestCaseExecutor {
 		reader.readValue(_hashFacility, "resources/Facility.json");
 		searchHelper.searchFacility(_hashFacility);
 		collateral360Helper.clickOnCollateralPool();
-		collateral360Helper.clickDetailsOnCollateralPool();
+		collateral360Helper.clickDetailsLinkOnCollateralPool();
 		collateral360Helper.clickCollateralAccounts();
 		collateral360Helper.clickAddOnCollateralAccounts();
 	}

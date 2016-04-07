@@ -5,6 +5,9 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -21,6 +24,7 @@ import com.provenir.automation.framework.helper.MyRequests;
 import com.provenir.automation.framework.helper.SearchHelper;
 import com.provenir.automation.framework.utility.TestCaseExecutor;
 import com.provenir.automation.framework.utility.TestDataReader;
+import com.thoughtworks.selenium.webdriven.commands.IsElementPresent;
 
 public class RuleBasedSecurity extends TestCaseExecutor {
 
@@ -57,7 +61,10 @@ public class RuleBasedSecurity extends TestCaseExecutor {
 		reader.readValue(_hashLogins, "resources/Login.json");
 		loginPage.login(_hashLogins);
 		loginPage = adminPage.clickAdminLink();
+
 	}
+
+	// For group
 
 	@Test(priority = 1)
 	public void test1_clickSecuritySettings() throws InterruptedException {
@@ -136,4 +143,45 @@ public class RuleBasedSecurity extends TestCaseExecutor {
 	public void test11_verifySecurityforOtherUser() {
 		credit360.isBookingSummaryDisplayed();
 	}
+
+	// For Role
+
+	@Test(priority = 12)
+	public void test12_login() throws InterruptedException {
+		myRequests = credit360.clickHome();
+		loginPage = logout.logoutCL();
+		loginPage.clickHere();
+		loginPage.login(_hashLogins);
+		loginPage = adminPage.clickAdminLink();
+	}
+
+	@Test(priority = 13)
+	public void test13_selectRoleAndCategory() throws InterruptedException {
+		adminPage.clickSecuritySettings();
+		adminPage.selectRoleFromSecurity();
+		adminPage.selectCategoryFromSecurity();
+	}
+
+	@Test(priority = 14)
+	public void test14_enterEditPermission() {
+		adminPage.clickEditPermissionOnSecurity();
+		adminPage.clickCreateCustomerOnSecurityPage();
+	}
+
+	@Test(priority = 15)
+	public void test15_selectRuleFromDEAndSave() throws InterruptedException {
+		adminPage.selectRule();
+		logout = adminPage.clickSaveBtnOnSecuritySettings();
+	}
+
+	@Test(priority = 16)
+	public void test16_verifySecurityWithOtherUser() {
+		loginPage = logout.logoutCL();
+		loginPage.clickHere();
+		loginPage.login3(_hashLogins);
+		myRequests = loginPage.clickMyRequetsLink();
+		myRequests.isCreateCustomerDisplayed();
+
+	}
+
 }

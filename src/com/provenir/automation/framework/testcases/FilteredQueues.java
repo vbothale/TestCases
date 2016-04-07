@@ -120,7 +120,7 @@ public class FilteredQueues extends TestCaseExecutor {
 	}
 
 	@Test(priority = 10)
-	public void test11_verifyTaskListDisplayedOnExpanding() {
+	public void test11_verifyTaskListDisplayedOnExpanding() throws InterruptedException {
 		myRequests.verifyTaskListDisplayed();
 	}
 

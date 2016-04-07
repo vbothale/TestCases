@@ -386,7 +386,9 @@ public class MyRequests {
 		Util.waitForLoaderToFinish(driver);
 	}
 
-	public Facility360Details clickOnAddedWorkflow() {
+	public Facility360Details clickOnAddedWorkflow()
+			throws InterruptedException {
+		Thread.sleep(8000);
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, facWorkFlow, 15);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -419,8 +421,7 @@ public class MyRequests {
 		String s4 = dateToText.getText().trim();
 		if (s1.equalsIgnoreCase("Workflow Milestone")
 				&& s2.equalsIgnoreCase("Decision")
-				&& s3.equalsIgnoreCase("From")
-				&& s4.equalsIgnoreCase("To")) {
+				&& s3.equalsIgnoreCase("From") && s4.equalsIgnoreCase("To")) {
 			return true;
 		} else
 			return false;
@@ -643,7 +644,8 @@ public class MyRequests {
 			return false;
 	}
 
-	public boolean verifyTaskListDisplayed() {
+	public boolean verifyTaskListDisplayed() throws InterruptedException {
+		Thread.sleep(6000);
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, taskDesc, 15);
 		String str = taskDesc.getText().trim();
