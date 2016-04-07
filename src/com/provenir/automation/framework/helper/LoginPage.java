@@ -3,6 +3,7 @@ package com.provenir.automation.framework.helper;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -100,7 +101,9 @@ public class LoginPage {
 	}
 
 	public void clickHere() {
-		clickHereLink.click();
+		Util.waitForElement(driver, clickHereLink, 10);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", clickHereLink);
 		Util.waitForAJAX(driver);
 	}
 

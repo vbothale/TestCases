@@ -71,9 +71,13 @@ public class AdvanceSearchHelper {
 
 	public Credit360Helper clickReqOnGrid() {
 		Util.waitForAJAX(driver);
-		Util.waitForElement(driver, reqOnGrid, 30);
+		WebElement e = driver
+				.findElement(By
+						.xpath(".//*[@id='advSrchResult']/div/div/div[2]/div/table/tbody/tr[1]/td[1]"));
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", reqOnGrid);
+		js.executeScript("arguments[0].click();", e);
+
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 		return new Credit360Helper(driver);

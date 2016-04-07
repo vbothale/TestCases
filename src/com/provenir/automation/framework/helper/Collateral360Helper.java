@@ -1091,7 +1091,8 @@ public class Collateral360Helper {
 
 	public void updateUCC(String option) {
 		Util.waitForAJAX(driver);
-		editBtnOnUCC.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", editBtnOnUCC);
 		Util.waitForAJAX(driver);
 		lastSrchDateOnUCC.clear();
 		lastSrchDateOnUCC.sendKeys(Util.getCurrentDate());
@@ -1160,7 +1161,8 @@ public class Collateral360Helper {
 		Util.selectItemFromList(driver, facilityName, option);
 		comments.clear();
 		comments.sendKeys("NA");
-		cancelUCC.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", cancelUCC);
 		Util.waitForLoaderToFinish(driver);
 	}
 

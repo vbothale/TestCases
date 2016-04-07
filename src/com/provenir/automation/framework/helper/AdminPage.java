@@ -177,8 +177,23 @@ public class AdminPage {
 	private String s = ".//*[@id='securityData']/table/tbody/tr[11]/td[5]/div[3]";
 
 	public LoginPage clickAdminLink() throws InterruptedException {
-		Util.waitForElement(driver, adminLink, 10);
+
+		try {
+			int count = driver.findElements(By.id("PGADMIN")).size();
+			count = driver.findElements(
+					By.xpath("//a[contains(@id, 'PGADMIN')]")).size();
+			System.out.println("Count = " + count);
+		} catch (Exception e) {
+			int count = driver.findElements(
+					By.xpath("//a[contains(@id, 'PGADMIN')]")).size();
+			System.out.println("Count = " + count);
+			System.out.println("Element not found");
+		}
+
+		System.out.println("before admin link click");
 		adminLink.click();
+		System.out.println("after admin link click");
+		Thread.sleep(5000);
 		Util.waitForAJAX(driver);
 		return new LoginPage(driver);
 	}
@@ -289,6 +304,21 @@ public class AdminPage {
 		Util.enableAllDropdowns(driver);
 		driver.findElement(By.xpath(".//*[@id='groupSec']/div[2]/span/input"))
 				.sendKeys("insti");
+		Util.waitForElementPresent(
+				driver,
+				By.xpath("//*[contains(@id,'ui-id-') and (@class='ui-corner-all')]"),
+				5);
+		driver.findElement(
+				By.xpath("//*[contains(@id,'ui-id-') and (@class='ui-corner-all')]"))
+				.click();
+		Util.waitForAJAX(driver);
+	}
+
+	public void selectRoleFromSecurity() {
+		Util.waitForAJAX(driver);
+		Util.enableAllDropdowns(driver);
+		driver.findElement(By.xpath(".//*[@id='roleSec']/div[2]/span/input"))
+				.sendKeys("Rule Security 2");
 		Util.waitForElementPresent(
 				driver,
 				By.xpath("//*[contains(@id,'ui-id-') and (@class='ui-corner-all')]"),
@@ -786,8 +816,9 @@ public class AdminPage {
 				By.xpath(".//*[@id='myGrid']/div[2]/div[2]/div/div[2]/span[2]"),
 				10);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", selectWorkflowTypeInWorkflowSummary);
-	
+		js.executeScript("arguments[0].click();",
+				selectWorkflowTypeInWorkflowSummary);
+
 		Util.waitForAJAX(driver);
 		if (driver
 				.findElement(
@@ -805,7 +836,8 @@ public class AdminPage {
 				By.xpath(".//*[@id='myGrid']/div[2]/div[2]/div/div[2]/span[2]"),
 				10);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", selectWorkflowTypeInWorkflowSummary);
+		js.executeScript("arguments[0].click();",
+				selectWorkflowTypeInWorkflowSummary);
 
 		Util.waitForAJAX(driver);
 		if (driver

@@ -314,7 +314,7 @@ public class FacilityLevelWorkflow extends TestCaseExecutor {
 	}
 
 	@Test(priority = 29)
-	public void test30_expandReqAndGotoFacility360() {
+	public void test30_expandReqAndGotoFacility360() throws InterruptedException {
 		myRequests = facility360.clickHome();
 		myRequests.expandRequest();
 		facility360 = myRequests.clickOnAddedWorkflow();
