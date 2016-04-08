@@ -405,7 +405,7 @@ public class Collateral360 extends TestCaseExecutor {
 	}
 
 	@Test(priority = 40)
-	public void test41_verifyErrorMsgTaxApnDetails() {
+	public void test41_voerifyErrorMsgTaxApnDetails() {
 		collateral360Helper.SaveTaxApnDetails();
 		Assert.assertEquals(collateral360Helper.getCountOfErrorMsgs(), 6);
 	}
