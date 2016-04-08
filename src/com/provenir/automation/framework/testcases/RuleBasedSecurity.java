@@ -64,96 +64,97 @@ public class RuleBasedSecurity extends TestCaseExecutor {
 
 	}
 
-	// For group
-
-	@Test(priority = 1)
-	public void test1_clickSecuritySettings() throws InterruptedException {
-		adminPage.clickSecuritySettings();
-		adminPage.selectGroupFromSecurity();
-		adminPage.selectCategoryFromSecurity();
-	}
-
-	@Test(priority = 2)
-	public void test2_enterEditPermission() {
-		adminPage.clickEditPermissionOnSecurity();
-		adminPage.clickCreateCustomerOnSecurityPage();
-	}
-
-	@Test(priority = 3)
-	public void test3_selectAnyRuleFromDEAndSave() throws InterruptedException {
-		adminPage.selectRule();
-		logout = adminPage.clickSaveBtnOnSecuritySettings();
-	}
-
-	@Test(priority = 4)
-	public void test4_verifySecurityWithOtherUser() {
-		loginPage = logout.logoutCL();
-		loginPage.clickHere();
-		loginPage.login3(_hashLogins);
-		myRequests = loginPage.clickMyRequetsLink();
-		myRequests.isCreateCustomerDisplayed();
-	}
-
-	@Test(priority = 5)
-	public void test5_loginWithOtherUser() throws InterruptedException {
-		logout = myRequests.clickMyRequetsLink();
-		loginPage = logout.logoutCL();
-		loginPage.clickHere();
-		loginPage.login(_hashLogins);
-		loginPage = adminPage.clickAdminLink();
-	}
-
-	@Test(priority = 6)
-	public void test6_goToSecuritySettingsAndSelectGroup()
-			throws InterruptedException {
-		adminPage.clickSecuritySettings();
-		adminPage.selectRuleBasedGroupFromSecurity();
-		adminPage.selectCredit360AsCategoryFromSecurity();
-	}
-
-	@Test(priority = 7)
-	public void test7_enterPermission() {
-		adminPage.clickEditPermissionOnSecurity();
-	}
-
-	@Test(priority = 8)
-	public void test8_selectRuleFromDEAndSave() throws InterruptedException {
-		adminPage.clickBookingDetails();
-		adminPage.select5MRuleForBookingDetails();
-		logout = adminPage.clickSaveBtnOnSecuritySettings();
-	}
-
-	@Test(priority = 9)
-	public void test9_loginWithOtherUser() {
-		loginPage = logout.logoutCL();
-		loginPage.clickHere();
-		loginPage.login3(_hashLogins);
-		myRequests = loginPage.clickMyRequetsLink();
-	}
-
-	@Test(priority = 10)
-	public void test10_searchReq() {
-		advanceSearch.clickAdvanceSearchLink();
-		advanceSearch.enterRequestType(option);
-		advanceSearch.searchRequestAndSubmit();
-		credit360 = advanceSearch.clickReqOnGrid();
-	}
-
-	@Test(priority = 11)
-	public void test11_verifySecurityforOtherUser() {
-		credit360.isBookingSummaryDisplayed();
-	}
-
-	// For Role
-
-	@Test(priority = 12)
-	public void test12_login() throws InterruptedException {
-		myRequests = credit360.clickHome();
-		loginPage = logout.logoutCL();
-		loginPage.clickHere();
-		loginPage.login(_hashLogins);
-		loginPage = adminPage.clickAdminLink();
-	}
+	// // For group
+	//
+	// @Test(priority = 1)
+	// public void test1_clickSecuritySettings() throws InterruptedException {
+	// adminPage.clickSecuritySettings();
+	// adminPage.selectGroupFromSecurity();
+	// adminPage.selectCategoryFromSecurity();
+	// }
+	//
+	// @Test(priority = 2)
+	// public void test2_enterEditPermission() {
+	// adminPage.clickEditPermissionOnSecurity();
+	// adminPage.clickCreateCustomerOnSecurityPage();
+	// }
+	//
+	// @Test(priority = 3)
+	// public void test3_selectAnyRuleFromDEAndSave() throws
+	// InterruptedException {
+	// adminPage.selectRule();
+	// logout = adminPage.clickSaveBtnOnSecuritySettings();
+	// }
+	//
+	// @Test(priority = 4)
+	// public void test4_verifySecurityWithOtherUser() {
+	// loginPage = logout.logoutCL();
+	// loginPage.clickHere();
+	// loginPage.login3(_hashLogins);
+	// myRequests = loginPage.clickMyRequetsLink();
+	// myRequests.isCreateCustomerDisplayed();
+	// }
+	//
+	// @Test(priority = 5)
+	// public void test5_loginWithOtherUser() throws InterruptedException {
+	// logout = myRequests.clickMyRequetsLink();
+	// loginPage = logout.logoutCL();
+	// loginPage.clickHere();
+	// loginPage.login(_hashLogins);
+	// loginPage = adminPage.clickAdminLink();
+	// }
+	//
+	// @Test(priority = 6)
+	// public void test6_goToSecuritySettingsAndSelectGroup()
+	// throws InterruptedException {
+	// adminPage.clickSecuritySettings();
+	// adminPage.selectRuleBasedGroupFromSecurity();
+	// adminPage.selectCredit360AsCategoryFromSecurity();
+	// }
+	//
+	// @Test(priority = 7)
+	// public void test7_enterPermission() {
+	// adminPage.clickEditPermissionOnSecurity();
+	// }
+	//
+	// @Test(priority = 8)
+	// public void test8_selectRuleFromDEAndSave() throws InterruptedException {
+	// adminPage.clickBookingDetails();
+	// adminPage.select5MRuleForBookingDetails();
+	// logout = adminPage.clickSaveBtnOnSecuritySettings();
+	// }
+	//
+	// @Test(priority = 9)
+	// public void test9_loginWithOtherUser() {
+	// loginPage = logout.logoutCL();
+	// loginPage.clickHere();
+	// loginPage.login3(_hashLogins);
+	// myRequests = loginPage.clickMyRequetsLink();
+	// }
+	//
+	// @Test(priority = 10)
+	// public void test10_searchReq() {
+	// advanceSearch.clickAdvanceSearchLink();
+	// advanceSearch.enterRequestType(option);
+	// advanceSearch.searchRequestAndSubmit();
+	// credit360 = advanceSearch.clickReqOnGrid();
+	// }
+	//
+	// @Test(priority = 11)
+	// public void test11_verifySecurityforOtherUser() {
+	// credit360.isBookingSummaryDisplayed();
+	// }
+	//
+	// // For Role
+	//
+	// @Test(priority = 12)
+	// public void test12_login() throws InterruptedException {
+	// myRequests = credit360.clickHome();
+	// loginPage = logout.logoutCL();
+	// loginPage.clickHere();
+	// loginPage.login(_hashLogins);
+	// loginPage = adminPage.clickAdminLink();
+	// }
 
 	@Test(priority = 13)
 	public void test13_selectRoleAndCategory() throws InterruptedException {
@@ -181,7 +182,6 @@ public class RuleBasedSecurity extends TestCaseExecutor {
 		loginPage.login3(_hashLogins);
 		myRequests = loginPage.clickMyRequetsLink();
 		myRequests.isCreateCustomerDisplayed();
-
 	}
 
 }

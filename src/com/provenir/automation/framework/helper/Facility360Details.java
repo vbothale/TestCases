@@ -1550,9 +1550,19 @@ public class Facility360Details {
 		Util.waitForAJAX(driver);
 		Util.waitForElement(driver, verifyTriggeredWorkflow, 15);
 		String str = verifyTriggeredWorkflow.getText().trim();
-		if (str.equalsIgnoreCase("Facility level workflow")) {
+		if (str.equalsIgnoreCase("//b[contains(.,'Facility level workflow')]")) {
 			return true;
 		} else
+			return false;
+	}
+
+	public boolean verifyWFTriggeredOrNot() {
+		Util.waitForAJAX(driver);
+		WebElement e = driver.findElement(By
+				.xpath("//*[@id='taskManagmntContainer']/div[1]/div"));
+		if (e.isDisplayed())
+			return true;
+		else
 			return false;
 	}
 

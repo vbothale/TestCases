@@ -289,7 +289,7 @@ public class FacilityLevelWorkflow extends TestCaseExecutor {
 
 	@Test(priority = 25)
 	public void test26_triggerFacilityWorkflow() {
-		facility360.verifyWorkflowTriggeredOrNot();
+		facility360.verifyWFTriggeredOrNot();
 	}
 
 	@Test(priority = 26)
