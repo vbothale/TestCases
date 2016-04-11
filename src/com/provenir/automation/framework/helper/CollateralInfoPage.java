@@ -271,6 +271,7 @@ public class CollateralInfoPage {
 		Util.waitForElement(driver,nextButton, 5);
 		nextButton.click();
 		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
 		return new TransactionInfoPage(driver);
 	}
 
