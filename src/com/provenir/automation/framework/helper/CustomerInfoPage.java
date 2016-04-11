@@ -2123,6 +2123,7 @@ public class CustomerInfoPage {
 		nextBtn.click();
 		Util.waitForAJAX(driver);
 		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
 		return new CollateralInfoPage(driver);
 	}
 

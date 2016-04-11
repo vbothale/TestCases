@@ -258,6 +258,7 @@ public class TransactionInfoPage {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", prodCatalogButton);
 		Util.waitForAJAX(driver);
+		Util.waitForLoaderToFinish(driver);
 		Util.enableAllDropdowns(driver);
 		return this;
 	}
