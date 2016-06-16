@@ -16,6 +16,7 @@ import com.provenir.automation.framework.helper.LoginPage;
 import com.provenir.automation.framework.helper.SearchHelper;
 import com.provenir.automation.framework.utility.TestCaseExecutor;
 import com.provenir.automation.framework.utility.TestDataReader;
+import com.provenir.automation.framework.utility.Util;
 
 public class Collateral360 extends TestCaseExecutor {
 
@@ -70,7 +71,7 @@ public class Collateral360 extends TestCaseExecutor {
 	}
 
 	@Test(priority = 3)
-	public void test3_saveCollateralDetails() {
+	public void test3_saveCollateralDetails() throws InterruptedException {
 		collateral360Helper.enterCollateralName();
 		collateral360Helper.enterCollateralCode();
 		collateral360Helper.selectCollType(option);
@@ -79,6 +80,8 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.enterCollateralPercentage();
 		collateral360Helper.setPrimaryCollateralOwner();
 		collateral360Helper.clickSaveCollateral();
+		Thread.sleep(3000);
+		collateral360Helper.clickUseCurrentBtn();
 		System.out.println("test 2");
 	}
 
@@ -96,6 +99,7 @@ public class Collateral360 extends TestCaseExecutor {
 			throws InterruptedException {
 		customer360Helper = collateral360Helper.clickBackBreadCrum(pageTitle);
 		collateral360Helper.clickOnAddBtn();
+		Thread.sleep(1000);
 		collateral360Helper.selectCollateralTypeAsShares(option);
 		collateral360Helper.verifyLeftHandMenuOnCollateralTypeAsShares();
 	}
@@ -122,7 +126,8 @@ public class Collateral360 extends TestCaseExecutor {
 	// Titled Motor Vehicle
 
 	@Test(priority = 8)
-	public void test8_saveCollateralDetailsAsVehicle() {
+	public void test8_saveCollateralDetailsAsVehicle()
+			throws InterruptedException {
 		collateral360Helper.enterCollateralName();
 		collateral360Helper.enterCollateralCode();
 		collateral360Helper.selectCollateralTypeAsVehicle(option);
@@ -140,13 +145,16 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.enterCollateralPercentage();
 		collateral360Helper.setPrimaryCollateralOwner();
 		collateral360Helper.clickSaveCollateral();
+		collateral360Helper.clickUseCurrentBtn();
+		Thread.sleep(2000);
 	}
 
 	@Test(priority = 9)
 	public void test9_verifyActionMenuDisplayedOnVehicle()
 			throws InterruptedException {
-
+		Thread.sleep(3000);
 		collateral360Helper.clickOnTitledMotorVehicleSection();
+		Thread.sleep(3000);
 		collateral360Helper.clickEditOnTitledMotorVehicle();
 		collateral360Helper.addOnTitledMotorVehicle();
 		collateral360Helper.verifyActionMenuPresentOnTitledMotorVehicle();
@@ -173,12 +181,16 @@ public class Collateral360 extends TestCaseExecutor {
 	// UCC
 
 	@Test(priority = 14)
-	public void test15_gotoCollateralPool() {
+	public void test15_gotoCollateralPool() throws InterruptedException {
 		log.info("Go to collateral pool to add facility");
 		reader.readValue(_hashFacility, "resources/Facility.json");
+		Thread.sleep(3000);
 		searchHelper.searchFacility(_hashFacility);
+		Thread.sleep(3000);
 		collateral360Helper.clickOnCollateralPool();
+		Thread.sleep(1000);
 		collateral360Helper.clickDetailsLinkOnCollateralPool();
+		Thread.sleep(2000);
 		collateral360Helper.clickCollateralAccounts();
 		collateral360Helper.clickAddOnCollateralAccounts();
 	}
@@ -194,20 +206,24 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.enterCollateralPercentage();
 		collateral360Helper.setPrimaryCollateralOwner();
 		collateral360Helper.clickSaveCollateral();
+		collateral360Helper.clickUseCurrentBtn();
 	}
 
 	@Test(priority = 16)
-	public void test17_verifyDeleteOnUCC() {
+	public void test17_verifyDeleteOnUCC() throws InterruptedException {
+		Thread.sleep(3000);
 		collateral360Helper.clickOnUCC();
+		Thread.sleep(3000);
 		collateral360Helper.clickEditAndAddOnUCC();
-		collateral360Helper.clickDeleteOnUCC();
-		collateral360Helper.clickCancelBtnOnUCC();
+//		collateral360Helper.clickDeleteOnUCC();
+//		collateral360Helper.clickCancelBtnOnUCC();
 	}
 
 	@Test(priority = 17)
-	public void test18_verifyActionMenuDisplayedOnUCC() {
-		collateral360Helper.clickEditAndAddOnUCC();
-		collateral360Helper.verifyActionMenuOnUCC();
+	public void test18_verifyActionMenuDisplayedOnUCC() throws InterruptedException {
+		Thread.sleep(2000);
+//		collateral360Helper.clickEditAndAddOnUCC();
+//		collateral360Helper.verifyActionMenuOnUCC();
 
 	}
 
@@ -220,7 +236,6 @@ public class Collateral360 extends TestCaseExecutor {
 	@Test(priority = 19)
 	public void test20_saveUCC() {
 		collateral360Helper.saveUCC(option);
-
 	}
 
 	@Test(priority = 20)
@@ -229,20 +244,25 @@ public class Collateral360 extends TestCaseExecutor {
 	}
 
 	@Test(priority = 21)
-	public void test22_cancelUCCDetails() {
+	public void test22_cancelUCCDetails() throws InterruptedException {
 		collateral360Helper.clickEditAndAddOnUCC();
 		collateral360Helper.cancelUCC(option);
+		Thread.sleep(3000);
+		collateral360Helper.clickOnUCC();
 	}
 
 	// Shares/Stocks/Bonds/Mutual Funds
 
 	@Test(priority = 22)
-	public void test23_gotoCollateral360() {
+	public void test23_gotoCollateral360() throws InterruptedException {
 		log.info("Go to collateral pool");
 		reader.readValue(_hashFacility, "resources/Facility.json");
+		Thread.sleep(3000);
 		searchHelper.searchFacility(_hashFacility);
+		Thread.sleep(3000);
 		collateral360Helper.clickOnCollateralPool();
 		collateral360Helper.clickDetailsLinkOnCollateralPool();
+		Thread.sleep(2000);
 		collateral360Helper.clickCollateralAccounts();
 		collateral360Helper.clickAddOnCollateralAccounts();
 	}
@@ -258,10 +278,13 @@ public class Collateral360 extends TestCaseExecutor {
 		collateral360Helper.enterCollateralPercentage();
 		collateral360Helper.setPrimaryCollateralOwner();
 		collateral360Helper.clickSaveCollateral();
+		collateral360Helper.clickUseCurrentBtn();
 	}
 
 	@Test(priority = 24)
-	public void test25_verifyMandatoryFieldsOnMutualFunds() {
+	public void test25_verifyMandatoryFieldsOnMutualFunds()
+			throws InterruptedException {
+		Thread.sleep(3000);
 		collateral360Helper.clickOnShares();
 		collateral360Helper.clickOnEDitBtnOfShares();
 		collateral360Helper.selectShareTypeAsMutualFunds(option);
@@ -274,8 +297,10 @@ public class Collateral360 extends TestCaseExecutor {
 	}
 
 	@Test(priority = 26)
-	public void test27_updateMutualFunds() {
+	public void test27_updateMutualFunds() throws InterruptedException {
+		Thread.sleep(3000);
 		collateral360Helper.clickOnEDitBtnOfShares();
+		Thread.sleep(3000);
 		collateral360Helper.enterMarginRate();
 		collateral360Helper.clickOnSaveBtnOfShares();
 	}
@@ -291,8 +316,11 @@ public class Collateral360 extends TestCaseExecutor {
 	// Verify Certified Bonds section
 
 	@Test(priority = 28)
-	public void test29_verifyCertificatedBondsSection() {
+	public void test29_verifyCertificatedBondsSection()
+			throws InterruptedException {
+		Thread.sleep(3000);
 		collateral360Helper.clickOnEDitBtnOfShares();
+		Thread.sleep(3000);
 		collateral360Helper.selectShareTypeAsCertificatedBonds(option);
 		collateral360Helper.verifyCertificatedBonds();
 	}
@@ -307,8 +335,10 @@ public class Collateral360 extends TestCaseExecutor {
 	}
 
 	@Test(priority = 30)
-	public void test31_updateCertifiedBonds() {
+	public void test31_updateCertifiedBonds() throws InterruptedException {
+		Thread.sleep(3000);
 		collateral360Helper.clickOnEDitBtnOfShares();
+		Thread.sleep(3000);
 		collateral360Helper.enterIssuer();
 		collateral360Helper.clickOnSaveBtnOfShares();
 	}
@@ -324,8 +354,11 @@ public class Collateral360 extends TestCaseExecutor {
 	// Verify Uncertified Securities or Mutual funds section
 
 	@Test(priority = 32)
-	public void test33_VerifyUncertifiedSecuritiesOrMutualFundsSection() {
+	public void test33_VerifyUncertifiedSecuritiesOrMutualFundsSection()
+			throws InterruptedException {
+		Thread.sleep(3000);
 		collateral360Helper.clickOnEDitBtnOfShares();
+		Thread.sleep(3000);
 		collateral360Helper.selectShareTypeAsUncertificatedSecurities(option);
 		collateral360Helper.verifyUncertificatedSecurities();
 	}
@@ -359,48 +392,61 @@ public class Collateral360 extends TestCaseExecutor {
 	// Real Estate
 
 	@Test(priority = 36)
-	public void test37_goToCollateralPool() {
+	public void test37_goToCollateralPool() throws InterruptedException {
 		log.info("Go to collateral pool");
 		reader.readValue(_hashFacility, "resources/Facility.json");
+		Thread.sleep(3000);
 		searchHelper.searchFacility(_hashFacility);
+		Thread.sleep(3000);
 		collateral360Helper.clickOnCollateralPool();
 		collateral360Helper.clickDetailsLinkOnCollateralPool();
+		Thread.sleep(2000);
 		collateral360Helper.clickCollateralAccounts();
 		collateral360Helper.clickAddOnCollateralAccounts();
 	}
 
 	@Test(priority = 37)
-	public void test38_saveCollateralDetailsAsRealState() {
+	public void test38_saveCollateralDetailsAsRealState()
+			throws InterruptedException {
 		collateral360Helper.enterCollateralName();
 		collateral360Helper.enterCollateralCode();
 		collateral360Helper.selectCollateralTypeAsRealEstate(option);
 		collateral360Helper.selectCollateralSubTypeAsRetailOffice(option);
-		collateral360Helper.enterCountry(option);
-		collateral360Helper.enterCity();
-		collateral360Helper.enterStreet();
-		collateral360Helper.enterNumber();
-		collateral360Helper.enterZipCode();
 
-		collateral360Helper.newlybuilt(option);
+		 collateral360Helper.OwnerOccupancyAndOccupancyofRent();
+		 
+		 collateral360Helper.BusinessLine(option);
+		 collateral360Helper.Market(option);
+		
+		 
+//		 collateral360Helper.enterNumber();
+//		 collateral360Helper.enterZipCode();
+//		
+//		 collateral360Helper.newlybuilt(option);
 
 		collateral360Helper.enterCollateralOwnerName();
 		collateral360Helper.enterCollateralPercentage();
 		collateral360Helper.setPrimaryCollateralOwner();
 
 		collateral360Helper.saveCollateral();
+		Thread.sleep(2000);
+
+		// collateral360Helper.clickUseCurrentBtn();
 	}
 
 	// APN/Tax Information
 
 	@Test(priority = 38)
-	public void test39_ClickTaxInformation() {
+	public void test39_ClickTaxInformation() throws InterruptedException {
+		Thread.sleep(3000);
 		collateral360Helper.clickOnTaxInformation();
 		collateral360Helper.clickEditOnTaxInformation();
 		collateral360Helper.EntervaluesInTaxInformation();
 	}
 
 	@Test(priority = 39)
-	public void test40_AddTaxInformation() {
+	public void test40_AddTaxInformation() throws InterruptedException {
+		Thread.sleep(3000);
 		collateral360Helper.ClickonAddTax();
 	}
 
