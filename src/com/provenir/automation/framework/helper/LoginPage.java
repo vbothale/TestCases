@@ -39,7 +39,7 @@ public class LoginPage {
 	public void login(HashMap<String, Map<String, String>> _hashLogins) {
 		try {
 			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashLogins
-					.get("fmartin");
+					.get("provadmin");
 			username.sendKeys(propertiesMap.get("username"));
 			password.sendKeys(propertiesMap.get("password"));
 			loginBtn.click();
