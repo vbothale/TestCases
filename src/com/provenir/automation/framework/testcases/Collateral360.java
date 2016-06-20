@@ -232,15 +232,15 @@ public class Collateral360 extends TestCaseExecutor {
 
 	}
 
-//	@Test(priority = 19)
-//	public void test20_saveUCC() {
+	@Test(priority = 19)
+	public void test20_saveUCC() {
 //		collateral360Helper.saveUCC(option);
-//	}
-//
-//	@Test(priority = 20)
-//	public void test21_updateUCC() {
+	}
+
+	@Test(priority = 20)
+	public void test21_updateUCC() {
 //		collateral360Helper.updateUCC(option);
-//	}
+	}
 
 	@Test(priority = 21)
 	public void test22_cancelUCCDetails() throws InterruptedException {
