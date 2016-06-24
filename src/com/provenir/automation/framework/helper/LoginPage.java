@@ -83,7 +83,7 @@ public class LoginPage {
 	public void login3(HashMap<String, Map<String, String>> _hashLogins) {
 		try {
 			HashMap<String, String> propertiesMap = (HashMap<String, String>) _hashLogins
-					.get("autouser2");
+					.get("fmartin");
 			username.sendKeys(propertiesMap.get("username"));
 			password.sendKeys(propertiesMap.get("password"));
 			loginBtn.click();
