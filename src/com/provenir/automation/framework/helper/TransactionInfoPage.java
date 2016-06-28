@@ -159,31 +159,47 @@ public class TransactionInfoPage {
 		return transactionInfoTitle.getText();
 	}
 
-	public void enterFacilityName(String facilityNm) {
-		facilityName.clear();
-		facilityName.sendKeys(facilityNm);
+	public void enterFacilityName() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value='';", facilityName);
+		js.executeScript("arguments[0].value='Test Facility';", facilityName);
 	}
 
-	public void selectFacilityType(String type) {
+	public void selectFacilityType() throws InterruptedException {
 		Util.enableAllDropdowns(driver);
-		Util.selectItemFromList(driver, facilityType, type);
+		driver.findElement(
+				By.xpath("//*[@id='BBUPSERTCREDLNSUMMFORM']/div[3]/div[1]/span/input"))
+				.click();
+		driver.findElement(
+				By.xpath("//*[@id='BBUPSERTCREDLNSUMMFORM']/div[3]/div[1]/span/input"))
+				.clear();
+		driver.findElement(
+				By.xpath("//*[@id='BBUPSERTCREDLNSUMMFORM']/div[3]/div[1]/span/input"))
+				.sendKeys("Term Loan");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//strong[contains(.,'Term Loan')]"))
+				.click();
 	}
 
-	public void enterProposedAmount(String value) {
-		Util.waitForElement(driver, proposedAmt, 10);
-		proposedAmt.clear();
-		proposedAmt.sendKeys(value);
+	public void enterProposedAmount() {
+		Util.waitForElement(driver, proposedAmt, 5);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value='';", proposedAmt);
+		js.executeScript("arguments[0].value='500000000';", proposedAmt);
 	}
 
 	public TransactionInfoPage clickSaveButton() throws InterruptedException {
-		saveButton.click();
-		Thread.sleep(5000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", saveButton);
 		Util.waitForAJAX(driver);
+		Thread.sleep(3000);
 		return this;
 	}
 
 	public void clickAddNewButton() {
-		addNewButton.click();
+		Util.waitForAJAX(driver);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", addNewButton);
 		Util.waitForAJAX(driver);
 	}
 
@@ -649,6 +665,24 @@ public class TransactionInfoPage {
 		Util.selectItemFromList(driver, borrowerName, option);
 	}
 
+	public void selBorrowerOnTransactionInformation()
+			throws InterruptedException {
+		driver.findElement(
+				By.xpath("//*[@id='borrSelect']/div/table/tbody/tr/td[1]/span/input"))
+				.click();
+		driver.findElement(
+				By.xpath("//*[@id='borrSelect']/div/table/tbody/tr/td[1]/span/input"))
+				.clear();
+		driver.findElement(
+				By.xpath("//*[@id='borrSelect']/div/table/tbody/tr/td[1]/span/input"))
+				.sendKeys("Test FMC");
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//strong[starts-with(.,'Test FMC')]"))
+				.click();
+		Util.waitForAJAX(driver);
+	}
+
 	public void selRelationshipTyp() throws InterruptedException {
 
 		Util.waitForElementPresent(
@@ -661,31 +695,34 @@ public class TransactionInfoPage {
 		Thread.sleep(1000);
 		driver.findElement(
 				By.xpath(".//*[@id='BBUPSERTCREDLNSUMMFORM']/div[5]/div[3]/div/table/tbody/tr/td[4]/span/input"))
+				.clear();
+		driver.findElement(
+				By.xpath(".//*[@id='BBUPSERTCREDLNSUMMFORM']/div[5]/div[3]/div/table/tbody/tr/td[4]/span/input"))
 				.sendKeys("Borrower");
-		Thread.sleep(1000);
-		List<WebElement> lst = driver
-				.findElements(By
-						.xpath("//*[contains(@id,'ui-id-') and (@class='ui-corner-all')]"));
-		lst.get(1).click();
-
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		List<WebElement> lst = driver.findElements(By
+				.xpath("//strong[contains(.,'Borrower')]"));
+		lst.get(0).click();
 		Util.waitForAJAX(driver);
 	}
 
 	public void clickPrimaryChkbox() {
 		WebElement e = driver
 				.findElement(By
-						.xpath("//*[@id='BBUPSERTCREDLNSUMMFORM']/div[5]/div[3]/div/table/tbody/tr/td[5]/input"));
+						.xpath("//*[@id='BBUPSERTCREDLNSUMMFORM']/div[5]/div[3]/div/table/tbody/tr/td[5]/input[@name='primFlag0']"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", e);
+		Util.waitForAJAX(driver);
 	}
 
-	public boolean verifyAmountRequestedValue(String value) {
+	public String verifyAmountRequestedValue() {
 		Util.waitForAJAX(driver);
-		if (amtRequested.getText().trim().equalsIgnoreCase(value))
-			return true;
-		else
-			return false;
+		return amtRequested.getText();
+		
+//		if (amtRequested.getText().trim().equalsIgnoreCase("500000000"))
+//			return true;
+//		else
+//			return false;
 	}
 
 	public AdditionalInformation clickNextBtn() {

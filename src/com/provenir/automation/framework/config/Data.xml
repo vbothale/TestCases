@@ -46,6 +46,7 @@
 			</addressDetails>
 			
 			<customerType>Individual</customerType>
+			<customerType1>Business</customerType1>
 			<asBusiness>
 				<companyName>Test FMC 371</companyName>
 				<companyShortName>FMC</companyShortName>
@@ -141,6 +142,10 @@
 			<teamMemberName>Stephen</teamMemberName>
 			</userTeamInformation>
 			
-			<additionalInfo>Yes</additionalInfo>
+			<additionalInfo>
+				<primaryChkingAcc></primaryChkingAcc>
+				<emp>500</emp>
+				<avgBalance>10000</avgBalance>
+			</additionalInfo>
 	</newCreditReqWizard>
 	</testdata>

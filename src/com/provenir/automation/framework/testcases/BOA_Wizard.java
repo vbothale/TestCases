@@ -47,6 +47,7 @@ public class BOA_Wizard extends TestCaseExecutor {
 	String taxId = "";
 	String custName = "";
 	String collName = "Coll";
+	String accName = "Acc";
 	boolean result = false;
 
 	public TestDataReader reader = new TestDataReader();
@@ -126,6 +127,9 @@ public class BOA_Wizard extends TestCaseExecutor {
 
 	@Test(priority = 6)
 	public void test6_saveBusinessCustDetails() throws InterruptedException {
+
+		customerInfoPage.selCustType();
+
 		int randomNumber = (int) (Math.random() * 1111);
 		companyName = "Test FMC " + randomNumber;
 		reader.updateNodeValue(
@@ -134,12 +138,7 @@ public class BOA_Wizard extends TestCaseExecutor {
 
 		customerInfoPage.enterCompanyLegalName(companyName);
 
-		taxId = "TaxID " + randomNumber;
-
-		customerInfoPage.enterTaxIdentification(taxId);
-		reader.updateNodeValue(
-				"testdata/newCreditReqWizard/customerInformation/taxIdentification",
-				taxId);
+		customerInfoPage.enterTaxID();
 
 		Thread.sleep(2000);
 		customerInfoPage.selectCorporateStructure();
@@ -152,6 +151,7 @@ public class BOA_Wizard extends TestCaseExecutor {
 		// address section
 
 		customerInfoPage.clickAddBtnOFAddressOnCustInfo();
+		Thread.sleep(2000);
 		customerInfoPage.selAddType();
 		customerInfoPage.selCountry();
 
@@ -162,60 +162,51 @@ public class BOA_Wizard extends TestCaseExecutor {
 		customerInfoPage.enterZipCode();
 
 		customerInfoPage.clickSaveButton();
+
+		customerInfoPage.clickMatchPopup();
 	}
 
-//	@Test(priority = 7)
-//	public void test7_verifyAddedBusinessCustomer() {
-//		customerInfoPage
-//				.clickBusinessCustOnGridWithAllDetails(reader
-//						.readNodeValue("testdata/newCreditReqWizard/customerInformation/asBusiness/companyName"));
-//		Assert.assertEquals(
-//				customerInfoPage.getCompanyName(),
-//				reader.readNodeValue("testdata/newCreditReqWizard/customerInformation/asBusiness/companyName"));
-//	}
-
 	@Test(priority = 8)
-	public void test8_verifyManadatoryFieldsForIndividualCustomer() {
+	public void test8_verifyManadatoryFieldsForIndividualCustomer()
+			throws InterruptedException {
+		Thread.sleep(2000);
 		customerInfoPage.clickAddNewButton();
-		customerInfoPage.clickCustText();
-		customerInfoPage
-				.clickCustTypeAsIndividual(reader
-						.readNodeValue("testdata/newCreditReqWizard/customerInformation/customerType"));
+		customerInfoPage.selCustTyp();
+
 		customerInfoPage.clickSaveButton();
 		Assert.assertEquals(customerInfoPage.getCountOfErrorMsgs(), 6);
 	}
 
 	@Test(priority = 9)
 	public void test9_saveIndividualCustDetails() throws InterruptedException {
+
+		customerInfoPage.selCustTyp();
+		Thread.sleep(3000);
+
 		int randomNumber = (int) (Math.random() * 1111);
 		custName = "Customer I2" + randomNumber;
 		customerInfoPage.enterCustFirstName(custName);
 		reader.updateNodeValue(
 				"testdata/newCreditReqWizard/customerInformation/asIndividual/firstName",
 				custName);
-		customerInfoPage
-				.enterMiddleName(reader
-						.readNodeValue("testdata/newCreditReqWizard/customerInformation/asIndividual/midName"));
-		customerInfoPage
-				.enterCustLastName(reader
-						.readNodeValue("testdata/newCreditReqWizard/customerInformation/asIndividual/lastName"));
-		customerInfoPage
-				.enterDateOfBirth(reader
-						.readNodeValue("testdata/newCreditReqWizard/customerInformation/dateOfBirth"));
 
-		customerInfoPage
-				.selectGender(reader
-						.readNodeValue("testdata/newCreditReqWizard/customerInformation/asIndividual/gender"));
+		customerInfoPage.enterDateOfBirth();
+
+		customerInfoPage.enterMiddleName();
+		customerInfoPage.selectGender();
+
+		customerInfoPage.enterCustLastName();
+
+		customerInfoPage.enterTaxID();
 
 		customerInfoPage.enterCustomerSince();
-
-		customerInfoPage
-				.enterTaxIdentification(reader
-						.readNodeValue("testdata/newCreditReqWizard/customerInformation/taxIdentification"));
+		Thread.sleep(2000);
+		customerInfoPage.clickCustomerInfo();
 
 		// address section
 
 		customerInfoPage.clickAddBtnOFAddressOnCustInfo();
+		Thread.sleep(2000);
 		customerInfoPage.selAddType();
 		customerInfoPage.selCountry();
 
@@ -228,11 +219,6 @@ public class BOA_Wizard extends TestCaseExecutor {
 		customerInfoPage = customerInfoPage.clickSaveButton();
 
 		customerInfoPage.clickMatchPopup();
-
-		Assert.assertTrue(customerInfoPage.getCustNameFromGridForIndivid(
-				reader.readNodeValue("testdata/newCreditReqWizard/customerInformation/asIndividual/firstName"),
-				reader.readNodeValue("testdata/newCreditReqWizard/customerInformation/asIndividual/midName"),
-				reader.readNodeValue("testdata/newCreditReqWizard/customerInformation/asIndividual/lastName")));
 
 	}
 
@@ -262,25 +248,18 @@ public class BOA_Wizard extends TestCaseExecutor {
 				"testdata/newCreditReqWizard/collateralInformation/collateralAccName",
 				collName);
 
-		collateralInfoPage
-				.selectCollType(reader
-						.readNodeValue("testdata/newCreditReqWizard/collateralInformation/collateralType"));
+		collateralInfoPage.selectCollType();
 		Thread.sleep(2000);
-		collateralInfoPage
-				.selectCollSubType(reader
-						.readNodeValue("testdata/newCreditReqWizard/collateralInformation/collateralSubType"));
+		collateralInfoPage.selectCollSubType();
 
-		collateralInfoPage
-				.enterCustName(reader
-						.readNodeValue("testdata/newCreditReqWizard/customerInformation/asBusiness/companyName"));
+		Thread.sleep(2000);
+		collateralInfoPage.enterCustName();
 
 		collateralInfoPage.clickSearchIcon();
 		collateralInfoPage.selectCustomerFromList();
 		collateralInfoPage.clickLoadBtn();
 
-		collateralInfoPage
-				.enterOwnerPercentage(reader
-						.readNodeValue("testdata/newCreditReqWizard/collateralInformation/addFromSearch/ownerPercentage"));
+		collateralInfoPage.enterOwnerPercentage();
 
 		collateralInfoPage.selectPrimaryOwner();
 		Thread.sleep(3000);
@@ -290,46 +269,41 @@ public class BOA_Wizard extends TestCaseExecutor {
 	@Test(priority = 13)
 	public void test13_verifyTransactionInformationPage() {
 		transactionInfoPage = collateralInfoPage.clickOnNextButton();
+
 		Assert.assertEquals(transactionInfoPage.getTransactionInfoTitle(),
 				"Transaction Information");
 	}
 
 	@Test(priority = 14)
 	public void test14_saveTransactionDetails() throws InterruptedException {
-		transactionInfoPage
-				.enterFacilityName(reader
-						.readNodeValue("testdata/newCreditReqWizard/transactionInformation/facilityName"));
 
-		transactionInfoPage
-				.selectFacilityType(reader
-						.readNodeValue("testdata/newCreditReqWizard/transactionInformation/facilityType"));
-		transactionInfoPage
-				.enterProposedAmount(reader
-						.readNodeValue("testdata/newCreditReqWizard/transactionInformation/proposedAmount"));
+		transactionInfoPage.clickAddNewButton();
+		Thread.sleep(2000);
+
+		transactionInfoPage.enterFacilityName();
+
+		transactionInfoPage.selectFacilityType();
+		transactionInfoPage.enterProposedAmount();
 
 		transactionInfoPage.clickAddBtnOfFacilityBorrowr();
-		transactionInfoPage
-				.selectBorrowerName(reader
-						.readNodeValue("testdata/newCreditReqWizard/customerInformation/asBusiness/companyName"));
+		Thread.sleep(1000);
+
+		transactionInfoPage.selBorrowerOnTransactionInformation();
+
 		Thread.sleep(2000);
 		transactionInfoPage.selRelationshipTyp();
 		Thread.sleep(2000);
 		transactionInfoPage.clickPrimaryChkbox();
 
 		transactionInfoPage.clickSaveButton();
-		Assert.assertEquals(
-				transactionInfoPage.getFacilityNmOnGrid(),
-				reader.readNodeValue("testdata/newCreditReqWizard/transactionInformation/facilityName"));
 	}
 
-	@Test(priority = 15)
-	public void test15_verifyAmountRequested() {
-		Assert.assertEquals(
-				transactionInfoPage
-						.verifyAmountRequestedValue(reader
-								.readNodeValue("testdata/newCreditReqWizard/transactionInformation/proposedAmount")),
-				"500000000");
-	}
+//	@Test(priority = 15)
+//	public void test15_verifyAmountRequested() throws InterruptedException {
+//		Thread.sleep(2000);
+//		Assert.assertEquals(transactionInfoPage.verifyAmountRequestedValue(),
+//				500000000);
+//	}
 
 	@Test(priority = 16)
 	public void test16_verifyAdditionalInformation() {
@@ -337,30 +311,48 @@ public class BOA_Wizard extends TestCaseExecutor {
 		Assert.assertTrue(addInfo.verifyAdditionalInformationTitle());
 	}
 
-	@Test(priority = 17)
-	public void test17_saveAdditionalInformation() {
-		addInfo.selectQuesObligation(reader
-				.readNodeValue("testdata/newCreditReqWizard/additionalInfo"));
-		addInfo.selectQuesBankrupt(reader
-				.readNodeValue("testdata/newCreditReqWizard/additionalInfo"));
-		addInfo.selectQuesGuarantor(reader
-				.readNodeValue("testdata/newCreditReqWizard/additionalInfo"));
-		addInfo.selectQuesTaxesOwned(reader
-				.readNodeValue("testdata/newCreditReqWizard/additionalInfo"));
-		addInfo.selectQuesOwnership(reader
-				.readNodeValue("testdata/newCreditReqWizard/additionalInfo"));
-		addInfo.clickSaveOnAdditionalInformation();
-	}
+	// @Test(priority = 17)
+	// public void test17_saveAdditionalInformation() throws
+	// InterruptedException {
+	//
+	// Thread.sleep(2000);
+	// int randomNumber = (int) (Math.random() * 1111);
+	// accName = accName + randomNumber;
+	//
+	// Thread.sleep(3000);
+	//
+	// addInfo.enterPrimaryCheckingAccount(accName);
+	// reader.updateNodeValue(
+	// "testdata/newCreditReqWizard/additionalInfo/primaryChkingAcc",
+	// accName);
+	//
+	// addInfo.enterNoOFEmp();
+	// addInfo.enterAvgAccBalance();
+	//
+	// addInfo.selectQuesObligation();
+	// Thread.sleep(1000);
+	// addInfo.selectQuesBankrupt();
+	// Thread.sleep(1000);
+	// addInfo.selectQuesGuarantor();
+	// Thread.sleep(1000);
+	// addInfo.selectQuesTaxesOwned();
+	// Thread.sleep(1000);
+	// addInfo.selectQuesOwnership();
+	// Thread.sleep(1000);
+	// addInfo.clickSaveOnAdditionalInformation();
+	// }
 
 	@Test(priority = 18)
 	public void test18_verifySummaryOfApplicationTitle() {
-		summaryOfApplication = addInfo.clickNextButton();
+		summaryOfApplication = addInfo.clickNxt();
+		// summaryOfApplication = addInfo.clickNextButton();
 		Assert.assertTrue(summaryOfApplication.verifySummaryOfApplication());
 	}
 
 	@Test(priority = 19)
 	public void test19_clickSubmitOnLastStepOfBOAWizard()
 			throws InterruptedException {
+		Thread.sleep(2000);
 		summaryOfApplication.clickFinishButton();
 		result = summaryOfApplication.verifyLinks();
 	}

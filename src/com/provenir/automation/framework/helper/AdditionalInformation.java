@@ -39,6 +39,15 @@ public class AdditionalInformation {
 	@FindBy(how = How.ID, using = "nextBtn")
 	private WebElement nextBtn;
 
+	@FindBy(how = How.ID, using = "acctNo")
+	private WebElement acctNo;
+
+	@FindBy(how = How.ID, using = "noOfFullTimeEmp")
+	private WebElement noOfEmp;
+
+	@FindBy(how = How.ID, using = "acgBalYTD")
+	private WebElement avgAccBalance;
+
 	public boolean verifyAdditionalInformationTitle() {
 		Util.waitForAJAX(driver);
 		if (additionalInfoTitle.isDisplayed())
@@ -64,26 +73,122 @@ public class AdditionalInformation {
 		return new SummaryOfApplication(driver);
 	}
 
-	public void selectQuesObligation(String answer) {
-		Util.enableAllDropdowns(driver);
+	public SummaryOfApplication clickNxt() {
+		WebElement e = driver.findElement(By.xpath("//span[contains(.,'6')]"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", e);
+		Util.waitForAJAX(driver);
+		return new SummaryOfApplication(driver);
+	}
+
+	public void enterPrimaryCheckingAccount(String value) {
+		acctNo.clear();
+		acctNo.sendKeys(value);
+	}
+
+	public void enterNoOFEmp() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value='';", noOfEmp);
+		js.executeScript("arguments[0].value='500';", noOfEmp);
+	}
+
+	public void enterAvgAccBalance() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value='';", avgAccBalance);
+		js.executeScript("arguments[0].value='10000';", avgAccBalance);
+	}
+
+	public void selectQuesObligation() throws InterruptedException {
+
 		Util.waitForElementPresent(driver, By.xpath(quesObligation), 10);
-		Util.selectItemFromList(driver, quesObligation, answer);
+		driver.findElement(
+				By.xpath("//*[@id='BBCRUPSERTAPPINFO']/div/div[1]/div[5]/div/div[2]/div[2]/span/input"))
+				.click();
+		driver.findElement(
+				By.xpath("//*[@id='BBCRUPSERTAPPINFO']/div/div[1]/div[5]/div/div[2]/div[2]/span/input"))
+				.clear();
+		driver.findElement(
+				By.xpath("//*[@id='BBCRUPSERTAPPINFO']/div/div[1]/div[5]/div/div[2]/div[2]/span/input"))
+				.sendKeys("No");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//strong[contains(.,'No')]")).click();
+		Util.waitForAJAX(driver);
 	}
 
-	public void selectQuesBankrupt(String answer) {
-		Util.selectItemFromList(driver, quesBankrupt, answer);
+	public void selectQuesBankrupt() throws InterruptedException {
+		Util.waitForElementPresent(driver, By.xpath(quesBankrupt), 2);
+		String option = "No";
+		Util.selectItemFromList(driver, quesBankrupt, option);
+		// driver.findElement(
+		// By.xpath("//*[@id='BBCRUPSERTAPPINFO']/div/div[1]/div[5]/div/div[3]/div[2]/span/input"))
+		// .click();
+		// driver.findElement(
+		// By.xpath("//*[@id='BBCRUPSERTAPPINFO']/div/div[1]/div[5]/div/div[3]/div[2]/span/input"))
+		// .clear();
+		// driver.findElement(
+		// By.xpath("//*[@id='BBCRUPSERTAPPINFO']/div/div[1]/div[5]/div/div[3]/div[2]/span/input"))
+		// .sendKeys("No");
+		// Thread.sleep(2000);
+		// driver.findElement(By.xpath("//a/strong[contains(.,'No')]")).click();
+
+		Util.waitForAJAX(driver);
 	}
 
-	public void selectQuesGuarantor(String answer) {
-		Util.selectItemFromList(driver, quesGuarantor, answer);
+	public void selectQuesGuarantor() throws InterruptedException {
+		Util.waitForElementPresent(driver, By.xpath(quesGuarantor), 6);
+		String option = "No";
+		Util.selectItemFromList(driver, quesGuarantor, option);
+
+		// driver.findElement(
+		// By.xpath("//*[@id='BBCRUPSERTAPPINFO']/div/div[1]/div[5]/div/div[4]/div[2]/span/input"))
+		// .click();
+		// driver.findElement(
+		// By.xpath("//*[@id='BBCRUPSERTAPPINFO']/div/div[1]/div[5]/div/div[4]/div[2]/span/input"))
+		// .clear();
+		// driver.findElement(
+		// By.xpath("//*[@id='BBCRUPSERTAPPINFO']/div/div[1]/div[5]/div/div[4]/div[2]/span/input"))
+		// .sendKeys("No");
+		// Thread.sleep(2000);
+		// driver.findElement(By.xpath("//strong[contains(.,'No')]")).click();
+		Util.waitForAJAX(driver);
 	}
 
-	public void selectQuesTaxesOwned(String answer) {
-		Util.selectItemFromList(driver, quesTaxesOwned, answer);
+	public void selectQuesTaxesOwned() throws InterruptedException {
+		Util.waitForElementPresent(driver, By.xpath(quesTaxesOwned), 7);
+		String option = "No";
+		Util.selectItemFromList(driver, quesTaxesOwned, option);
+
+		// driver.findElement(
+		// By.xpath("//*[@id='BBCRUPSERTAPPINFO']/div/div[1]/div[5]/div/div[5]/div[2]/span/input"))
+		// .click();
+		// driver.findElement(
+		// By.xpath("//*[@id='BBCRUPSERTAPPINFO']/div/div[1]/div[5]/div/div[5]/div[2]/span/input"))
+		// .clear();
+		// driver.findElement(
+		// By.xpath("//*[@id='BBCRUPSERTAPPINFO']/div/div[1]/div[5]/div/div[5]/div[2]/span/input"))
+		// .sendKeys("No");
+		// Thread.sleep(2000);
+		// driver.findElement(By.xpath("//strong[contains(.,'No')]")).click();
+		Util.waitForAJAX(driver);
 	}
 
-	public void selectQuesOwnership(String answer) {
-		Util.selectItemFromList(driver, quesAnyDegree, answer);
+	public void selectQuesOwnership() throws InterruptedException {
+		Util.waitForElementPresent(driver, By.xpath(quesAnyDegree), 7);
+		String option = "No";
+		Util.selectItemFromList(driver, quesAnyDegree, option);
+
+		// driver.findElement(
+		// By.xpath("//*[@id='BBCRUPSERTAPPINFO']/div/div[1]/div[5]/div/div[6]/div[2]/span/input"))
+		// .click();
+		// driver.findElement(
+		// By.xpath("//*[@id='BBCRUPSERTAPPINFO']/div/div[1]/div[5]/div/div[6]/div[2]/span/input"))
+		// .clear();
+		// driver.findElement(
+		// By.xpath("//*[@id='BBCRUPSERTAPPINFO']/div/div[1]/div[5]/div/div[6]/div[2]/span/input"))
+		// .sendKeys("No");
+		// Thread.sleep(2000);
+		// driver.findElement(By.xpath("//strong[contains(.,'No')]")).click();
+		Util.waitForAJAX(driver);
 	}
 
 }

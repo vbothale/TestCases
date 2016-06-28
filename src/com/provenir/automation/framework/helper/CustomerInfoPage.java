@@ -52,7 +52,6 @@ public class CustomerInfoPage {
 	// "//div[@id='partyList']/div[@class='main_content_div']/div[2]/div[1]/a[@name='addParty']")
 	// private WebElement NewButton;
 
-	
 	@FindBy(how = How.XPATH, using = "//label[@class='error']")
 	private List<WebElement> errorMsg;
 
@@ -1500,6 +1499,13 @@ public class CustomerInfoPage {
 		driver.findElement(By.id("customerInfo")).click();
 	}
 
+	public void clickCustomerInfo() {
+		driver.findElement(
+				By.xpath("//*[@id='custSpecDiv']/div[1]/div[7]/div[1]/div/a"))
+				.click();
+		driver.findElement(By.id("customerInfo")).click();
+	}
+
 	public void selectCustStatus(String status) {
 		Util.selectItemFromList(driver, custStatus, status);
 	}
@@ -1512,9 +1518,12 @@ public class CustomerInfoPage {
 		Util.selectItemFromList(driver, language, lang);
 	}
 
-	public void enterDateOfBirth(String dateOfBirthvalue) {
-		dateOfBirth.clear();
-		dateOfBirth.sendKeys(dateOfBirthvalue);
+	public void enterDateOfBirth() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value='';", dateOfBirth);
+		js.executeScript("arguments[0].value='1990-01-15';", dateOfBirth);
+		// dateOfBirth.clear();
+		// dateOfBirth.sendKeys(dateOfBirthvalue);
 	}
 
 	public void enterTaxIdentification(String taxId) {
@@ -1522,12 +1531,16 @@ public class CustomerInfoPage {
 		taxIdentification.sendKeys(taxId);
 	}
 
+	public void enterTaxID() {
+		taxIdentification.clear();
+		taxIdentification.sendKeys("123456789");
+	}
+
 	public void selectStateOfIncorp(String state) {
 		Util.selectItemFromList(driver, stateOfIncorp, state);
 	}
 
 	public void selectCorporateStructure() throws InterruptedException {
-		Util.enableAllDropdowns(driver);
 		Util.waitForAJAX(driver);
 		driver.findElement(
 				By.xpath("//*[@id='addInfoDiv']/div/div[1]/span/input"))
@@ -1663,16 +1676,31 @@ public class CustomerInfoPage {
 		Util.selectItemFromList(driver, saluation, saluationValue);
 	}
 
-	public void selectGender(String genderValue) {
-		Util.selectItemFromList(driver, gender, genderValue);
+	public void selectGender() throws InterruptedException {
+		Util.waitForElementPresent(driver, By.xpath(gender), 10);
+		driver.findElement(
+				By.xpath("//*[@id='custSpecDiv']/div[1]/div[4]/div[2]/span/input"))
+				.click();
+		driver.findElement(
+				By.xpath("//*[@id='custSpecDiv']/div[1]/div[4]/div[2]/span/input"))
+				.clear();
+		driver.findElement(
+				By.xpath("//*[@id='custSpecDiv']/div[1]/div[4]/div[2]/span/input"))
+				.sendKeys("Female");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a[contains(.,'Female')]")).click();
 	}
 
 	public void selectMaritalStatus(String maritalStatusValue) {
 		Util.selectItemFromList(driver, maritalStatus, maritalStatusValue);
 	}
 
-	public void enterMiddleName(String midName) {
-		middleName.sendKeys(midName);
+	public void enterMiddleName() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value='';", middleName);
+		js.executeScript("arguments[0].value='On';", middleName);
+		// middleName.clear();
+		// middleName.sendKeys(midName);
 	}
 
 	public void selectSuffix(String suffixValue) {
@@ -2130,8 +2158,10 @@ public class CustomerInfoPage {
 		custFirstName.sendKeys(firstNm);
 	}
 
-	public void enterCustLastName(String lastNm) {
-		custLastName.sendKeys(lastNm);
+	public void enterCustLastName() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value='';", custLastName);
+		js.executeScript("arguments[0].value='Test';", custLastName);
 	}
 
 	public NewCreditRequest clickBackBtn() {
@@ -2166,7 +2196,9 @@ public class CustomerInfoPage {
 		Util.waitForAJAX(driver);
 		Util.waitForElementPresent(driver,
 				By.xpath(".//*[@id='nextBtn']/span"), 40);
-		nextBtn.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", nextBtn);
+
 		Util.waitForAJAX(driver);
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
@@ -2740,6 +2772,37 @@ public class CustomerInfoPage {
 				.sendKeys("United States");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//a[contains(.,'United States')]"))
+				.click();
+	}
+
+	public void selCustTyp() throws InterruptedException {
+		Util.waitForElementPresent(driver, By.xpath(customerType), 10);
+		driver.findElement(
+				By.xpath("//*[@id='custSpecDiv']/div/div[2]/div[1]/span/input"))
+				.click();
+		driver.findElement(
+				By.xpath("//*[@id='custSpecDiv']/div/div[2]/div[1]/span/input"))
+				.clear();
+		driver.findElement(
+				By.xpath("//*[@id='custSpecDiv']/div/div[2]/div[1]/span/input"))
+				.sendKeys("Individual");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a[contains(.,'Individual')]")).click();
+	}
+
+	public void selCustType() throws InterruptedException {
+		Util.waitForElementPresent(driver, By.xpath(customerType), 10);
+		driver.findElement(
+				By.xpath("//*[@id='custSpecDiv']/div/div[2]/div[1]/span/input"))
+				.click();
+		driver.findElement(
+				By.xpath("//*[@id='custSpecDiv']/div/div[2]/div[1]/span/input"))
+				.clear();
+		driver.findElement(
+				By.xpath("//*[@id='custSpecDiv']/div/div[2]/div[1]/span/input"))
+				.sendKeys("Business");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a/strong[contains(.,'Business')]"))
 				.click();
 	}
 

@@ -104,7 +104,7 @@ public class CollateralInfoPage {
 	@FindBy(how = How.XPATH, using = "//*[@name='addColList']/b")
 	private WebElement addToCustListBtn;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='collateralDetails']/div/h2")
+	@FindBy(how = How.XPATH, using = "//*[@id='collateralList']/div/h2")
 	private WebElement collPoolSummaryHeader;
 
 	@FindBy(how = How.ID, using = "ownerName")
@@ -189,7 +189,9 @@ public class CollateralInfoPage {
 	 */
 
 	public CollateralInfoPage clickAddNewButton() {
-		addNewButton.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", addNewButton);
+
 		Util.waitForAJAX(driver);
 		return this;
 	}
@@ -277,7 +279,9 @@ public class CollateralInfoPage {
 
 	public TransactionInfoPage clickOnNextButton() {
 		Util.waitForElement(driver, nextButton, 5);
-		nextButton.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", nextButton);
+
 		Util.waitForAJAX(driver);
 		Util.waitForLoaderToFinish(driver);
 		return new TransactionInfoPage(driver);
@@ -390,8 +394,10 @@ public class CollateralInfoPage {
 		return lstOfRows.size();
 	}
 
-	public void enterCustName(String custName) {
-		customerName.sendKeys(custName);
+	public void enterCustName() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value='';", customerName);
+		js.executeScript("arguments[0].value='Dell Corporation';", customerName);
 	}
 
 	public void clickSearchIcon() {
@@ -412,8 +418,10 @@ public class CollateralInfoPage {
 		Util.waitForAJAX(driver);
 	}
 
-	public void enterOwnerPercentage(String oP) {
-		ownerPercentage.sendKeys(oP);
+	public void enterOwnerPercentage() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value='';", ownerPercentage);
+		js.executeScript("arguments[0].value='100';", ownerPercentage);
 	}
 
 	public void selectBusinessLine(String value) {
@@ -465,15 +473,33 @@ public class CollateralInfoPage {
 		Util.waitForAJAX(driver);
 	}
 
-	public void selectCollType(String option) {
+	public void selectCollType() throws InterruptedException {
 		Util.enableAllDropdowns(driver);
 		Util.waitForElementPresent(driver, By.xpath(collateralTypeField), 10);
-		Util.selectItemFromList(driver, collateralTypeField, option);
+		driver.findElement(
+				By.xpath("//*[@id='UPSERTCOLLTERALPOOLFORM']/div[1]/div[2]/div[1]/span/input"))
+				.click();
+		driver.findElement(
+				By.xpath("//*[@id='UPSERTCOLLTERALPOOLFORM']/div[1]/div[2]/div[1]/span/input"))
+				.clear();
+		driver.findElement(
+				By.xpath("//*[@id='UPSERTCOLLTERALPOOLFORM']/div[1]/div[2]/div[1]/span/input"))
+				.sendKeys("Shares");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//strong[contains(.,'Shares')]")).click();
 	}
 
-	public void selectCollSubType(String option) {
+	public void selectCollSubType() throws InterruptedException {
 		Util.waitForElementPresent(driver, By.xpath(collSubType), 10);
-		Util.selectItemFromList(driver, collSubType, option);
+		driver.findElement(By.xpath("//*[@id='collSubTyp']/span/input"))
+				.click();
+		driver.findElement(By.xpath("//*[@id='collSubTyp']/span/input"))
+				.clear();
+		driver.findElement(By.xpath("//*[@id='collSubTyp']/span/input"))
+				.sendKeys("Corporate Bonds");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//strong[contains(.,'Corporate')]"))
+				.click();
 	}
 
 }
