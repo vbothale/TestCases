@@ -298,13 +298,6 @@ public class BOA_Wizard extends TestCaseExecutor {
 		transactionInfoPage.clickSaveButton();
 	}
 
-//	@Test(priority = 15)
-//	public void test15_verifyAmountRequested() throws InterruptedException {
-//		Thread.sleep(2000);
-//		Assert.assertEquals(transactionInfoPage.verifyAmountRequestedValue(),
-//				500000000);
-//	}
-
 	@Test(priority = 16)
 	public void test16_verifyAdditionalInformation() {
 		addInfo = transactionInfoPage.clickNextBtn();
