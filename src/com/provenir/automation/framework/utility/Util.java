@@ -265,6 +265,12 @@ public class Util {
 		((JavascriptExecutor) driver)
 				.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 	}
+	
+	public static void scollTop(WebDriver driver)
+	{
+		((JavascriptExecutor) driver)
+		.executeScript("document.body.scrollTop = document.documentElement.scrollTop = 0;");
+	}
 
 	public static void scrollUp(WebDriver driver) {
 		((JavascriptExecutor) driver).executeScript("window.scrollBy(0, -200)");

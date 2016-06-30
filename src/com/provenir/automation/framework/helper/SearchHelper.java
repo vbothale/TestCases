@@ -188,4 +188,21 @@ public class SearchHelper {
 		Util.waitForAJAX(driver);
 	}
 
+	public void srchReq(String option) {
+		Util.waitForElement(driver, searchBox, 10);
+		searchBox.clear();
+		searchBox.sendKeys(option);
+		searchBox.sendKeys(Keys.ENTER);
+		Util.waitForAJAX(driver);
+	}
+
+	public Credit360Helper clickLoadBtnOnSearchPopup() {
+		Util.waitForAJAX(driver);
+		searchedReq.click();
+		loadReq.click();
+		Util.waitForLoaderToFinish(driver);
+		Util.waitForAJAX(driver);
+		return new Credit360Helper(driver);
+	}
+
 }
