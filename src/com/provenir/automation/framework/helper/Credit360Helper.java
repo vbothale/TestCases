@@ -91,6 +91,57 @@ public class Credit360Helper {
 	@FindBy(how = How.XPATH, using = ".//*[@id='taskManagmntContainer']/div[2]/div/div/div[3]/div/div/div[2]/div/div[4]/span")
 	private WebElement taskDescOnTM;
 
+	@FindBy(how = How.XPATH, using = "//h2[contains(.,'Credit 360')]")
+	private WebElement credit360Title;
+
+	@FindBy(how = How.ID, using = "regB")
+	private WebElement regB;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='regBr']/div//a[contains(.,'Reg B')]")
+	private WebElement verifyRegB;
+
+	@FindBy(how = How.ID, using = "startDt")
+	private WebElement regBStrtDate;
+
+	@FindBy(how = How.ID, using = "satisfactionDt")
+	private WebElement regBSatisfactionDate;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='taskManagmntContainer']/div[1]/a")
+	private WebElement expnadIconOnTM;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='main_content_div taskMgmtblock']/div[3]/div/div/div[2]/div/div[@title='Expand/Collapse']/span")
+	private WebElement expandAll;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='main_content_div taskMgmtblock']/div[3]/div/div/div[5]/div/div[2]/div[1]/span[2]")
+	private WebElement expandDecision;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='main_content_div taskMgmtblock']/div[3]/div/div/div[5]/div/div[2]/div[12]/a")
+	private WebElement actionMenuOnDecisionOfTM;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='main_content_div taskMgmtblock']/div[3]/div/div/div[5]/div/div[2]/div[12]/div/div/div/div/ul/li/a")
+	private WebElement reassignTask;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='main_content_div taskMgmtblock']/div[3]/div/div/div[5]/div/div[3]/div[12]/a")
+	private WebElement actionMenuOnPolicyException;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='main_content_div taskMgmtblock']/div[3]/div/div/div[5]/div/div[3]/div[12]/div/div/div/div/ul/li/a")
+	private WebElement reassignTaskOnPolicyException;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='main_content_div taskMgmtblock']/div[3]/div/div/div[5]/div/div[3]/div[12]/div/div/div/div/ul/li[1]/a")
+	private WebElement setTaskWaivedOnPolicyException;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='taskAssigee']/input")
+	private WebElement assignedUser;
+
+	@FindBy(how = How.XPATH, using = "//li[contains(.,'Abby Lockhart [alockhart]')]")
+	private WebElement clickAssignedUSer;
+
+	@FindBy(how = How.ID, using = "saveTask")
+	private WebElement saveBtnOnAssignedUSer;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='data_content']/div[3]/table/tbody/tr/td[contains(.,'Decision Complete')]")
+	private WebElement regBGrid;
+
 	private String creditWorkflowText = ".//*[@id='taskManagmntContainer']/div[1]/div/span/b";
 	private String creditTextOnWorkflow = ".//*[@id='taskManagmntContainer']/div[1]/div/a/span";
 	private String facilityWorkflowText = ".//*[@id='taskManagmntContainer']/div[3]/div/span/b";
@@ -102,7 +153,86 @@ public class Credit360Helper {
 		Util.waitForElement(driver, creditBorrowerLink, 10);
 		creditBorrowerLink.click();
 		Util.waitForLoaderToFinish(driver);
+	}
 
+	public void reassignTaskOfPolicyException() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", actionMenuOnPolicyException);
+		Thread.sleep(1000);
+		js.executeScript("arguments[0].click();", reassignTaskOnPolicyException);
+		Util.waitForAJAX(driver);
+	}
+
+	public void setTaskToWaived() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		// js.executeScript("arguments[0].click();",
+		// actionMenuOnPolicyException);
+		Thread.sleep(1000);
+		Actions action = new Actions(driver);
+		action.moveToElement(actionMenuOnPolicyException).click().build()
+				.perform();
+		Thread.sleep(1000);
+		js.executeScript("arguments[0].click();",
+				setTaskWaivedOnPolicyException);
+		Util.waitForAJAX(driver);
+	}
+
+	public void setTaskInProgress() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", actionMenuOnPolicyException);
+		Thread.sleep(1000);
+		js.executeScript("arguments[0].click();", reassignTaskOnPolicyException);
+		Util.waitForAJAX(driver);
+	}
+
+	public void setTaskInProgressOfDecision() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", actionMenuOnDecisionOfTM);
+		Thread.sleep(1000);
+		js.executeScript("arguments[0].click();", reassignTask);
+		Util.waitForAJAX(driver);
+	}
+
+	public void setTaskToComplete() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", actionMenuOnPolicyException);
+		Thread.sleep(1000);
+		js.executeScript("arguments[0].click();", reassignTaskOnPolicyException);
+		Util.waitForAJAX(driver);
+	}
+
+	public void setTaskToCompleteOfDecision() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", actionMenuOnDecisionOfTM);
+		Thread.sleep(1000);
+		js.executeScript("arguments[0].click();", reassignTask);
+		Util.waitForAJAX(driver);
+	}
+
+	public void reassignTaskOfDecision() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", actionMenuOnDecisionOfTM);
+		Thread.sleep(1000);
+		js.executeScript("arguments[0].click();", reassignTask);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterAssignedUser() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", assignedUser);
+		assignedUser.clear();
+		assignedUser.sendKeys("alockhart");
+		Util.waitForAJAX(driver);
+		Thread.sleep(2000);
+		js.executeScript("arguments[0].click();", clickAssignedUSer);
+		Util.waitForAJAX(driver);
+	}
+
+	public void clickSaveOnReassignTask() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", saveBtnOnAssignedUSer);
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
 	}
 
 	public void clickAddBtnOnCreditBorrower() {
@@ -143,7 +273,7 @@ public class Credit360Helper {
 		Util.waitForElement(driver, actionColumnOnCredit360, 15);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", actionColumnOnCredit360);
-		
+
 		Util.waitForElement(driver, actionList, 15);
 		String str = actionList.getText();
 		if (str.equalsIgnoreCase("Credit level workflow")) {
@@ -244,7 +374,7 @@ public class Credit360Helper {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", actionMenuOnFacilitySummary);
 		Util.waitForElement(driver, delete, 5);
-//		actions.moveToElement(actionMenuOnFacilitySummary).click().perform();
+		// actions.moveToElement(actionMenuOnFacilitySummary).click().perform();
 		js.executeScript("arguments[0].click();", delete);
 
 		Util.waitForAJAX(driver);
@@ -275,17 +405,72 @@ public class Credit360Helper {
 		} else
 			return false;
 	}
-	
+
 	// to check element is not present in the page
 
-		public boolean isBookingSummaryDisplayed() {
-			List<WebElement> lst = driver.findElements(By
-					.xpath("//a[@title='Booking Summary']"));
-			if (lst.isEmpty()) {
-				System.out.println("element does not exist");
-				return true;
-			} else
-				return false;
-		}
+	public boolean isBookingSummaryDisplayed() {
+		List<WebElement> lst = driver.findElements(By
+				.xpath("//a[@title='Booking Summary']"));
+		if (lst.isEmpty()) {
+			System.out.println("element does not exist");
+			return true;
+		} else
+			return false;
+	}
+
+	public boolean verifyCredit360Title() {
+		Util.waitForAJAX(driver);
+		if (credit360Title.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public void expandWorkflow() {
+		Util.waitForAJAX(driver);
+		Util.scrollUp(driver);
+		Util.waitForElement(driver, expnadIconOnTM, 10);
+		expnadIconOnTM.click();
+		Util.waitForAJAX(driver);
+	}
+
+	public void expandDecision() {
+		Util.scrollDown(driver);
+		Util.waitForAJAX(driver);
+		expandDecision.click();
+		Util.waitForAJAX(driver);
+	}
+
+	public void clickRegB() {
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, regB, 10);
+		regB.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public boolean verifyRegBSection() {
+		Util.waitForAJAX(driver);
+		if (verifyRegB.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyRegBStartDate() {
+		String s = regBStrtDate.getText();
+		if (s.equalsIgnoreCase(Util.getCurrentDate()))
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyRegBSatisfactionDate() {
+		String s = regBSatisfactionDate.getText();
+		if (s.equalsIgnoreCase(Util.getCurrentDate()) && regBGrid.isDisplayed())
+			return true;
+		else
+			return false;
+	}
 
 }

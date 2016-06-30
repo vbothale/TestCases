@@ -42,6 +42,12 @@ public class AdminPage {
 	@FindBy(how = How.XPATH, using = "//span[contains(.,'Manage Workflows')]")
 	private WebElement manageWorkflows;
 
+	@FindBy(how = How.XPATH, using = "//span[contains(.,'Team Roles')]")
+	private WebElement teamRoles;
+
+	@FindBy(how = How.XPATH, using = "//h2[contains(.,'Team Role Editor ')]")
+	private WebElement verifyTeamRoles;
+
 	@FindBy(how = How.XPATH, using = "//a[contains(@title,'Add')]")
 	private WebElement addOnManageWorkflows;
 
@@ -172,9 +178,53 @@ public class AdminPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='securityData']/table/tbody/tr[5]/td[5]/input[2]")
 	private WebElement bookingDetails;
 
+	@FindBy(how = How.ID, using = "srchTeamRole")
+	private WebElement srchTeamRole;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(@class,'searchButtonIcon')]")
+	private WebElement searchBtn;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='UPSERTTEAMROLEFORM']/div[4]/table/tbody/tr[1]/td[1]")
+	private WebElement verifyRoleNm;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='UPSERTTEAMROLEFORM']/div[4]/table/tbody/tr[2]/td[1]")
+	private WebElement verifyRNm;
+
 	private String roleOnSecurity = ".//*[@id='roleSec']/div[2]/span/input";
 	private String workflowType = "processTypeCd";
 	private String s = ".//*[@id='securityData']/table/tbody/tr[11]/td[5]/div[3]";
+	private String role1 = "SALESADMN";
+	private String role2 = "LOANOFCR";
+	private String role3 = "SALESMNGR";
+	private String role4 = "SALESEXCTV";
+	private String role5 = "RELNMGR";
+	private String role6 = "CRDTADMN";
+	private String role7 = "CRDANLST";
+	private String role8 = "SRCRDTANLSYST";
+	private String role9 = "CREDOFFICER";
+	private String role10 = "SRCREDOFFICER";
+	private String role11 = "CHIEFCREDOFFICER";
+	private String role12 = "OPRTNMNGR";
+	private String role13 = "PRTFLIOMNGR";
+	private String role14 = "PRTFLIOADMN";
+	private String role15 = "SCRTYOFSR";
+	private String role16 = "CMPLIANSANLSYST";
+	private String role17 = "DOCMNGR";
+	private String role18 = "DOCSPCLIST";
+	private String role19 = "COLLATRLMNGR";
+	private String role20 = "COLLATRLANALSYST";
+	private String role21 = "UCCSPCLST";
+	private String role22 = "IMGINGSPCLST";
+	private String role23 = "FNDINGSPCLST";
+	private String role24 = "BOKINGSPCLST";
+	private String role25 = "PROVADMIN";
+	private String role26 = "CRDRISKMGR";
+	private String role27 = "COMPLIANCE";
+	private String role28 = "SBBO";
+	private String role29 = "UNDERWRITER";
+	private String role30 = "SBANALYST";
+	private String role31 = "SBUW";
+	private String role32 = "SBCLOSER";
 
 	public LoginPage clickAdminLink() throws InterruptedException {
 
@@ -204,6 +254,21 @@ public class AdminPage {
 		js.executeScript("arguments[0].click();", manageWorkflows);
 		Util.waitForLoaderToFinish(driver);
 		Util.waitForAJAX(driver);
+	}
+
+	public void clickTeamRoles() {
+		Util.waitForElement(driver, teamRoles, 10);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", teamRoles);
+		Util.waitForAJAX(driver);
+	}
+
+	public boolean verifyTeamRoles() {
+		Util.waitForAJAX(driver);
+		if (verifyTeamRoles.isDisplayed())
+			return true;
+		else
+			return false;
 	}
 
 	public void clickAddBtnOnWorkflowSummary() {
@@ -977,4 +1042,312 @@ public class AdminPage {
 		okOnSecurityPopup.click();
 		return new LogoutPage(driver);
 	}
+
+	public void enterRole(String option) {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(option);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole1() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role1);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole2() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role2);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole3() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role3);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole4() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role4);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole5() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role5);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole6() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role6);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole7() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role7);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole8() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role8);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole9() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role9);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole10() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role10);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole11() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role11);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole12() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role12);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole13() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role13);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole14() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role14);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole15() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role15);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole16() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role16);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole17() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role17);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole18() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role18);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole19() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role19);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole20() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role20);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole21() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role21);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole22() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role22);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole23() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role23);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole24() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role24);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole25() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role25);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole26() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role26);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole27() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role27);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole28() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role28);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole29() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role29);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole30() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role30);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole31() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role31);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterRole32() {
+		Util.waitForElement(driver, srchTeamRole, 10);
+		srchTeamRole.clear();
+		srchTeamRole.sendKeys(role32);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public String getTeamRole() {
+		Util.waitForAJAX(driver);
+		return verifyRoleNm.getText().trim();
+	}
+
+	public String getRole() {
+		Util.waitForAJAX(driver);
+		return verifyRNm.getText().trim();
+	}
+
 }

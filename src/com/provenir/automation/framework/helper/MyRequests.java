@@ -125,6 +125,9 @@ public class MyRequests {
 	@FindBy(how = How.XPATH, using = "//span[@class='getcount']")
 	private WebElement reqCount;
 
+	@FindBy(how = How.XPATH, using = ".//*[@id='pgexpanded']/td/div/div[1]/div/a[@class='expandGridLinkIcon']")
+	private WebElement credit360HyperlinkOnMyReqPage;
+
 	@FindBy(how = How.XPATH, using = ".//*[@class='blueColor']")
 	private WebElement reqName;
 
@@ -710,6 +713,13 @@ public class MyRequests {
 		myRequests.click();
 		Util.waitForAJAX(driver);
 	}
+	
+	public void clickMyReq() {
+		Util.waitForElement(driver, myRequests, 10);
+		Util.scollTop(driver);
+		myRequests.click();
+		Util.waitForAJAX(driver);
+	}
 
 	public void clickCreateCustomer() {
 		Util.scrollDown(driver);
@@ -749,5 +759,22 @@ public class MyRequests {
 	public String getMyRequestsTitle() {
 		Util.waitForAJAX(driver);
 		return myReqTitle.getText().trim();
+	}
+
+	public Credit360Helper gotoCredit360() {
+		Util.waitForAJAX(driver);
+		Util.waitForElement(driver, credit360HyperlinkOnMyReqPage, 20);
+		credit360HyperlinkOnMyReqPage.click();
+		Util.waitForAJAX(driver);
+		return new Credit360Helper(driver);
+	}
+
+	public void expandReqToVerifyTM() {
+		Util.waitForElement(driver, expandReq, 20);
+		expandReq.click();
+		Util.waitForAJAX(driver);
+		Util.waitForWorkflowToLoad(driver);
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
 	}
 }
