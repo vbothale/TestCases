@@ -45,6 +45,12 @@ public class AdminPage {
 	@FindBy(how = How.XPATH, using = "//span[contains(.,'Team Roles')]")
 	private WebElement teamRoles;
 
+	@FindBy(how = How.XPATH, using = "//span[contains(.,'Checklist Summary')]")
+	private WebElement chklistSummary;
+
+	@FindBy(how = How.XPATH, using = "//h2[contains(.,'Checklist Summary')]")
+	private WebElement verifyChklistSummaryTitle;
+
 	@FindBy(how = How.XPATH, using = "//h2[contains(.,'Team Role Editor ')]")
 	private WebElement verifyTeamRoles;
 
@@ -93,6 +99,12 @@ public class AdminPage {
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='taskListDD']")
 	private WebElement taskName;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='checklistContentDiv']/div/table/tbody/tr/td[4]/a")
+	private WebElement actionMenuOnChklist;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='checklistContentDiv']/div/table/tbody/tr/td[4]/div/div/div/div/ul/li[1]/a")
+	private WebElement editOnChklist;
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='processGrid']/div[2]/div[5]/div/div/div[9]")
 	private WebElement milestoneOnGrid;
@@ -181,11 +193,17 @@ public class AdminPage {
 	@FindBy(how = How.ID, using = "srchTeamRole")
 	private WebElement srchTeamRole;
 
+	@FindBy(how = How.ID, using = "srchChecklist")
+	private WebElement srchChecklist;
+
 	@FindBy(how = How.XPATH, using = "//span[contains(@class,'searchButtonIcon')]")
 	private WebElement searchBtn;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='UPSERTTEAMROLEFORM']/div[4]/table/tbody/tr[1]/td[1]")
 	private WebElement verifyRoleNm;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='checklistContentDiv']/div[2]/table/tbody/tr[1]/td[1]")
+	private WebElement verifyChecklistName;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='UPSERTTEAMROLEFORM']/div[4]/table/tbody/tr[2]/td[1]")
 	private WebElement verifyRNm;
@@ -226,6 +244,18 @@ public class AdminPage {
 	private String role31 = "SBUW";
 	private String role32 = "SBCLOSER";
 
+	private String chklist1 = "Eligibility Checklist";
+	private String chklist2 = "Policy Exception Checklist";
+	private String chklist3 = "Conditions and Precedent";
+	private String chklist4 = "Closing Checklist";
+	private String chklist5 = "Post-Booking QA checklist";
+	private String chklist6 = "Pre-Booking Checklist";
+	private String chklist7 = "Pre-Funding Checklist";
+	private String chklist8 = "Pre-Closing Checklist";
+	private String chklist9 = "Document Checklist";
+	private String chklist10 = "Due Diligence Checklist";
+	private String chklist11 = "Application Checklist";
+
 	public LoginPage clickAdminLink() throws InterruptedException {
 
 		try {
@@ -261,6 +291,21 @@ public class AdminPage {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", teamRoles);
 		Util.waitForAJAX(driver);
+	}
+
+	public void clickChecklistSummary() {
+		Util.waitForElement(driver, teamRoles, 10);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", chklistSummary);
+		Util.waitForAJAX(driver);
+	}
+
+	public boolean verifyChecklistSummary() {
+		Util.waitForAJAX(driver);
+		if (verifyChklistSummaryTitle.isDisplayed())
+			return true;
+		else
+			return false;
 	}
 
 	public boolean verifyTeamRoles() {
@@ -1061,6 +1106,180 @@ public class AdminPage {
 		Util.waitForAJAX(driver);
 	}
 
+	public void enterChklist1() {
+		Util.waitForElement(driver, srchChecklist, 10);
+		srchChecklist.clear();
+		srchChecklist.sendKeys(chklist1);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterChklist2() {
+		Util.waitForElement(driver, srchChecklist, 10);
+		srchChecklist.clear();
+		srchChecklist.sendKeys(chklist2);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterChklist3() {
+		Util.waitForElement(driver, srchChecklist, 10);
+		srchChecklist.clear();
+		srchChecklist.sendKeys(chklist3);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterChklist4() {
+		Util.waitForElement(driver, srchChecklist, 10);
+		srchChecklist.clear();
+		srchChecklist.sendKeys(chklist4);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterChklist5() {
+		Util.waitForElement(driver, srchChecklist, 10);
+		srchChecklist.clear();
+		srchChecklist.sendKeys(chklist5);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterChklist6() {
+		Util.waitForElement(driver, srchChecklist, 10);
+		srchChecklist.clear();
+		srchChecklist.sendKeys(chklist6);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterChklist7() {
+		Util.waitForElement(driver, srchChecklist, 10);
+		srchChecklist.clear();
+		srchChecklist.sendKeys(chklist7);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterChklist8() {
+		Util.waitForElement(driver, srchChecklist, 10);
+		srchChecklist.clear();
+		srchChecklist.sendKeys(chklist8);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterChklist9() {
+		Util.waitForElement(driver, srchChecklist, 10);
+		srchChecklist.clear();
+		srchChecklist.sendKeys(chklist9);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterChklist10() {
+		Util.waitForElement(driver, srchChecklist, 10);
+		srchChecklist.clear();
+		srchChecklist.sendKeys(chklist10);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterChklist11() {
+		Util.waitForElement(driver, srchChecklist, 10);
+		srchChecklist.clear();
+		srchChecklist.sendKeys(chklist11);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void clickEditOfApplicationChecklist() throws InterruptedException {
+		Util.waitForElement(driver, actionMenuOnChklist, 10);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", actionMenuOnChklist);
+		Thread.sleep(1000);
+		js.executeScript("arguments[0].click();", editOnChklist);
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public boolean verifyAttachCopyofArticlesofIncorporation() {
+		Util.waitForAJAX(driver);
+		if (driver
+				.findElement(
+						By.xpath("//input[contains(@value,'Attach Copy of Articles of Incorporation')]"))
+				.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyAttachFinancialStatements_Last3Years() {
+		Util.waitForAJAX(driver);
+		if (driver
+				.findElement(
+						By.xpath("//input[contains(@value,'Attach Financial Statements (Last 3 Years)')]"))
+				.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyAttachCopyofRealEstateTitle() {
+		Util.waitForAJAX(driver);
+		if (driver
+				.findElement(
+						By.xpath("//input[contains(@value,'Attach Copy of Real Estate Title')]"))
+				.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyAttachPersonalFinancialStatements_LAst3YearsofIndividualBorrowersOrGuarantors() {
+		Util.waitForAJAX(driver);
+		if (driver
+				.findElement(
+						By.xpath("//input[contains(@value,'Attach Personal Financial Statements (Last 3 Years) of Individual Borrowers/Guarantors')]"))
+				.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyAttachCopyofPassportOrDriversLicenseOrGovtID() {
+		Util.waitForAJAX(driver);
+		if (driver
+				.findElement(By.xpath("//input[contains(@name,'itemName4')]"))
+				.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyAttachCorporateBorrowingResolution() {
+		Util.waitForAJAX(driver);
+		if (driver
+				.findElement(
+						By.xpath("//input[contains(@value,'Attach Corporate Borrowing Resolution')]"))
+				.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
 	public void enterRole2() {
 		Util.waitForElement(driver, srchTeamRole, 10);
 		srchTeamRole.clear();
@@ -1343,6 +1562,11 @@ public class AdminPage {
 	public String getTeamRole() {
 		Util.waitForAJAX(driver);
 		return verifyRoleNm.getText().trim();
+	}
+
+	public String getChecklist() {
+		Util.waitForAJAX(driver);
+		return verifyChecklistName.getText().trim();
 	}
 
 	public String getRole() {

@@ -162,7 +162,8 @@ public class RegB extends TestCaseExecutor {
 	}
 
 	@Test(priority = 11)
-	public void test11_gotoRegB() {
+	public void test11_gotoRegB() throws InterruptedException {
+		Thread.sleep(2000);
 		credit360Helper.clickRegB();
 		Assert.assertTrue(credit360Helper.verifyRegBSection());
 	}
@@ -219,7 +220,8 @@ public class RegB extends TestCaseExecutor {
 	}
 
 	@Test(priority = 16)
-	public void test16_gotoRegBSection() {
+	public void test16_gotoRegBSection() throws InterruptedException {
+		Thread.sleep(3000);
 		credit360Helper.clickRegB();
 		Assert.assertTrue(credit360Helper.verifyRegBSection());
 	}
