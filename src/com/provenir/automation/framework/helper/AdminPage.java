@@ -208,9 +208,28 @@ public class AdminPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='UPSERTTEAMROLEFORM']/div[4]/table/tbody/tr[2]/td[1]")
 	private WebElement verifyRNm;
 
+	@FindBy(how = How.XPATH, using = "//*[@id='myGrid']/div/div[5]/div/div/div[1]")
+	private WebElement verifyWflwName;
+
+	@FindBy(how = How.XPATH, using = "//h2[contains(.,'Workflow Summary')]")
+	private WebElement verifyWorkflowSummary;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='myGrid']/div/div[5]/div/div/div[4]/a")
+	private WebElement actionMenuWorkflowSummary;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='myGrid']/div/div[5]/div/div/div[4]/div/div/div/div/ul/li[2]/a")
+	private WebElement editLinkWorkflowSummary;
+
+	@FindBy(how = How.ID, using = "wfNameLabel")
+	private WebElement wflwNm;
+
 	private String roleOnSecurity = ".//*[@id='roleSec']/div[2]/span/input";
 	private String workflowType = "processTypeCd";
 	private String s = ".//*[@id='securityData']/table/tbody/tr[11]/td[5]/div[3]";
+
+	private String wflw1 = "Workflow for Small Business";
+	private String wflw2 = "New Request for Money";
+
 	private String role1 = "SALESADMN";
 	private String role2 = "LOANOFCR";
 	private String role3 = "SALESMNGR";
@@ -1106,6 +1125,24 @@ public class AdminPage {
 		Util.waitForAJAX(driver);
 	}
 
+	public void enterWflw1() {
+		Util.waitForElement(driver, srchboxOnWorkflowSummary, 10);
+		srchboxOnWorkflowSummary.clear();
+		srchboxOnWorkflowSummary.sendKeys(wflw1);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void enterwflw2() {
+		Util.waitForElement(driver, srchboxOnWorkflowSummary, 10);
+		srchboxOnWorkflowSummary.clear();
+		srchboxOnWorkflowSummary.sendKeys(wflw2);
+		searchBtn.click();
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
 	public void enterChklist1() {
 		Util.waitForElement(driver, srchChecklist, 10);
 		srchChecklist.clear();
@@ -1569,9 +1606,355 @@ public class AdminPage {
 		return verifyChecklistName.getText().trim();
 	}
 
+	public String getWorkflow() {
+		Util.waitForAJAX(driver);
+		return verifyWflwName.getText().trim();
+	}
+
 	public String getRole() {
 		Util.waitForAJAX(driver);
 		return verifyRNm.getText().trim();
+	}
+
+	public boolean verifyWorkflowTitile() {
+		Util.waitForAJAX(driver);
+		if (verifyWorkflowSummary.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public void clickEditOnWflw() throws InterruptedException {
+		Util.waitForAJAX(driver);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", actionMenuWorkflowSummary);
+		Thread.sleep(2000);
+		js.executeScript("arguments[0].click();", editLinkWorkflowSummary);
+		Util.waitForAJAX(driver);
+		Util.waitForAJAX(driver);
+	}
+
+	public void clickWflwNm() {
+		Util.waitForAJAX(driver);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", wflwNm);
+		Util.waitForAJAX(driver);
+	}
+
+	public boolean verifyPreAnalysisTasks() {
+		Util.waitForAJAX(driver);
+		WebElement e = driver.findElement(By
+				.xpath("//label[contains(.,'Pre-Analysis')]"));
+		WebElement f = driver.findElement(By
+				.xpath("//label[contains(.,'Enter Financial Statements')]"));
+		WebElement g = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Execute OFAC Check on all Parties')]"));
+		WebElement h = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Verify readiness to pull credit')]"));
+		WebElement i = driver.findElement(By
+				.xpath("//label[contains(.,'Retrieve Credit Bureau Data')]"));
+		WebElement j = driver.findElement(By
+				.xpath("//label[contains(.,'Execute Auto-Decision')]"));
+		WebElement k = driver.findElement(By
+				.xpath("//label[contains(.,'Duplicate Check')]"));
+		WebElement l = driver.findElement(By
+				.xpath("//label[contains(.,'Fraud Check')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed()
+				&& h.isDisplayed() && i.isDisplayed() && j.isDisplayed()
+				&& k.isDisplayed() && l.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyDecision() {
+		Util.waitForAJAX(driver);
+		WebElement e = driver.findElement(By
+				.xpath("//label[starts-with(.,'Decision')]"));
+		WebElement f = driver.findElement(By
+				.xpath("//label[contains(.,'Policy Exceptions')]"));
+		WebElement g = driver.findElement(By
+				.xpath("//label[contains(.,'Post Bureau Check')]"));
+		WebElement h = driver.findElement(By
+				.xpath("//label[contains(.,'Review or Amend Decision')]"));
+		WebElement i = driver.findElement(By
+				.xpath("//label[contains(.,'Generate Commitment Letter')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed()
+				&& h.isDisplayed() && i.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyCustomerAcceptance() {
+		Util.waitForAJAX(driver);
+		WebElement e = driver.findElement(By
+				.xpath("//label[contains(.,'Customer Acceptance')]"));
+		WebElement f = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Complete Application Checklist')]"));
+		WebElement g = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Does Customer Accept Approved Terms?')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyDueDiligence() {
+		Util.waitForAJAX(driver);
+		WebElement e = driver.findElement(By
+				.xpath("//label[contains(.,'Fulfillment - Due diligence')]"));
+		WebElement f = driver.findElement(By
+				.xpath("//label[contains(.,'Due Diligence checklist')]"));
+		WebElement g = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Complete Pre-Document Checklist')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyLoanDocumentPreparation() {
+		Util.waitForAJAX(driver);
+		WebElement e = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Fulfillment - Loan Document Preparation')]"));
+		WebElement f = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Generate Legal Docs (Laser Pro)')]"));
+		WebElement g = driver.findElement(By
+				.xpath("//label[contains(.,'Document Package creation')]"));
+		WebElement h = driver.findElement(By
+				.xpath("//label[contains(.,'Verify Docs Are Correct')]"));
+		WebElement i = driver.findElement(By
+				.xpath("//label[contains(.,'Closing Checklist')]"));
+		WebElement j = driver.findElement(By
+				.xpath("//label[contains(.,'Schedule Closing')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed()
+				&& h.isDisplayed() && i.isDisplayed() && j.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyClosing() {
+		Util.waitForAJAX(driver);
+		Util.scrollBottom(driver);
+		WebElement e = driver
+				.findElement(By
+						.xpath("//*[@id='processGrid']/div[2]/div[5]/div/div[28]/div[2]/label"));
+		WebElement f = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Complete Pre-Funding Checklist')]"));
+		WebElement g = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Have Signed Docs Been Received Back from Customer?')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyBookingFundingServicing() {
+		Util.waitForAJAX(driver);
+		WebElement e = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Booking, Funding and Servicing')]"));
+		WebElement f = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Complete Pre-Booking Checklist')]"));
+		WebElement g = driver.findElement(By
+				.xpath("//label[contains(.,'Book to Servicing System')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyGeneralTask() {
+		Util.waitForAJAX(driver);
+		WebElement e = driver.findElement(By
+				.xpath("//label[contains(.,'General Task')]"));
+		WebElement f = driver
+				.findElement(By
+						.xpath("//label[contains(.,'CheckList Common Conditional Task')]"));
+		WebElement g = driver.findElement(By
+				.xpath("//label[contains(.,'Fee review task')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyCompliance() {
+		Util.waitForAJAX(driver);
+		WebElement e = driver.findElement(By
+				.xpath("//label[contains(.,'Compliance')]"));
+		WebElement f = driver.findElement(By
+				.xpath("//label[contains(.,'Start Reg B')]"));
+		WebElement g = driver.findElement(By
+				.xpath("//label[contains(.,'Stop Reg B')]"));
+		WebElement h = driver.findElement(By
+				.xpath("//label[contains(.,'OFAC')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed()
+				&& h.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyPreAnalysis() {
+		Util.waitForAJAX(driver);
+		WebElement e = driver.findElement(By
+				.xpath("//label[contains(.,'Pre-Analysis')]"));
+		WebElement f = driver.findElement(By
+				.xpath("//label[contains(.,'Add Customer Address')]"));
+		WebElement g = driver.findElement(By
+				.xpath("//label[contains(.,'Enter Financial Statements')]"));
+		WebElement h = driver.findElement(By
+				.xpath("//label[contains(.,'Setup Pricing')]"));
+		Util.scrollDown(driver);
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed()
+				&& h.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyCreditAnalysis() {
+		Util.waitForAJAX(driver);
+		Util.scrollDown(driver);
+		WebElement e = driver.findElement(By
+				.xpath("//label[contains(.,'Credit Analysis')]"));
+		WebElement f = driver.findElement(By
+				.xpath("//label[contains(.,'Facility Risk Rating')]"));
+		WebElement g = driver.findElement(By
+				.xpath("//label[contains(.,'Financial Analysis')]"));
+		WebElement h = driver.findElement(By
+				.xpath("//label[contains(.,'Set covenants')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed()
+				&& h.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyDecisioning() {
+		Util.waitForAJAX(driver);
+		Util.scrollDown(driver);
+		WebElement e = driver.findElement(By
+				.xpath("//label[contains(.,'Decisioning')]"));
+		WebElement f = driver.findElement(By
+				.xpath("//label[contains(.,'Review Credit Memo')]"));
+		WebElement g = driver.findElement(By
+				.xpath("//label[contains(.,'Generate Commitment Letter')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyFulfillmentDueDiligence() {
+		Util.waitForAJAX(driver);
+		Util.scrollBottom(driver);
+		WebElement e = driver.findElement(By
+				.xpath("//label[contains(.,'Fulfillment - Due diligence')]"));
+		WebElement f = driver.findElement(By
+				.xpath("//label[contains(.,'Due Diligence checklist')]"));
+		WebElement g = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Customize Terms and Conditions')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyFulfillmentLoanDocumentPreparation() {
+		Util.waitForAJAX(driver);
+		WebElement e = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Fulfillment - Loan Document Preparation')]"));
+		WebElement f = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Generate Legal Docs (Laser Pro)')]"));
+		WebElement g = driver.findElement(By
+				.xpath("//label[contains(.,'Document Package creation')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyFulfillmentClosing() {
+		Util.waitForAJAX(driver);
+		WebElement e = driver
+				.findElement(By
+						.xpath("//*[@id='processGrid']/div[2]/div[5]/div/div[66]/div[2]/label"));
+		WebElement f = driver.findElement(By
+				.xpath("//label[contains(.,'Closing Checklist')]"));
+		WebElement g = driver.findElement(By
+				.xpath("//label[contains(.,'Satisfy conditions precedent')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyBookingAndFundingAndServicing() {
+		Util.waitForAJAX(driver);
+		WebElement e = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Booking, Funding and Servicing')]"));
+		WebElement f = driver.findElement(By
+				.xpath("//label[contains(.,'Book to Loan IQ')]"));
+		WebElement g = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Complete Pre-Funding Checklist')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean verifyPostBooking() {
+		Util.waitForAJAX(driver);
+		WebElement e = driver.findElement(By
+				.xpath("//label[contains(.,'Post- Booking')]"));
+		WebElement f = driver
+				.findElement(By
+						.xpath("//label[contains(.,'Generate Document, Generate Cancel Letter, Duplicate')]"));
+		WebElement g = driver.findElement(By
+				.xpath("//label[contains(.,'Submit UCC filing')]"));
+		WebElement h = driver.findElement(By
+				.xpath("//label[contains(.,'Lien Perfection')]"));
+
+		if (e.isDisplayed() && f.isDisplayed() && g.isDisplayed()
+				&& h.isDisplayed())
+			return true;
+		else
+			return false;
 	}
 
 }
